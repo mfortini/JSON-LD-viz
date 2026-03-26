@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlante semantico del Comune</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero" aria-labelledby="page-title">
+        <div class="hero__content">
+          <p class="eyebrow">Single page app</p>
+          <h1 id="page-title">Atlante semantico del Comune</h1>
+          <p class="hero__lead">
+            Una vista editoriale dei contenuti in <code>comune.jsonld</code> e
+            delle relazioni che li collegano nel grafo.
+          </p>
+
+          <div class="hero__actions">
+            <label class="ghost-button" for="file-picker">
+              Carica un altro JSON-LD
+            </label>
+            <input
+              id="file-picker"
+              type="file"
+              accept=".json,.jsonld,application/ld+json"
+            />
+            <a class="ghost-link" href="#graph-panel">Vai al grafo</a>
+          </div>
+        </div>
+
+        <div class="hero__stats" id="stats-panel" aria-live="polite"></div>
+      </header>
+
+      <main class="layout">
+        <section class="panel panel--filters" aria-labelledby="filters-title">
+          <div class="section-heading">
+            <p class="section-kicker">Esplora</p>
+            <h2 id="filters-title">Filtri e categorie</h2>
+          </div>
+
+          <div class="toolbar">
+            <label class="field">
+              <span class="field__label">Cerca per titolo, tipo o testo</span>
+              <input
+                id="search-input"
+                type="search"
+                placeholder="Es. evento, museo, servizio, residenza"
+              />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Filtra per tipo</span>
+              <select id="type-filter">
+                <option value="all">Tutti i tipi</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="type-pills" id="type-pills"></div>
+        </section>
+
+        <section class="panel panel--list" aria-labelledby="list-title">
+          <div class="section-heading">
+            <p class="section-kicker">Contenuti</p>
+            <h2 id="list-title">Schede dei nodi</h2>
+          </div>
+
+          <p class="panel__intro" id="results-summary"></p>
+          <ul class="card-grid" id="node-list"></ul>
+        </section>
+
+        <section
+          class="panel panel--detail"
+          aria-labelledby="detail-title"
+          id="detail-panel"
+        >
+          <div class="section-heading">
+            <p class="section-kicker">Dettaglio</p>
+            <h2 id="detail-title">Nodo selezionato</h2>
+          </div>
+
+          <div id="node-detail" class="detail-empty">
+            Seleziona una scheda o un nodo nel grafo per vedere attributi e
+            collegamenti.
+          </div>
+        </section>
+
+        <section
+          class="panel panel--graph"
+          aria-labelledby="graph-title"
+          id="graph-panel"
+        >
+          <div class="section-heading">
+            <p class="section-kicker">Relazioni</p>
+            <h2 id="graph-title">Mappa del grafo</h2>
+          </div>
+
+          <p class="panel__intro">
+            I colori identificano i tipi di entità. La selezione mette in
+            evidenza i collegamenti entranti e uscenti del nodo attivo.
+          </p>
+
+          <div class="graph-legend" id="graph-legend"></div>
+          <div class="graph-stage">
+            <svg
+              id="graph-svg"
+              viewBox="0 0 960 640"
+              role="img"
+              aria-label="Visualizzazione delle connessioni del grafo JSON-LD"
+            ></svg>
+          </div>
+        </section>
+      </main>
+
+      <div class="toast" id="app-status" aria-live="polite"></div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
