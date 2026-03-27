@@ -88,6 +88,8 @@ const state = {
   filteredType: "all",
   searchText: "",
   selectedId: null,
+  layoutCacheKey: null,
+  layoutCache: null,
 };
 
 const elements = {
@@ -385,50 +387,52 @@ function renderDetail() {
 
   elements.nodeDetail.className = "";
   elements.nodeDetail.innerHTML = `
-    <div class="detail-header">
-      <div class="type-pill is-active" style="width:max-content">
-        <span class="swatch" style="background:${getTypeColor(node.type)}"></span>
-        <span>${getTypeLabel(node.type)}</span>
-      </div>
-      <h3>${escapeHtml(node.title)}</h3>
-      <p class="panel__intro">${escapeHtml(node.summary)}</p>
-      <code>${escapeHtml(node.id)}</code>
-      <div class="detail-flow-summary">
-        <span class="flow-chip flow-chip--outgoing">${node.outgoing.length} uscenti</span>
-        <span class="flow-chip flow-chip--incoming">${node.incoming.length} entranti</span>
-      </div>
-    </div>
-    <div class="detail-sections">
-      <section class="detail-box">
-        <h4>Attributi</h4>
-        <div class="kv-list">
-          ${
-            node.attributes.length
-              ? node.attributes.map(renderAttribute).join("")
-              : '<p class="panel__intro">Questo nodo espone quasi esclusivamente relazioni verso altri nodi.</p>'
-          }
-        </div>
-      </section>
-      <section class="detail-box">
-        <h4>Relazioni uscenti</h4>
-        <div class="relation-list">
-          ${
-            node.outgoing.length
-              ? node.outgoing.map((relation) => renderRelation(relation, "outgoing")).join("")
-              : '<p class="panel__intro">Nessuna relazione uscente rilevata.</p>'
-          }
-        </div>
-      </section>
-      <section class="detail-box">
-        <h4>Relazioni entranti</h4>
-        <div class="relation-list">
+    <div class="smart-viewer">
+      <div class="smart-column smart-column--incoming">
+        <h4><span class="flow-chip flow-chip--incoming">${node.incoming.length} Entranti</span></h4>
+        <div class="relation-cards">
           ${
             node.incoming.length
-              ? node.incoming.map((relation) => renderRelation(relation, "incoming")).join("")
+              ? node.incoming.map((relation) => renderRelationCard(relation, "incoming")).join("")
               : '<p class="panel__intro">Nessuna relazione entrante rilevata.</p>'
           }
         </div>
-      </section>
+      </div>
+
+      <div class="smart-column smart-column--current">
+        <div class="detail-header">
+          <div class="type-pill is-active" style="width:max-content">
+            <span class="swatch" style="background:${getTypeColor(node.type)}"></span>
+            <span>${getTypeLabel(node.type)}</span>
+          </div>
+          <h3>${escapeHtml(node.title)}</h3>
+          <p class="panel__intro">${escapeHtml(node.summary)}</p>
+          <code>${escapeHtml(node.id)}</code>
+        </div>
+        <div class="detail-sections">
+          <section class="detail-box">
+            <h4>Attributi</h4>
+            <div class="kv-list">
+              ${
+                node.attributes.length
+                  ? node.attributes.map(renderAttribute).join("")
+                  : '<p class="panel__intro">Questo nodo espone quasi esclusivamente relazioni verso altri nodi.</p>'
+              }
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="smart-column smart-column--outgoing">
+        <h4><span class="flow-chip flow-chip--outgoing">${node.outgoing.length} Uscenti</span></h4>
+        <div class="relation-cards">
+          ${
+            node.outgoing.length
+              ? node.outgoing.map((relation) => renderRelationCard(relation, "outgoing")).join("")
+              : '<p class="panel__intro">Nessuna relazione uscente rilevata.</p>'
+          }
+        </div>
+      </div>
     </div>
   `;
 
@@ -449,20 +453,29 @@ function renderAttribute(attribute) {
   `;
 }
 
-function renderRelation(relation, direction) {
+function renderRelationCard(relation, direction) {
   const counterpartId = direction === "incoming" ? relation.source : relation.target;
   const counterpart = state.nodes.find((node) => node.id === counterpartId);
   const counterpartLabel = counterpart ? counterpart.title : counterpartId;
   const counterpartType = counterpart ? getTypeLabel(counterpart.type) : "Nodo esterno";
+  const typeColor = counterpart ? getTypeColor(counterpart.type) : "#ccc";
+  const counterpartSummary = counterpart ? escapeHtml(counterpart.summary) : "";
 
   return `
-    <div class="relation-item">
-      <div class="relation-predicate">${escapeHtml(humanizePredicate(relation.predicate))}</div>
-      <button type="button" class="relation-button" data-node-id="${escapeHtml(counterpartId)}">
-        ${escapeHtml(counterpartLabel)}
-      </button>
-      <div class="relation-target">${escapeHtml(counterpartType)}</div>
-    </div>
+    <details class="rel-card" style="border-left-color: ${typeColor}">
+      <summary class="rel-card__summary">
+        <div class="rel-card__info">
+          <div class="relation-predicate">${escapeHtml(humanizePredicate(relation.predicate))}</div>
+          <div class="relation-target">${escapeHtml(counterpartType)}</div>
+        </div>
+      </summary>
+      <div class="rel-card__body">
+        <button type="button" class="relation-button" data-node-id="${escapeHtml(counterpartId)}">
+          ${escapeHtml(counterpartLabel)}
+        </button>
+        ${counterpartSummary ? `<p class="rel-card__desc">${counterpartSummary}</p>` : ""}
+      </div>
+    </details>
   `;
 }
 
@@ -526,6 +539,8 @@ function renderGraph() {
           x2="${target.x.toFixed(1)}"
           y2="${target.y.toFixed(1)}"
           marker-end="url(#arrow-${direction})"
+          data-source-id="${escapeHtml(link.source)}"
+          data-target-id="${escapeHtml(link.target)}"
         >
           <title>${escapeHtml(`${source.title} → ${humanizePredicate(link.predicate)} → ${target.title}`)}</title>
         </line>
@@ -571,8 +586,88 @@ function renderGraph() {
     ${nodeMarkup}
   `;
 
+  let draggedNodeId = null;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let initialNodeX = 0;
+  let initialNodeY = 0;
+  let isDragging = false;
+
+  const onMouseMove = (e) => {
+    if (!draggedNodeId) return;
+    isDragging = true;
+    const svgRect = elements.graphSvg.getBoundingClientRect();
+    const viewBox = elements.graphSvg.viewBox.baseVal;
+    const scaleX = viewBox.width / svgRect.width;
+    const scaleY = viewBox.height / svgRect.height;
+
+    const dx = (e.clientX - dragStartX) * scaleX;
+    const dy = (e.clientY - dragStartY) * scaleY;
+
+    const node = layout.nodeMap.get(draggedNodeId);
+    if (!node) return;
+
+    node.x = initialNodeX + dx;
+    node.y = initialNodeY + dy;
+
+    // Update DOM directly for smooth drag
+    const group = elements.graphSvg.querySelector(`.graph-node[data-node-id="${draggedNodeId}"]`);
+    if (group) {
+      const circle = group.querySelector("circle");
+      if (circle) {
+        circle.setAttribute("cx", node.x.toFixed(1));
+        circle.setAttribute("cy", node.y.toFixed(1));
+      }
+      const text = group.querySelector("text");
+      if (text) {
+        const radius = 8 + Math.min(node.degree, 8);
+        text.setAttribute("x", (node.x + radius + 6).toFixed(1));
+        text.setAttribute("y", (node.y + 4).toFixed(1));
+      }
+    }
+
+    // Update lines connected to this node
+    const lines = elements.graphSvg.querySelectorAll("line.graph-link");
+    for (const line of lines) {
+      if (line.dataset.sourceId === draggedNodeId) {
+        line.setAttribute("x1", node.x.toFixed(1));
+        line.setAttribute("y1", node.y.toFixed(1));
+      }
+      if (line.dataset.targetId === draggedNodeId) {
+        line.setAttribute("x2", node.x.toFixed(1));
+        line.setAttribute("y2", node.y.toFixed(1));
+      }
+    }
+  };
+
+  const onMouseUp = () => {
+    draggedNodeId = null;
+    window.removeEventListener("mousemove", onMouseMove);
+    window.removeEventListener("mouseup", onMouseUp);
+    setTimeout(() => { isDragging = false; }, 0);
+  };
+
   for (const group of elements.graphSvg.querySelectorAll(".graph-node")) {
-    group.addEventListener("click", () => {
+    group.addEventListener("mousedown", (e) => {
+      draggedNodeId = group.dataset.nodeId;
+      dragStartX = e.clientX;
+      dragStartY = e.clientY;
+      const node = layout.nodeMap.get(draggedNodeId);
+      if (node) {
+        initialNodeX = node.x;
+        initialNodeY = node.y;
+      }
+      isDragging = false;
+      window.addEventListener("mousemove", onMouseMove);
+      window.addEventListener("mouseup", onMouseUp);
+      e.stopPropagation();
+    });
+
+    group.addEventListener("click", (e) => {
+      if (isDragging) {
+        e.stopPropagation();
+        return;
+      }
       state.selectedId = group.dataset.nodeId;
       renderAll();
     });
@@ -580,6 +675,12 @@ function renderGraph() {
 }
 
 function computeLayout(nodes, links, width, height) {
+  const cacheKey = nodes.map((n) => n.id).sort().join("|") + width + "x" + height;
+  if (state.layoutCacheKey === cacheKey) {
+    // Return cached layout so nodes don't move around when clicking a new active node
+    return state.layoutCache;
+  }
+
   const centerX = width / 2;
   const centerY = height / 2;
   const typeList = [...new Set(nodes.map((node) => node.type))];
@@ -661,7 +762,10 @@ function computeLayout(nodes, links, width, height) {
     }
   }
 
-  return { nodes: [...nodeMap.values()], nodeMap };
+  const layout = { nodes: [...nodeMap.values()], nodeMap };
+  state.layoutCacheKey = cacheKey;
+  state.layoutCache = layout;
+  return layout;
 }
 
 function collectHighlightedIds(selectedId, links) {
