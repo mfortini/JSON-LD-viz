@@ -91,6 +91,7 @@ const state = {
   layoutCacheKey: null,
   layoutCache: null,
   animationDirection: "none",
+  prefixMap: {},
 };
 
 const elements = {
@@ -156,11 +157,20 @@ function bindUi() {
   });
 
   window.addEventListener("resize", debounce(() => renderGraph(), 120));
+
+  window.addEventListener("popstate", () => {
+    const hashId = window.location.hash.slice(1);
+    if (hashId && state.nodes.some((n) => n.id === hashId)) {
+      state.selectedId = hashId;
+      renderAll(false);
+    }
+  });
 }
 
 function initializeApp(data, message) {
   const parsed = parseGraph(data);
   state.raw = data;
+  state.prefixMap = buildPrefixMap(data["@context"]);
   state.nodes = parsed.nodes;
   state.links = parsed.links;
   state.filteredType = "all";
@@ -178,6 +188,14 @@ function initializeApp(data, message) {
   renderLegend(parsed.typeCounts);
   renderAll();
   showStatus(message);
+
+  if (isValidHash) {
+    requestAnimationFrame(() => {
+      document
+        .querySelector("#detail-panel")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 }
 
 function parseGraph(data) {
@@ -240,7 +258,7 @@ function ensureSelectionIsVisible() {
   state.selectedId = state.visibleNodes[0]?.id ?? null;
 }
 
-function renderAll() {
+function renderAll(pushHistory = false) {
   renderStats();
   renderTypePills();
   renderResultsSummary();
@@ -249,7 +267,11 @@ function renderAll() {
   renderGraph();
 
   if (state.selectedId) {
-    window.history.replaceState(null, "", `#${state.selectedId}`);
+    if (pushHistory) {
+      window.history.pushState(null, "", `#${state.selectedId}`);
+    } else {
+      window.history.replaceState(null, "", `#${state.selectedId}`);
+    }
   }
 }
 
@@ -375,7 +397,7 @@ function renderNodeList() {
   for (const button of elements.nodeList.querySelectorAll(".entity-card")) {
     button.addEventListener("click", () => {
       state.selectedId = button.dataset.nodeId;
-      renderAll();
+      renderAll(true);
       document
         .querySelector("#detail-panel")
         ?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -409,9 +431,12 @@ function renderDetail() {
 
       <div class="smart-column smart-column--current ${state.animationDirection === 'left' ? 'slide-from-left' : state.animationDirection === 'right' ? 'slide-from-right' : ''}">
         <div class="detail-header">
-          <div class="type-pill is-active" style="width:max-content">
-            <span class="swatch" style="background:${getTypeColor(node.type)}"></span>
-            <span>${getTypeLabel(node.type)}</span>
+          <div class="detail-header__top">
+            <div class="type-pill is-active" style="width:max-content">
+              <span class="swatch" style="background:${getTypeColor(node.type)}"></span>
+              <span>${getTypeLabel(node.type)}</span>
+            </div>
+            <button type="button" class="source-toggle" data-source-id="__current__" title="Mostra sorgente JSON-LD">&lt;/&gt;</button>
           </div>
           <h3>${escapeHtml(node.title)}</h3>
           <p class="panel__intro">${escapeHtml(node.summary)}</p>
@@ -427,6 +452,10 @@ function renderDetail() {
                   : '<p class="panel__intro">Questo nodo espone quasi esclusivamente relazioni verso altri nodi.</p>'
               }
             </div>
+          </section>
+          <section class="detail-box source-box" hidden>
+            <h4>Sorgente JSON-LD</h4>
+            <pre class="source-pre">${escapeHtml(JSON.stringify(node.raw, null, 2))}</pre>
           </section>
         </div>
       </div>
@@ -451,6 +480,40 @@ function renderDetail() {
     });
   }
 
+  // Source toggle for the current (center) node
+  const sourceToggle = elements.nodeDetail.querySelector(".source-toggle[data-source-id='__current__']");
+  const sourceBox = elements.nodeDetail.querySelector(".source-box");
+  if (sourceToggle && sourceBox) {
+    sourceToggle.addEventListener("click", () => {
+      const isHidden = sourceBox.hasAttribute("hidden");
+      if (isHidden) {
+        sourceBox.removeAttribute("hidden");
+        sourceToggle.classList.add("is-active");
+      } else {
+        sourceBox.setAttribute("hidden", "");
+        sourceToggle.classList.remove("is-active");
+      }
+    });
+  }
+
+  // Source toggles for each rel-card
+  for (const btn of elements.nodeDetail.querySelectorAll(".source-toggle--inline")) {
+    const card = btn.closest(".rel-card");
+    const panel = card?.querySelector(".rel-card__source");
+    if (!panel) continue;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = panel.hasAttribute("hidden");
+      if (isHidden) {
+        panel.removeAttribute("hidden");
+        btn.classList.add("is-active");
+      } else {
+        panel.setAttribute("hidden", "");
+        btn.classList.remove("is-active");
+      }
+    });
+  }
+
   for (const button of elements.nodeDetail.querySelectorAll(".relation-button")) {
     button.addEventListener("click", () => {
       const card = button.closest(".rel-card");
@@ -458,17 +521,65 @@ function renderDetail() {
         state.animationDirection = card.classList.contains("rel-card--incoming") ? "left" : "right";
       }
       state.selectedId = button.dataset.nodeId;
-      renderAll();
+      renderAll(true);
       state.animationDirection = "none";
     });
   }
+}
+
+function isUrl(value) {
+  return /^https?:\/\//.test(value);
+}
+
+function buildPrefixMap(context) {
+  const map = {};
+  if (!context) return map;
+  const contexts = Array.isArray(context) ? context : [context];
+  for (const ctx of contexts) {
+    if (ctx && typeof ctx === "object") {
+      for (const [prefix, uri] of Object.entries(ctx)) {
+        if (prefix.startsWith("@")) continue;
+        if (typeof uri === "string" && isUrl(uri)) {
+          map[prefix] = uri;
+        }
+      }
+    }
+  }
+  return map;
+}
+
+function resolvePrefixedUri(value) {
+  if (!value || isUrl(value)) return value;
+  // Match prefix:localPart, but not absolute URIs like http://
+  const match = /^([a-zA-Z][a-zA-Z0-9_-]*):([^/].*)$/.exec(value);
+  if (!match) return value;
+  const [, prefix, local] = match;
+  const base = state.prefixMap[prefix];
+  return base ? base + local : value;
+}
+
+function renderAttributeValue(value) {
+  const resolved = resolvePrefixedUri(value);
+  if (isUrl(resolved)) {
+    return `<a href="${escapeHtml(resolved)}" target="_blank" rel="noopener noreferrer">${escapeHtml(resolved)}</a>`;
+  }
+  return escapeHtml(value);
+}
+
+function renderPredicateLink(predicate) {
+  const label = escapeHtml(humanizePredicate(predicate));
+  const uri = resolvePrefixedUri(predicate);
+  if (isUrl(uri)) {
+    return `<a href="${escapeHtml(uri)}" target="_blank" rel="noopener noreferrer" class="rel-card__predicate predicate-link">${label}</a>`;
+  }
+  return `<span class="rel-card__predicate">${label}</span>`;
 }
 
 function renderAttribute(attribute) {
   return `
     <div class="kv-item">
       <div class="kv-key">${escapeHtml(humanizePredicate(attribute.key))}</div>
-      <div class="kv-value">${escapeHtml(attribute.value)}</div>
+      <div class="kv-value">${renderAttributeValue(attribute.value)}</div>
     </div>
   `;
 }
@@ -486,6 +597,8 @@ function renderRelationCard(relation, direction) {
     ? `border-right-color: ${typeColor}; border-left-color: var(--panel-border);`
     : `border-left-color: ${typeColor}; border-right-color: var(--panel-border);`;
 
+  const sourceRaw = counterpart ? escapeHtml(JSON.stringify(counterpart.raw, null, 2)) : null;
+
   return `
     <div class="${cardClass}" style="${styleAttr}">
       <div class="rel-card__summary">
@@ -498,11 +611,13 @@ function renderRelationCard(relation, direction) {
             ${counterpartSummary ? `<div class="rel-card__desc">${counterpartSummary}</div>` : ""}
           </div>
           <div class="rel-card__band">
-            <span class="rel-card__predicate">${escapeHtml(humanizePredicate(relation.predicate))}</span>
+            ${renderPredicateLink(relation.predicate)}
+            ${sourceRaw ? `<button type="button" class="source-toggle source-toggle--inline" title="Sorgente JSON-LD">&lt;/&gt;</button>` : ""}
           </div>
         ` : `
           <div class="rel-card__band">
-            <span class="rel-card__predicate">${escapeHtml(humanizePredicate(relation.predicate))}</span>
+            ${renderPredicateLink(relation.predicate)}
+            ${sourceRaw ? `<button type="button" class="source-toggle source-toggle--inline" title="Sorgente JSON-LD">&lt;/&gt;</button>` : ""}
           </div>
           <div class="rel-card__main" style="text-align: right;">
             <div class="rel-card__header">
@@ -513,6 +628,7 @@ function renderRelationCard(relation, direction) {
           </div>
         `}
       </div>
+      ${sourceRaw ? `<div class="rel-card__source" hidden><pre class="source-pre">${sourceRaw}</pre></div>` : ""}
     </div>
   `;
 }
@@ -707,13 +823,13 @@ function renderGraph() {
         return;
       }
       state.selectedId = group.dataset.nodeId;
-      renderAll();
+      renderAll(true);
     });
 
     group.addEventListener("dblclick", (e) => {
       e.stopPropagation();
       state.selectedId = group.dataset.nodeId;
-      renderAll();
+      renderAll(true);
       document
         .querySelector("#detail-panel")
         ?.scrollIntoView({ behavior: "smooth", block: "start" });
