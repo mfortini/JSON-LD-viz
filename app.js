@@ -90,6 +90,7 @@ const state = {
   selectedId: null,
   layoutCacheKey: null,
   layoutCache: null,
+  animationDirection: "none",
 };
 
 const elements = {
@@ -164,7 +165,10 @@ function initializeApp(data, message) {
   state.links = parsed.links;
   state.filteredType = "all";
   state.searchText = "";
-  state.selectedId = parsed.nodes[0]?.id ?? null;
+  
+  const hashId = window.location.hash.slice(1);
+  const isValidHash = parsed.nodes.some(n => n.id === hashId);
+  state.selectedId = isValidHash ? hashId : (parsed.nodes[0]?.id ?? null);
 
   elements.searchInput.value = "";
   elements.typeFilter.value = "all";
@@ -243,6 +247,10 @@ function renderAll() {
   renderNodeList();
   renderDetail();
   renderGraph();
+
+  if (state.selectedId) {
+    window.history.replaceState(null, "", `#${state.selectedId}`);
+  }
 }
 
 function renderStats() {
@@ -399,7 +407,7 @@ function renderDetail() {
         </div>
       </div>
 
-      <div class="smart-column smart-column--current">
+      <div class="smart-column smart-column--current ${state.animationDirection === 'left' ? 'slide-from-left' : state.animationDirection === 'right' ? 'slide-from-right' : ''}">
         <div class="detail-header">
           <div class="type-pill is-active" style="width:max-content">
             <span class="swatch" style="background:${getTypeColor(node.type)}"></span>
@@ -407,7 +415,7 @@ function renderDetail() {
           </div>
           <h3>${escapeHtml(node.title)}</h3>
           <p class="panel__intro">${escapeHtml(node.summary)}</p>
-          <code>${escapeHtml(node.id)}</code>
+          <code><a href="${escapeHtml(node.id)}" target="_blank" rel="noopener noreferrer">${escapeHtml(node.id)}</a></code>
         </div>
         <div class="detail-sections">
           <section class="detail-box">
@@ -436,10 +444,22 @@ function renderDetail() {
     </div>
   `;
 
+  for (const card of elements.nodeDetail.querySelectorAll(".rel-card")) {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest(".relation-button")) return;
+      card.classList.toggle("is-expanded");
+    });
+  }
+
   for (const button of elements.nodeDetail.querySelectorAll(".relation-button")) {
     button.addEventListener("click", () => {
+      const card = button.closest(".rel-card");
+      if (card) {
+        state.animationDirection = card.classList.contains("rel-card--incoming") ? "left" : "right";
+      }
       state.selectedId = button.dataset.nodeId;
       renderAll();
+      state.animationDirection = "none";
     });
   }
 }
@@ -460,22 +480,40 @@ function renderRelationCard(relation, direction) {
   const counterpartType = counterpart ? getTypeLabel(counterpart.type) : "Nodo esterno";
   const typeColor = counterpart ? getTypeColor(counterpart.type) : "#ccc";
   const counterpartSummary = counterpart ? escapeHtml(counterpart.summary) : "";
+  const isIncoming = direction === "incoming";
+  const cardClass = isIncoming ? "rel-card rel-card--incoming" : "rel-card rel-card--outgoing";
+  const styleAttr = isIncoming 
+    ? `border-right-color: ${typeColor}; border-left-color: var(--panel-border);`
+    : `border-left-color: ${typeColor}; border-right-color: var(--panel-border);`;
 
   return `
-    <details class="rel-card" style="border-left-color: ${typeColor}">
-      <summary class="rel-card__summary">
-        <div class="rel-card__info">
-          <div class="relation-predicate">${escapeHtml(humanizePredicate(relation.predicate))}</div>
-          <div class="relation-target">${escapeHtml(counterpartType)}</div>
-        </div>
-      </summary>
-      <div class="rel-card__body">
-        <button type="button" class="relation-button" data-node-id="${escapeHtml(counterpartId)}">
-          ${escapeHtml(counterpartLabel)}
-        </button>
-        ${counterpartSummary ? `<p class="rel-card__desc">${counterpartSummary}</p>` : ""}
+    <div class="${cardClass}" style="${styleAttr}">
+      <div class="rel-card__summary">
+        ${isIncoming ? `
+          <div class="rel-card__main">
+            <div class="rel-card__header">
+              <button type="button" class="relation-button rel-card__title" data-node-id="${escapeHtml(counterpartId)}">${escapeHtml(counterpartLabel)}</button>
+              <span class="rel-card__type">${escapeHtml(counterpartType)}</span>
+            </div>
+            ${counterpartSummary ? `<div class="rel-card__desc">${counterpartSummary}</div>` : ""}
+          </div>
+          <div class="rel-card__band">
+            <span class="rel-card__predicate">${escapeHtml(humanizePredicate(relation.predicate))}</span>
+          </div>
+        ` : `
+          <div class="rel-card__band">
+            <span class="rel-card__predicate">${escapeHtml(humanizePredicate(relation.predicate))}</span>
+          </div>
+          <div class="rel-card__main" style="text-align: right;">
+            <div class="rel-card__header">
+              <button type="button" class="relation-button rel-card__title" data-node-id="${escapeHtml(counterpartId)}">${escapeHtml(counterpartLabel)}</button>
+              <span class="rel-card__type">${escapeHtml(counterpartType)}</span>
+            </div>
+            ${counterpartSummary ? `<div class="rel-card__desc">${counterpartSummary}</div>` : ""}
+          </div>
+        `}
       </div>
-    </details>
+    </div>
   `;
 }
 
@@ -670,6 +708,15 @@ function renderGraph() {
       }
       state.selectedId = group.dataset.nodeId;
       renderAll();
+    });
+
+    group.addEventListener("dblclick", (e) => {
+      e.stopPropagation();
+      state.selectedId = group.dataset.nodeId;
+      renderAll();
+      document
+        .querySelector("#detail-panel")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 }
