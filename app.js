@@ -80,6 +80,8 @@ const GRAPH_FLOW_META = {
   },
 };
 
+const PERSISTED_SOURCE_KEY = "semantic-graph:last-source";
+
 const state = {
   raw: null,
   nodes: [],
@@ -126,11 +128,28 @@ function boot() {
 
   if (dataToLoad) {
     loadFromData(dataToLoad);
+  } else if (restorePersistedSource()) {
+    return;
+  } else if (elements.filePicker.files.length > 0) {
+    handleFileLoad(elements.filePicker.files[0]);
   } else {
     showStatus(
       "Apri un file JSON-LD o incollane il codice per visualizzare il grafo semantico.",
     );
     renderEmptyState();
+  }
+}
+
+async function handleFileLoad(file) {
+  try {
+    const text = await file.text();
+    const data = JSON.parse(text);
+    initializeApp(data, "Codice caricato correttamente");
+    persistSource(text);
+    await storeDataInUrlIfSmall(text);
+  } catch (error) {
+    showStatus("Il file selezionato non sembra un JSON valido.");
+    console.error(error);
   }
 }
 
@@ -151,16 +170,7 @@ function bindUi() {
   elements.filePicker.addEventListener("change", async (event) => {
     const [file] = event.target.files ?? [];
     if (!file) return;
-
-    try {
-      const text = await file.text();
-      const data = JSON.parse(text);
-      initializeApp(data, "Codice caricato correttamente");
-      await storeDataInUrlIfSmall(text);
-    } catch (error) {
-      showStatus("Il file selezionato non sembra un JSON valido.");
-      console.error(error);
-    }
+    await handleFileLoad(file);
   });
 
   elements.pasteBtn.addEventListener("click", () => {
@@ -183,6 +193,7 @@ function bindUi() {
       const data = JSON.parse(text);
       elements.pasteDialog.close();
       initializeApp(data, "Codice caricato correttamente");
+      persistSource(text);
       await storeDataInUrlIfSmall(text);
     } catch (error) {
       alert("Il testo incollato non è un JSON valido.");
@@ -207,6 +218,7 @@ async function loadFromData(compressedData) {
     const text = await decompressData(compressedData);
     const data = JSON.parse(text);
     initializeApp(data, "Dati caricati dall'URL");
+    persistSource(text);
   } catch (error) {
     showStatus("Impossibile caricare i dati dall'URL. Formato non valido.");
     renderEmptyState();
@@ -227,6 +239,36 @@ async function storeDataInUrlIfSmall(text) {
     newUrl.searchParams.delete("data");
     window.history.replaceState(null, "", newUrl.toString());
     showStatus("Dati in memoria (sorgente troppo grande per condivisione link)");
+  }
+}
+
+function persistSource(text) {
+  try {
+    const payload = JSON.stringify({
+      text,
+      savedAt: new Date().toISOString(),
+    });
+    window.localStorage.setItem(PERSISTED_SOURCE_KEY, payload);
+  } catch (error) {
+    console.warn("Impossibile salvare i dati nel browser.", error);
+  }
+}
+
+function restorePersistedSource() {
+  try {
+    const stored = window.localStorage.getItem(PERSISTED_SOURCE_KEY);
+    if (!stored) return false;
+
+    const parsed = JSON.parse(stored);
+    if (!parsed?.text) return false;
+
+    const data = JSON.parse(parsed.text);
+    initializeApp(data, "Dati ripristinati dall'archivio locale del browser");
+    return true;
+  } catch (error) {
+    window.localStorage.removeItem(PERSISTED_SOURCE_KEY);
+    console.warn("Archivio locale non valido, rimosso.", error);
+    return false;
   }
 }
 
@@ -269,7 +311,7 @@ function initializeApp(data, message) {
   
   const hashId = window.location.hash.slice(1);
   const isValidHash = parsed.nodes.some(n => n.id === hashId);
-  state.selectedId = isValidHash ? hashId : null;
+  state.selectedId = isValidHash ? hashId : (parsed.nodes[0]?.id ?? null);
 
   elements.searchInput.value = "";
   elements.typeFilter.value = "all";
@@ -280,7 +322,7 @@ function initializeApp(data, message) {
   renderAll();
   showStatus(message);
 
-  if (isValidHash) {
+  if (state.selectedId) {
     requestAnimationFrame(() => {
       document
         .querySelector("#detail-panel")
