@@ -47,6 +47,22 @@
       </header>
 
       <main class="layout">
+        <section
+          class="panel panel--detail"
+          aria-labelledby="detail-title"
+          id="detail-panel"
+        >
+          <div class="section-heading">
+            <p class="section-kicker">Dettaglio</p>
+            <h2 id="detail-title">Nodo selezionato</h2>
+          </div>
+
+          <div id="node-detail" class="detail-empty">
+            Seleziona una scheda o un nodo nel grafo per vedere attributi e
+            collegamenti.
+          </div>
+        </section>
+
         <section class="panel panel--filters" aria-labelledby="filters-title">
           <div class="section-heading">
             <p class="section-kicker">Esplora</p>
@@ -82,22 +98,6 @@
 
           <p class="panel__intro" id="results-summary"></p>
           <ul class="card-grid" id="node-list"></ul>
-        </section>
-
-        <section
-          class="panel panel--detail"
-          aria-labelledby="detail-title"
-          id="detail-panel"
-        >
-          <div class="section-heading">
-            <p class="section-kicker">Dettaglio</p>
-            <h2 id="detail-title">Nodo selezionato</h2>
-          </div>
-
-          <div id="node-detail" class="detail-empty">
-            Seleziona una scheda o un nodo nel grafo per vedere attributi e
-            collegamenti.
-          </div>
         </section>
 
         <section

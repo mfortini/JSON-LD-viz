@@ -321,14 +321,6 @@ function initializeApp(data, message) {
   renderLegend(parsed.typeCounts);
   renderAll();
   showStatus(message);
-
-  if (state.selectedId) {
-    requestAnimationFrame(() => {
-      document
-        .querySelector("#detail-panel")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }
 }
 
 function parseGraph(data) {
@@ -407,6 +399,14 @@ function renderAll(pushHistory = false) {
       window.history.replaceState(null, "", `#${state.selectedId}`);
     }
   }
+}
+
+function scrollToDetailPanel() {
+  requestAnimationFrame(() => {
+    document
+      .querySelector("#detail-panel")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function renderStats() {
@@ -532,9 +532,7 @@ function renderNodeList() {
     button.addEventListener("click", () => {
       state.selectedId = button.dataset.nodeId;
       renderAll(true);
-      document
-        .querySelector("#detail-panel")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToDetailPanel();
     });
   }
 }
@@ -657,9 +655,7 @@ function renderDetail() {
       state.selectedId = button.dataset.nodeId;
       renderAll(true);
       state.animationDirection = "none";
-      document
-        .querySelector("#detail-panel")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToDetailPanel();
     });
   }
 }
@@ -969,11 +965,7 @@ function renderGraph() {
       
       if (state.lastGraphClickedNodeId === nodeId && now - state.lastGraphClickTime < 400) {
         state.lastGraphClickTime = 0;
-        requestAnimationFrame(() => {
-          document
-            .querySelector("#detail-panel")
-            ?.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
+        scrollToDetailPanel();
         return;
       }
       
@@ -982,6 +974,7 @@ function renderGraph() {
       
       state.selectedId = nodeId;
       renderAll(true);
+      scrollToDetailPanel();
     });
   }
 }
