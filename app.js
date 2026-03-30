@@ -92,6 +92,8 @@ const state = {
   layoutCache: null,
   animationDirection: "none",
   prefixMap: {},
+  lastGraphClickTime: 0,
+  lastGraphClickedNodeId: null,
 };
 
 const elements = {
@@ -106,25 +108,29 @@ const elements = {
   searchInput: document.querySelector("#search-input"),
   filePicker: document.querySelector("#file-picker"),
   appStatus: document.querySelector("#app-status"),
+  pasteBtn: document.querySelector("#paste-btn"),
+  pasteDialog: document.querySelector("#paste-dialog"),
+  pasteTextarea: document.querySelector("#paste-textarea"),
+  pasteCancel: document.querySelector("#paste-cancel"),
+  pasteConfirm: document.querySelector("#paste-confirm"),
 };
+
+let toastTimer = null;
 
 boot();
 
-async function boot() {
+function boot() {
   bindUi();
-  try {
-    const response = await fetch("./comune.jsonld");
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-    const data = await response.json();
-    initializeApp(data, "Dati caricati da comune.jsonld");
-  } catch (error) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const dataToLoad = urlParams.get("data");
+
+  if (dataToLoad) {
+    loadFromData(dataToLoad);
+  } else {
     showStatus(
-      "Caricamento automatico non riuscito. Puoi usare il pulsante per aprire manualmente un file JSON-LD.",
+      "Apri un file JSON-LD o incollane il codice per visualizzare il grafo semantico.",
     );
     renderEmptyState();
-    console.error(error);
   }
 }
 
@@ -149,9 +155,37 @@ function bindUi() {
     try {
       const text = await file.text();
       const data = JSON.parse(text);
-      initializeApp(data, `Caricato ${file.name}`);
+      initializeApp(data, "Codice caricato correttamente");
+      await storeDataInUrlIfSmall(text);
     } catch (error) {
       showStatus("Il file selezionato non sembra un JSON valido.");
+      console.error(error);
+    }
+  });
+
+  elements.pasteBtn.addEventListener("click", () => {
+    elements.pasteTextarea.value = "";
+    elements.pasteDialog.showModal();
+  });
+
+  elements.pasteCancel.addEventListener("click", () => {
+    elements.pasteDialog.close();
+  });
+
+  elements.pasteConfirm.addEventListener("click", async () => {
+    const text = elements.pasteTextarea.value.trim();
+    if (!text) {
+      elements.pasteDialog.close();
+      return;
+    }
+    
+    try {
+      const data = JSON.parse(text);
+      elements.pasteDialog.close();
+      initializeApp(data, "Codice caricato correttamente");
+      await storeDataInUrlIfSmall(text);
+    } catch (error) {
+      alert("Il testo incollato non è un JSON valido.");
       console.error(error);
     }
   });
@@ -167,6 +201,63 @@ function bindUi() {
   });
 }
 
+async function loadFromData(compressedData) {
+  try {
+    showStatus("Decompressione dei dati dall'URL...");
+    const text = await decompressData(compressedData);
+    const data = JSON.parse(text);
+    initializeApp(data, "Dati caricati dall'URL");
+  } catch (error) {
+    showStatus("Impossibile caricare i dati dall'URL. Formato non valido.");
+    renderEmptyState();
+    console.error(error);
+  }
+}
+
+async function storeDataInUrlIfSmall(text) {
+  showStatus("Compressione URL in corso...");
+  const compressed = await compressData(text);
+  const newUrl = new URL(window.location.href);
+  
+  if (compressed.length <= 8000) {
+    newUrl.searchParams.set("data", compressed);
+    window.history.replaceState(null, "", newUrl.toString());
+    showStatus("Sorgente caricata e salvata nell'URL");
+  } else {
+    newUrl.searchParams.delete("data");
+    window.history.replaceState(null, "", newUrl.toString());
+    showStatus("Dati in memoria (sorgente troppo grande per condivisione link)");
+  }
+}
+
+async function compressData(jsonString) {
+  const stream = new Blob([jsonString]).stream().pipeThrough(new CompressionStream("gzip"));
+  const response = new Response(stream);
+  const buffer = await response.arrayBuffer();
+  
+  let binary = "";
+  const bytes = new Uint8Array(buffer);
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+async function decompressData(base64str) {
+  let b64 = base64str.replace(/-/g, "+").replace(/_/g, "/");
+  while (b64.length % 4) b64 += "=";
+  
+  const binary = atob(b64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+  const response = new Response(stream);
+  return await response.text();
+}
+
 function initializeApp(data, message) {
   const parsed = parseGraph(data);
   state.raw = data;
@@ -178,7 +269,7 @@ function initializeApp(data, message) {
   
   const hashId = window.location.hash.slice(1);
   const isValidHash = parsed.nodes.some(n => n.id === hashId);
-  state.selectedId = isValidHash ? hashId : (parsed.nodes[0]?.id ?? null);
+  state.selectedId = isValidHash ? hashId : null;
 
   elements.searchInput.value = "";
   elements.typeFilter.value = "all";
@@ -220,7 +311,8 @@ function parseGraph(data) {
 
   const typeCounts = new Map();
   const nodes = graph.map((node) => {
-    const type = node["@type"] || "Altro";
+    const rawType = node["@type"];
+    const type = (Array.isArray(rawType) ? rawType[0] : rawType) || "Altro";
     typeCounts.set(type, (typeCounts.get(type) || 0) + 1);
 
     const outgoing = links.filter((link) => link.source === node["@id"]);
@@ -434,7 +526,7 @@ function renderDetail() {
           <div class="detail-header__top">
             <div class="type-pill is-active" style="width:max-content">
               <span class="swatch" style="background:${getTypeColor(node.type)}"></span>
-              <span>${getTypeLabel(node.type)}</span>
+              <span>${getTypeLabel(node.type)}${renderLinkIcon(node.type)}</span>
             </div>
             <button type="button" class="source-toggle" data-source-id="__current__" title="Mostra sorgente JSON-LD">&lt;/&gt;</button>
           </div>
@@ -523,6 +615,9 @@ function renderDetail() {
       state.selectedId = button.dataset.nodeId;
       renderAll(true);
       state.animationDirection = "none";
+      document
+        .querySelector("#detail-panel")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 }
@@ -569,16 +664,20 @@ function renderAttributeValue(value) {
 function renderPredicateLink(predicate) {
   const label = escapeHtml(humanizePredicate(predicate));
   const uri = resolvePrefixedUri(predicate);
-  if (isUrl(uri)) {
-    return `<a href="${escapeHtml(uri)}" target="_blank" rel="noopener noreferrer" class="rel-card__predicate predicate-link">${label}</a>`;
-  }
-  return `<span class="rel-card__predicate">${label}</span>`;
+  const icon = isUrl(uri) ? ` <a href="${escapeHtml(uri)}" target="_blank" rel="noopener noreferrer" class="term-link-icon" title="${escapeHtml(uri)}">&#x1F517;</a>` : "";
+  return `<span class="rel-card__predicate">${label}${icon}</span>`;
+}
+
+function renderLinkIcon(term) {
+  const uri = resolvePrefixedUri(term);
+  if (!isUrl(uri)) return "";
+  return ` <a href="${escapeHtml(uri)}" target="_blank" rel="noopener noreferrer" class="term-link-icon" title="${escapeHtml(uri)}">&#x1F517;</a>`;
 }
 
 function renderAttribute(attribute) {
   return `
     <div class="kv-item">
-      <div class="kv-key">${escapeHtml(humanizePredicate(attribute.key))}</div>
+      <div class="kv-key">${escapeHtml(humanizePredicate(attribute.key))}${renderLinkIcon(attribute.key)}</div>
       <div class="kv-value">${renderAttributeValue(attribute.value)}</div>
     </div>
   `;
@@ -606,7 +705,7 @@ function renderRelationCard(relation, direction) {
           <div class="rel-card__main">
             <div class="rel-card__header">
               <button type="button" class="relation-button rel-card__title" data-node-id="${escapeHtml(counterpartId)}">${escapeHtml(counterpartLabel)}</button>
-              <span class="rel-card__type">${escapeHtml(counterpartType)}</span>
+              <span class="rel-card__type">${escapeHtml(counterpartType)}${counterpart ? renderLinkIcon(counterpart.type) : ""}</span>
             </div>
             ${counterpartSummary ? `<div class="rel-card__desc">${counterpartSummary}</div>` : ""}
           </div>
@@ -622,7 +721,7 @@ function renderRelationCard(relation, direction) {
           <div class="rel-card__main" style="text-align: right;">
             <div class="rel-card__header">
               <button type="button" class="relation-button rel-card__title" data-node-id="${escapeHtml(counterpartId)}">${escapeHtml(counterpartLabel)}</button>
-              <span class="rel-card__type">${escapeHtml(counterpartType)}</span>
+              <span class="rel-card__type">${escapeHtml(counterpartType)}${counterpart ? renderLinkIcon(counterpart.type) : ""}</span>
             </div>
             ${counterpartSummary ? `<div class="rel-card__desc">${counterpartSummary}</div>` : ""}
           </div>
@@ -822,17 +921,25 @@ function renderGraph() {
         e.stopPropagation();
         return;
       }
-      state.selectedId = group.dataset.nodeId;
+      
+      const now = Date.now();
+      const nodeId = group.dataset.nodeId;
+      
+      if (state.lastGraphClickedNodeId === nodeId && now - state.lastGraphClickTime < 400) {
+        state.lastGraphClickTime = 0;
+        requestAnimationFrame(() => {
+          document
+            .querySelector("#detail-panel")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        return;
+      }
+      
+      state.lastGraphClickTime = now;
+      state.lastGraphClickedNodeId = nodeId;
+      
+      state.selectedId = nodeId;
       renderAll(true);
-    });
-
-    group.addEventListener("dblclick", (e) => {
-      e.stopPropagation();
-      state.selectedId = group.dataset.nodeId;
-      renderAll(true);
-      document
-        .querySelector("#detail-panel")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 }
@@ -1162,7 +1269,6 @@ function debounce(fn, delay) {
   };
 }
 
-let toastTimer = null;
 function showStatus(message) {
   elements.appStatus.textContent = message;
   elements.appStatus.classList.add("is-visible");

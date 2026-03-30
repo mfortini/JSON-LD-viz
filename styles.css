@@ -118,12 +118,76 @@ code {
   margin-top: 24px;
 }
 
-#file-picker {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
+.ghost-button.ghost-button--dark {
+  border-color: var(--panel-border);
+  color: var(--text-main);
+  background: transparent;
+}
+
+.ghost-button.ghost-button--dark:hover,
+.ghost-button.ghost-button--dark:focus-visible {
+  background: #f3f7fb;
+  border-color: var(--text-muted);
+}
+
+.paste-modal {
+  max-width: 640px;
+  width: calc(100% - 32px);
+  margin: auto;
+  padding: 32px;
+}
+
+.paste-modal::backdrop {
+  background: rgba(11, 49, 95, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+#paste-textarea {
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: #f8fbff;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+#paste-textarea:focus-visible {
+  outline: 3px solid rgba(0, 102, 204, 0.18);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.paste-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.paste-modal-actions .ghost-button {
+  background: var(--accent);
+  border-color: transparent;
+}
+
+.paste-modal-actions .ghost-button:hover,
+.paste-modal-actions .ghost-button:focus-visible {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.paste-modal-actions .ghost-button--dark {
+  background: transparent;
+  border-color: var(--panel-border);
+  color: var(--text-main);
+}
+
+.paste-modal-actions .ghost-button--dark:hover {
+  background: #f8f9fa;
+  border-color: #a4abb3;
 }
 
 .ghost-button,
@@ -510,6 +574,22 @@ code {
 .predicate-link:hover,
 .predicate-link:focus-visible {
   text-decoration: underline;
+}
+
+.term-link-icon {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.8em;
+  opacity: 0.55;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: opacity 150ms ease;
+}
+
+.term-link-icon:hover,
+.term-link-icon:focus-visible {
+  opacity: 1;
+  text-decoration: none;
 }
 
 .source-toggle--inline {

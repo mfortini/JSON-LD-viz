@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atlante semantico del Comune</title>
+    <title>Visualizzatore grafo JSON-LD</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -11,21 +11,22 @@
       <header class="hero" aria-labelledby="page-title">
         <div class="hero__content">
           <p class="eyebrow">Single page app</p>
-          <h1 id="page-title">Atlante semantico del Comune</h1>
+          <h1 id="page-title">Visualizzatore grafo JSON-LD</h1>
           <p class="hero__lead">
-            Una vista editoriale dei contenuti in <code>comune.jsonld</code> e
+            Una vista editoriale dei contenuti in formato JSON-LD e
             delle relazioni che li collegano nel grafo.
           </p>
 
           <div class="hero__actions">
             <label class="ghost-button" for="file-picker">
-              Carica un altro JSON-LD
+              Carica da file
             </label>
             <input
               id="file-picker"
               type="file"
               accept=".json,.jsonld,application/ld+json"
             />
+            <button type="button" id="paste-btn" class="ghost-button">Incolla codice</button>
             <a class="ghost-link" href="#graph-panel">Vai al grafo</a>
           </div>
         </div>
@@ -115,6 +116,20 @@
       </main>
 
       <div class="toast" id="app-status" aria-live="polite"></div>
+
+      <dialog id="paste-dialog" class="panel paste-modal" aria-labelledby="paste-modal-title">
+        <div class="section-heading">
+          <h2 id="paste-modal-title">Incolla JSON-LD</h2>
+        </div>
+        <p class="panel__intro" style="margin-bottom: 16px;">
+          Incollando il codice, verrà compresso e aggiunto all'URL per permetterti di condividerlo facilmente con altri copiando il link.
+        </p>
+        <textarea id="paste-textarea" rows="12" placeholder="Copia e incolla qui il codice sorgente del JSON-LD..." aria-label="Sorgente JSON-LD"></textarea>
+        <div class="paste-modal-actions">
+          <button type="button" class="ghost-button ghost-button--dark" id="paste-cancel">Annulla</button>
+          <button type="button" class="ghost-button" id="paste-confirm">Carica e Comprimi</button>
+        </div>
+      </dialog>
     </div>
 
     <script type="module" src="./app.js"></script>
