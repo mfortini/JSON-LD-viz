@@ -1,0 +1,1115 @@
+.comune-hero h1 {
+  max-width: 16ch;
+}
+
+.comune-hero .stat-card--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.comune-hero .stat-card--link:hover,
+.comune-hero .stat-card--link:focus-visible {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.34);
+  transform: translateY(-1px);
+}
+
+.comune-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+}
+
+.comune-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.comune-nav__link:hover,
+.comune-nav__link:focus-visible {
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.comune-nav__link.is-active {
+  color: #ffffff;
+  background: var(--accent);
+  box-shadow: 0 10px 24px rgba(0, 102, 204, 0.2);
+}
+
+.comune-main {
+  margin-top: 24px;
+}
+
+.comune-explorer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.comune-explorer__heading {
+  padding: 0 4px;
+}
+
+.comune-explorer__detail {
+  align-self: start;
+}
+
+.comune-explorer__graph {
+  min-width: 0;
+}
+
+.comune-person-link,
+.comune-node-link {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent-strong);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.comune-person-link:hover,
+.comune-person-link:focus-visible,
+.comune-node-link:hover,
+.comune-node-link:focus-visible {
+  text-decoration: underline;
+}
+
+.comune-office-card__head .comune-node-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.comune-office-card__head .comune-node-link:hover,
+.comune-office-card__head .comune-node-link:focus-visible {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.comune-chip--clickable {
+  cursor: pointer;
+}
+
+.comune-chip--clickable:hover,
+.comune-chip--clickable:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 8px 18px rgba(0, 102, 204, 0.12);
+}
+
+.comune-panel--special {
+  margin-top: 0;
+}
+
+.comune-special-stage {
+  margin-top: 18px;
+  border-radius: 24px;
+  overflow: auto;
+  border: 1px solid rgba(197, 199, 201, 0.7);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(0, 102, 204, 0.08), transparent 22%),
+    linear-gradient(180deg, #f8fbff 0%, #eff4fa 100%);
+}
+
+.comune-panel--tree {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.comune-list--offices {
+  max-height: 280px;
+}
+
+.comune-tree-nav {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.comune-tree-nav__btn {
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: #ffffff;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.comune-tree-nav__btn:hover:not(:disabled),
+.comune-tree-nav__btn:focus-visible:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.comune-tree-nav__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.comune-tree-breadcrumb {
+  margin: 0;
+  text-align: center;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.comune-tree-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.comune-tree-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: 24px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.comune-special-stage--tree {
+  min-height: 560px;
+  max-height: 860px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.special-node--office-compressed {
+  opacity: 0.5;
+}
+
+.special-node--office-compressed .special-node__box {
+  stroke-width: 1.5;
+}
+
+.special-node--office-compressed:hover,
+.special-node--office-compressed:focus-visible {
+  opacity: 0.82;
+}
+
+.special-node--office-focused {
+  opacity: 1;
+}
+
+.special-node--office-focused .special-node__box {
+  stroke: #0b315f;
+  stroke-width: 3.5;
+  filter: drop-shadow(0 8px 18px rgba(11, 49, 95, 0.18));
+}
+
+.special-node__label--compressed {
+  font-size: 10px;
+}
+
+.special-edge.is-compressed {
+  stroke: rgba(92, 111, 130, 0.28);
+  stroke-width: 1.4;
+}
+
+.special-edge--org-office-focus {
+  stroke: rgba(0, 89, 179, 0.75);
+  stroke-width: 2.4;
+}
+
+.special-edge--office-service {
+  stroke: rgba(0, 105, 92, 0.55);
+  stroke-width: 2;
+}
+
+.special-node--service-branch .special-node__box {
+  fill: #00695c;
+}
+
+.comune-special-stage--io {
+  overflow: hidden;
+}
+
+.comune-special-svg {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}
+
+.comune-special-svg--tree {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.comune-special-svg--io {
+  min-height: 430px;
+}
+
+.special-canvas {
+  fill: transparent;
+}
+
+.special-edge {
+  stroke: rgba(92, 111, 130, 0.45);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.special-edge--org-office,
+.special-edge--office-person {
+  stroke: rgba(0, 89, 179, 0.55);
+}
+
+.special-edge--input-service {
+  stroke: #2e7d32;
+  stroke-width: 2.4;
+}
+
+.special-edge--service-output {
+  stroke: #558b2f;
+  stroke-width: 2.4;
+}
+
+.special-edge--office-service,
+.special-edge--service-aux {
+  stroke: rgba(0, 102, 204, 0.5);
+  stroke-dasharray: 6 4;
+}
+
+.special-edge__label {
+  font-size: 11px;
+  fill: var(--text-muted);
+  font-weight: 600;
+}
+
+.special-lane-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: #2e7d32;
+}
+
+.special-lane-title--center {
+  fill: #00695c;
+}
+
+.special-lane-divider {
+  stroke: rgba(197, 199, 201, 0.8);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+}
+
+.special-node {
+  cursor: pointer;
+}
+
+.special-node__box {
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 8px 18px rgba(11, 49, 95, 0.12));
+  transition:
+    stroke-width 150ms ease,
+    filter 150ms ease;
+}
+
+.special-node:hover .special-node__box,
+.special-node:focus-visible .special-node__box {
+  stroke: #0b315f;
+  stroke-width: 3.5;
+}
+
+.special-node.is-selected .special-node__box {
+  stroke: #0b315f;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 89, 179, 0.28));
+}
+
+.special-node__label {
+  fill: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.special-node__meta,
+.special-node__desc {
+  fill: rgba(255, 255, 255, 0.92);
+  font-size: 11px;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.special-node--input .special-node__box {
+  fill: #2e7d32;
+}
+
+.special-node--output .special-node__box,
+.special-node--bottom-right .special-node__box {
+  fill: #558b2f;
+}
+
+.special-expand {
+  cursor: pointer;
+}
+
+.special-expand__circle {
+  fill: #ffffff;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.special-expand__label {
+  fill: var(--accent-strong);
+  font-size: 16px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.comune-person-card__head h3 {
+  margin: 10px 0 4px;
+}
+
+.comune-io-hint {
+  margin: 12px 4px 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.special-io-card {
+  display: grid;
+  gap: 6px;
+  height: 100%;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.special-io-card--compact {
+  gap: 4px;
+}
+
+.special-io-card.is-clickable {
+  cursor: pointer;
+}
+
+.special-io-card__head {
+  display: grid;
+  gap: 2px;
+}
+
+.special-io-card__meta {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.special-io-card__preview,
+.special-io-card__body {
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.special-io-card__body {
+  max-height: 180px;
+  overflow: auto;
+}
+
+.special-io-card__more {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.special-io-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.special-io-card__btn {
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.special-io-card__btn--primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #17324d;
+  border-color: transparent;
+}
+
+.special-node.is-expanded .special-node__box {
+  stroke: #0b315f;
+  stroke-width: 4;
+}
+
+.comune-view {
+  display: grid;
+  gap: 24px;
+}
+
+.comune-split {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.4fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.comune-split--geo {
+  grid-template-columns: minmax(220px, 0.7fr) minmax(240px, 0.8fr) minmax(0, 1.5fr);
+}
+
+.comune-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--panel-shadow);
+  padding: 24px;
+}
+
+.comune-events-geo {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+
+.comune-events-geo .comune-panel--map {
+  min-height: 360px;
+}
+
+.comune-events-geo .comune-map {
+  height: 360px;
+}
+
+.comune-panel--map {
+  min-height: 520px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.comune-panel--calendar {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.comune-panel--calendar {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 20px;
+  overflow: auto;
+}
+
+.event-calendar__header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.event-calendar__heading {
+  text-align: center;
+}
+
+.event-calendar__month {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.event-calendar__summary {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.event-calendar__nav {
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: #ffffff;
+  color: var(--text-main);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.event-calendar__nav:hover,
+.event-calendar__nav:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.event-calendar__weekdays,
+.event-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.event-calendar__weekday {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  padding-bottom: 4px;
+}
+
+.event-calendar__day {
+  min-height: 108px;
+  padding: 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(197, 199, 201, 0.65);
+  background: rgba(255, 255, 255, 0.88);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-calendar__day--empty {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.event-calendar__day.is-today {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(0, 102, 204, 0.18);
+}
+
+.event-calendar__day.has-selected {
+  background: rgba(0, 102, 204, 0.06);
+}
+
+.event-calendar__day-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.event-calendar__day-num {
+  font-weight: 700;
+}
+
+.event-calendar__day-count {
+  min-width: 22px;
+  min-height: 22px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(239, 108, 0, 0.14);
+  color: #bf360c;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.event-calendar__day-events {
+  display: grid;
+  gap: 4px;
+  max-height: 148px;
+  overflow-y: auto;
+}
+
+.event-calendar__event {
+  display: grid;
+  gap: 1px;
+  width: 100%;
+  margin: 0;
+  padding: 5px 6px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(239, 108, 0, 0.12);
+  color: #8a3b00;
+  text-align: left;
+  cursor: pointer;
+}
+
+.event-calendar__event.is-active,
+.event-calendar__event:hover,
+.event-calendar__event:focus-visible {
+  background: rgba(239, 108, 0, 0.22);
+}
+
+.event-calendar__event-time {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.event-calendar__event-title {
+  font-size: 0.78rem;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-calendar__more {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.event-calendar__undated {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(197, 199, 201, 0.65);
+}
+
+.event-calendar__undated-title {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+
+.event-calendar__undated-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.event-calendar__undated-item {
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: #ffffff;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.event-calendar__undated-item.is-active,
+.event-calendar__undated-item:hover,
+.event-calendar__undated-item:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.comune-map {
+  width: 100%;
+  height: 520px;
+  border-radius: var(--radius-panel);
+}
+
+.map-popup__title {
+  display: block;
+  width: 100%;
+  margin: 0 0 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  color: var(--accent-strong);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.map-popup__title:hover,
+.map-popup__title:focus-visible {
+  color: var(--accent);
+}
+
+.map-popup__meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.map-popup__links {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.map-popup__link {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.88rem;
+  text-align: left;
+  color: var(--accent-strong);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.map-popup__link:hover,
+.map-popup__link:focus-visible {
+  color: var(--accent);
+}
+
+.map-popup__more {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.comune-related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.comune-related-list__meta {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.comune-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(160px, 0.6fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.comune-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  max-height: 520px;
+  overflow: auto;
+}
+
+.comune-list__item {
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  background: #f8fbff;
+  color: var(--text-main);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.comune-list__item:hover,
+.comune-list__item:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 10px 24px rgba(0, 102, 204, 0.1);
+  transform: translateY(-1px);
+}
+
+.comune-list__item.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.comune-list__title {
+  display: block;
+  font-weight: 700;
+}
+
+.comune-list__meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.comune-detail h3 {
+  margin: 0 0 8px;
+}
+
+.comune-detail__meta {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.comune-kv {
+  display: grid;
+  gap: 10px;
+}
+
+.comune-kv__row {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(197, 199, 201, 0.6);
+}
+
+.comune-kv__key {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.comune-kv__value {
+  line-height: 1.5;
+}
+
+.comune-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.comune-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f3f7fb;
+  border: 1px solid var(--panel-border);
+  font-size: 0.9rem;
+}
+
+.comune-chip--office {
+  background: rgba(0, 115, 230, 0.1);
+  border-color: rgba(0, 115, 230, 0.25);
+}
+
+.comune-chip--service {
+  background: rgba(0, 105, 92, 0.1);
+  border-color: rgba(0, 105, 92, 0.25);
+}
+
+.comune-chip--event {
+  background: rgba(239, 108, 0, 0.1);
+  border-color: rgba(239, 108, 0, 0.25);
+}
+
+.comune-org-tree {
+  display: grid;
+  gap: 16px;
+}
+
+.comune-org-root {
+  padding: 20px 24px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0, 89, 179, 0.12), rgba(79, 163, 255, 0.08));
+  border: 1px solid rgba(0, 89, 179, 0.2);
+}
+
+.comune-org-root h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.comune-office-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.comune-office-card {
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.comune-office-card__head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: #f8fbff;
+  color: var(--text-main);
+  text-align: left;
+}
+
+.comune-office-card__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--text-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.comune-office-card__toggle:hover,
+.comune-office-card__toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.comune-office-card__head strong {
+  display: block;
+}
+
+.comune-office-card__head span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.comune-office-card__body {
+  padding: 0 18px 16px;
+}
+
+.comune-office-card__body[hidden] {
+  display: none;
+}
+
+.comune-person-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.comune-person-list li {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #f3f7fb;
+  font-size: 0.95rem;
+}
+
+.comune-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.comune-card-link {
+  display: block;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--panel-border);
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.comune-card-link:hover,
+.comune-card-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 14px 30px rgba(0, 102, 204, 0.12);
+}
+
+.comune-card-link h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.comune-card-link p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.comune-empty {
+  margin: 0;
+  padding: 24px;
+  border-radius: 16px;
+  background: #f8fbff;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.comune-section-title {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.comune-section-intro {
+  margin: 0 0 18px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.comune-related {
+  margin-top: 18px;
+}
+
+.comune-related h4 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+  .comune-split,
+  .comune-split--geo,
+  .comune-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .comune-map {
+    height: 360px;
+  }
+
+  .comune-panel--map {
+    min-height: 360px;
+  }
+}

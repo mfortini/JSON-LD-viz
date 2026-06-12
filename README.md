@@ -15,6 +15,11 @@ Ottimizzata in particolar modo per gli standard ontologici per le Pubbliche Ammi
 
 ## Struttura
 
-* `index.html`: La struttura DOM e la UI principale.
+* `index.html`: La struttura DOM e la UI principale del viewer generico.
+* `comune.html`: Viewer tematico **Grafo Comune** con viste dedicate (organigramma, persone, uffici, servizi, eventi, luoghi con mappa) e pannello grafo relazioni come il viewer generico. Supporta permalink nella URL (es. `#organigramma?id=…`, `#persone?id=…`, `#servizi?id=…`). Richiede il caricamento manuale di un file JSON-LD.
+* `comune-permalinks.js`: Parsing e costruzione dei permalink per le viste tematiche.
+* `comune-app.js` / `comune.css`: Logica e stili del viewer tematico.
+* `graph-core.js`: Motore condiviso per parsing JSON-LD, dettaglio entranti/uscenti e layout del grafo SVG.
+* `comune-special-views.js`: Layout SVG dedicati (albero organigramma, diagramma input/output servizi).
 * `styles.css`: Fogli di stile completi con variabili semantiche, animazioni micro-interattive e componentistica custom ispirata ai migliori design system (layout CSS Grid/Flexbox moderno).
-* `app.js`: Contiene tutto il core logico. È diviso per ambiti: inizializzazione eventi, parser JSON-LD in struttura a grafo unio/bi-direzionale, motore fisico (Forza Layout) minimale basato su repulsione/attrazione, compression stream GZIP (Streams API).
+* `app.js`: Contiene tutto il core logico del viewer generico. È diviso per ambiti: inizializzazione eventi, parser JSON-LD in struttura a grafo unio/bi-direzionale, motore fisico (Forza Layout) minimale basato su repulsione/attrazione, compression stream GZIP (Streams API).

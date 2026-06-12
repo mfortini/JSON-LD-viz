@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grafo Comune — viste tematiche</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./comune.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+    />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero comune-hero" aria-labelledby="page-title">
+        <div class="hero__topbar">
+          <a class="ghost-link hero__github-link" href="./index.html">
+            Viewer generico
+          </a>
+        </div>
+
+        <div class="hero__content">
+          <p class="eyebrow">Viste tematiche</p>
+          <h1 id="page-title">Grafo Comune</h1>
+          <p class="hero__lead" id="org-lead">
+            Esplora organigramma, uffici, servizi, eventi e luoghi a partire
+            dal grafo JSON-LD del comune.
+          </p>
+
+          <div class="hero__actions">
+            <label class="ghost-button" for="file-picker">
+              Carica grafo
+            </label>
+            <input
+              id="file-picker"
+              type="file"
+              accept=".json,.jsonld,application/ld+json"
+            />
+            <a class="ghost-link" href="#organigramma">Vai all'organigramma</a>
+          </div>
+        </div>
+
+        <div class="hero__stats" id="stats-panel" aria-live="polite"></div>
+      </header>
+
+      <nav class="comune-nav" id="view-nav" aria-label="Viste tematiche">
+        <a class="comune-nav__link is-active" href="#panoramica" data-view="panoramica"
+          >Panoramica</a
+        >
+        <a class="comune-nav__link" href="#organigramma" data-view="organigramma"
+          >Organigramma</a
+        >
+        <a class="comune-nav__link" href="#persone" data-view="persone">Persone</a>
+        <a class="comune-nav__link" href="#uffici" data-view="uffici">Uffici</a>
+        <a class="comune-nav__link" href="#servizi" data-view="servizi">Servizi</a>
+        <a class="comune-nav__link" href="#eventi" data-view="eventi">Eventi</a>
+        <a class="comune-nav__link" href="#luoghi" data-view="luoghi">Luoghi</a>
+      </nav>
+
+      <main class="comune-main" id="view-root" aria-live="polite"></main>
+
+      <section
+        class="comune-explorer"
+        id="graph-explorer"
+        hidden
+        aria-labelledby="explorer-title"
+      >
+        <div class="comune-explorer__heading">
+          <div class="section-heading">
+            <p class="section-kicker">Collegamenti</p>
+            <h2 id="explorer-title">Dettaglio e grafo relazioni</h2>
+          </div>
+          <p class="panel__intro">
+            Come nel viewer generico: relazioni entranti e uscenti, attributi e
+            mappa interattiva del sotto-grafo attorno al nodo selezionato.
+          </p>
+        </div>
+
+        <section class="panel panel--detail comune-explorer__detail" aria-labelledby="explorer-detail-title">
+          <div class="section-heading">
+            <p class="section-kicker">Nodo attivo</p>
+            <h3 id="explorer-detail-title">Collegamenti semantici</h3>
+          </div>
+          <div id="node-detail" class="detail-empty">
+            Seleziona una persona, un ufficio o un altro elemento nelle viste sopra.
+          </div>
+        </section>
+
+        <section class="panel panel--graph comune-explorer__graph" aria-labelledby="explorer-graph-title">
+          <div class="section-heading">
+            <p class="section-kicker">Relazioni</p>
+            <h3 id="explorer-graph-title">Mappa del sotto-grafo</h3>
+          </div>
+          <div class="graph-legend" id="graph-legend"></div>
+          <div class="graph-stage">
+            <svg
+              id="graph-svg"
+              viewBox="0 0 960 640"
+              role="img"
+              aria-label="Visualizzazione delle connessioni del nodo selezionato"
+            ></svg>
+          </div>
+        </section>
+      </section>
+
+      <footer class="site-footer">
+        <p class="site-footer__license">
+          Licenza
+          <a href="./LICENSE" target="_blank" rel="noreferrer">MIT</a>
+          . Copyright (c) 2026 Matteo Fortini.
+          <a href="./index.html">Torna al viewer generico</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="toast" id="app-status" aria-live="polite"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script type="module" src="./comune-app.js"></script>
+  </body>
+</html>
