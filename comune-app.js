@@ -1,3 +1,4 @@
+import { parseGraphFile } from "./graph-file-loader.js";
 import { GraphExplorer, parseGraph } from "./graph-core.js";
 import {
   applyPermalinkToState,
@@ -356,20 +357,19 @@ function onStatsClick(event) {
   navigateToView(link.dataset.gotoView);
 }
 
-function onFileSelected(event) {
+async function onFileSelected(event) {
   const file = event.target.files?.[0];
   if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const data = JSON.parse(reader.result);
-      loadGraph(data);
-      showStatus(`Grafo caricato da ${file.name} (${store.index.size} nodi).`);
-    } catch {
-      showStatus("Il file selezionato non contiene JSON valido.");
-    }
-  };
-  reader.readAsText(file);
+
+  try {
+    showStatus(`Caricamento di ${file.name}…`);
+    const data = await parseGraphFile(file);
+    loadGraph(data);
+    showStatus(`Grafo caricato da ${file.name} (${store.index.size} nodi).`);
+  } catch (error) {
+    showStatus("Il file selezionato non contiene JSON valido o gzip non leggibile.");
+    console.error(error);
+  }
 }
 
 function updateNav() {

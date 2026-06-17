@@ -1,3 +1,5 @@
+import { readGraphFile } from "./graph-file-loader.js";
+
 const TYPE_META = {
   "cov:PublicOrganization": {
     label: "Organizzazione",
@@ -134,7 +136,7 @@ function boot() {
     handleFileLoad(elements.filePicker.files[0]);
   } else {
     showStatus(
-      "Apri un file JSON-LD o incollane il codice per visualizzare il grafo semantico.",
+      "Apri un file JSON-LD o gzip (.gz) oppure incollane il codice per visualizzare il grafo semantico.",
     );
     renderEmptyState();
   }
@@ -142,13 +144,13 @@ function boot() {
 
 async function handleFileLoad(file) {
   try {
-    const text = await file.text();
+    const { text } = await readGraphFile(file);
     const data = JSON.parse(text);
     initializeApp(data, "Codice caricato correttamente");
     persistSource(text);
     await storeDataInUrlIfSmall(text);
   } catch (error) {
-    showStatus("Il file selezionato non sembra un JSON valido.");
+    showStatus("Il file selezionato non sembra un JSON valido o un gzip leggibile.");
     console.error(error);
   }
 }
