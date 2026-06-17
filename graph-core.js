@@ -115,6 +115,7 @@ export class GraphExplorer {
     this.prefixMap = {};
     this.selectedId = null;
     this.animationDirection = "none";
+    this.filterDetailToSubgraph = false;
     this.layoutCacheKey = null;
     this.layoutCache = null;
     this.lastGraphClickTime = 0;
@@ -131,12 +132,13 @@ export class GraphExplorer {
     this.layoutCache = null;
   }
 
-  select(nodeId, { rerender = true } = {}) {
+  select(nodeId, { rerender = true, maxNodes = 56, filterDetailToSubgraph = false } = {}) {
     if (!this.nodeById.has(nodeId)) return false;
     this.selectedId = nodeId;
-    const neighborhood = extractNeighborhood(nodeId, this.allNodes, this.allLinks);
+    const neighborhood = extractNeighborhood(nodeId, this.allNodes, this.allLinks, maxNodes);
     this.nodes = neighborhood.nodes;
     this.links = neighborhood.links;
+    this.filterDetailToSubgraph = filterDetailToSubgraph;
     this.layoutCacheKey = null;
     if (rerender) this.render();
     return true;
@@ -187,15 +189,25 @@ export class GraphExplorer {
       return;
     }
 
+    const visibleIds = this.filterDetailToSubgraph
+      ? new Set(this.nodes.map((entry) => entry.id))
+      : null;
+    const incoming = visibleIds
+      ? node.incoming.filter((relation) => visibleIds.has(relation.source))
+      : node.incoming;
+    const outgoing = visibleIds
+      ? node.outgoing.filter((relation) => visibleIds.has(relation.target))
+      : node.outgoing;
+
     this.detailEl.className = "";
     this.detailEl.innerHTML = `
       <div class="smart-viewer">
         <div class="smart-column smart-column--incoming">
-          <h4><span class="flow-chip flow-chip--incoming">${node.incoming.length} Entranti</span></h4>
+          <h4><span class="flow-chip flow-chip--incoming">${incoming.length} Entranti</span></h4>
           <div class="relation-cards">
             ${
-              node.incoming.length
-                ? node.incoming.map((relation) => this.renderRelationCard(relation, "incoming")).join("")
+              incoming.length
+                ? incoming.map((relation) => this.renderRelationCard(relation, "incoming")).join("")
                 : '<p class="panel__intro">Nessuna relazione entrante rilevata.</p>'
             }
           </div>
@@ -231,11 +243,11 @@ export class GraphExplorer {
           </div>
         </div>
         <div class="smart-column smart-column--outgoing">
-          <h4><span class="flow-chip flow-chip--outgoing">${node.outgoing.length} Uscenti</span></h4>
+          <h4><span class="flow-chip flow-chip--outgoing">${outgoing.length} Uscenti</span></h4>
           <div class="relation-cards">
             ${
-              node.outgoing.length
-                ? node.outgoing.map((relation) => this.renderRelationCard(relation, "outgoing")).join("")
+              outgoing.length
+                ? outgoing.map((relation) => this.renderRelationCard(relation, "outgoing")).join("")
                 : '<p class="panel__intro">Nessuna relazione uscente rilevata.</p>'
             }
           </div>

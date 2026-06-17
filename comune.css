@@ -817,6 +817,78 @@
   margin-bottom: 18px;
 }
 
+.comune-split--uffici {
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.75fr);
+}
+
+.comune-toolbar--uffici {
+  grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.8fr);
+}
+
+.comune-table-wrap {
+  max-height: 520px;
+  overflow: auto;
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.comune-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.comune-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: #f5f8fc;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.comune-table tbody td,
+.comune-table tbody th {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(197, 199, 201, 0.55);
+  vertical-align: top;
+}
+
+.comune-office-row {
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+
+.comune-office-row:hover,
+.comune-office-row:focus-visible {
+  background: rgba(0, 102, 204, 0.06);
+}
+
+.comune-office-row.is-active {
+  background: rgba(0, 102, 204, 0.1);
+}
+
+.comune-office-row.is-active .comune-office-table__name {
+  color: var(--accent-strong);
+}
+
+.comune-office-table__name {
+  font-weight: 600;
+  min-width: 180px;
+}
+
+.comune-office-table__num {
+  width: 72px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
 .comune-list {
   list-style: none;
   margin: 0;

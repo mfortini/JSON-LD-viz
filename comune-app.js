@@ -267,7 +267,7 @@ function renderFromPermalink({ replaceUrl = false } = {}) {
   renderStats();
   if (viewState.selectedNodeId) {
     ui.graphExplorer.hidden = false;
-    graphExplorer.select(viewState.selectedNodeId);
+    selectGraphExplorerNode(viewState.selectedNodeId);
   } else {
     ui.graphExplorer.hidden = true;
   }
@@ -307,6 +307,9 @@ function ensureDefaultSelectionForView(view) {
     case "uffici":
       if (!viewState.selectedOfficeId) {
         viewState.selectedOfficeId = store.offices[0]?.["@id"] ?? null;
+      }
+      if (viewState.selectedOfficeId) {
+        viewState.selectedNodeId = viewState.selectedOfficeId;
       }
       break;
     case "servizi":
@@ -569,6 +572,7 @@ function onViewClick(event) {
     selectGraphNode(officeId, { scroll: true, syncViewSelection: false, updateUrl: false });
     updatePermalink({ replace: false });
     renderCurrentView();
+    scrollThematicListItem(officeId, "officeId");
     return;
   }
 
@@ -645,6 +649,17 @@ function onViewChange(event) {
   }
 }
 
+function getGraphExplorerSelectOptions(nodeId) {
+  if (viewState.current === "uffici" && getNodeType(nodeId) === "cov:Office") {
+    return { maxNodes: 28, filterDetailToSubgraph: true };
+  }
+  return { maxNodes: 56, filterDetailToSubgraph: false };
+}
+
+function selectGraphExplorerNode(nodeId) {
+  graphExplorer.select(nodeId, getGraphExplorerSelectOptions(nodeId));
+}
+
 function selectGraphNode(
   nodeId,
   { scroll = false, syncViewSelection = true, updateUrl = true } = {},
@@ -652,7 +667,7 @@ function selectGraphNode(
   if (!nodeId || !store.graph?.nodes.some((node) => node.id === nodeId)) return;
   viewState.selectedNodeId = nodeId;
   ui.graphExplorer.hidden = false;
-  graphExplorer.select(nodeId);
+  selectGraphExplorerNode(nodeId);
 
   if (syncViewSelection) {
     const raw = store.index.get(nodeId);
@@ -1084,13 +1099,17 @@ function renderUffici() {
   const offices = filterOffices();
 
   return `
-    <section class="comune-view comune-split">
+    <section class="comune-view comune-split comune-split--uffici">
       <article class="comune-panel">
         <h2 class="comune-section-title">Uffici</h2>
-        <div class="comune-toolbar">
+        <p class="comune-section-intro">
+          ${offices.length} uffici su ${store.offices.length}. Seleziona una riga per aprire la scheda
+          e il sotto-grafo con i soli nodi collegati a quell'ufficio.
+        </p>
+        <div class="comune-toolbar comune-toolbar--uffici">
           <label class="field">
             <span class="field__label">Cerca ufficio</span>
-            <input type="search" data-search value="${escapeHtml(viewState.search)}" placeholder="Nome o funzione" />
+            <input type="search" data-search value="${escapeHtml(viewState.search)}" placeholder="Nome, funzione o tema" />
           </label>
           <label class="field">
             <span class="field__label">Tema</span>
@@ -1100,24 +1119,42 @@ function renderUffici() {
             </select>
           </label>
         </div>
-        <ul class="comune-list">
-          ${offices
-            .map((office) => {
-              const officeId = office["@id"];
-              const active = officeId === viewState.selectedOfficeId ? "is-active" : "";
-              const persons = store.personsByOffice.get(officeId)?.length ?? 0;
-              const services = store.servicesByOffice.get(officeId)?.length ?? 0;
-              return `
-                <li>
-                  <button type="button" class="comune-list__item ${active}" data-office-id="${escapeHtml(officeId)}">
-                    <span class="comune-list__title">${escapeHtml(getTitle(office))}</span>
-                    <span class="comune-list__meta">${persons} persone · ${services} servizi</span>
-                  </button>
-                </li>
-              `;
-            })
-            .join("")}
-        </ul>
+        <div class="comune-table-wrap" role="region" aria-label="Elenco uffici" tabindex="0">
+          <table class="comune-table comune-office-table">
+            <thead>
+              <tr>
+                <th scope="col">Ufficio</th>
+                <th scope="col">Funzione</th>
+                <th scope="col">Persone</th>
+                <th scope="col">Servizi</th>
+                <th scope="col">Temi</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${offices
+                .map((office) => {
+                  const officeId = office["@id"];
+                  const active = officeId === viewState.selectedOfficeId ? "is-active" : "";
+                  const persons = store.personsByOffice.get(officeId)?.length ?? 0;
+                  const services = store.servicesByOffice.get(officeId)?.length ?? 0;
+                  const themesForOffice = store.themesByOffice.get(officeId) ?? [];
+                  const functionLabel = normalizeLiteral(
+                    office["cov:mainFunction"] || office["l0:description"],
+                  );
+                  return `
+                    <tr class="comune-office-row ${active}" data-office-id="${escapeHtml(officeId)}" tabindex="0" role="button" aria-pressed="${active ? "true" : "false"}">
+                      <th scope="row" class="comune-office-table__name">${escapeHtml(getTitle(office))}</th>
+                      <td>${escapeHtml(functionLabel || "—")}</td>
+                      <td class="comune-office-table__num">${persons}</td>
+                      <td class="comune-office-table__num">${services}</td>
+                      <td>${escapeHtml(themesForOffice.join(" · ") || "—")}</td>
+                    </tr>
+                  `;
+                })
+                .join("")}
+            </tbody>
+          </table>
+        </div>
       </article>
       <article class="comune-panel comune-detail">
         ${renderOfficeDetail(viewState.selectedOfficeId)}
