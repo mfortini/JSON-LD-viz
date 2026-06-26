@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogo CPSV — portale servizi</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./cpsv.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero cpsv-hero" aria-labelledby="page-title">
+        <div class="hero__topbar">
+          <a class="ghost-link hero__github-link" href="./index.html">Viewer generico</a>
+          <a class="ghost-link hero__github-link" href="./comune.html">Grafo Comune</a>
+        </div>
+
+        <div class="hero__content">
+          <p class="eyebrow">Catalogo servizi</p>
+          <h1 id="page-title">Portale CPSV</h1>
+          <p class="hero__lead" id="org-lead">
+            Esplora un catalogo CPSV-AP in JSON-LD: card dei servizi, schede informative e
+            accesso diretto al servizio online.
+          </p>
+
+          <div class="hero__actions">
+            <label class="ghost-button" for="file-picker">Carica catalogo</label>
+            <input
+              id="file-picker"
+              type="file"
+              accept=".json,.jsonld,.json.gz,.gz,application/ld+json,application/gzip"
+            />
+            <a class="ghost-link" href="#catalog">Vai al catalogo</a>
+          </div>
+        </div>
+
+        <div class="hero__stats" id="stats-panel" aria-live="polite"></div>
+      </header>
+
+      <main class="cpsv-main" id="view-root" aria-live="polite"></main>
+    </div>
+
+    <div class="toast" id="app-status" aria-live="polite"></div>
+    <script type="module" src="./cpsv-app.js"></script>
+  </body>
+</html>
