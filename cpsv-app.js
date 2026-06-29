@@ -109,14 +109,14 @@ function onViewClick(event) {
 function onViewInput(event) {
   if (event.target.matches("[data-search]")) {
     state.search = event.target.value;
-    render();
+    updateCatalogResults();
   }
 }
 
 function onViewChange(event) {
   if (event.target.matches("[data-addressee-filter]")) {
     state.addresseeFilter = event.target.value;
-    render();
+    updateCatalogResults();
   }
 }
 
@@ -132,7 +132,81 @@ function render() {
     return;
   }
 
-  ui.viewRoot.innerHTML = renderCatalog();
+  ui.viewRoot.innerHTML = renderCatalogShell();
+  updateCatalogResults();
+}
+
+function renderCatalogShell() {
+  const orgBadges = state.catalog.organizations
+    .map((org) => `<span class="cpsv-stat">${escapeHtml(org.title)}</span>`)
+    .join("");
+
+  return `
+    <section class="cpsv-view">
+      <div class="cpsv-stats" data-catalog-stats>
+        <span class="cpsv-stat" data-visible-count></span>
+        ${orgBadges}
+      </div>
+      <div class="cpsv-toolbar">
+        <label class="field">
+          <span class="field__label">Cerca servizio</span>
+          <input
+            type="search"
+            data-search
+            value="${escapeHtml(state.search)}"
+            placeholder="Titolo, descrizione o destinatario"
+          />
+        </label>
+        <label class="field field--select">
+          <span class="field__label">Destinatario</span>
+          <select data-addressee-filter>
+            <option value="all">Tutti i destinatari</option>
+            ${state.catalog.addresseeOptions
+              .map(
+                (label) =>
+                  `<option value="${escapeHtml(label)}" ${state.addresseeFilter === label ? "selected" : ""}>${escapeHtml(label)}</option>`,
+              )
+              .join("")}
+          </select>
+        </label>
+      </div>
+      <div data-service-results></div>
+    </section>
+  `;
+}
+
+function updateCatalogResults() {
+  const root = ui.viewRoot.querySelector(".cpsv-view");
+  if (!root || !state.catalog) return;
+
+  const services = filterServices(state.catalog, {
+    search: state.search,
+    addressee: state.addresseeFilter,
+  });
+
+  const countEl = root.querySelector("[data-visible-count]");
+  if (countEl) {
+    countEl.textContent = `${services.length} servizi visibili su ${state.catalog.services.length}`;
+  }
+
+  const searchEl = root.querySelector("[data-search]");
+  if (searchEl && document.activeElement !== searchEl) {
+    searchEl.value = state.search;
+  }
+
+  const filterEl = root.querySelector("[data-addressee-filter]");
+  if (filterEl && document.activeElement !== filterEl) {
+    filterEl.value = state.addresseeFilter;
+  }
+
+  const resultsEl = root.querySelector("[data-service-results]");
+  if (!resultsEl) return;
+
+  resultsEl.innerHTML = services.length
+    ? `<ul class="cpsv-grid">
+        ${services.map((service) => renderServiceCard(service)).join("")}
+      </ul>`
+    : `<section class="cpsv-empty"><p>Nessun servizio corrisponde ai filtri impostati.</p></section>`;
 }
 
 function renderHero() {
@@ -148,8 +222,14 @@ function renderHero() {
     return;
   }
 
-  const orgTitle = state.catalog.organization?.title || "Ente non indicato";
-  ui.orgLead.textContent = `Catalogo di ${orgTitle}: ${state.catalog.services.length} servizi pubblici in formato CPSV-AP.`;
+  const orgCount = state.catalog.organizations.length;
+  const orgLabel =
+    orgCount === 0
+      ? "Ente non indicato"
+      : orgCount === 1
+        ? state.catalog.organizations[0].title
+        : `${orgCount} enti`;
+  ui.orgLead.textContent = `Catalogo di ${orgLabel}: ${state.catalog.services.length} servizi pubblici in formato CPSV-AP.`;
   ui.statsPanel.innerHTML = `
     <article class="stat-card">
       <span class="stat-card__value">${state.catalog.services.length}</span>
@@ -160,7 +240,7 @@ function renderHero() {
       <span class="stat-card__label">Destinatari</span>
     </article>
     <article class="stat-card">
-      <span class="stat-card__value">${state.catalog.organization ? "1" : "0"}</span>
+      <span class="stat-card__value">${orgCount}</span>
       <span class="stat-card__label">Enti</span>
     </article>
   `;
@@ -175,55 +255,6 @@ function renderEmpty() {
   `;
 }
 
-function renderCatalog() {
-  const services = filterServices(state.catalog, {
-    search: state.search,
-    addressee: state.addresseeFilter,
-  });
-
-  return `
-    <section class="cpsv-view">
-      <div class="cpsv-stats">
-        <span class="cpsv-stat">${services.length} servizi visibili su ${state.catalog.services.length}</span>
-        ${
-          state.catalog.organization
-            ? `<span class="cpsv-stat">${escapeHtml(state.catalog.organization.title)}</span>`
-            : ""
-        }
-      </div>
-      <div class="cpsv-toolbar">
-        <label class="field">
-          <span class="field__label">Cerca servizio</span>
-          <input
-            type="search"
-            data-search
-            value="${escapeHtml(state.search)}"
-            placeholder="Titolo, descrizione o destinatario"
-          />
-        </label>
-        <label class="field">
-          <span class="field__label">Destinatario</span>
-          <select data-addressee-filter>
-            <option value="all">Tutti i destinatari</option>
-            ${state.catalog.addresseeOptions
-              .map(
-                (label) =>
-                  `<option value="${escapeHtml(label)}" ${state.addresseeFilter === label ? "selected" : ""}>${escapeHtml(label)}</option>`,
-              )
-              .join("")}
-          </select>
-        </label>
-      </div>
-      ${
-        services.length
-          ? `<ul class="cpsv-grid">
-              ${services.map((service) => renderServiceCard(service)).join("")}
-            </ul>`
-          : `<section class="cpsv-empty"><p>Nessun servizio corrisponde ai filtri impostati.</p></section>`
-      }
-    </section>
-  `;
-}
 
 function renderServiceCard(service) {
   const orgLabel = service.organization?.title || state.catalog.organization?.title || "Ente";

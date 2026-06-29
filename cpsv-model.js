@@ -2,10 +2,18 @@ export function buildCpsvCatalog(data) {
   const graph = Array.isArray(data?.["@graph"]) ? data["@graph"] : [];
   const index = new Map(graph.map((node) => [node["@id"], node]));
 
-  const organization =
-    graph.find((node) => node["@type"] === "cv:PublicOrganisation") ??
-    graph.find((node) => node["@type"] === "cov:PublicOrganization") ??
-    null;
+  const organizationNodes = graph.filter(
+    (node) =>
+      node["@type"] === "cv:PublicOrganisation" || node["@type"] === "cov:PublicOrganization",
+  );
+
+  const organizations = organizationNodes
+    .map((node) => ({
+      id: node["@id"],
+      title: getNodeTitle(node),
+      homepage: normalizeLiteral(node["foaf:homepage"]) || null,
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title, "it"));
 
   const services = graph
     .filter((node) => node["@type"] === "cpsv:PublicService")
@@ -18,13 +26,8 @@ export function buildCpsvCatalog(data) {
 
   return {
     raw: data,
-    organization: organization
-      ? {
-          id: organization["@id"],
-          title: getNodeTitle(organization),
-          homepage: normalizeLiteral(organization["foaf:homepage"]) || null,
-        }
-      : null,
+    organization: organizations[0] ?? null,
+    organizations,
     services,
     addresseeOptions,
     serviceById: new Map(services.map((service) => [service.id, service])),

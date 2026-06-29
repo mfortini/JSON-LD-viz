@@ -19,9 +19,19 @@
 
 .cpsv-toolbar {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(200px, 0.8fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
   gap: 12px;
   margin-bottom: 20px;
+}
+
+.cpsv-toolbar .field {
+  min-width: 0;
+}
+
+.cpsv-toolbar .field--select select {
+  width: 100%;
+  max-width: 100%;
+  text-overflow: ellipsis;
 }
 
 .cpsv-stats {
