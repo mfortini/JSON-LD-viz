@@ -84,6 +84,30 @@
   margin-top: 20px;
 }
 
+.cpsv-load-dialog__actions .ghost-button {
+  background: var(--accent);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.cpsv-load-dialog__actions .ghost-button:hover,
+.cpsv-load-dialog__actions .ghost-button:focus-visible {
+  background: var(--accent-strong);
+  border-color: transparent;
+}
+
+.cpsv-load-dialog__actions .ghost-button--dark {
+  background: transparent;
+  border-color: var(--panel-border);
+  color: var(--text-main);
+}
+
+.cpsv-load-dialog__actions .ghost-button--dark:hover,
+.cpsv-load-dialog__actions .ghost-button--dark:focus-visible {
+  background: #f8f9fa;
+  border-color: #a4abb3;
+}
+
 .cpsv-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
