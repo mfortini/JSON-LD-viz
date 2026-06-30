@@ -1,4 +1,15 @@
-export function buildCpsvCatalog(data) {
+let lifeEventLabelsPromise = null;
+
+export function loadLifeEventLabels() {
+  if (!lifeEventLabelsPromise) {
+    lifeEventLabelsPromise = fetch("./life-event-labels.json")
+      .then((response) => (response.ok ? response.json() : {}))
+      .catch(() => ({}));
+  }
+  return lifeEventLabelsPromise;
+}
+
+export function buildCpsvCatalog(data, { lifeEventLabels = {} } = {}) {
   const graph = Array.isArray(data?.["@graph"]) ? data["@graph"] : [];
   const index = new Map(graph.map((node) => [node["@id"], node]));
 
@@ -17,12 +28,24 @@ export function buildCpsvCatalog(data) {
 
   const services = graph
     .filter((node) => node["@type"] === "cpsv:PublicService")
-    .map((node) => normalizeService(node, index))
+    .map((node) => normalizeService(node, index, lifeEventLabels))
     .sort((a, b) => a.title.localeCompare(b.title, "it"));
 
   const addresseeOptions = [...new Set(services.flatMap((service) => service.addressees.map((a) => a.label)))]
     .filter(Boolean)
     .sort((a, b) => a.localeCompare(b, "it"));
+
+  const lifeEventOptions = [...new Set(services.flatMap((service) => service.lifeEvents.map((e) => e.label)))]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, "it"));
+
+  const servicesWithLifeEvents = services.filter((service) => service.lifeEvents.length > 0).length;
+
+  const sources = Array.isArray(data?.["cpsv-portalone:sourceCatalogs"])
+    ? data["cpsv-portalone:sourceCatalogs"]
+    : Array.isArray(data?.sources)
+      ? data.sources
+      : [];
 
   return {
     raw: data,
@@ -30,11 +53,191 @@ export function buildCpsvCatalog(data) {
     organizations,
     services,
     addresseeOptions,
+    lifeEventOptions,
+    servicesWithLifeEvents,
+    sources,
     serviceById: new Map(services.map((service) => [service.id, service])),
   };
 }
 
-function normalizeService(node, index) {
+export function mergeCpsvDocuments(existing, incoming, { filename, loadedAt } = {}) {
+  if (!existing) {
+    const catalog = buildCpsvCatalog(incoming);
+    return {
+      document: attachSourceMeta(incoming, {
+        filename,
+        loadedAt,
+        serviceCount: catalog.services.length,
+      }),
+      stats: { addedServices: catalog.services.length, updatedNodes: 0 },
+    };
+  }
+
+  const existingIds = new Set(
+    (existing["@graph"] || [])
+      .filter((node) => node["@type"] === "cpsv:PublicService" && node["@id"])
+      .map((node) => node["@id"]),
+  );
+
+  const merged = structuredClone(existing);
+  merged["@context"] = mergeContext(existing["@context"], incoming["@context"]);
+  merged["@graph"] = mergeGraph(existing["@graph"] || [], incoming["@graph"] || []);
+
+  for (const key of Object.keys(incoming)) {
+    if (key.startsWith("@") || key === "dct:source" || key === "dct:title" || key === "dct:modified") {
+      continue;
+    }
+    if (key.endsWith(":unmappedSections") && incoming[key] && typeof incoming[key] === "object") {
+      merged[key] = { ...(merged[key] || {}), ...structuredClone(incoming[key]) };
+    }
+  }
+
+  const incomingCatalog = buildCpsvCatalog(incoming);
+  const addedServices = incomingCatalog.services.filter((service) => !existingIds.has(service.id)).length;
+  const updatedNodes = countUpdatedNodes(existing["@graph"] || [], incoming["@graph"] || [], existingIds);
+
+  const document = attachSourceMeta(merged, {
+    filename,
+    loadedAt,
+    serviceCount: incomingCatalog.services.length,
+  });
+
+  return {
+    document,
+    stats: { addedServices, updatedNodes },
+  };
+}
+
+function attachSourceMeta(document, { filename, loadedAt, serviceCount }) {
+  const copy = structuredClone(document);
+  const entry = {
+    filename: filename || "catalogo.jsonld",
+    loadedAt: loadedAt || new Date().toISOString(),
+    serviceCount: serviceCount ?? 0,
+  };
+
+  const existing = Array.isArray(copy.sources) ? copy.sources : [];
+  copy.sources = [...existing, entry];
+
+  if (!copy["cpsv-portalone:sourceCatalogs"]) {
+    copy["@context"] = {
+      ...(copy["@context"] || {}),
+      "cpsv-portalone": "urn:cpsv-portalone:",
+    };
+  }
+
+  const provenance = Array.isArray(copy["cpsv-portalone:sourceCatalogs"])
+    ? [...copy["cpsv-portalone:sourceCatalogs"]]
+    : [];
+  provenance.push({
+    "@id": `urn:cpsv-portalone:source:${filename || "catalogo"}`,
+    "dct:title": filename || "catalogo.jsonld",
+    "dct:modified": entry.loadedAt,
+  });
+  copy["cpsv-portalone:sourceCatalogs"] = provenance;
+
+  return copy;
+}
+
+function countUpdatedNodes(existingGraph, incomingGraph, existingServiceIds) {
+  const byId = new Map(existingGraph.filter((node) => node["@id"]).map((node) => [node["@id"], node]));
+  let updated = 0;
+
+  for (const node of incomingGraph) {
+    const nodeId = node["@id"];
+    if (!nodeId || !byId.has(nodeId)) continue;
+    if (node["@type"] === "cpsv:PublicService" && !existingServiceIds.has(nodeId)) continue;
+    if (stableJson(node) !== stableJson(byId.get(nodeId))) {
+      updated += 1;
+    }
+  }
+
+  return updated;
+}
+
+function mergeContext(...contexts) {
+  const merged = {};
+  for (const context of contexts) {
+    if (!context || typeof context !== "object") continue;
+    for (const [prefix, uri] of Object.entries(context)) {
+      if (prefix.startsWith("@")) continue;
+      if (typeof uri === "string" && !(prefix in merged)) {
+        merged[prefix] = uri;
+      }
+    }
+  }
+  return merged;
+}
+
+function mergeGraph(existingGraph, incomingGraph) {
+  const byId = new Map();
+  const ordered = [];
+
+  for (const graph of [existingGraph, incomingGraph]) {
+    for (const node of graph) {
+      const nodeId = node?.["@id"];
+      if (!nodeId) {
+        ordered.push(structuredClone(node));
+        continue;
+      }
+      if (byId.has(nodeId)) {
+        const mergedNode = mergeNode(byId.get(nodeId), node);
+        byId.set(nodeId, mergedNode);
+        const index = ordered.findIndex((entry) => entry["@id"] === nodeId);
+        if (index >= 0) ordered[index] = mergedNode;
+        continue;
+      }
+      const copy = structuredClone(node);
+      byId.set(nodeId, copy);
+      ordered.push(copy);
+    }
+  }
+
+  return ordered;
+}
+
+function mergeNode(existing, incoming) {
+  const merged = structuredClone(existing);
+  for (const [key, value] of Object.entries(incoming)) {
+    if (key === "@id") continue;
+    if (!(key in merged)) {
+      merged[key] = structuredClone(value);
+      continue;
+    }
+    const current = merged[key];
+    if (stableJson(current) === stableJson(value)) continue;
+    if (Array.isArray(current) && Array.isArray(value)) {
+      const seen = new Set(current.map((item) => stableJson(item)));
+      for (const item of value) {
+        const encoded = stableJson(item);
+        if (!seen.has(encoded)) {
+          current.push(structuredClone(item));
+          seen.add(encoded);
+        }
+      }
+      continue;
+    }
+    if (Array.isArray(current)) {
+      const encoded = stableJson(value);
+      if (!current.some((item) => stableJson(item) === encoded)) {
+        current.push(structuredClone(value));
+      }
+      continue;
+    }
+    if (Array.isArray(value)) {
+      merged[key] = [structuredClone(current), ...structuredClone(value)];
+      continue;
+    }
+    merged[key] = structuredClone(value);
+  }
+  return merged;
+}
+
+function stableJson(value) {
+  return JSON.stringify(value);
+}
+
+function normalizeService(node, index, lifeEventLabels) {
   const id = node["@id"];
   const orgRef = refId(node["cv:hasCompetentAuthority"] ?? node["cov:hasOrganization"]);
   const orgNode = orgRef ? index.get(orgRef) : null;
@@ -52,6 +255,14 @@ function normalizeService(node, index) {
       return { id: addresseeId, label };
     })
     .filter(Boolean);
+
+  const lifeEventIds = refIds(node["cpsv:isPartOfEvent"]);
+  const lifeEvents = lifeEventIds
+    .map((eventId) => ({
+      id: eventId,
+      label: lifeEventLabels[eventId] || getLastSegment(eventId),
+    }))
+    .filter((entry) => entry.label);
 
   const websiteChannelId = refId(node["cpsv:hasWebSiteChannel"]);
   const websiteChannel = websiteChannelId ? index.get(websiteChannelId) : null;
@@ -133,6 +344,7 @@ function normalizeService(node, index) {
       ? { id: orgNode["@id"], title: getNodeTitle(orgNode) }
       : null,
     addressees,
+    lifeEvents,
     channels,
     inputs,
     processingTime,
@@ -142,19 +354,28 @@ function normalizeService(node, index) {
     issued: normalizeLiteral(node["dct:issued"]) || null,
     modified: normalizeLiteral(node["dct:modified"]) || null,
     language: normalizeLiteral(node["dct:language"]) || null,
-    searchText: [title, abstract, description, orgNode ? getNodeTitle(orgNode) : "", ...addressees.map((a) => a.label)]
+    searchText: [
+      title,
+      abstract,
+      description,
+      orgNode ? getNodeTitle(orgNode) : "",
+      ...addressees.map((a) => a.label),
+      ...lifeEvents.map((e) => e.label),
+    ]
       .join(" ")
       .toLowerCase(),
   };
 }
 
-export function filterServices(catalog, { search = "", addressee = "all" } = {}) {
+export function filterServices(catalog, { search = "", addressee = "all", lifeEvent = "all" } = {}) {
   const query = search.trim().toLowerCase();
   return catalog.services.filter((service) => {
     const matchesSearch = !query || service.searchText.includes(query);
     const matchesAddressee =
       addressee === "all" || service.addressees.some((entry) => entry.label === addressee);
-    return matchesSearch && matchesAddressee;
+    const matchesLifeEvent =
+      lifeEvent === "all" || service.lifeEvents.some((entry) => entry.label === lifeEvent);
+    return matchesSearch && matchesAddressee && matchesLifeEvent;
   });
 }
 

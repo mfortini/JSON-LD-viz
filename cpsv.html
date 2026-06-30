@@ -41,6 +41,21 @@
     </div>
 
     <div class="toast" id="app-status" aria-live="polite"></div>
+
+    <dialog id="load-mode-dialog" class="panel cpsv-load-dialog" aria-labelledby="load-mode-title">
+      <div class="section-heading">
+        <h2 id="load-mode-title">Catalogo già caricato</h2>
+      </div>
+      <p class="panel__intro">
+        Vuoi aggiungere <strong id="load-mode-filename">il file</strong> al catalogo esistente o ricominciare da zero?
+      </p>
+      <div class="cpsv-load-dialog__actions">
+        <button type="button" class="ghost-button ghost-button--dark" id="load-mode-cancel">Annulla</button>
+        <button type="button" class="ghost-button" id="load-mode-replace">Ricomincia</button>
+        <button type="button" class="ghost-button" id="load-mode-append">Aggiungi al catalogo</button>
+      </div>
+    </dialog>
+
     <script type="module" src="./cpsv-app.js"></script>
   </body>
 </html>

@@ -1,5 +1,11 @@
 import { parseGraphFile } from "./graph-file-loader.js";
-import { buildCpsvCatalog, filterServices, truncate } from "./cpsv-model.js";
+import {
+  buildCpsvCatalog,
+  filterServices,
+  loadLifeEventLabels,
+  mergeCpsvDocuments,
+  truncate,
+} from "./cpsv-model.js";
 import { buildCpsvPermalinkUrl, parseCpsvPermalink } from "./cpsv-permalinks.js";
 
 const ui = {
@@ -8,6 +14,11 @@ const ui = {
   viewRoot: document.querySelector("#view-root"),
   filePicker: document.querySelector("#file-picker"),
   appStatus: document.querySelector("#app-status"),
+  loadModeDialog: document.querySelector("#load-mode-dialog"),
+  loadModeFilename: document.querySelector("#load-mode-filename"),
+  loadModeAppend: document.querySelector("#load-mode-append"),
+  loadModeReplace: document.querySelector("#load-mode-replace"),
+  loadModeCancel: document.querySelector("#load-mode-cancel"),
 };
 
 const state = {
@@ -16,9 +27,17 @@ const state = {
   selectedServiceId: null,
   search: "",
   addresseeFilter: "all",
+  lifeEventFilter: "all",
+  lifeEventLabels: {},
+  sources: [],
 };
 
 let toastTimer = null;
+let pendingFile = null;
+let lifeEventLabelsReady = loadLifeEventLabels().then((labels) => {
+  state.lifeEventLabels = labels;
+  return labels;
+});
 
 init();
 
@@ -29,23 +48,89 @@ function init() {
   ui.viewRoot.addEventListener("change", onViewChange);
   window.addEventListener("hashchange", syncFromHash);
   window.addEventListener("popstate", syncFromHash);
+
+  ui.loadModeAppend?.addEventListener("click", () => finalizePendingLoad("append"));
+  ui.loadModeReplace?.addEventListener("click", () => finalizePendingLoad("replace"));
+  ui.loadModeCancel?.addEventListener("click", cancelPendingLoad);
+  ui.loadModeDialog?.addEventListener("cancel", cancelPendingLoad);
+
   renderEmpty();
 }
 
 async function onFileSelected(event) {
   const file = event.target.files?.[0];
+  event.target.value = "";
   if (!file) return;
 
+  if (state.catalog) {
+    pendingFile = file;
+    if (ui.loadModeFilename) {
+      ui.loadModeFilename.textContent = file.name;
+    }
+    ui.loadModeDialog?.showModal();
+    return;
+  }
+
+  await loadCatalogFile(file, { mode: "replace" });
+}
+
+function cancelPendingLoad(event) {
+  event?.preventDefault();
+  pendingFile = null;
+  ui.loadModeDialog?.close();
+}
+
+async function finalizePendingLoad(mode) {
+  const file = pendingFile;
+  pendingFile = null;
+  ui.loadModeDialog?.close();
+  if (!file) return;
+  await loadCatalogFile(file, { mode });
+}
+
+async function loadCatalogFile(file, { mode }) {
   try {
+    await lifeEventLabelsReady;
     showStatus(`Caricamento di ${file.name}…`);
-    const data = await parseGraphFile(file);
-    state.catalog = buildCpsvCatalog(data);
+    const incoming = await parseGraphFile(file);
+    const loadedAt = new Date().toISOString();
+
+    let document = incoming;
+    let mergeStats = null;
+
+    if (mode === "append" && state.catalog) {
+      const result = mergeCpsvDocuments(state.catalog.raw, incoming, {
+        filename: file.name,
+        loadedAt,
+      });
+      document = result.document;
+      mergeStats = result.stats;
+    } else {
+      const result = mergeCpsvDocuments(null, incoming, {
+        filename: file.name,
+        loadedAt,
+      });
+      document = result.document;
+      mergeStats = result.stats;
+    }
+
+    state.catalog = buildCpsvCatalog(document, { lifeEventLabels: state.lifeEventLabels });
+    state.sources = state.catalog.sources;
     state.search = "";
     state.addresseeFilter = "all";
+    state.lifeEventFilter = "all";
     state.view = "catalog";
     state.selectedServiceId = null;
     updatePermalink({ replace: true });
     render();
+
+    if (mode === "append" && mergeStats) {
+      showStatus(
+        `Catalogo aggiornato: +${mergeStats.addedServices} servizi, ${mergeStats.updatedNodes} nodi aggiornati. Totale: ${state.catalog.services.length}.`,
+      );
+      return;
+    }
+
     showStatus(
       `Catalogo caricato: ${state.catalog.services.length} servizi${
         state.catalog.organization ? ` di ${state.catalog.organization.title}` : ""
@@ -118,6 +203,10 @@ function onViewChange(event) {
     state.addresseeFilter = event.target.value;
     updateCatalogResults();
   }
+  if (event.target.matches("[data-life-event-filter]")) {
+    state.lifeEventFilter = event.target.value;
+    updateCatalogResults();
+  }
 }
 
 function render() {
@@ -141,13 +230,35 @@ function renderCatalogShell() {
     .map((org) => `<span class="cpsv-stat">${escapeHtml(org.title)}</span>`)
     .join("");
 
+  const sourceBadges = state.catalog.sources
+    .map((source) => `<span class="cpsv-stat cpsv-stat--source">${escapeHtml(source.filename)}</span>`)
+    .join("");
+
+  const lifeEventFilter = state.catalog.lifeEventOptions.length
+    ? `
+        <label class="field field--select">
+          <span class="field__label">Evento di vita</span>
+          <select data-life-event-filter>
+            <option value="all">Tutti gli eventi</option>
+            ${state.catalog.lifeEventOptions
+              .map(
+                (label) =>
+                  `<option value="${escapeHtml(label)}" ${state.lifeEventFilter === label ? "selected" : ""}>${escapeHtml(label)}</option>`,
+              )
+              .join("")}
+          </select>
+        </label>
+      `
+    : "";
+
   return `
     <section class="cpsv-view">
       <div class="cpsv-stats" data-catalog-stats>
         <span class="cpsv-stat" data-visible-count></span>
         ${orgBadges}
+        ${sourceBadges}
       </div>
-      <div class="cpsv-toolbar">
+      <div class="cpsv-toolbar ${lifeEventFilter ? "cpsv-toolbar--three" : ""}">
         <label class="field">
           <span class="field__label">Cerca servizio</span>
           <input
@@ -169,6 +280,7 @@ function renderCatalogShell() {
               .join("")}
           </select>
         </label>
+        ${lifeEventFilter}
       </div>
       <div data-service-results></div>
     </section>
@@ -182,6 +294,7 @@ function updateCatalogResults() {
   const services = filterServices(state.catalog, {
     search: state.search,
     addressee: state.addresseeFilter,
+    lifeEvent: state.lifeEventFilter,
   });
 
   const countEl = root.querySelector("[data-visible-count]");
@@ -197,6 +310,11 @@ function updateCatalogResults() {
   const filterEl = root.querySelector("[data-addressee-filter]");
   if (filterEl && document.activeElement !== filterEl) {
     filterEl.value = state.addresseeFilter;
+  }
+
+  const lifeEventEl = root.querySelector("[data-life-event-filter]");
+  if (lifeEventEl && document.activeElement !== lifeEventEl) {
+    lifeEventEl.value = state.lifeEventFilter;
   }
 
   const resultsEl = root.querySelector("[data-service-results]");
@@ -243,6 +361,18 @@ function renderHero() {
       <span class="stat-card__value">${orgCount}</span>
       <span class="stat-card__label">Enti</span>
     </article>
+    <article class="stat-card">
+      <span class="stat-card__value">${state.catalog.servicesWithLifeEvents}</span>
+      <span class="stat-card__label">Con life event</span>
+    </article>
+    <article class="stat-card">
+      <span class="stat-card__value">${state.catalog.lifeEventOptions.length}</span>
+      <span class="stat-card__label">Life event</span>
+    </article>
+    <article class="stat-card">
+      <span class="stat-card__value">${state.catalog.sources.length}</span>
+      <span class="stat-card__label">Fonti caricate</span>
+    </article>
   `;
 }
 
@@ -255,13 +385,16 @@ function renderEmpty() {
   `;
 }
 
-
 function renderServiceCard(service) {
   const orgLabel = service.organization?.title || state.catalog.organization?.title || "Ente";
   const addresseeLabel =
     service.addressees.length === 1
       ? service.addressees[0].label
       : `${service.addressees.length} destinatari`;
+
+  const lifeEventChips = service.lifeEvents
+    .map((event) => `<span class="cpsv-chip cpsv-chip--life-event">${escapeHtml(event.label)}</span>`)
+    .join("");
 
   return `
     <li>
@@ -271,6 +404,7 @@ function renderServiceCard(service) {
         <p class="cpsv-service-card__abstract">${escapeHtml(truncate(service.abstract || service.description, 160))}</p>
         <div class="cpsv-service-card__meta">
           <span class="cpsv-chip">${escapeHtml(addresseeLabel)}</span>
+          ${lifeEventChips}
           ${service.modified ? `<span class="cpsv-chip">Aggiornato ${escapeHtml(service.modified)}</span>` : ""}
         </div>
       </button>
@@ -324,6 +458,17 @@ function renderServiceDetail(service) {
               <h2>Destinatari</h2>
               <div class="cpsv-chip-row">
                 ${service.addressees.map((entry) => `<span class="cpsv-chip">${escapeHtml(entry.label)}</span>`).join("")}
+              </div>
+            </section>`
+          : ""
+      }
+
+      ${
+        service.lifeEvents.length
+          ? `<section class="cpsv-section">
+              <h2>Eventi di vita</h2>
+              <div class="cpsv-chip-row">
+                ${service.lifeEvents.map((entry) => `<span class="cpsv-chip cpsv-chip--life-event">${escapeHtml(entry.label)}</span>`).join("")}
               </div>
             </section>`
           : ""
