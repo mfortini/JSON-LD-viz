@@ -31,6 +31,11 @@ export function buildCpsvCatalog(data, { lifeEventLabels = {} } = {}) {
     .map((node) => normalizeService(node, index, lifeEventLabels))
     .sort((a, b) => a.title.localeCompare(b.title, "it"));
 
+  const organizationIdsFromServices = new Set(
+    services.map((service) => service.organization?.id).filter(Boolean),
+  );
+  const organizationsWithServices = organizations.filter((org) => organizationIdsFromServices.has(org.id));
+
   const addresseeOptions = [...new Set(services.flatMap((service) => service.addressees.map((a) => a.label)))]
     .filter(Boolean)
     .sort((a, b) => a.localeCompare(b, "it"));
@@ -41,6 +46,13 @@ export function buildCpsvCatalog(data, { lifeEventLabels = {} } = {}) {
 
   const servicesWithLifeEvents = services.filter((service) => service.lifeEvents.length > 0).length;
 
+  const lifeEventMappingCounts = services.reduce((counts, service) => {
+    if (!service.lifeEventMapping) return counts;
+    const key = service.lifeEventMapping.badge || service.lifeEventMapping.method || "unknown";
+    counts[key] = (counts[key] || 0) + 1;
+    return counts;
+  }, {});
+
   const sources = Array.isArray(data?.["cpsv-portalone:sourceCatalogs"])
     ? data["cpsv-portalone:sourceCatalogs"]
     : Array.isArray(data?.sources)
@@ -49,12 +61,13 @@ export function buildCpsvCatalog(data, { lifeEventLabels = {} } = {}) {
 
   return {
     raw: data,
-    organization: organizations[0] ?? null,
-    organizations,
+    organization: organizationsWithServices[0] ?? organizations[0] ?? null,
+    organizations: organizationsWithServices.length ? organizationsWithServices : organizations,
     services,
     addresseeOptions,
     lifeEventOptions,
     servicesWithLifeEvents,
+    lifeEventMappingCounts,
     sources,
     serviceById: new Map(services.map((service) => [service.id, service])),
   };
@@ -237,9 +250,31 @@ function stableJson(value) {
   return JSON.stringify(value);
 }
 
+function normalizeLifeEventMapping(node) {
+  const mapping = node["cpsv-portalone:lifeEventMapping"];
+  if (!mapping || typeof mapping !== "object") return null;
+  return {
+    method: normalizeLiteral(mapping["cpsv-portalone:method"]) || null,
+    methodLabel: normalizeLiteral(mapping["cpsv-portalone:methodLabel"]) || null,
+    confidence: normalizeLiteral(mapping["cpsv-portalone:confidence"]) || null,
+    badge: normalizeLiteral(mapping["cpsv-portalone:badge"]) || null,
+    sourceField: normalizeLiteral(mapping["cpsv-portalone:sourceField"]) || null,
+    sourceValue: normalizeLiteral(mapping["cpsv-portalone:sourceValue"]) || null,
+    note: normalizeLiteral(mapping["dct:description"]) || null,
+  };
+}
+
+function resolveOrganizationRef(node) {
+  return refId(
+    node["cv:hasCompetentAuthority"] ??
+      node["cpsv:producedBy"] ??
+      node["cov:hasOrganization"],
+  );
+}
+
 function normalizeService(node, index, lifeEventLabels) {
   const id = node["@id"];
-  const orgRef = refId(node["cv:hasCompetentAuthority"] ?? node["cov:hasOrganization"]);
+  const orgRef = resolveOrganizationRef(node);
   const orgNode = orgRef ? index.get(orgRef) : null;
 
   const addresseeIds = refIds(node["cv:addressee"]);
@@ -263,6 +298,8 @@ function normalizeService(node, index, lifeEventLabels) {
       label: lifeEventLabels[eventId] || getLastSegment(eventId),
     }))
     .filter((entry) => entry.label);
+
+  const lifeEventMapping = normalizeLifeEventMapping(node);
 
   const websiteChannelId = refId(node["cpsv:hasWebSiteChannel"]);
   const websiteChannel = websiteChannelId ? index.get(websiteChannelId) : null;
@@ -345,6 +382,7 @@ function normalizeService(node, index, lifeEventLabels) {
       : null,
     addressees,
     lifeEvents,
+    lifeEventMapping,
     channels,
     inputs,
     processingTime,
@@ -361,13 +399,18 @@ function normalizeService(node, index, lifeEventLabels) {
       orgNode ? getNodeTitle(orgNode) : "",
       ...addressees.map((a) => a.label),
       ...lifeEvents.map((e) => e.label),
+      lifeEventMapping?.methodLabel || "",
+      lifeEventMapping?.sourceValue || "",
     ]
       .join(" ")
       .toLowerCase(),
   };
 }
 
-export function filterServices(catalog, { search = "", addressee = "all", lifeEvent = "all" } = {}) {
+export function filterServices(
+  catalog,
+  { search = "", addressee = "all", lifeEvent = "all", organization = "all" } = {},
+) {
   const query = search.trim().toLowerCase();
   return catalog.services.filter((service) => {
     const matchesSearch = !query || service.searchText.includes(query);
@@ -375,7 +418,10 @@ export function filterServices(catalog, { search = "", addressee = "all", lifeEv
       addressee === "all" || service.addressees.some((entry) => entry.label === addressee);
     const matchesLifeEvent =
       lifeEvent === "all" || service.lifeEvents.some((entry) => entry.label === lifeEvent);
-    return matchesSearch && matchesAddressee && matchesLifeEvent;
+    const matchesOrganization =
+      organization === "all" ||
+      (organization === "none" ? !service.organization?.id : service.organization?.id === organization);
+    return matchesSearch && matchesAddressee && matchesLifeEvent && matchesOrganization;
   });
 }
 

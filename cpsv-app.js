@@ -27,6 +27,7 @@ const state = {
   selectedServiceId: null,
   search: "",
   addresseeFilter: "all",
+  organizationFilter: "all",
   lifeEventFilter: "all",
   lifeEventLabels: {},
   sources: [],
@@ -118,6 +119,7 @@ async function loadCatalogFile(file, { mode }) {
     state.sources = state.catalog.sources;
     state.search = "";
     state.addresseeFilter = "all";
+    state.organizationFilter = "all";
     state.lifeEventFilter = "all";
     state.view = "catalog";
     state.selectedServiceId = null;
@@ -188,6 +190,13 @@ function onViewClick(event) {
     state.selectedServiceId = null;
     updatePermalink();
     render();
+    return;
+  }
+
+  const orgFilter = event.target.closest("[data-organization-pick]");
+  if (orgFilter && state.view === "catalog") {
+    state.organizationFilter = orgFilter.dataset.organizationPick;
+    updateCatalogResults();
   }
 }
 
@@ -201,6 +210,10 @@ function onViewInput(event) {
 function onViewChange(event) {
   if (event.target.matches("[data-addressee-filter]")) {
     state.addresseeFilter = event.target.value;
+    updateCatalogResults();
+  }
+  if (event.target.matches("[data-organization-filter]")) {
+    state.organizationFilter = event.target.value;
     updateCatalogResults();
   }
   if (event.target.matches("[data-life-event-filter]")) {
@@ -227,19 +240,43 @@ function render() {
 
 function renderCatalogShell() {
   const orgBadges = state.catalog.organizations
-    .map((org) => `<span class="cpsv-stat">${escapeHtml(org.title)}</span>`)
+    .map(
+      (org) =>
+        `<button type="button" class="cpsv-stat cpsv-stat--filter${
+          state.organizationFilter === org.id ? " is-active" : ""
+        }" data-organization-pick="${escapeHtml(org.id)}" title="Filtra per ${escapeHtml(org.title)}">${escapeHtml(org.title)}</button>`,
+    )
     .join("");
 
   const sourceBadges = state.catalog.sources
     .map((source) => `<span class="cpsv-stat cpsv-stat--source">${escapeHtml(source.filename)}</span>`)
     .join("");
 
+  const organizationFilter =
+    state.catalog.organizations.length > 0
+      ? `
+        <label class="field field--select">
+          <span class="field__label">Ente che pubblica</span>
+          <select data-organization-filter>
+            <option value="all">Tutti gli enti</option>
+            ${state.catalog.organizations
+              .map(
+                (org) =>
+                  `<option value="${escapeHtml(org.id)}" ${state.organizationFilter === org.id ? "selected" : ""}>${escapeHtml(org.title)}</option>`,
+              )
+              .join("")}
+            <option value="none" ${state.organizationFilter === "none" ? "selected" : ""}>Senza ente indicato</option>
+          </select>
+        </label>
+      `
+      : "";
+
   const lifeEventFilter = state.catalog.lifeEventOptions.length
     ? `
         <label class="field field--select">
-          <span class="field__label">Evento di vita</span>
+          <span class="field__label">Evento della vita</span>
           <select data-life-event-filter>
-            <option value="all">Tutti gli eventi</option>
+            <option value="all">Tutti gli eventi della vita</option>
             ${state.catalog.lifeEventOptions
               .map(
                 (label) =>
@@ -251,6 +288,9 @@ function renderCatalogShell() {
       `
     : "";
 
+  const toolbarClass =
+    organizationFilter || lifeEventFilter ? "cpsv-toolbar cpsv-toolbar--multi" : "cpsv-toolbar";
+
   return `
     <section class="cpsv-view">
       <div class="cpsv-stats" data-catalog-stats>
@@ -258,7 +298,7 @@ function renderCatalogShell() {
         ${orgBadges}
         ${sourceBadges}
       </div>
-      <div class="cpsv-toolbar ${lifeEventFilter ? "cpsv-toolbar--three" : ""}">
+      <div class="${toolbarClass}">
         <label class="field">
           <span class="field__label">Cerca servizio</span>
           <input
@@ -268,6 +308,7 @@ function renderCatalogShell() {
             placeholder="Titolo, descrizione o destinatario"
           />
         </label>
+        ${organizationFilter}
         <label class="field field--select">
           <span class="field__label">Destinatario</span>
           <select data-addressee-filter>
@@ -282,6 +323,7 @@ function renderCatalogShell() {
         </label>
         ${lifeEventFilter}
       </div>
+      ${renderLifeEventLegend(state.catalog)}
       <div data-service-results></div>
     </section>
   `;
@@ -294,6 +336,7 @@ function updateCatalogResults() {
   const services = filterServices(state.catalog, {
     search: state.search,
     addressee: state.addresseeFilter,
+    organization: state.organizationFilter,
     lifeEvent: state.lifeEventFilter,
   });
 
@@ -310,6 +353,11 @@ function updateCatalogResults() {
   const filterEl = root.querySelector("[data-addressee-filter]");
   if (filterEl && document.activeElement !== filterEl) {
     filterEl.value = state.addresseeFilter;
+  }
+
+  const organizationEl = root.querySelector("[data-organization-filter]");
+  if (organizationEl && document.activeElement !== organizationEl) {
+    organizationEl.value = state.organizationFilter;
   }
 
   const lifeEventEl = root.querySelector("[data-life-event-filter]");
@@ -363,11 +411,23 @@ function renderHero() {
     </article>
     <article class="stat-card">
       <span class="stat-card__value">${state.catalog.servicesWithLifeEvents}</span>
-      <span class="stat-card__label">Con life event</span>
+      <span class="stat-card__label">Con eventi della vita</span>
+    </article>
+    <article class="stat-card">
+      <span class="stat-card__value">${state.catalog.lifeEventMappingCounts.ade || 0}</span>
+      <span class="stat-card__label">AdE curati</span>
+    </article>
+    <article class="stat-card">
+      <span class="stat-card__value">${state.catalog.lifeEventMappingCounts.draft || 0}</span>
+      <span class="stat-card__label">INPS bozza</span>
+    </article>
+    <article class="stat-card">
+      <span class="stat-card__value">${state.catalog.lifeEventMappingCounts.manual || 0}</span>
+      <span class="stat-card__label">INAIL manuali</span>
     </article>
     <article class="stat-card">
       <span class="stat-card__value">${state.catalog.lifeEventOptions.length}</span>
-      <span class="stat-card__label">Life event</span>
+      <span class="stat-card__label">Eventi della vita</span>
     </article>
     <article class="stat-card">
       <span class="stat-card__value">${state.catalog.sources.length}</span>
@@ -386,7 +446,7 @@ function renderEmpty() {
 }
 
 function renderServiceCard(service) {
-  const orgLabel = service.organization?.title || state.catalog.organization?.title || "Ente";
+  const orgLabel = service.organization?.title || "Ente non indicato";
   const addresseeLabel =
     service.addressees.length === 1
       ? service.addressees[0].label
@@ -396,6 +456,8 @@ function renderServiceCard(service) {
     .map((event) => `<span class="cpsv-chip cpsv-chip--life-event">${escapeHtml(event.label)}</span>`)
     .join("");
 
+  const mappingBadge = renderLifeEventMappingBadge(service.lifeEventMapping);
+
   return `
     <li>
       <button type="button" class="cpsv-service-card" data-service-id="${escapeHtml(service.id)}">
@@ -404,6 +466,7 @@ function renderServiceCard(service) {
         <p class="cpsv-service-card__abstract">${escapeHtml(truncate(service.abstract || service.description, 160))}</p>
         <div class="cpsv-service-card__meta">
           <span class="cpsv-chip">${escapeHtml(addresseeLabel)}</span>
+          ${mappingBadge}
           ${lifeEventChips}
           ${service.modified ? `<span class="cpsv-chip">Aggiornato ${escapeHtml(service.modified)}</span>` : ""}
         </div>
@@ -422,7 +485,7 @@ function renderServiceDetail(service) {
     `;
   }
 
-  const orgTitle = service.organization?.title || state.catalog.organization?.title || "—";
+  const orgTitle = service.organization?.title || "—";
 
   return `
     <article class="cpsv-detail">
@@ -445,7 +508,7 @@ function renderServiceDetail(service) {
       }
 
       <div class="cpsv-kv">
-        ${renderKv("Ente", orgTitle)}
+        ${renderKv("Ente che pubblica", orgTitle)}
         ${renderKv("Codice servizio", service.serviceCode || service.identifier || "—")}
         ${renderKv("Pubblicato", service.issued || "—")}
         ${renderKv("Ultimo aggiornamento", service.modified || "—")}
@@ -466,7 +529,8 @@ function renderServiceDetail(service) {
       ${
         service.lifeEvents.length
           ? `<section class="cpsv-section">
-              <h2>Eventi di vita</h2>
+              <h2>Eventi della vita</h2>
+              ${renderLifeEventMappingDetail(service.lifeEventMapping)}
               <div class="cpsv-chip-row">
                 ${service.lifeEvents.map((entry) => `<span class="cpsv-chip cpsv-chip--life-event">${escapeHtml(entry.label)}</span>`).join("")}
               </div>
@@ -523,6 +587,48 @@ function renderServiceDetail(service) {
         }
       </section>
     </article>
+  `;
+}
+
+function renderLifeEventMappingBadge(mapping) {
+  if (!mapping?.methodLabel) return "";
+  const badgeClass = mapping.badge ? `cpsv-chip--mapping-${mapping.badge}` : "cpsv-chip--mapping-unknown";
+  return `<span class="cpsv-chip cpsv-chip--mapping ${badgeClass}" title="${escapeHtml(mapping.note || mapping.sourceValue || "")}">${escapeHtml(mapping.methodLabel)}</span>`;
+}
+
+function renderLifeEventMappingDetail(mapping) {
+  if (!mapping?.methodLabel) return "";
+  const badgeClass = mapping.badge ? `cpsv-chip--mapping-${mapping.badge}` : "cpsv-chip--mapping-unknown";
+  return `
+    <div class="cpsv-mapping-detail">
+      <span class="cpsv-chip cpsv-chip--mapping ${badgeClass}">${escapeHtml(mapping.methodLabel)}</span>
+      ${
+        mapping.sourceValue
+          ? `<p class="cpsv-mapping-detail__meta"><strong>Fonte:</strong> ${escapeHtml(mapping.sourceField || "—")} → ${escapeHtml(mapping.sourceValue)}</p>`
+          : ""
+      }
+      ${
+        mapping.note
+          ? `<p class="cpsv-mapping-detail__note">${escapeHtml(mapping.note)}</p>`
+          : ""
+      }
+    </div>
+  `;
+}
+
+function renderLifeEventLegend(catalog) {
+  const counts = catalog.lifeEventMappingCounts || {};
+  if (!Object.keys(counts).length && !catalog.lifeEventOptions.length) return "";
+
+  return `
+    <aside class="cpsv-life-event-legend" aria-label="Legenda collegamenti eventi della vita">
+      <p class="cpsv-life-event-legend__title">Come sono stati collegati gli eventi della vita</p>
+      <ul class="cpsv-life-event-legend__list">
+        <li><span class="cpsv-chip cpsv-chip--mapping cpsv-chip--mapping-ade">Curato · categoria catalogo AdE</span> ${counts.ade || 0} servizi</li>
+        <li><span class="cpsv-chip cpsv-chip--mapping cpsv-chip--mapping-draft">Bozza · area breadcrumb INPS</span> ${counts.draft || 0} servizi — crosswalk provvisorio</li>
+        <li><span class="cpsv-chip cpsv-chip--mapping cpsv-chip--mapping-manual">Manuale · override INAIL</span> ${counts.manual || 0} servizi — revisione umana</li>
+      </ul>
+    </aside>
   `;
 }
 
