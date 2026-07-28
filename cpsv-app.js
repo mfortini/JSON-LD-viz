@@ -579,9 +579,9 @@ function renderServiceDetail(service) {
         ${
           service.inputs.length
             ? `<section class="cpsv-sheet__section">
-                <h2>Cosa serve</h2>
-                <ul class="cpsv-sheet__list">
-                  ${service.inputs.map((input) => `<li>${escapeHtml(input.label)}</li>`).join("")}
+                <h2>Requisiti e condizioni</h2>
+                <ul class="cpsv-sheet__requirements">
+                  ${service.inputs.map((input) => renderRequirement(input.label)).join("")}
                 </ul>
               </section>`
             : ""
@@ -607,6 +607,18 @@ function renderServiceDetail(service) {
       </footer>
     </article>
   `;
+}
+
+function renderRequirement(label) {
+  const match = String(label).match(/^([^:]{2,60}):\s*([\s\S]+)$/);
+  if (match) {
+    return `
+      <li class="cpsv-sheet__requirement">
+        <strong>${escapeHtml(match[1].trim())}</strong>
+        <p>${escapeHtml(match[2].trim())}</p>
+      </li>`;
+  }
+  return `<li class="cpsv-sheet__requirement"><p>${escapeHtml(label)}</p></li>`;
 }
 
 function renderFact(label, value) {

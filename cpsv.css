@@ -472,6 +472,33 @@
   line-height: 1.5;
 }
 
+.cpsv-sheet__requirements {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.cpsv-sheet__requirement {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f5f7fa;
+}
+
+.cpsv-sheet__requirement strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  color: #17324d;
+}
+
+.cpsv-sheet__requirement p {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+
 .cpsv-channel-cards {
   list-style: none;
   margin: 0;

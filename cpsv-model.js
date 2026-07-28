@@ -409,9 +409,15 @@ function normalizeService(node, index, lifeEventLabels) {
     .map((inputId) => {
       const input = index.get(inputId);
       if (!input) return null;
+      const label =
+        normalizeLiteral(input["l0:description"]) ||
+        normalizeLiteral(input["dct:description"]) ||
+        normalizeLiteral(input["dct:title"]) ||
+        normalizeLiteral(input["rdfs:label"]);
+      if (!label) return null;
       return {
         id: inputId,
-        label: normalizeLiteral(input["l0:description"]) || normalizeLiteral(input["dct:title"]) || "Input richiesto",
+        label,
       };
     })
     .filter(Boolean);
