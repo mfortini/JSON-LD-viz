@@ -9,6 +9,41 @@ export function loadLifeEventLabels() {
   return lifeEventLabelsPromise;
 }
 
+function packageNameFromSource(source) {
+  const id = source?.["@id"] || source?.id || "";
+  if (typeof id === "string" && id.includes(":")) {
+    const tail = id.split(":").pop();
+    if (tail && tail !== "catalogo" && !tail.endsWith(".jsonld")) return tail;
+  }
+  const filename = source?.filename;
+  if (typeof filename === "string" && filename.trim()) {
+    return filename.replace(/\.(jsonld|json|gz)$/i, "").split("/").pop();
+  }
+  return null;
+}
+
+function normalizeSourceEntry(source) {
+  if (!source || typeof source !== "object") return null;
+  const packageName = packageNameFromSource(source);
+  const title =
+    normalizeLiteral(source["dct:title"]) ||
+    normalizeLiteral(source.title) ||
+    null;
+  const filename =
+    (typeof source.filename === "string" && source.filename.trim()) ||
+    packageName ||
+    null;
+  // Prefer short package code for pills; keep full title for tooltips.
+  const label = packageName || title || filename;
+  if (!label || label === "undefined") return null;
+  return {
+    ...source,
+    filename: filename || label,
+    label,
+    fullTitle: title || label,
+  };
+}
+
 export function buildCpsvCatalog(data, { lifeEventLabels = {} } = {}) {
   const graph = Array.isArray(data?.["@graph"]) ? data["@graph"] : [];
   const index = new Map(graph.map((node) => [node["@id"], node]));
@@ -53,11 +88,21 @@ export function buildCpsvCatalog(data, { lifeEventLabels = {} } = {}) {
     return counts;
   }, {});
 
-  const sources = Array.isArray(data?.["cpsv-portalone:sourceCatalogs"])
+  const rawSources = Array.isArray(data?.["cpsv-portalone:sourceCatalogs"])
     ? data["cpsv-portalone:sourceCatalogs"]
     : Array.isArray(data?.sources)
       ? data.sources
       : [];
+  const sources = [];
+  const seenSourceLabels = new Set();
+  for (const entry of rawSources) {
+    const normalized = normalizeSourceEntry(entry);
+    if (!normalized) continue;
+    const key = normalized["@id"] || normalized.label;
+    if (seenSourceLabels.has(key)) continue;
+    seenSourceLabels.add(key);
+    sources.push(normalized);
+  }
 
   return {
     raw: data,
@@ -81,6 +126,7 @@ export function mergeCpsvDocuments(existing, incoming, { filename, loadedAt } = 
         filename,
         loadedAt,
         serviceCount: catalog.services.length,
+        incoming,
       }),
       stats: { addedServices: catalog.services.length, updatedNodes: 0 },
     };
@@ -113,6 +159,7 @@ export function mergeCpsvDocuments(existing, incoming, { filename, loadedAt } = 
     filename,
     loadedAt,
     serviceCount: incomingCatalog.services.length,
+    incoming,
   });
 
   return {
@@ -121,7 +168,7 @@ export function mergeCpsvDocuments(existing, incoming, { filename, loadedAt } = 
   };
 }
 
-function attachSourceMeta(document, { filename, loadedAt, serviceCount }) {
+function attachSourceMeta(document, { filename, loadedAt, serviceCount, incoming } = {}) {
   const copy = structuredClone(document);
   const entry = {
     filename: filename || "catalogo.jsonld",
@@ -129,25 +176,41 @@ function attachSourceMeta(document, { filename, loadedAt, serviceCount }) {
     serviceCount: serviceCount ?? 0,
   };
 
-  const existing = Array.isArray(copy.sources) ? copy.sources : [];
-  copy.sources = [...existing, entry];
+  const existingFiles = Array.isArray(copy.sources) ? copy.sources : [];
+  copy.sources = [...existingFiles, entry];
 
-  if (!copy["cpsv-portalone:sourceCatalogs"]) {
+  const byId = new Map();
+  for (const source of Array.isArray(copy["cpsv-portalone:sourceCatalogs"])
+    ? copy["cpsv-portalone:sourceCatalogs"]
+    : []) {
+    if (source?.["@id"]) byId.set(source["@id"], source);
+  }
+  for (const source of Array.isArray(incoming?.["cpsv-portalone:sourceCatalogs"])
+    ? incoming["cpsv-portalone:sourceCatalogs"]
+    : []) {
+    if (source?.["@id"]) byId.set(source["@id"], structuredClone(source));
+  }
+
+  if (byId.size === 0 && filename) {
+    const packageName =
+      String(filename)
+        .replace(/\.(jsonld|json|gz)$/i, "")
+        .split(/[/\\]/)
+        .pop() || "catalogo";
+    byId.set(`urn:cpsv-portalone:source:${packageName}`, {
+      "@id": `urn:cpsv-portalone:source:${packageName}`,
+      "dct:title": filename,
+      "dct:modified": entry.loadedAt,
+    });
+  }
+
+  if (byId.size > 0) {
     copy["@context"] = {
       ...(copy["@context"] || {}),
       "cpsv-portalone": "urn:cpsv-portalone:",
     };
+    copy["cpsv-portalone:sourceCatalogs"] = [...byId.values()];
   }
-
-  const provenance = Array.isArray(copy["cpsv-portalone:sourceCatalogs"])
-    ? [...copy["cpsv-portalone:sourceCatalogs"]]
-    : [];
-  provenance.push({
-    "@id": `urn:cpsv-portalone:source:${filename || "catalogo"}`,
-    "dct:title": filename || "catalogo.jsonld",
-    "dct:modified": entry.loadedAt,
-  });
-  copy["cpsv-portalone:sourceCatalogs"] = provenance;
 
   return copy;
 }

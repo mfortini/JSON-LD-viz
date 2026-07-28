@@ -249,7 +249,10 @@ function renderCatalogShell() {
     .join("");
 
   const sourceBadges = state.catalog.sources
-    .map((source) => `<span class="cpsv-stat cpsv-stat--source">${escapeHtml(source.filename)}</span>`)
+    .map(
+      (source) =>
+        `<span class="cpsv-stat cpsv-stat--source" title="${escapeHtml(source.fullTitle || source.label)}">${escapeHtml(source.label)}</span>`,
+    )
     .join("");
 
   const organizationFilter =
@@ -376,6 +379,10 @@ function updateCatalogResults() {
 }
 
 function renderHero() {
+  const shell = document.querySelector(".page-shell");
+  shell?.classList.toggle("cpsv-shell--detail", Boolean(state.catalog && state.view === "servizio"));
+  shell?.classList.toggle("cpsv-shell--loaded", Boolean(state.catalog));
+
   if (!state.catalog) {
     ui.orgLead.textContent =
       "Carica un file JSON-LD CPSV-AP (.jsonld o .gz) per esplorare il catalogo servizi.";
@@ -391,19 +398,15 @@ function renderHero() {
   const orgCount = state.catalog.organizations.length;
   const orgLabel =
     orgCount === 0
-      ? "Ente non indicato"
+      ? "ente non indicato"
       : orgCount === 1
         ? state.catalog.organizations[0].title
         : `${orgCount} enti`;
-  ui.orgLead.textContent = `Catalogo di ${orgLabel}: ${state.catalog.services.length} servizi pubblici in formato CPSV-AP.`;
+  ui.orgLead.textContent = `${state.catalog.services.length} servizi · ${orgLabel} · ${state.catalog.sources.length} fonti`;
   ui.statsPanel.innerHTML = `
     <article class="stat-card">
       <span class="stat-card__value">${state.catalog.services.length}</span>
       <span class="stat-card__label">Servizi</span>
-    </article>
-    <article class="stat-card">
-      <span class="stat-card__value">${state.catalog.addresseeOptions.length}</span>
-      <span class="stat-card__label">Destinatari</span>
     </article>
     <article class="stat-card">
       <span class="stat-card__value">${orgCount}</span>
@@ -411,27 +414,11 @@ function renderHero() {
     </article>
     <article class="stat-card">
       <span class="stat-card__value">${state.catalog.servicesWithLifeEvents}</span>
-      <span class="stat-card__label">Con eventi della vita</span>
-    </article>
-    <article class="stat-card">
-      <span class="stat-card__value">${state.catalog.lifeEventMappingCounts.ade || 0}</span>
-      <span class="stat-card__label">AdE curati</span>
-    </article>
-    <article class="stat-card">
-      <span class="stat-card__value">${state.catalog.lifeEventMappingCounts.draft || 0}</span>
-      <span class="stat-card__label">INPS bozza</span>
-    </article>
-    <article class="stat-card">
-      <span class="stat-card__value">${state.catalog.lifeEventMappingCounts.manual || 0}</span>
-      <span class="stat-card__label">INAIL manuali</span>
-    </article>
-    <article class="stat-card">
-      <span class="stat-card__value">${state.catalog.lifeEventOptions.length}</span>
-      <span class="stat-card__label">Eventi della vita</span>
+      <span class="stat-card__label">Con eventi vita</span>
     </article>
     <article class="stat-card">
       <span class="stat-card__value">${state.catalog.sources.length}</span>
-      <span class="stat-card__label">Fonti caricate</span>
+      <span class="stat-card__label">Fonti</span>
     </article>
   `;
 }
@@ -485,109 +472,173 @@ function renderServiceDetail(service) {
     `;
   }
 
-  const orgTitle = service.organization?.title || "—";
+  const orgTitle = service.organization?.title || "Ente non indicato";
+  const mappingBadge = renderLifeEventMappingBadge(service.lifeEventMapping);
+  const addresseeChips = service.addressees
+    .map((entry) => `<span class="cpsv-chip">${escapeHtml(entry.label)}</span>`)
+    .join("");
+  const lifeEventChips = service.lifeEvents
+    .map((entry) => `<span class="cpsv-chip cpsv-chip--life-event">${escapeHtml(entry.label)}</span>`)
+    .join("");
+
+  const metaChips = [
+    mappingBadge,
+    service.modified ? `<span class="cpsv-chip">Aggiornato ${escapeHtml(formatDate(service.modified))}</span>` : "",
+    service.language ? `<span class="cpsv-chip">${escapeHtml(shortLanguage(service.language))}</span>` : "",
+  ]
+    .filter(Boolean)
+    .join("");
 
   return `
-    <article class="cpsv-detail">
+    <article class="cpsv-sheet">
       <nav class="cpsv-breadcrumb" aria-label="Percorso">
-        <button type="button" data-goto-catalog>Catalogo</button>
-        <span aria-hidden="true">→</span>
-        <span>${escapeHtml(service.title)}</span>
+        <button type="button" data-goto-catalog>← Catalogo</button>
       </nav>
 
-      <h1 class="cpsv-detail__title">${escapeHtml(service.title)}</h1>
-      ${
-        service.abstract
-          ? `<p class="cpsv-detail__lead">${escapeHtml(service.abstract)}</p>`
-          : ""
-      }
-      ${
-        service.description
-          ? `<p class="cpsv-detail__body">${escapeHtml(service.description)}</p>`
-          : ""
-      }
+      <header class="cpsv-sheet__header">
+        <p class="cpsv-sheet__org">${escapeHtml(orgTitle)}</p>
+        <div class="cpsv-sheet__title-row">
+          <h1 class="cpsv-sheet__title">${escapeHtml(service.title)}</h1>
+          ${
+            service.externalUrl
+              ? `<a class="cpsv-cta cpsv-cta--header" href="${escapeHtml(service.externalUrl)}" target="_blank" rel="noopener noreferrer">Vai al servizio</a>`
+              : ""
+          }
+        </div>
+        ${
+          service.abstract
+            ? `<p class="cpsv-sheet__lead">${escapeHtml(service.abstract)}</p>`
+            : ""
+        }
+        ${metaChips ? `<div class="cpsv-chip-row">${metaChips}</div>` : ""}
+      </header>
 
-      <div class="cpsv-kv">
-        ${renderKv("Ente che pubblica", orgTitle)}
-        ${renderKv("Codice servizio", service.serviceCode || service.identifier || "—")}
-        ${renderKv("Pubblicato", service.issued || "—")}
-        ${renderKv("Ultimo aggiornamento", service.modified || "—")}
-        ${renderKv("Lingua", service.language || "—")}
+      <div class="cpsv-sheet__body">
+        ${
+          service.description
+            ? `<section class="cpsv-sheet__section">
+                <h2>Descrizione</h2>
+                <p class="cpsv-sheet__prose">${escapeHtml(service.description)}</p>
+              </section>`
+            : ""
+        }
+
+        <section class="cpsv-sheet__section">
+          <h2>Informazioni</h2>
+          <dl class="cpsv-sheet__facts">
+            ${renderFact("Ente che pubblica", orgTitle)}
+            ${renderFact("Codice servizio", service.serviceCode || service.identifier)}
+            ${renderFact("Pubblicato", formatDate(service.issued))}
+            ${renderFact("Ultimo aggiornamento", formatDate(service.modified))}
+            ${renderFact("Lingua", shortLanguage(service.language))}
+          </dl>
+        </section>
+
+        ${
+          service.addressees.length
+            ? `<section class="cpsv-sheet__section">
+                <h2>Destinatari</h2>
+                <div class="cpsv-chip-row">${addresseeChips}</div>
+              </section>`
+            : ""
+        }
+
+        ${
+          service.lifeEvents.length || service.lifeEventMapping
+            ? `<section class="cpsv-sheet__section">
+                <h2>Eventi della vita</h2>
+                ${renderLifeEventMappingDetail(service.lifeEventMapping)}
+                ${lifeEventChips ? `<div class="cpsv-chip-row">${lifeEventChips}</div>` : ""}
+              </section>`
+            : ""
+        }
+
+        ${
+          service.channels.length
+            ? `<section class="cpsv-sheet__section">
+                <h2>Canali di accesso</h2>
+                <ul class="cpsv-channel-cards">
+                  ${service.channels
+                    .map(
+                      (channel) => `
+                        <li class="cpsv-channel-card">
+                          <span class="cpsv-channel-card__type">${escapeHtml(channel.label)}</span>
+                          ${
+                            channel.url
+                              ? `<a href="${escapeHtml(channel.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(channel.url)}</a>`
+                              : `<span class="cpsv-channel-card__missing">URL non disponibile</span>`
+                          }
+                        </li>`,
+                    )
+                    .join("")}
+                </ul>
+              </section>`
+            : ""
+        }
+
+        ${
+          service.inputs.length
+            ? `<section class="cpsv-sheet__section">
+                <h2>Cosa serve</h2>
+                <ul class="cpsv-sheet__list">
+                  ${service.inputs.map((input) => `<li>${escapeHtml(input.label)}</li>`).join("")}
+                </ul>
+              </section>`
+            : ""
+        }
+
+        ${
+          service.processingTime
+            ? `<section class="cpsv-sheet__section">
+                <h2>Tempi di lavorazione</h2>
+                <p class="cpsv-sheet__prose">${escapeHtml(service.processingTime)}</p>
+              </section>`
+            : ""
+        }
       </div>
 
-      ${
-        service.addressees.length
-          ? `<section class="cpsv-section">
-              <h2>Destinatari</h2>
-              <div class="cpsv-chip-row">
-                ${service.addressees.map((entry) => `<span class="cpsv-chip">${escapeHtml(entry.label)}</span>`).join("")}
-              </div>
-            </section>`
-          : ""
-      }
-
-      ${
-        service.lifeEvents.length
-          ? `<section class="cpsv-section">
-              <h2>Eventi della vita</h2>
-              ${renderLifeEventMappingDetail(service.lifeEventMapping)}
-              <div class="cpsv-chip-row">
-                ${service.lifeEvents.map((entry) => `<span class="cpsv-chip cpsv-chip--life-event">${escapeHtml(entry.label)}</span>`).join("")}
-              </div>
-            </section>`
-          : ""
-      }
-
-      ${
-        service.channels.length
-          ? `<section class="cpsv-section">
-              <h2>Canali</h2>
-              <ul class="cpsv-channel-list">
-                ${service.channels
-                  .map(
-                    (channel) =>
-                      `<li><strong>${escapeHtml(channel.label)}</strong>${
-                        channel.url
-                          ? `: <a href="${escapeHtml(channel.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(channel.url)}</a>`
-                          : " — URL non disponibile"
-                      }</li>`,
-                  )
-                  .join("")}
-              </ul>
-            </section>`
-          : ""
-      }
-
-      ${
-        service.inputs.length
-          ? `<section class="cpsv-section">
-              <h2>Input richiesti</h2>
-              <ul class="cpsv-channel-list">
-                ${service.inputs.map((input) => `<li>${escapeHtml(input.label)}</li>`).join("")}
-              </ul>
-            </section>`
-          : ""
-      }
-
-      ${
-        service.processingTime
-          ? `<section class="cpsv-section">
-              <h2>Tempi di lavorazione</h2>
-              <p>${escapeHtml(service.processingTime)}</p>
-            </section>`
-          : ""
-      }
-
-      <section class="cpsv-section">
+      <footer class="cpsv-sheet__footer">
         ${
           service.externalUrl
-            ? `<a class="cpsv-cta" href="${escapeHtml(service.externalUrl)}" target="_blank" rel="noopener noreferrer">Vai al servizio</a>`
+            ? `<a class="cpsv-cta" href="${escapeHtml(service.externalUrl)}" target="_blank" rel="noopener noreferrer">Vai al servizio online</a>`
             : `<span class="cpsv-cta is-disabled" aria-disabled="true">Vai al servizio</span>
                <p class="cpsv-cta-note">Nessun URL pubblico disponibile per questo servizio.</p>`
         }
-      </section>
+      </footer>
     </article>
   `;
+}
+
+function renderFact(label, value) {
+  if (!value) return "";
+  return `
+    <div class="cpsv-sheet__fact">
+      <dt>${escapeHtml(label)}</dt>
+      <dd>${escapeHtml(value)}</dd>
+    </div>
+  `;
+}
+
+function formatDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+  return date.toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" });
+}
+
+function shortLanguage(value) {
+  if (!value) return "";
+  if (/ITA|it\b/i.test(value)) return "Italiano";
+  if (/ENG|en\b/i.test(value)) return "English";
+  return getLastPathSegment(value);
+}
+
+function getLastPathSegment(value) {
+  try {
+    return decodeURIComponent(String(value)).split(/[#/]/).filter(Boolean).pop() || String(value);
+  } catch {
+    return String(value);
+  }
 }
 
 function renderLifeEventMappingBadge(mapping) {
@@ -632,15 +683,6 @@ function renderLifeEventLegend(catalog) {
   `;
 }
 
-function renderKv(label, value) {
-  return `
-    <div class="cpsv-kv__row">
-      <div class="cpsv-kv__label">${escapeHtml(label)}</div>
-      <div class="cpsv-kv__value">${escapeHtml(value)}</div>
-    </div>
-  `;
-}
-
 function showStatus(message) {
   ui.appStatus.textContent = message;
   ui.appStatus.classList.add("is-visible");
@@ -651,6 +693,7 @@ function showStatus(message) {
 }
 
 function escapeHtml(value) {
+  if (value == null || value === "undefined" || value === "null") return "";
   return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
