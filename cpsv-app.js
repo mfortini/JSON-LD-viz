@@ -195,7 +195,8 @@ function onViewClick(event) {
 
   const orgFilter = event.target.closest("[data-organization-pick]");
   if (orgFilter && state.view === "catalog") {
-    state.organizationFilter = orgFilter.dataset.organizationPick;
+    const picked = orgFilter.dataset.organizationPick;
+    state.organizationFilter = state.organizationFilter === picked ? "all" : picked;
     updateCatalogResults();
   }
 }
@@ -361,6 +362,10 @@ function updateCatalogResults() {
   const organizationEl = root.querySelector("[data-organization-filter]");
   if (organizationEl && document.activeElement !== organizationEl) {
     organizationEl.value = state.organizationFilter;
+  }
+
+  for (const button of root.querySelectorAll("[data-organization-pick]")) {
+    button.classList.toggle("is-active", button.dataset.organizationPick === state.organizationFilter);
   }
 
   const lifeEventEl = root.querySelector("[data-life-event-filter]");
