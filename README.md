@@ -23,3 +23,16 @@ Ottimizzata in particolar modo per gli standard ontologici per le Pubbliche Ammi
 * `comune-special-views.js`: Layout SVG dedicati (albero organigramma, diagramma input/output servizi).
 * `styles.css`: Fogli di stile completi con variabili semantiche, animazioni micro-interattive e componentistica custom ispirata ai migliori design system (layout CSS Grid/Flexbox moderno).
 * `app.js`: Contiene tutto il core logico del viewer generico. È diviso per ambiti: inizializzazione eventi, parser JSON-LD in struttura a grafo unio/bi-direzionale, motore fisico (Forza Layout) minimale basato su repulsione/attrazione, compression stream GZIP (Streams API).
+* `cpsv.html`: Viewer CPSV tecnico (carica un JSON-LD dal disco).
+* `catalogo-cpsv/`: **Catalogo cittadini** (build Vite + Bootstrap Italia dal monorepo Portalone CPSV). Il link «Catalogo CPSV» in homepage punta qui.
+
+## Aggiornare il Catalogo CPSV (cittadini)
+
+La cartella `catalogo-cpsv/` non si edita a mano: si rigenera dal monorepo Portalone CPSV:
+
+```bash
+cd ../portalone   # monorepo Portalone CPSV
+npm run build:viz
+```
+
+Poi committa e pusha in questo repository.
