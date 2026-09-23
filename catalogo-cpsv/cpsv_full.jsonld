@@ -68667,6 +68667,38 @@
       "foaf:homepage": "https://www.anagrafenazionale.interno.it/"
     },
     {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Persone iscritte all’Anagrafe Nazionale che intendono dichiarare, sotto la propria responsabilità, i propri dati anagrafici."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Un documento di identità valido (carta d’identità o passaporto)."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi scaricare l‘autocertificazione direttamente oppure inviarla all’indirizzo email che hai salvato nella sezione “I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio è immediato."
+      }
+    },
+    {
       "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione/",
       "@type": "cpsv:PublicService",
       "cpsv:name": {
@@ -68686,7 +68718,31 @@
       "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione/",
       "dct:description": {
         "@language": "it",
+        "@value": "L’autocertificazione è una dichiarazione che sostituisce un certificato. È prodotta e sottoscritta direttamente dalla persona interessata, alla quale si riferiscono i dati personali. L’autocertificazione sostituisce il certificato senza che sia necessario presentare in seguito anche il certificato vero e proprio. È valida e utilizzabile nei rapporti con la Pubblica Amministrazione, con i gestori di pubblici servizi e tra privati .\nSono previsti alcuni casi, tuttavia, in cui un certificato non può essere sostituito da un’autocertificazione: per esempio, nei rapporti con l’autorità giudiziaria, nelle pratiche organizzative di un matrimonio o per atti da trasmettere all’estero.\nCon l’ autocertificazione puoi dichiarare i dati relativi a:\nnascita; stato civile; cittadinanza; famiglia anagrafica; residenza; esistenza in vita."
+      },
+      "dct:abstract": {
+        "@language": "it",
         "@value": "Ottieni subito l’autocertificazione sostitutiva di un certificato anagrafico."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "L’autocertificazione è gratuita."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi e seleziona il servizio di “Autocertificazione”. SELEZIONA I DATI CHE VUOI MOSTRARE NELL’AUTOCERTIFICAZIONE Puoi decidere se inserire tutti i dati disponibili o solo alcuni. INSERISCI IL NUMERO DEL TUO DOCUMENTO D’IDENTITÀ Il numero della tua carta di identità sarà già compilato se presente a sistema. In alternativa, inserisci i riferimenti di un tuo documento scegliendo tra carta di identità o passaporto. VERIFICA IL RIEPILOGO E OTTIENI L’AUTOCERTIFICAZIONE Controlla che i dati mostrati siano corretti attraverso l’anteprima e ottieni l’autocertificazione. Puoi scaricarla direttamente oppure inviarla all’indirizzo email che hai salvato nella sezione “I tuoi dati”."
       },
       "cpsv:hasChannel": {
         "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione/#channel-online-0",
@@ -68703,6 +68759,38 @@
         "cpsv-portalone:badge": "manual",
         "cpsv-portalone:sourceField": "life_event_overrides.json",
         "cpsv-portalone:sourceValue": "https://www.anagrafenazionale.interno.it/area-cittadino/autocertificazione/"
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Persone iscritte all’Anagrafe Nazionale, che:\nhanno cambiato abitazione nell’ambito dello stesso comune ; hanno cambiato abitazione trasferendosi in un altro comune ; sono rientrate in Italia dall’estero (se persone con cittadinanza italiana iscritte all’AIRE )."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Durante la compilazione della dichiarazione di residenza ti sarà richiesto di fornire alcune informazioni: per esempio, gli estremi catastali dell’immobile presso cui ti trasferisci nel caso in cui sia di tua proprietà, oppure gli estremi del contratto di locazione e la carta d’identità della persona proprietaria se l’immobile non è tuo. Prima di iniziare la dichiarazione, verifica di averli a portata di mano.\nPer le persone con cittadinanza extra UE è obbligatorio allegare il permesso di soggiorno .\nIn generale, ti suggeriamo di allegare qualunque documento tu ritenga necessario per agevolare la lavorazione della pratica presso il tuo comune."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Una volta inviata la dichiarazione, puoi verificare in ogni momento lo stato di avanzamento della pratica nella sezione “Le tue richieste”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Una volta inviata, la dichiarazione di cambio di residenza è gestita direttamente dall’ufficio anagrafe del comune di competenza. Il comune in cui ti trasferisci deve registrare e accogliere la dichiarazione con riserva entro 2 giorni dal ricevimento.\nSi entra poi in una fase di accertamento di massimo 45 giorni. Se l’esito è positivo, il comune accoglie definitivamente la richiesta con decorrenza dalla data di presentazione.\nI tempi di lavorazione, quindi, possono variare in base ai singoli casi.\nPuoi seguire lo stato di lavorazione nella sezione Le tue richieste . Riceverai comunque una notifica sia per email (se indicata nei tuoi contatti) sia tramite app IO ."
       }
     },
     {
@@ -68725,7 +68813,31 @@
       "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza/",
       "dct:description": {
         "@language": "it",
-        "@value": "Invia al comune la dichiarazione per cambiare residenza o rimpatriare in Italia."
+        "@value": "Il servizio ti consente di inviare per te e per la tua famiglia anagrafica una dichiarazione di cambio di residenza al comune di competenza, per comunicare i dati della nuova abitazione e i dati delle persone della tua famiglia che si trasferiscono con te."
+      },
+      "dct:abstract": {
+        "@language": "it",
+        "@value": "Invia online al tuo comune la dichiarazione di cambio di residenza per te e per la tua famiglia anagrafica."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "La dichiarazione di cambio di residenza è gratuita ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi e seleziona il servizio di “Cambio di residenza” . SCEGLI LA TIPOLOGIA DI CAMBIO DI RESIDENZA Scegli il tipo di dichiarazione tra le due seguenti opzioni: Nuova residenza , se vai ad abitare in una casa dove non risiedono altre persone o se nella casa dove ti trasferisci ci sono altre persone con cui non hai vincoli di parentela o affettivi (è il caso di un gruppo di studenti che condividono un appartamento); Residenza in famiglia esistente , se, viceversa, nella nuova casa ci sono persone con le quali hai vincoli di parentela o affettivi (è il caso di una coppia di fidanzati). SELEZIONA I COMPONENTI DELLA FAMIGLIA Seleziona le persone della tua famiglia anagrafica coinvolte nel cambio di residenza e inserisci per ognuna i dati richiesti. INSERISCI LE INFORMAZIONI RELATIVE ALLA NUOVA RESIDENZA Sono richiesti i dati relativi al nuovo indirizzo di residenza, al titolo di occupazione dell’immobile e ai tuoi dati di contatto. CARICA GLI ALLEGATI E VERIFICA IL RIEPILOGO Allega tutti i documenti che ritieni necessari per agevolare la lavorazione della pratica presso il tuo comune, controlla il riepilogo e invia la richiesta."
       },
       "cpsv:hasChannel": {
         "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/cambio-di-residenza/#channel-online-0",
@@ -68793,6 +68905,318 @@
       }
     },
     {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi richiedere un certificato anagrafico per te o per un’altra persona che appartiene alla tua famiglia anagrafica ."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Se desideri ricevere il certificato via email o al tuo domicilio digitale, devi prima aver salvato queste informazioni nella sezione ”I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "I certificati anagrafici emessi online attraverso l’Anagrafe Nazionale hanno la stessa validità giuridica di quelli rilasciati presso gli sportelli anagrafici comunali. Ogni certificato viene prodotto in formato .pdf non modificabile. Riporta il logo del Ministero dell’Interno e la dicitura “Anagrafe Nazionale della Popolazione Residente”. Inoltre, contiene il QR code e il sigillo elettronico qualificato del Ministero dell’Interno, non visibile a occhio nudo, che ne garantiscono l’autenticità, l’integrità e l’accettazione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "L’ emissione del certificato anagrafico è immediata : puoi scaricarlo oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione ”I tuoi dati”. Il certificato sarà valido per 3 mesi dalla data di emissione ."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificati anagrafici"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati anagrafici"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/",
+      "dct:isPartOf": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il certificato è un documento rilasciato da un’amministrazione pubblica che ti consente di dimostrare stati, qualità personali e fatti contenuti in albi, elenchi o registri pubblici o, comunque, accertati da soggetti titolari di funzioni pubbliche.\nTramite il servizio dell’Anagrafe Nazionale puoi richiedere i seguenti certificati:\nanagrafico di nascita; anagrafico di matrimonio; di cittadinanza; di esistenza in vita; di residenza; di residenza con decorrenza 01/01/2022; di residenza AIRE; di stato civile; di stato di famiglia; di stato di famiglia e di stato civile; di residenza in convivenza; di stato di famiglia AIRE; di stato di famiglia con rapporti di parentela; di stato libero; anagrafico di unione civile; di contratto di convivenza.\nIl certificato di residenza con decorrenza dal 01/01/2022 riporta tutte le residenze italiane del cittadino a partire dalla data indicata (conclusione del subentro dei comuni nell’ANPR). Non sono, invece, presenti le residenze estere per le quali è possibile richiedere un “Certificato di residenza AIRE”.\nPer quelli non indicati, per esempio i certificati storici o di morte, ti invitiamo a rivolgerti allo sportello del tuo comune di residenza o di iscrizione AIRE (se sei residente all’estero).\nPuoi chiedere i certificati anagrafici singolarmente oppure in forma contestuale , cioè riunendo diverse tipologie di dati in un unico certificato (le combinazioni possibili sono suggerite in automatico dal portale).\nTi ricordiamo che il certificato anagrafico è valido e utilizzabile solo nei rapporti tra privati . Nei rapporti con gli organi della Pubblica Amministrazione e con i gestori di pubblici servizi, il certificato anagrafico è sempre sostituito con l’ autocertificazione ."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-anagrafici#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "L’emissione di un certificato anagrafico è gratuita se l’uso per cui lo richiedi rientra tra i motivi di esenzione previsti dalla legge. In tutti gli altri casi, è previsto il pagamento di un’ imposta di bollo di 16 euro ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Certificati anagrafici” . SELEZIONA LA PERSONA INTESTATARIA A chi è intestato il certificato? Puoi richiederlo per te o per un’altra persona che appartiene alla tua famiglia anagrafica . SELEZIONA LA TIPOLOGIA Quale certificato anagrafico ti serve? Scegli tra le 15 tipologie disponibili online . SELEZIONA L’USO Per quale uso richiedi il certificato? Puoi richiederlo gratuitamente se l’uso rientra tra i motivi di esenzione previsti dalla legge. Nel caso in cui, invece, tu debba richiedere un certificato in bollo, dovrai successivamente procedere al pagamento dell’ imposta di 16 euro . SELEZIONA L’EVENTUALE SECONDA LINGUA Se risiedi in un comune bilingue, puoi scegliere la seconda lingua di emissione per il tuo certificato. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nel certificato sono corrette? Verificale nell’ anteprima . VAI AL PAGAMENTO Procedi all’eventuale pagamento dell’imposta di bollo di 16 euro. Il sistema ti reindirizzerà verso un portale dedicato. OTTIENI IL CERTIFICATO Terminata l’operazione di pagamento, puoi tornare sull’Anagrafe nazionale per scaricare il certificato oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione ”I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi richiedere un certificato elettorale solo per te . A differenza del certificato anagrafico, attraverso il servizio dell’Anagrafe Nazionale non è possibile richiedere un certificato elettorale per un’altra persona della tua famiglia anagrafica."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Se desideri ricevere il certificato via email o al tuo domicilio digitale, devi prima aver salvato queste informazioni nella sezione “I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "I certificati elettorali emessi online attraverso l’Anagrafe Nazionale hanno la stessa validità giuridica di quelli rilasciati presso gli uffici elettorali comunali . Ogni certificato viene prodotto in formato .pdf non modificabile. Riporta il logo del Ministero dell’interno e la dicitura “Anagrafe Nazionale della Popolazione Residente”. Inoltre, contiene il QR code e il sigillo elettronico qualificato del Ministero dell’interno, non visibile a occhio nudo, che ne garantiscono l’autenticità, l’integrità e l’accettazione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "L’ emissione del certificato elettorale è immediata : puoi scaricarlo oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione ”I tuoi dati”. Il certificato sarà valido per 6 mesi dalla data di emissione ."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificati elettorali"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati elettorali"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/",
+      "dct:isPartOf": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Sono disponibili 2 tipologie di certificato elettorale :\ndi godimento dei diritti politici; di iscrizione nelle liste elettorali.\nPuoi chiedere i certificati singolarmente oppure in forma contestuale , cioè riunendo entrambe le tipologie in un unico certificato.\nTi ricordiamo che i certificati elettorali non possono essere sostituiti dall’ autocertificazione ."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-elettorali#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "L’emissione di un certificato elettorale è gratuita se l’uso per cui lo richiedi rientra tra i motivi di esenzione previsti dalla legge. In tutti gli altri casi, è previsto il pagamento di un’ imposta di bollo di 16 euro ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Certificati elettorali” . SELEZIONA LA TIPOLOGIA DI CERTIFICATO Quale certificato elettorale ti serve? Scegli tra le 2 tipologie disponibili . SELEZIONA L’USO Per quale uso richiedi il certificato? Puoi richiederlo gratuitamente se l’uso rientra tra i motivi di esenzione previsti dalla legge ( uso per iniziativa legislativa popolare , uso elettorale o uso referendario ). Nel caso in cui, invece, tu debba richiedere un certificato in bollo, dovrai successivamente procedere al pagamento dell’ imposta di 16 euro . SELEZIONA L’EVENTUALE SECONDA LINGUA Se risiedi in un comune bilingue, puoi scegliere la seconda lingua di emissione per il tuo certificato. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nel certificato sono corrette? Verificale nell’ anteprima . VAI AL PAGAMENTO Procedi all’eventuale pagamento dell’imposta di bollo di 16 euro. Il sistema ti reindirizzerà verso un portale di pagamento dedicato. OTTIENI IL CERTIFICATO Terminata l’operazione di pagamento, puoi tornare sull’Anagrafe Nazionale per scaricare il certificato oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione “I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi richiedere un certificato dello stato civile per te o per un figlio minore appartenente alla tua famiglia anagrafica e con lo stesso indirizzo di residenza."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Se desideri ricevere il certificato via email o al tuo domicilio digitale, devi prima aver salvato queste informazioni nella sezione “I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "I certificati dello stato civile emessi online attraverso l’Anagrafe Nazionale hanno la stessa validità giuridica di quelli rilasciati presso l’ufficio dello stato civile del tuo comune . Ogni certificato viene prodotto in formato .pdf non modificabile. Riporta il logo del Ministero dell’interno e la dicitura “Archivio Nazionale informatizzato dei registri dello Stato Civile”. Inoltre, contiene il QR code e il sigillo elettronico qualificato del Ministero dell’interno, non visibile a occhio nudo, che ne garantiscono l’autenticità, l’integrità e l’accettazione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "L’ emissione del certificato è immediata : puoi scaricarlo oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione I tuoi dati. I certificati dello stato civile sono validi 6 mesi dalla data di emissione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificati dello stato civile"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati dello stato civile"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/",
+      "dct:isPartOf": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "I certificati dello stato civile servono a dimostrare il luogo e la data dell’evento che si intende certificare e sono disponibili solo per gli atti formati digitalmente attraverso lo stato civile digitale (ANSC). Verifica nella pagina Numeri quando il comune che ha formato l’atto ha aderito allo stato civile digitale e ottieni i certificati formati successivamente alla data di adesione. L’Anagrafe Nazionale consente di certificare 3 tipi di evento:\nnascita; matrimonio; unione civile.\nTi ricordiamo che il certificato dello stato civile è valido e utilizzabile solo nei rapporti con i privati che te lo richiedano esplicitamente, oppure in casi specifici quali i rapporti con l’autorità giudiziaria, le pratiche organizzative di un matrimonio o per atti da trasmettere all’estero. Nei rapporti con gli organi della Pubblica Amministrazione e con i gestori di pubblici servizi, il certificato dello stato civile è sempre sostituito dall’ autocertificazione ."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#certificati-dello-stato-civile#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "L’emissione di un certificato dello stato civile è gratuita."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Certificati dello stato civile” . SELEZIONA LA PERSONA INTESTATARIA A chi è intestato il certificato? Puoi richiederlo per te o per un figlio minore appartenente alla tua famiglia anagrafica e con lo stesso indirizzo di residenza. SELEZIONA L’EVENTO Quale evento hai bisogno di certificare? Scegli tra le opzioni disponibili. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nel certificato sono corrette? Verificale nell’ anteprima . OTTIENI IL CERTIFICATO Puoi scaricare il certificato oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione I tuoi dati."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi richiedere un estratto per riassunto o per copia integrale per te o per un figlio minore appartenente alla tua famiglia anagrafica e con lo stesso indirizzo di residenza."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Se desideri ricevere l’estratto via email o al tuo domicilio digitale, devi prima aver salvato queste informazioni nella sezione “I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Gli estratti dello stato civile emessi online attraverso l’Anagrafe Nazionale hanno la stessa validità giuridica di quelli rilasciati presso l’ufficio dello stato civile del tuo comune . Ogni estratto viene prodotto in formato .pdf non modificabile. Riporta il logo del Ministero dell’Interno e la dicitura “Archivio Nazionale informatizzato dei registri dello Stato Civile”. Inoltre, contiene il QR code e il sigillo elettronico qualificato del Ministero dell’Interno, non visibile a occhio nudo, che ne garantiscono l’autenticità, l’integrità e l’accettazione, nonché la firma elettronica dell’ufficiale dello stato civile ."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Una volta inviata, la richiesta dell’estratto sarà gestita direttamente dall’ufficio dello stato civile del comune che ha formato l’atto. I tempi di lavorazione, quindi, possono variare in base ai singoli casi. Gli estratti dello stato civile sono validi 6 dalla data di emissione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Estratti dello stato civile"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Estratti dello stato civile"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/",
+      "dct:isPartOf": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati/"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Gli estratti dello stato civile, come i certificati dello stato civile, servono a dimostrare il luogo e la data dell’evento che si intende certificare ma riportano un maggior numero di informazioni.\nPuoi richiedere 2 tipi di estratto: l’ estratto per copia integrale e l’ estratto per riassunto . In particolare, l’estratto per copia integrale è la copia dell’atto stesso con tutte le sue componenti e tutte le annotazioni apposte. L’estratto per riassunto dello stato civile riassume l’atto integrale dello stato civile. La richiesta di un estratto deve essere sempre motivata.\nL’Anagrafe Nazionale consente di richiedere 3 tipi di evento :\nnascita; matrimonio; unione civile.\nTi ricordiamo che l’estratto dello stato civile è valido e utilizzabile solo nei rapporti con i privati che te lo richiedano esplicitamente, oppure in casi specifici quali i rapporti con l’autorità giudiziaria, le pratiche organizzative di un matrimonio o per atti da trasmettere all’estero. Nei rapporti con gli organi della Pubblica Amministrazione e con i gestori di pubblici servizi, l’estratto dello stato civile è sempre sostituito dall’ autocertificazione ."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/certificati#estratti-dello-stato-civile#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "L’emissione di un estratto dello stato civile è gratuita ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "Puoi selezionare in autonomia tutte le informazioni necessarie alla richiesta dell’estratto:\nVAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Estratti dello stato civile” . SELEZIONA LA PERSONA INTESTATARIA A chi è intestato il certificato? Puoi richiederlo per te o per un figlio minore appartenente alla tua famiglia anagrafica e con lo stesso indirizzo di residenza. SELEZIONA L'EVENTO E DESCRIVI IL MOTIVO DELLA RICHIESTA Seleziona l’ evento che hai bisogno di certificare e la tipologia di estratto (per riassunto o per copia integrale). In ogni caso, descrivi il motivo della tua richiesta. L’ufficio di stato civile valuterà se la motivazione fornita è relativa a un interesse personale e concreto. Una motivazione generica o non pertinente potrebbe portare al rifiuto della richiesta. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nella richiesta sono corrette? Verificale nel riepilogo. RICHIEDI L’ESTRATTO Quando richiedi l’estratto il sistema attribuisce un identificativo alla richiesta che viene trasmessa al comune che ha formato l’atto. A ogni cambio di stato della richiesta da parte del comune, ti verrà inviata una notifica per email. Puoi verificare in ogni momento lo stato di avanzamento della richiesta nella sezione “Le tue richieste”. Inoltre, quando il comune avrà approvato la richiesta, riceverai anche una notifica all’indirizzo email che hai salvato nella sezione “I tuoi dati” OTTIENI L’ESTRATTO Una volta che la richiesta è stata approvata dal Comune, puoi scaricare l’estratto dalla sezione “Le tue richieste” oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione “I tuoi dati”."
+      }
+    },
+    {
       "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/domicilio-digitale/",
       "@type": "cpsv:PublicService",
       "cpsv:name": {
@@ -68812,12 +69236,52 @@
       "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/domicilio-digitale/",
       "dct:description": {
         "@language": "it",
-        "@value": "Consulta il tuo indirizzo PEC per ricevere comunicazioni con valore legale dalla PA."
+        "@value": "Il domicilio digitale è un indirizzo di posta elettronica certificata (PEC) che sostituisce il tuo recapito fisico per l’invio delle comunicazioni con valore legale da parte della Pubblica Amministrazione, come atti, notifiche e avvisi."
+      },
+      "dct:abstract": {
+        "@language": "it",
+        "@value": "Visualizza nell’ANPR l’indirizzo di posta elettronica certificata (PEC) che hai comunicato sul portale INAD per ricevere comunicazioni con valore legale da parte della Pubblica Amministrazione."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "Puoi visualizzare il tuo domicilio digitale nella sezione “I tuoi dati” all’interno della tua area riservata dell’ANPR, dopo avere effettuato l’accesso con SPID, CIE o CNS. Ricorda che, per poterlo visualizzare, devi prima comunicarlo sul portale INAD : Apre una nuova finestra ."
       },
       "cpsv:hasChannel": {
         "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/domicilio-digitale/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/domicilio-digitale/"
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Persone iscritte all’Anagrafe Nazionale che hanno riscontrato un’incongruenza tra i dati presenti nella loro scheda anagrafica, consultabile nella sezione “I tuoi dati” dell’ area riservata , e i loro documenti."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Ti suggeriamo di allegare qualunque documento dimostri la versione corretta dei dati di cui chiedi la rettifica."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Una volta inviata la richiesta, puoi verificare in ogni momento lo stato di avanzamento della pratica nella sezione “Le tue richieste”. Inoltre, quando il tuo comune avrà completato la rettifica, riceverai una notifica all’indirizzo email che hai salvato nella sezione “I tuoi dati”."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Una volta inviata, la richiesta di rettifica sarà gestita direttamente dall’ufficio anagrafe del tuo comune. I tempi di lavorazione, quindi, possono variare in base ai singoli casi."
       }
     },
     {
@@ -68840,7 +69304,31 @@
       "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati/",
       "dct:description": {
         "@language": "it",
-        "@value": "Richiedi al tuo comune la correzione dei dati inesatti presenti sulla tua scheda anagrafica."
+        "@value": "Il servizio ti consente di inviare al tuo comune una richiesta di rettifica, cioè di correzione, di uno o più dati registrati nella tua scheda anagrafica: si può trattare, per esempio, di un errore ortografico presente nell’indirizzo oppure di un CAP incompleto.\nQUALI DATI PUOI RETTIFICARE?\nPuoi richiedere la correzione di errori di digitazione o di errata trascrizione dimostrabili attraverso la relativa documentazione (per esempio, allegando il documento d’identità, il passaporto, l’atto di nascita, ecc.).\nQUALI DATI NON PUOI RETTIFICARE?\nNon puoi utilizzare questo servizio per chiedere al comune di modificare il tuo indirizzo a seguito di un cambio di residenza. Per dichiarare un trasferimento, utilizza il servizio di cambio di residenza , sul sito dell’Anagrafe Nazionale. Inoltre, non puoi chiedere la correzione di quei dati anagrafici che comporterebbero, tra le altre cose, l’attribuzione di un nuovo codice fiscale (per esempio, non puoi chiedere di aggiornare il tuo nome o cognome). Per richiedere l’aggiornamento dei dati anagrafici che compongono il codice fiscale (nome, cognome, luogo e data di nascita), dovrai rivolgerti direttamente al tuo comune."
+      },
+      "dct:abstract": {
+        "@language": "it",
+        "@value": "Richiedi la correzione di uno o più dati registrati nella tua scheda anagrafica, se riscontri errori di digitazione o di errata trascrizione rispetto ai tuoi documenti."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi e seleziona il servizio di “Rettifica dati”. MODIFICA IL DATO ERRATO Inserisci il dato che ritieni corretto sulla base della documentazione in tuo possesso. ALLEGA LA DOCUMENTAZIONE La dimensione massima consentita per i documenti da allegare è di 1 MB. Puoi allegare immagini (in formato .png o .jpeg) oppure documenti (in formato .pdf). Gli allegati sono raccomandati, ma non obbligatori. VERIFICA IL RIEPILOGO Verifica la correttezza dei dati inseriti e invia la tua richiesta. ATTENDI L’ESITO DELLA TUA RICHIESTA Puoi verificare in ogni momento lo stato di avanzamento della pratica nella sezione “Le tue richieste”. Inoltre, quando il tuo comune avrà completato la rettifica, riceverai una notifica all’indirizzo email che hai salvato nella sezione “I tuoi dati”."
       },
       "cpsv:hasChannel": {
         "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/rettifica-dati/#channel-online-0",
@@ -68868,12 +69356,246 @@
       "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/",
       "dct:description": {
         "@language": "it",
-        "@value": "Trasferisci online la tua residenza in un comune italiano e registrati all'ANPR oppure richiedi il tuo certificato di nascita in Italia senza rinnovare l’iscrizione anagrafica. Se sei già residente, richiedi l’ iscrizione nelle liste elettorali ."
+        "@value": "Trasferisci la tua residenza presso un comune italiano e iscriviti all’Anagrafe nazionale. Se sei già residente in un comune italiano, puoi richiedere l’iscrizione nelle liste elettorali. Se sei nato in Italia e hai il codice fiscale italiano, puoi richiedere il tuo certificato di nascita anche senza essere residente in Italia. Registry services for European citizens: read this page in English"
       },
       "cpsv:hasChannel": {
         "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.anagrafenazionale.interno.it/servizi-al-cittadino/"
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio è rivolto ai cittadini europei e ai loro familiari che desiderano soggiornare in Italia per più di 3 mesi ."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Durante la compilazione della dichiarazione di residenza, ti sarà richiesto di fornire i dati personali riportati nei tuoi documenti. Prima di iniziare la dichiarazione, verifica di avere a portata di mano:\ncarta d’identità, passaporto o documento valido per l’espatrio; codice fiscale italiano, se lo possiedi; dati anagrafici e codice fiscale di una persona della famiglia presso cui ti trasferisci; estremi catastali dell’immobile dove abiterai se sei il proprietario, estremi del contratto di locazione, ovvero informazioni relative ad altro titolo di occupazione dell’immobile.\nAltri documenti possono essere necessari in base ai casi specifici.\nSe ti trasferisci per lavoro:\ndocumentazione che dimostri la tua qualità di lavoratore subordinato o autonomo.\nSe ti trasferisci per studio e non sei lavoratore:\ndocumentazione che attesti la tua iscrizione presso un istituto di formazione; autodichiarazione del possesso di risorse economiche sufficienti per non ricorrere all’assistenza sociale dello Stato; assicurazione sanitaria o altro titolo idoneo che copra tutti i rischi nel territorio nazionale.\nSe ti trasferisci senza essere lavoratore o studente:\nautodichiarazione del possesso di risorse economiche sufficienti per non ricorrere all’assistenza sociale dello Stato; assicurazione sanitaria o altro titolo idoneo che copra tutti i rischi nel territorio nazionale.\nSe ti stai ricongiungendo con un familiare:\ncertificato di matrimonio, se il ricongiungimento avviene tra coniugi; certificato di nascita con l’indicazione di paternità e maternità, se il ricongiungimento avviene tra figlio e genitore."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Una volta inviata la tua dichiarazione, puoi verificarne in ogni momento lo stato di avanzamento accedendo di nuovo al servizio e selezionando l’opzione “Ho una dichiarazione di trasferimento in corso”. Quando il comune a cui hai inviato la dichiarazione di trasferimento l’avrà accolta, riceverai una notifica via email."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Una volta inviata, la dichiarazione viene gestita direttamente dagli operatori d’anagrafe del comune di competenza. I tempi di lavorazione possono variare in base ai singoli casi.\nTi ricordiamo che:\nnon c’è un termine ultimo per l’iscrizione anagrafica; i cittadini europei e i loro familiari non incorrono in sanzioni pecuniarie o altre conseguenze per la mancata iscrizione anagrafica o per non avere con sé il proprio certificato di iscrizione anagrafica durante un controllo."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Trasferimento della residenza in Italia"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Trasferimento della residenza in Italia"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/",
+      "dct:isPartOf": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio ti consente di trasferirti in un comune italiano e presentare una dichiarazione di residenza. A trasferimento completato, otterrai l’iscrizione anagrafica e potrai utilizzare i servizi dell’Anagrafe nazionale."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#trasferimento-della-residenza-in-italia#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "La dichiarazione di trasferimento in un comune italiano e la registrazione all’Anagrafe nazionale sono gratuite ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi per cittadini europei e seleziona l’opzione “ Voglio iniziare ora una dichiarazione di trasferimento ”. INSERISCI I TUOI DATI Inserisci i tuoi dati anagrafici e il tuo indirizzo email. SCEGLI LA TIPOLOGIA DI CAMBIO DI RESIDENZA Scegli il tipo di dichiarazione tra le due seguenti opzioni: Nuova residenza , se vai ad abitare in una casa dove non risiedono altre persone o se nella casa dove ti trasferisci ci sono altre persone con cui non hai vincoli di parentela o affettivi (è il caso di un gruppo di studenti che condividono un appartamento); Residenza in famiglia esistente , se, viceversa, nella nuova casa ci sono persone con le quali hai vincoli di parentela o affettivi (è il caso di una coppia di fidanzati). COMPLETA I DATI RICHIESTI Completa i tuoi dati personali, inserisci quelli delle persone che si trasferiscono insieme a te, le informazioni relative alla residenza presso cui ti trasferisci e i dati dell’immobile dove abiterai. ALLEGA LA DOCUMENTAZIONE Allega i documenti richiesti. Puoi caricarli dal tuo dispositivo oppure, se già in possesso di una identità digitale europea eIDAS, puoi utilizzare il sistema OOTS (Once Only Technical System) per recuperarli direttamente online e trasmetterli all’Anagrafe Nazionale. AGGIUNGI I DATI DI REPERIBILITÀ Se lo desideri, inserisci il tuo numero di telefono e la fascia di reperibilità per consentire la verifica della tua presenza nell’abitazione. VERIFICA IL RIEPILOGO E INVIA Controlla che i dati mostrati siano corretti e invia la dichiarazione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cittadini europei nati in Italia , in possesso del proprio codice fiscale italiano ma non più iscritti in anagrafe ."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il tuo codice fiscale italiano , di norma attribuito contestualmente alla registrazione della nascita."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Ogni certificato viene prodotto in formato pdf non modificabile. Riporta il logo del Ministero dell’Interno e la dicitura “Anagrafe Nazionale della Popolazione Residente”. Inoltre, contiene il QR code e il sigillo elettronico qualificato del Ministero dell’Interno, non visibile a occhio nudo, che ne garantiscono l’autenticità, l’integrità e l’accettazione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "L’ emissione del certificato è immediata : una volta visualizzata l’anteprima, puoi scaricarlo o riceverlo via email. Il certificato sarà valido 3 mesi dalla data di emissione."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificato di nascita"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificato di nascita"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/",
+      "dct:isPartOf": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il certificato di nascita è il documento che attesta la nascita di una persona e ne specifica nome, cognome, data e luogo di nascita, numero dell’atto di nascita. Attraverso il servizio per cittadini europei messo a disposizione dall’Anagrafe nazionale, se sei nato in Italia ma non più iscritto in anagrafe, puoi richiedere il certificato al comune in cui hai risieduto direttamente online e senza che sia necessario iscriverti di nuovo all’Anagrafe nazionale : è sufficiente che tu sia in possesso del tuo codice fiscale italiano ."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#certificato-di-nascita#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "L’emissione del certificato è gratuita se l’uso per cui lo richiedi rientra tra i motivi di esenzione previsti dalla legge. In tutti gli altri casi, è previsto il pagamento di un’ imposta di bollo di 16,00 € ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi ai servizi per cittadini europei e seleziona “Richiedi il certificato di nascita” . INSERISCI IL TUO CODICE FISCALE Per utilizzare il servizio, è necessario inserire il tuo codice fiscale italiano. SELEZIONA L’USO Seleziona l’ uso per cui richiedi il certificato . Puoi richiederlo gratuitamente se l’uso rientra tra i motivi di esenzione previsti dalla legge. Nel caso in cui, invece, tu debba richiedere un certificato in bollo, per procedere al pagamento dell’imposta di 16,00 € sarai reindirizzato verso un portale dedicato. OTTIENI IL CERTIFICATO Terminata l’operazione di pagamento, potrai tornare sul portale dell’Anagrafe nazionale e ottenere il tuo certificato."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cittadini di uno Stato dell’Unione europea residenti in Italia."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#input",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Aver già ottenuto l’ iscrizione all’Anagrafe nazionale a seguito del tuo trasferimento in Italia. Essere in possesso di un’ identità digitale (SPID, CIE, CNS o eIDAS). Poter indicare un indirizzo di ultima residenza nel tuo Stato estero di origine . Se lo desideri, indicare un recapito telefonico al quale il comune possa contattarti in caso di necessità."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#output",
+      "@type": "cpsv:Output",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Se la richiesta di iscrizione nelle liste elettorali viene accolta, puoi consultare i tuoi dati elettorali direttamente nell’area riservata dell’Anagrafe nazionale."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#processing-time",
+      "@type": "cpsv:ServiceProcessingTime",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Dopo l’invio tramite il portale dell’Anagrafe nazionale, la richiesta viene gestita direttamente dall’ufficio elettorale del comune di competenza. Riceverai una notifica sullo stato di avanzamento della richiesta all’indirizzo email o al domicilio digitale indicati nel tuo profilo personale. I tempi di lavorazione possono variare in base ai singoli casi. Una volta approvata, l’iscrizione nelle liste elettorali non ha scadenza."
+      }
+    },
+    {
+      "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Iscrizione nelle liste elettorali"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Iscrizione nelle liste elettorali"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.anagrafenazionale.interno.it"
+      },
+      "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/",
+      "dct:isPartOf": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei/"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "L’iscrizione nelle liste elettorali del comune italiano dove risiedi ti consente di esercitare il diritto di voto in occasione delle elezioni comunali e circoscrizionali."
+      },
+      "cv:addressee": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#addressee"
+      },
+      "cpsv:hasInput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#input"
+      },
+      "cpsv:hasOutput": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#output"
+      },
+      "cpsv:hasProcessingTime": {
+        "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/servizi-per-cittadini-europei#iscrizione-nelle-liste-elettorali#processing-time"
+      },
+      "cpsv:hasCost": {
+        "@language": "it",
+        "@value": "L’iscrizione nelle liste elettorali è gratuita ."
+      },
+      "anpr:howTo": {
+        "@language": "it",
+        "@value": "VAI AL SERVIZIO Accedi all’area riservata dell’Anagrafe nazionale con la tua identità digitale (SPID, CIE, CNS o eIDAS) e seleziona il servizio “Iscrizione nelle liste elettorali” . INSERISCI UNA NUOVA RICHIESTA Ti ricordiamo che non è possibile iniziare un nuovo inserimento se sono presenti richieste ancora in lavorazione. Verifica i dati relativi alle tue generalità, alla cittadinanza e alla residenza in Italia presenti sulla tua scheda, quindi compila i “Dati aggiuntivi” , indicando un indirizzo di ultima residenza nel tuo Stato estero di origine e, se lo desideri, un recapito telefonico al quale il comune possa contattarti in caso di necessità. VERIFICA IL RIEPILOGO E INVIA Controlla che i dati mostrati siano corretti e invia la richiesta ."
       }
     },
     {
@@ -74758,96 +75480,96 @@
     "https://www.ipzs.it/",
     "https://www.lavoro.gov.it/"
   ],
-  "dct:modified": "2026-09-15T16:37:20.501630+00:00",
+  "dct:modified": "2026-09-23T08:29:29.305323+00:00",
   "cpsv-portalone:sourceCatalogs": [
     {
       "@id": "urn:cpsv-portalone:source:ACI",
+      "dct:modified": "2026-09-15T11:36:28.968036+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi online ACI (aci.gov.it)"
       },
-      "dct:modified": "2026-09-15T11:36:28.968036+00:00",
       "dct:source": "https://aci.gov.it/servizi/tutti-i-servizi-online/"
     },
     {
       "@id": "urn:cpsv-portalone:source:INPS",
+      "dct:modified": "2026-09-15T14:08:56.848955+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi INPS (schede servizio da inps.it)"
       },
-      "dct:modified": "2026-09-15T14:08:56.848955+00:00",
       "dct:source": "https://www.inps.it"
     },
     {
       "@id": "urn:cpsv-portalone:source:AdE",
+      "dct:modified": "2026-09-15T11:41:37.439279+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi AdE (schede servizio da agenziaentrate.gov.it)"
       },
-      "dct:modified": "2026-09-15T11:41:37.439279+00:00",
       "dct:source": "https://www.agenziaentrate.gov.it/portale/servizi"
     },
     {
       "@id": "urn:cpsv-portalone:source:INAIL",
+      "dct:modified": "2026-09-15T11:46:44.419044+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi online INAIL (Servizi per te da inail.it)"
       },
-      "dct:modified": "2026-09-15T11:46:44.419044+00:00",
       "dct:source": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te.html"
     },
     {
       "@id": "urn:cpsv-portalone:source:ANPR",
+      "dct:modified": "2026-09-23T08:29:29.305323+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi ANPR (area cittadino)"
       },
-      "dct:modified": "2026-09-15T16:36:58.094593+00:00",
       "dct:source": "https://www.anagrafenazionale.interno.it/"
     },
     {
       "@id": "urn:cpsv-portalone:source:MIT",
+      "dct:modified": "2026-09-15T16:37:20.501630+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi online Motorizzazione Civile"
       },
-      "dct:modified": "2026-09-15T16:37:20.501630+00:00",
       "dct:source": "https://www.ilportaledellautomobilista.it/"
     },
     {
       "@id": "urn:cpsv-portalone:source:MIM",
+      "dct:modified": "2026-09-15T16:33:28.461206+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi MIM"
       },
-      "dct:modified": "2026-09-15T16:33:28.461206+00:00",
       "dct:source": "https://www.mim.gov.it/"
     },
     {
       "@id": "urn:cpsv-portalone:source:GSE",
+      "dct:modified": "2026-09-15T16:34:15.637564+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi GSE"
       },
-      "dct:modified": "2026-09-15T16:34:15.637564+00:00",
       "dct:source": "https://www.gse.it/"
     },
     {
       "@id": "urn:cpsv-portalone:source:IPZS",
+      "dct:modified": "2026-09-15T16:34:51.281907+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo soluzioni IPZS"
       },
-      "dct:modified": "2026-09-15T16:34:51.281907+00:00",
       "dct:source": "https://www.ipzs.it/"
     },
     {
       "@id": "urn:cpsv-portalone:source:MLPS",
+      "dct:modified": "2026-09-15T16:35:27.040069+00:00",
       "dct:title": {
         "@language": "it",
         "@value": "Catalogo servizi MLPS"
       },
-      "dct:modified": "2026-09-15T16:35:27.040069+00:00",
       "dct:source": "https://www.lavoro.gov.it/"
     }
   ],
