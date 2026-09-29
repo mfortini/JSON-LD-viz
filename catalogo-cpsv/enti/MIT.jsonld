@@ -1,0 +1,570 @@
+{
+  "@context": {
+    "cpsv": "https://w3id.org/italia/onto/CPSV#",
+    "cv": "http://data.europa.eu/m8g/",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "io": "https://io.italia.it/onto/io#",
+    "mit": "https://www.mit.gov.it/onto/mit#",
+    "cpsv-portalone": "urn:cpsv-portalone:"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.ilportaledellautomobilista.it",
+      "@type": "cv:PublicOrganisation",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Motorizzazione Civile - Portale dell'Automobilista"
+      },
+      "foaf:homepage": "https://www.ilportaledellautomobilista.it/"
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/gestione-pratiche-online/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Gestione Pratiche Online"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Gestione Pratiche Online"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/gestione-pratiche-online/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il nuovo sistema di Gestione Pratiche On-line consente all'utente di procedere alla lavorazione di una specifica richiesta e di gestire le richieste a proprio carico."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/gestione-pratiche-online/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/arpr/spa/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/monopattini-contrassegno-identificativo/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Istruzioni operative contrassegni monopattini a propulsione prevalentemente elettrica"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Istruzioni operative contrassegni monopattini a propulsione prevalentemente elettrica"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/monopattini-contrassegno-identificativo/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Decreto del Capo Dipartimento per i trasporti e la navigazione 27 giugno 2025, n.210\nCon il Decreto del Capo Dipartimento per i trasporti e la navigazione 27 giugno 2025, n. 210, sono definiti i criteri e le modalità di stampa dei contrassegni identificativi.\nL'apposizione deve essere visibile e permanente nell'alloggiamento sul parafango posteriore o, in assenza dello stesso, sul piantone dello sterzo, rispettando orientamento, verticalità e leggibilità.\nLa mancata o non corretta applicazione comporta le sanzioni previste dall'art. 1, comma 75-undevicies, della legge n. 160/2019."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/monopattini-contrassegno-identificativo/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/monopattini-contrassegno-identificativo/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/neopatentati/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Limiti guida neopatentati categoria B"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Limiti guida neopatentati categoria B"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/neopatentati/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Verifica quali sono i limiti in vigore per i neopatentati alla guida. Controlla, digitando la targa dell'autoveicolo, se un neopatentato ne è autorizzato alla guida. Limiti di velocità Si ricorda che per i primi 3 anni dal conseguimento della patente di categoria B non è consentito il superamento della velocità di 100 Km/h per le autostrade e di 90 Km/h per le strade extraurbane principali. Da dicembre 2024 il limite di potenza specifica, riferita alla tara, superiore a 75 kW/t fermo restando il limite, nel caso di veicoli di categoria M1, di potenza massima pari a 105 kW che deve essere rispettato nei primi tre anni di guida - dal conseguimento della patente - non si applica se a fianco del conducente si trova, in funzione di istruttore, persona di età non superiore a sessantacinque anni, munita di patente valida per la stessa categoria, conseguita da almeno dieci anni, ovvero valida per la categoria superiore. In caso di veicolo ibrido plug-in l'esito della verifica potrebbe essere non corretto. Effettuare anche la verifica utilizzando i dati del documento di circolazione."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/neopatentati/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/neopatentati/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/pagamenti-pagopa/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Pagamenti con Autenticazione"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Pagamenti con Autenticazione"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/pagamenti-pagopa/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "E' possibile utilizzare i servizi della piattaforma pagamenti PagoPA una volta effettuata il login sul Portale dell'Automobilista.\nNel sistema dei Pagamenti PagoPA, è necessario che per tutte le pratiche il codice fiscale del pagatore (indicato all'atto del pagamento) corrisponda al codice fiscale dell'intestatario del veicolo (o cointestatario) che effettua la pratica (ad esempio emissione del duplicato carta di circolazione-documento unico)."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/pagamenti-pagopa/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/sistema-pagamenti/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/piattaforma-cude/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Piattaforma CUDE"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Piattaforma CUDE"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/piattaforma-cude/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per semplificare la mobilità delle persone con disabilità su tutto il territorio italiano, il Decreto ministeriale del 5 luglio 2021 ha istituito una banca dati nazionale. Grazie a una gestione delle autorizzazioni coordinata su tutto il territorio, chi deve spostarsi da un Comune all'altro, non deve più comunicare l'ingresso nelle aree a traffico limitato situate in comuni diversi da quello di riferimento.\nLa funzionalità è disponibile, previa autenticazione, nella propria area riservata, sotto la voce Accesso ai servizi ---> Piattaforma unica contrassegno disabili - CUDE ."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/piattaforma-cude/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/piattaforma-cude/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rent/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Istruzioni operative per l'iscrizione al RENT"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Istruzioni operative per l'iscrizione al RENT"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rent/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Le imprese titolari di licenza per il servizio taxi, oppure le imprese titolari di autorizzazione per il servizio di noleggio con conducente, direttamente, ovvero tramite delega conferita ai soggetti di cui all'articolo 7, comma 1, lettere b) e c) della legge 15 gennaio 1992, n. 21 o alle associazioni di categoria, potranno presentare l'istanza di iscrizione al RENT seguendo le istruzioni riportate nel seguito.\nIstruzioni rivolte ai legali rappresentanti di imprese esercenti il servizio di autotrasporto pubblico non di linea\nL'applicazione è disponibile, via internet, collegandosi al Portale dell'Automobilista.\nUna volta effettuata l'autenticazione con le proprie credenziali SPID, cliccare qui per accedere all'applicazione di gestione delle istanze di iscrizione al RENT ."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rent/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rent/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Ricerca Medici Certificatori"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Ricerca Medici Certificatori"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Controlla qual è il medico certificatore per il rinnovo della tua Patente più vicino a te."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Ricerca Officine Autorizzate"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Ricerca Officine Autorizzate"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Controlla qual è l'officina autorizzata dal Dipartimento Trasporti Terrestri (DTT) più vicina a te"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/gms/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Menù di servizio"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Menù di servizio"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/gms/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Seleziona la provincia di interesse e accedi alle informazioni degli Uffici.\nPer informazioni sui servizi offerti, contatta il Call Center del Portale dell'Automobilista attivo dal lunedì al sabato dalle 8.00 alle 20.00\nPer informazioni sui servizi di pagamento, contatta il Call Center attivo dal lunedì al sabato dalle 8.00 alle 20.00"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/gms/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/gms/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rui-registro-unico-ispettori/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Istruzioni operative per il Registro Unico Ispettori (RUI)"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Istruzioni operative per il Registro Unico Ispettori (RUI)"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rui-registro-unico-ispettori/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per consentire l'integrazione di soluzioni di firma digitale remota nei sistemi della Motorizzazione, è stato adottato il decreto direttoriale n. 407 del 17 ottobre 2025, che definisce la procedura di adesione alla piattaforma per i prestatori di servizi fiduciari qualificati (QTSP).\nFino al completamento delle attività di adeguamento dei provider, l'inserimento del documento di firma digitale nel RUI è temporaneamente sospeso. La funzionalità sarà riattivata non appena la procedura di accreditamento sarà completata.\nDecreto n. 219 del 6 agosto 2025. Modifiche al Decreto del Capo del Dipartimento n. 198/2025\nCon il Decreto del Capo del Dipartimento n. 219 del 6 agosto 2025 sono state introdotte modifiche e integrazioni al precedente Decreto n. 198 del 9 giugno 2025."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rui-registro-unico-ispettori/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/rui-registro-unico-ispettori/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Saldo punti patente"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Saldo punti patente"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "E' possibile verificare il saldo punti della propria patente di guida effettuando il login sul Portale dell'Automobilista, oppure chiamando il servizio automatico al n. 06 45775962 disponibile H24 - 7 giorni su 7, al costo di una telefonata urbana."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente  /",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Saldo punti patente"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Saldo punti patente"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente  /",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente  /#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente  /"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori  /",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Servizi online ricerca medici certificatori"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Servizi online ricerca medici certificatori"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori  /",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori  /#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-medici-certificatori  /"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate  /",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Servizi online ricerca officine autorizzate"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Servizi online ricerca officine autorizzate"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate  /",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate  /#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/servizi-online-ricerca-officine-autorizzate  /"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Verifica Classe Ambientale e CO2"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica Classe Ambientale e CO2"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Verifica la classe ambientale di appartenenza (categoria Euro) di autoveicoli, motoveicoli e ciclomotori, con il relativo dato di emissione CO2. Una volta selezionato il tipo di veicolo, è sufficiente inserire il numero di targa."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo  /",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Verifica classe ambientale veicolo"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica classe ambientale veicolo"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo  /",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo  /#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo  /"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc  /",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Verifica copertura rc"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica copertura rc"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc  /",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc  /#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc  /"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Verifica Copertura Assicurativa RCA"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica Copertura Assicurativa RCA"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "In questa sezione è possibile consultare i numeri di targa dei veicoli a motore e dei rimorchi immatricolati in Italia che non risultano in regola con gli obblighi assicurativi RCA. Lei può effettuare la ricerca del suo veicolo scrivendo il numero di targa nell'apposito campo di inserimento. Le informazioni sono aggiornate in tempo reale dalle compagnie assicuratrici. Se sa di avere in corso un regolare contratto di assicurazione RCA ed ha verificato che il suo veicolo non risulta assicurato, le raccomandiamo di contattare subito la sua Compagnia di assicurazione. Se lei intende utilizzare il suo veicolo e non è in regola con gli obblighi assicurativi, la invitiamo a provvedere tempestivamente. Le ricordiamo che, a norma dell'articolo 193 del codice della strada, è vietato circolare su strada senza copertura assicurativa RCA e che è prevista la sanzione del pagamento di una somma da € 841 a € 3.366, oltre al sequestro del veicolo."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-copertura-rc/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-massa-supplementare/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Verifica massa supplementare"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica massa supplementare"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-massa-supplementare/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "E' possibile utilizzare il servizio di verifica della massa supplementare per i veicoli da alimentazione alternativa.\nIl servizio permette la verifica di un veicolo di categoria N2, alimentato con combustibile alternativo e con una massa autorizzata massima compresa tra 3.500 kg e 4.250 kg, adibito al trasporto di merci e che opera senza rimorchio, di poter essere condotto dai titolari di una patente di guida di categoria B rilasciata da almeno due anni."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-massa-supplementare/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-massa-supplementare/"
+      }
+    },
+    {
+      "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-revisioni-effettuate-ms/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Verifica revisioni effettuate"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica revisioni effettuate"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ilportaledellautomobilista.it"
+      },
+      "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-revisioni-effettuate-ms/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "E' possibile utilizzare il servizio di verifica delle revisioni per i veicoli.\nIl servizio visualizza le revisioni effettuate dopo il 1° giugno 2018."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-revisioni-effettuate-ms/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/verifica-revisioni-effettuate-ms/"
+      }
+    }
+  ],
+  "dct:title": {
+    "@language": "it",
+    "@value": "Catalogo servizi online Motorizzazione Civile"
+  },
+  "dct:modified": "2026-09-15T16:37:20.501630+00:00",
+  "dct:source": "https://www.ilportaledellautomobilista.it/"
+}

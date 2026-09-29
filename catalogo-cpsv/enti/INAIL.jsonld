@@ -1,0 +1,2706 @@
+{
+  "@context": {
+    "cpsv": "https://w3id.org/italia/onto/CPSV#",
+    "cv": "http://data.europa.eu/m8g/",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "inail": "https://www.inail.it/onto/inail#",
+    "cpsv-portalone": "urn:cpsv-portalone:"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.inail.it",
+      "@type": "cv:PublicOrganisation",
+      "dct:title": {
+        "@language": "it",
+        "@value": "INAIL - Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro"
+      },
+      "foaf:homepage": "https://www.inail.it"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Adesioni e revoche ditte"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte#addressee-altri-utenti"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Adesioni%20e%20revoche%20ditte#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Allievi IeFP"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Allievi%20IeFP#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale operativo polizza allievi IeFP https://www.inail.it/content/dam/inail-hub-site/documenti/2024/05/Manuale%20operativo%20polizza%20allievi%20IeFP.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Anagrafica associazione"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione#addressee-altri-utenti"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anagrafica%20associazione#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Anagrafica light"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#input-manual-2"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Anagrafica light - guida applicativa azienda https://www.inail.it/content/dam/inail-hub-site/documenti/2016/05/Guida%20Applicativa%20Anagrafica%20Light%20-%20Azienda.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Anagrafica%20light#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Anagrafica light - guida applicativa intermediario https://www.inail.it/content/dam/inail-hub-site/documenti/2016/05/Guida%20Applicativa%20Anagrafica%20Light%20-%20Intermediari.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Anticipo finanziario TFR/TFS"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS#addressee-altri-utenti"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Anticipo%20finanziario%20TFR%2FTFS#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Fac-simile domanda di anticipazione TFR/TFS https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/Fac-simile%20per%20pubblicazione.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Assegno per il nucleo familiare"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#addressee-altri-utenti"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-3"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-4"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Domanda dell'avente diritto all'erogazione dell'assegno per il nucleo familiare https://www.inail.it/content/dam/inail-hub-site/documenti/circolari/2025/06/Allegato%201%20tren%20(3).pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Domanda del coniuge dell'avente diritto all'erogazione dell'assegno per il nucleo familiare https://www.inail.it/content/dam/inail-hub-site/documenti/circolari/2025/06/Allegato%202%20tren%20(3).pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Dichiarazione redditi per assegno nucleo familiare https://www.inail.it/content/dam/inail-hub-site/documenti/circolari/2025/06/Allegato%203%20tren%20(1).pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assegno%20per%20il%20nucleo%20familiare#input-manual-4",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Informazioni sull'assegno per il nucleo familiare https://www.inail.it/content/dam/inail-hub-site/documenti/circolari/2025/06/Allegato%204%20tren.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Assicurazione lavoro domestico"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#addressee-altri-utenti"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-3"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-4"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-5"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-6"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-7"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-8"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Assicurazione infortuni domestici - Scheda di sintesi accesso e uso ai servizi on line 2022 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/ASSICURAZIONE%20INFORTUNI%20DOMESTICI%20-%20SINTESI%202022.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Assicurazione contro gli infortuni domestici - Brochure 2022 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/Brochure_Assicurazione%20contro%20gli%20infortuni%20domestici%20-%202022.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Assicurazione obbligatoria contro gli infortuni domestici - Opuscolo informativo 2022 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/A5%20-%20Opuscolo-CASALINGHE-2022,0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-4",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Assicurazione infortuni domestici - Vademecum 2022 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/ASSICURAZIONE%20INFORTUNI%20DOMESTICI%20-%20VADEMECUM%202022.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-5",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Assicurazione infortuni domestici - Manuale utente 2021 https://www.inail.it/content/dam/inail-hub-site/documenti/2019/12/ASSICURAZIONE%20INFORTUNI%20DOMESTICI%20-%20MANUALE%20UTENTE%20(agg_dic_2021).pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-6",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Mod. 500 Prest. - Assicurato https://www.inail.it/content/dam/inail-hub-site/documenti/2015/09/Mod-500-Prest%20econ%20Assicurato.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-7",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Mod. 500 Prest. - Medico https://www.inail.it/content/dam/inail-hub-site/documenti/2016/03/Mod-500-Prest%20econ%20Medico.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Assicurazione%20lavoro%20domestico#input-manual-8",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Mod. 500 Prest. - Superstite https://www.inail.it/content/dam/inail-hub-site/documenti/2021/02/Mod%20500%20-Rendita%20a%20superstiti(1).pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Associa unità produttiva"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva#addressee-operatori-della-sanita"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Associa%20unit%C3%A0%20produttiva#addressee-operatori-della-sanita",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Operatori della Sanità"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Bando Fipit"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20Fipit#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Bando ISI"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Bando%20ISI#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Bando Isi 2020 Incentivi per la sicurezza – manuale utente https://www.inail.it/content/dam/inail-hub-site/documenti/2018/04/Manuale%20utente%20ISI%202020-febbr.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Basi di calcolo - Richiesta"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Richiesta#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Guida all'autoliquidazione 2021-2022 https://www.inail.it/content/dam/inail-hub-site/documenti/2020/01/guida%20autoliquidazione%202021-2022.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Basi di calcolo - Visualizza"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Basi%20di%20calcolo%20-%20Visualizza#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Guida all'autoliquidazione 2021-2022 https://www.inail.it/content/dam/inail-hub-site/documenti/2020/01/guida%20autoliquidazione%202021-2022.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Borsa di studio ai superstiti"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html",
+      "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "dct:issued": "25/06/2026, 08:38",
+      "dct:modified": "30/06/2026",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#addressee-altri-utenti"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#input-guide-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/app/dbssfe#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale utenti - Borsa di studio ai superstiti https://www.inail.it/content/dam/inail-hub-site/documenti/servizi-per-te/2026/06/Manuale%20Utente%20Borsa%20di%20studio%20ai%20superstiti%20V%202.1.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html#input-guide-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Scarica file: Manuale Utente - Borsa di studio ai superstiti Formato PDF — Dimensione 5.25 MB https://www.inail.it/content/dam/inail-hub-site/documenti/servizi-per-te/2026/06/Manuale%20Utente%20Borsa%20di%20studio%20ai%20superstiti%20V%202.1.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/app/dbssfe#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/app/dbssfe"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Calcola il premio"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-3"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-4"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-5"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Guida all'autoliquidazione 2021-2022 https://www.inail.it/content/dam/inail-hub-site/documenti/2020/01/guida%20autoliquidazione%202021-2022.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Guida illustrativa delle tariffe dei premi 2019 - gestione industria https://www.inail.it/content/dam/inail-hub-site/documenti/2019/04/INDUSTRIA%20guida%20e%20tabelle_%20USO%20PUBBLICO%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Guida illustrativa delle tariffe dei premi 2019 - gestione artigianato https://www.inail.it/content/dam/inail-hub-site/documenti/2019/04/ARTIGIANATO%20guida%20e%20tabelle_%20USO%20PUBBLICO.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-4",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Guida illustrativa delle tariffe dei premi 2019 - gestione terziario https://www.inail.it/content/dam/inail-hub-site/documenti/2019/04/TERZIARIO%20guida%20e%20tabelle%20_%20USO%20PUBBLICO.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Calcola%20il%20premio#input-manual-5",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Guida illustrativa delle tariffe dei premi 2019 - gestione altre attività https://www.inail.it/content/dam/inail-hub-site/documenti/2019/04/ALTRE%20ATTIVITA%27%20guida%20e%20tabelle%20_%20USO%20PUBBLICO%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Calcolo dei contributi"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi#addressee-altri-utenti"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Calcolo%20dei%20contributi#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati medici di infortunio"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio#addressee-operatori-della-sanita"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20infortunio#addressee-operatori-della-sanita",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Operatori della Sanità"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati medici di malattia professionale"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#addressee-operatori-della-sanita"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-3"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-4"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-5"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#addressee-operatori-della-sanita",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Operatori della Sanità"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Mod. 5ss bis https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/ucm_087308%2c1.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Istruzioni per la compilazione del Mod. 101 R.A. https://www.inail.it/content/dam/inail-hub-site/documenti/2016/03/All%20%20Istruzioni%20per%20la%20compilazione%20del%20modulo%20cartaceo%20di%20denuncia%20mp%20-%20silicosi%20asbestosi%20luglio%202022.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Mod. 92 bis con legende e note https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/Mod.%2092%20bis-reader.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-4",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cronologia delle versioni di certificati medici di malattia professionale https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/Cronologia%20versioni%20CertificatiMalattiaProfessionale-20161108,2.docx"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Certificati%20medici%20di%20malattia%20professionale#input-manual-5",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale certificati medici di malattia professionale 1.1 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/Manuale%20Certificati%20di%20malattia%20professionale%20online%20V1_1.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificazione unica"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html",
+      "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "dct:issued": "11/04/2018, 11:55",
+      "dct:modified": "05/07/2024, 08:55",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#addressee-caf"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#addressee-lavoratore"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-3"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-4"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-5"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-guide-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-guide-2"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#addressee-caf",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Caf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#addressee-lavoratore",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Lavoratore"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Elenco Caf convenzionati https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/elenco_CAF_aggiornato_al_6_5_22.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Schema di convenzione per l'adesione https://www.inail.it/content/dam/inail-hub-site/documenti/2016/03/schema%20convenzione%20CAF.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Elenco Caf convenzionati https://www.inail.it/content/dam/inail-hub-site/documenti/2015/09/elenco_CAF_aggiornato_al_6_5_22.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-4",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale utente lavoratori settore navigazione - Consultazione CU https://www.inail.it/content/dam/inail-hub-site/documenti/2024/05/Manuale%20utente%20lavoratori%20settore%20navigazione%20-%20Consultazione%20CU.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-manual-5",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale utente ex dipendenti Inail (.pdf - 202 kb) https://www.inail.it/content/dam/inail-hub-site/documenti/2024/05/Manuale%20utente%20ex%20dipendenti%20Inail.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-guide-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Scarica file: CU - manuale utente lavoratori Formato PDF — Dimensione 222.22 kB https://www.inail.it/content/dam/inail-hub-site/documenti/2016/03/CU%20-%20manuale%20utente%20Lavoratori.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html#input-guide-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Scarica file: CU - manuale utente ex dipendenti Inail Formato PDF — Dimensione 1.17 MB https://www.inail.it/content/dam/inail-hub-site/documenti/supporto/2024/07/Manuale_utente_v02.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cessazione azienda"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#input-manual-3"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale di istruzioni https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/ucm_085809%2c1.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Posizioni assicurative navigazione - manuale utente https://www.inail.it/content/dam/inail-hub-site/documenti/2016/10/manuale-utente-posizioni-assicurative-navigazione.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/consulente.html#Cessazione%20azienda#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Tabella Toponimi (All. 1) https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/ucm_085810%2c1.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Chiarimenti d.lgs. n.151 del 14 settembre 2015 art. 21"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#input-manual-2"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Allegato 1 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/DCRA-V-3-obbligo%20di%20denuncia%20e%20invio%20certificato%20medico%20mp%20lavoratori%20agricoli-ALL%201.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Chiarimenti%20d.lgs.%20n.151%20del%2014%20settembre%202015%20art.%2021#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Allegato 2 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/DCRA-V-3-obbligo%20di%20denuncia%20e%20invio%20certificato%20medico%20mp%20lavoratori%20agricoli-ALL%202,0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Civa"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#addressee-altri-utenti"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#addressee-consulente"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#input-manual-2"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#addressee-altri-utenti",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Altri Utenti"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#addressee-consulente",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Consulente"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale utente CIVA https://www.inail.it/content/dam/inail-hub-site/documenti/supporto/2025/01/CIVA-Manuale-utente-Front-End-V.2.15%20(D20250116).pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/altri-utenti.html#Civa#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale utente CIVA - Versione tedesca https://www.inail.it/content/dam/inail-hub-site/documenti/2020/01/CIVA%20manuale%20utente%20Civa%20HANDBUCH.30.12.2019.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Co&Si - Costi e Sicurezza"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza#addressee-datore-di-lavoro"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/datore-di-lavoro.html#Co%26Si%20-%20Costi%20e%20Sicurezza#addressee-datore-di-lavoro",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Datore di Lavoro"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Consultazione pratica e provvedimenti"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Consultazione%20pratica%20e%20provvedimenti#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuali area patronati - consultazione pratica e provvedimenti e lista pratiche https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/Gestione%20Area%20Patronati%202016.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cruscotto Patronati"
+      },
+      "dct:identifier": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard",
+      "foaf:page": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard#addressee-patronati"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard"
+    },
+    {
+      "@id": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://cruscottopatronatioas.inail.it/analytics/saw.dll?dashboard"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Gestione transitoria infortuni ex Inpgi"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html",
+      "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "dct:issued": "01/12/2023, 12:36",
+      "dct:modified": "30/09/2024, 09:22",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#addressee-lavoratore"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#input-guide-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://inail.service-now.com/csm?id=inpgi#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#addressee-lavoratore",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Lavoratore"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale utente - Gestione transitoria infortuni ex Inpgi v 2.0 https://www.inail.it/content/dam/inail-hub-site/documenti/2024/09/Manuale%20utente%20Gestione%20transitoria%20infortuni%20ex%20Inpgi%20online_V2.0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html#input-guide-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Scarica file: Manuale utente - Gestione transitoria infortuni ex Inpgi v 2.0 Formato PDF — Dimensione 4.04 MB https://www.inail.it/content/dam/inail-hub-site/documenti/2024/09/Manuale%20utente%20Gestione%20transitoria%20infortuni%20ex%20Inpgi%20online_V2.0.pdf"
+      }
+    },
+    {
+      "@id": "https://inail.service-now.com/csm?id=inpgi#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://inail.service-now.com/csm?id=inpgi"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Gestione uffici zonali"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Gestione%20uffici%20zonali#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Gestione uffici zonali patronato nazionale- guida applicativa https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/Guida_GestioneUfficiZonali_Patronato%20Nazionale_20160512131725.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Interventi"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-3"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-4"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-5"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-6"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Mod. 1P - Delega al patronato https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/ucm_085819.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Interventi successivi patronato - Intervento integrativo https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/ucm_085821%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Delega patrocinato (in formato .pdf) https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/ucm_portstg_115202.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-4",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Delega patrocinato (in formato .doc) https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/ucm_portstg_115203.docx"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-5",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Interventi di patronato - Patronato nazionale - guida applicativa https://www.inail.it/content/dam/inail-hub-site/documenti/2016/06/Guida_Interventi%20patronato_1.0_Patronato%20Nazionale%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Interventi#input-manual-6",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Interventi di patronato - Patronato zonale - guida applicativa https://www.inail.it/content/dam/inail-hub-site/documenti/2016/06/Guida_Interventi%20patronato_1.0_Patronato%20Zonale.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Lista pratiche"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Lista%20pratiche#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuali area patronati - consultazione pratica e provvedimenti e lista pratiche https://www.inail.it/content/dam/inail-hub-site/documenti/2015/10/Gestione%20Area%20Patronati%202016.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Nuova comunicazione"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#addressee-operatori-della-sanita"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#input-manual-3"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#addressee-operatori-della-sanita",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Operatori della Sanità"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Comunicazione medico competente - manuale utente https://www.inail.it/content/dam/inail-hub-site/documenti/2024/06/ComunicazioneMC_Manuale.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Comunicazione medico competente - manuale utente profilo Asl https://www.inail.it/content/dam/inail-hub-site/documenti/2016/05/ComunicazioneMC_Manuale_ASL_UX_v1.0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Nuova%20comunicazione#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Comunicazione medico competente - manuale utente estrazione Regioni https://www.inail.it/content/dam/inail-hub-site/documenti/2016/05/ComunicazioneMC_Manuale_operativo_Estrazione_Regioni_UX_v1.0%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Registro di esposizione"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#addressee-operatori-della-sanita"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-2"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-3"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-4"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-5"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-6"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-7"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-8"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-9"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-10"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-11"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#addressee-operatori-della-sanita",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Operatori della Sanità"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Specifiche per la compilazione dei modelli B 626 https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/Spec626BNew%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello B 626/1 - Dati generali https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModB626-1_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-3",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello B 626/2 - Dati individuali lavoratore esposto https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModB626-2_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-4",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello B 626/3 - Dati generali, comunicazione variazioni https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModB626-3_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-5",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello B 626/4 - Richiesta copia annotazioni individuali e cartelle sanitarie https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModB626-4_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-6",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Specifiche per la compilazione dei modelli C 626 https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/Spec626C%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-7",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello C 626/1 - Dati generali https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModC626-1_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-8",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello C 626/2 - Dati individuali lavoratore esposto https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModC626-2_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-9",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello C 626/3 - Dati generali, comunicazione variazioni https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModC626-3_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-10",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Modello C 626/4 - Richiesta copia annotazioni individuali e cartelle sanitarie https://www.inail.it/content/dam/inail-hub-site/documenti/2017/04/ModC626-4_reader%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/operatori-della-sanita.html#Registro%20di%20esposizione#input-manual-11",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Registri di esposizione - manuale utente https://www.inail.it/content/dam/inail-hub-site/documenti/2017/10/Manuale_Utente_Registri_di_esposizione.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Registro infortuni"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Registro%20infortuni#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Registro infortuni - manuale utente https://www.inail.it/content/dam/inail-hub-site/documenti/modulistica-prevenzione/2025/03/20250304-Manuale%20Registro%20Infortuni%20telematico%20V1.0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/app/apamp/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Riabilitazione amputati"
+      },
+      "dct:identifier": "https://www.inail.it/app/apamp/",
+      "foaf:page": "https://www.inail.it/app/apamp/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/app/apamp/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/app/apamp/#addressee-lavoratore"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/app/apamp/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/app/apamp/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/app/apamp/"
+    },
+    {
+      "@id": "https://www.inail.it/app/apamp/#addressee-lavoratore",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Lavoratore"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/app/apamp/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/app/apamp/"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Riepilogo attività"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#addressee-patronati"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#input-manual-1"
+        },
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#input-manual-2"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#addressee-patronati",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Patronati"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Riepilogo attività patronato nazionale - guida applicativa https://www.inail.it/content/dam/inail-hub-site/documenti/2016/05/Guida_Patronato%20Nazionale_20160513163351%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/patronati.html#Riepilogo%20attivit%C3%A0#input-manual-2",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Riepilogo attività patronato zonale - guida applicativa https://www.inail.it/content/dam/inail-hub-site/documenti/2016/05/Guida_Patronato%20Zonale_20160513162634%2c0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.inail.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Speciale elargizione familiari vittime Covid-19"
+      },
+      "dct:identifier": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19#addressee-lavoratore"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19#input-manual-1"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19"
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19#addressee-lavoratore",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Lavoratore"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te/lavoratore.html#Speciale%20elargizione%20familiari%20vittime%20Covid-19#input-manual-1",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Manuale utente https://www.inail.it/content/dam/inail-hub-site/documenti/2024/05/DCOD_Speciali_elargizioni_familiari_vittime_Covid19_2.0.pdf"
+      }
+    },
+    {
+      "@id": "https://www.inail.it/portale/it/servizi-online/servizi.html#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://www.inail.it/portale/it/servizi-online/servizi.html",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale servizi online INAIL"
+      }
+    }
+  ],
+  "dct:source": "https://www.inail.it/portale/it/attivita-e-servizi/servizi-per-te.html",
+  "dct:title": {
+    "@language": "it",
+    "@value": "Catalogo servizi online INAIL (Servizi per te da inail.it)"
+  },
+  "dct:modified": "2026-09-15T11:46:44.419044+00:00",
+  "inail:unmappedSections": {
+    "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html": {
+      "Allegati": "Scarica file: Manuale Utente - Borsa di studio ai superstiti Formato PDF — Dimensione 5.25 MB Ultimo aggiornamento 30/06/2026 Formato PDF — 5.25 MB",
+      "Condivisione social": "Pubblicazione 25/06/2026, 08:38 Ultimo aggiornamento 30/06/2026, 08:38 Condividi Condividi su Facebook - Sito esterno - Apertura in nuova finestra X - Sito esterno - Apertura in nuova finestra Invio Mail: apre il programma di posta elettronica del proprio computer Stampa pagina: scelta meno ecologica Stampa pagina: scelta meno ecologica"
+    },
+    "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html": {
+      "Allegati": "Scarica file: CU - manuale utente lavoratori Formato PDF — Dimensione 222.22 kB Istruzioni per la consultazione della Certificazione unica. Aggiornamento: 25 febbraio 2022 Formato PDF — 222.22 kB Scarica file: CU - manuale utente ex dipendenti Inail Formato PDF — Dimensione 1.17 MB Istruzioni per la consultazione della Certificazione unica. Aggiornamento: 5 luglio 2024 Formato PDF — 1.17 MB",
+      "Condivisione social": "Pubblicazione 11/04/2018, 11:55 Ultimo aggiornamento 05/07/2024, 08:55 Condividi Condividi su Facebook - Sito esterno - Apertura in nuova finestra X - Sito esterno - Apertura in nuova finestra Invio Mail: apre il programma di posta elettronica del proprio computer Stampa pagina: scelta meno ecologica Stampa pagina: scelta meno ecologica"
+    },
+    "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html": {
+      "Allegati": "Scarica file: Manuale utente - Gestione transitoria infortuni ex Inpgi v 2.0 Formato PDF — Dimensione 4.04 MB Aggiornamento: 30 settembre 2024 Formato PDF — 4.04 MB",
+      "Condivisione social": "Pubblicazione 01/12/2023, 12:36 Ultimo aggiornamento 30/09/2024, 09:22 Condividi Condividi su Facebook - Sito esterno - Apertura in nuova finestra X - Sito esterno - Apertura in nuova finestra Invio Mail: apre il programma di posta elettronica del proprio computer Stampa pagina: scelta meno ecologica Stampa pagina: scelta meno ecologica"
+    }
+  }
+}

@@ -1,0 +1,842 @@
+{
+  "@context": {
+    "cpsv": "https://w3id.org/italia/onto/CPSV#",
+    "cv": "http://data.europa.eu/m8g/",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "io": "https://io.italia.it/onto/io#",
+    "mlps": "https://www.lavoro.gov.it/onto/mlps#",
+    "cpsv-portalone": "urn:cpsv-portalone:"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.lavoro.gov.it",
+      "@type": "cv:PublicOrganisation",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Ministero del Lavoro e delle Politiche Sociali"
+      },
+      "foaf:homepage": "https://www.lavoro.gov.it/"
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albi-professionali-persone-non-vedenti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Albi professionali persone non vedenti"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Albi professionali persone non vedenti"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albi-professionali-persone-non-vedenti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Ministero del lavoro e delle politiche sociali gestisce tre albi professionali di persone non vedenti:\nCi si può rivolgere al Ministero per:\nUtilizza i moduli scaricabili (sezione più in basso). Invia i documenti alla pec : [email protected] .\nAlbo professionale nazionale dei centralinisti telefonici non vedenti"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albi-professionali-persone-non-vedenti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/modulistica/modello-richiesta-certificazione-centralinisti-non-vedenti"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-delle-agenzie-il-lavoro/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Albo nazionale delle Agenzie per il lavoro"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Albo nazionale delle Agenzie per il lavoro"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-delle-agenzie-il-lavoro/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per operare nel campo dei servizi per il lavoro, le agenzie devono essere iscritte all’Albo nazionale delle Agenzie per il lavoro. L’iscrizione all’Albo certifica l’autorizzazione a operare legittimamente nel mercato e costituisce una tutela per cittadine e cittadini.\nConsulta l' Albo delle agenzie del lavoro e dei soggetti accreditati alle politiche attive\nLa procedura di autorizzazione è diversa per agenzie per il lavoro e soggetti a regime speciale e si avvia online sul Portale per le politiche attive del lavoro accedendo dalla pagina Servizi Lavoro tramite l’autenticazione con Spid (o altra modalità).\nLe agenzie per il lavoro sono operatori privati autorizzati dal Ministero del Lavoro e delle Politiche Sociali a offrire i servizi di incontro tra domanda e offerta di lavoro e iscritti all'Albo informatico delle agenzie per il lavoro (la procedura era in capo ad Anpal fino alla data di soppressione dell’Agenzia). Si dividono in:"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-delle-agenzie-il-lavoro/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-delle-agenzie-il-lavoro/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-soggetti-accreditati-ai-servizi-lavoro/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Albo nazionale soggetti accreditati ai servizi lavoro"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Albo nazionale soggetti accreditati ai servizi lavoro"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-soggetti-accreditati-ai-servizi-lavoro/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per erogare servizi di politica attiva del lavoro è necessario essere accreditati. L’iscrizione all'Albo nazionale dei soggetti accreditati ai servizi per il lavoro può essere richiesta al Ministero del Lavoro e delle Politiche Sociali.\nI soggetti accreditati da Regioni e Province Autonome sono inseriti, da queste ultime, nella sezione 2 dell’Albo nazionale.\nAlbo dei soggetti accreditati ai servizi per il lavoro\nRaccoglie i soggetti accreditati a livello nazionale e regionale a svolgere servizi e misure di politica attiva del lavoro."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-soggetti-accreditati-ai-servizi-lavoro/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-soggetti-accreditati-ai-servizi-lavoro/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/Ambiti-Territoriali-del-SIUSS/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Ambiti Territoriali Sociali"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Ambiti Territoriali Sociali"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/Ambiti-Territoriali-del-SIUSS/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "​L'Ambito Territoriale rappresenta la sede principale della programmazione locale, concertazione e coordinamento degli interventi dei servizi sociali e delle altre prestazioni integrate, attive a livello locale.\nL'Ambito è individuato dalle Regioni, ai sensi della Legge 328/2000 . In particolare, in base all'articolo 8, comma 3 lettera \"a\", tramite le forme di concertazione con gli enti locali interessati, spetta ad esse la determinazione degli Ambiti Territoriali, delle modalità e degli strumenti per la gestione unitaria del sistema locale dei sevizi sociali a rete.\nLe Regioni esercitano, quindi, la funzione di programmazione, coordinamento ed indirizzo degli interventi sociali, garantendone l'adeguamento alle esigenze delle comunità locali, nonché di verifica della rispettiva attuazione a livello territoriale."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/Ambiti-Territoriali-del-SIUSS/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/Ambiti-Territoriali-del-SIUSS/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/applicativo-sgravicdsonline/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Applicativo \"sgravicdsonline\""
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Applicativo \"sgravicdsonline\""
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/applicativo-sgravicdsonline/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "L'applicativo \" sgravicdsonline \" consente telematicamente di inoltrare le domande per la procedura di decontribuzione per contratti di solidarietà industriali .\nPer accedere all'applicativo di Servizi Lavoro clicca qui .\nPer ulteriori informazioni sul tema consulta il Focus on del Ministero del Lavoro e delle Politiche Sociali \" Decontribuzione contratti di solidarietà industriali \".\nPer eventuali comunicazioni o informazioni relative allo stato della domanda si invita a contattare la Divisione III della Dg competente in materia, al seguente indirizzo peo: [email protected] ."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/applicativo-sgravicdsonline/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/applicativo-sgravicdsonline/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assegno-di-ricollocazione-cigs/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Assegno di ricollocazione Cigs"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Assegno di ricollocazione Cigs"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assegno-di-ricollocazione-cigs/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "L’Assegno di ricollocazione (Adr) è uno strumento che aiuta le persone a ricollocarsi nel mercato del lavoro. Consiste in un importo da utilizzare presso i soggetti che forniscono servizi di assistenza personalizzata per la ricerca di occupazione (Centri per l’impiego o Enti accreditati ai servizi per il lavoro).\nAttualmente è operativo l’Adr Cigs, rilasciato ai lavoratori in Cassa integrazione straordinaria (Cigs) purché i loro profili e ambiti siano previsti dall’Accordo di ricollocazione sottoscritto dalla loro azienda e dalle organizzazioni sindacali.\nDi seguito viene descritto il percorso.\nScelta della sede operativa La persona beneficiaria dell’Adr Cigs ha tempo 30 giorni dalla firma dell’accordo di ricollocazione per prenotare l’Adr nell’area riservata del Portale per le politiche attive del lavoro. Dovrà scegliere l’ente da cui farsi aiutare, consultando l’ Albo nazionale dei soggetti accreditati ."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assegno-di-ricollocazione-cigs/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assegno-di-ricollocazione-cigs/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assumere-lavoratori-non-comunitari/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Assumere lavoratori non comunitari"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Assumere lavoratori non comunitari"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assumere-lavoratori-non-comunitari/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Procedura per datori di lavoro 2023-2025\nChi intende assumere una persona non comunitaria residente all'estero deve compiere due passaggi:\nIl centro per l’impiego istruisce la richiesta e la pubblicizza. La verifica di indisponibilità di lavoratori presenti sul territorio nazionale si intende compiuta in uno di questi casi:\nIl datore di lavoro dovrà comunicare tempestivamente al centro per l’impiego:"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assumere-lavoratori-non-comunitari/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assumere-lavoratori-non-comunitari/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/collocamento-nello-spettacolo-cittadini-extra-ue/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Collocamento nello spettacolo per cittadini extra-Ue"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Collocamento nello spettacolo per cittadini extra-Ue"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/collocamento-nello-spettacolo-cittadini-extra-ue/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per fare entrare in Italia, al di fuori della quota programmata di flussi migratori, il personale extra-Ue nel settore dello spettacolo, i datori di lavoro che operano in Italia devono inviare le richieste di nullaosta al Ministero del Lavoro e delle Politiche Sociali utilizzando i seguenti modelli:\nModello A - primo ingresso Modello B - proroga Istruzioni per la compilazione dei modelli A e B\nProcedura per il visto d’ingresso Il Ministero del Lavoro e delle Politiche Sociali riceve le dichiarazioni di responsabilità per il rilascio del visto d'ingresso per il personale autonomo extracomunitario del settore dei circhi e spettacoli viaggianti. Per tale dichiarazione utilizzare il seguente modello di dichiarazione di responsabilità per instaurazione di lavoro autonomo. Modello dichiarazione lavoro autonomo spettacoli viaggianti"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/collocamento-nello-spettacolo-cittadini-extra-ue/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/collocamento-nello-spettacolo-cittadini-extra-ue/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Credito-d-imposta-deposito-contratti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Credito d'imposta per la formazione 4.0"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Credito d'imposta per la formazione 4.0"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Credito-d-imposta-deposito-contratti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La Legge di Bilancio 2018 (Legge 27 dicembre 2017, n. 205) ha introdotto una misura volta a favorire i processo di innovazione tecnologica e digitale delle aziende, incentrata su una delle risorse più importanti: il capitale umano.\nÈ il credito d'imposta per la formazione 4.0 di cui sono fornite le modalità operative nel DM 4 maggio 2018. Possono beneficiarne imprese residenti in Italia o all'estero ma con stabili organizzazioni sul territorio italiano, gli enti non commerciali residenti che svolgono attività commerciali rilevanti ai fini del reddito d'impresa.\nL'agevolazione è modulata in base alle dimensioni aziendali, dopo la Legge di Bilancio 2019 (Legge 30 dicembre 2018 n.145) che ha inteso favorire, in particolare, le piccole e medie imprese. Riguarda le spese sostenute nel 2019 per il personale dipendente impegnato nelle attività di formazione relative alle \"tecnologie abilitanti\" - limitatamente al costo aziendale riferito alle ore o alle giornate di formazione - e pattuite attraverso contratti collettivi aziendali o territoriali. Sono ammissibili anche le spese per il personale impegnato come tutor o docente, nel limite del 30% della retribuzione complessiva annua…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Credito-d-imposta-deposito-contratti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://servizi.lavoro.gov.it/deposito-contratti"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Decreti-di-riparto/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Decreti di riparto"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Decreti di riparto"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Decreti-di-riparto/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Decreto interministeriale del 2 aprile 2025 (registrato alla Corte dei Conti il 5 maggio 2025 - n. 500, in attesa di pubblicazione in Gazzetta Ufficiale)\nDecreto interministeriale del 26 novembre 2018 (registrato alla Corte dei Conti il 14 dicembre 2018 - n. 3492) Piano Sociale Nazionale 2018-2020\nDecreto interministeriale del 23 novembre 2017 (registrato alla Corte dei Conti il 7 dicembre 2017 - n. 2291)\nDecreto interministeriale del 10 ottobre 2016 (registrato alla Corte dei Conti l'8 novembre 2016 - Foglio 4055)"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Decreti-di-riparto/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Decreti-di-riparto/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/ricorsi-e-sanzioni-di-condizionalita/pagine/delibere-comitato-ricorsi/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Delibere del Comitato per i ricorsi di condizionalità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Delibere del Comitato per i ricorsi di condizionalità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/ricorsi-e-sanzioni-di-condizionalita/pagine/delibere-comitato-ricorsi/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Anno 2026 Delibera n. 21 del 6 agosto 2026 Delibera n. 20 del 6 agosto 2026 Delibera n. 19 del 16 luglio 2026 Delibera n. 18 del 18 giugno 2026 Delibera n. 17 del 25 maggio 2026 Delibera n. 16 dell'8 maggio 2026 Delibera n. 15 del 24 aprile 2026 Delibera n. 14 del 10 aprile 2026 Delibera n. 13 del 27 marzo 2026 Delibera n. 12 del 13 marzo 2026 Delibera n. 11 del 27 febbraio 2026 Delibera n. 10 del 12 febbraio 2026 Delibera n. 9 del 23 gennaio 2026 Anno 2025 Delibera n. 8 del 19 dicembre 2025 Delibera n. 7 del 28 novembre 2025 Delibera n. 6 del 14 novembre 2025 Delibera n. 5 del 27 ottobre 2025 Delibera n. 4 del 9 ottobre 2025 Delibera n. 3 del 23 settembre 2025 Delibera n. 2 del 30 luglio 2025 Delibera n. 1 del 22 maggio 2025"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/ricorsi-e-sanzioni-di-condizionalita/pagine/delibere-comitato-ricorsi/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/ricorsi-e-sanzioni-di-condizionalita/pagine/delibere-comitato-ricorsi/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/dichiarazione-di-immediata-disponibilita-al-lavoro/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Dichiarazione di immediata disponibilità al lavoro"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Dichiarazione di immediata disponibilità al lavoro"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/dichiarazione-di-immediata-disponibilita-al-lavoro/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La Dichiarazione di immediata disponibilità al lavoro (Did) è la dichiarazione che determina formalmente l’inizio dello stato di disoccupazione di una persona. Chi è disoccupato, o ha ricevuto comunicazione di licenziamento, può presentare la Did per accedere ai servizi di reinserimento nel mercato del lavoro.\nPer compilare la Did accedi al Portale per le politiche attive del lavoro, seleziona \"Did online - Dichiarazione di immediata disponibilità\". La tua dichiarazione di immediata disponibilità al lavoro viene acquisita con riserva. Al primo contatto con il centro per l'impiego sarai invitato a confermare lo stato di disoccupazione e a convalidare l'autenticazione con un documento d'identità. Dopo il riconoscimento, lo stato di disoccupazione decorre dal momento del rilascio della Did online. Le lavoratrici e i lavoratori dipendenti che hanno ricevuto la comunicazione di licenziamento possono rendere la Did già durante il periodo di preavviso di licenziamento.\nPrestazioni e agevolazioni sociali o sanitarie\nNon deve rendere la Did chi si trova in condizione di \"non occupazione\" e non cerca lavoro, e desidera prestazioni e agevolazioni sociali o sanitarie. I “non occupati” sono…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/dichiarazione-di-immediata-disponibilita-al-lavoro/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/dichiarazione-di-immediata-disponibilita-al-lavoro/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/fondi-interprofessionali-e-bilaterali-formazione-continua/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Fondi interprofessionali e bilaterali formazione continua"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Fondi interprofessionali e bilaterali formazione continua"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/fondi-interprofessionali-e-bilaterali-formazione-continua/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Criteri di gestione dei fondi paritetici interprofessionali nazionali per la formazione continua\nLinee guida sulla gestione delle risorse finanziarie Circolare Anpal n. 1 del 10 febbraio 2018 Allegato 1 - Rendiconto finanziario Allegato 2 - Regolamento generale Revisione delle istruzioni operative sul rendiconto finanziario per cassa Nota Anpal n. 7141 del 31 maggio 2019 Allegato - Istruzioni operative sul rendiconto finanziario - revisione maggio 2019 Orientamenti sulle modalità di controllo della Fad in tempo di Covid-19 Circolare n. 1 del 30 novembre 2021\nCriteri di gestione dei fondi bilaterali Linee guida sulla gestione delle risorse finanziarie Circolare Anpal n. 3/2020 Allegato 1- Rendiconto finanziario Allegato 2- Regolamento generale\nPer ulteriori informazioni vai a Focus on Fondi alle imprese per la formazione continua"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/fondi-interprofessionali-e-bilaterali-formazione-continua/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/fondi-interprofessionali-e-bilaterali-formazione-continua/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/fondo-opere-indifferibili/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Fondo Opere Indifferibili"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Fondo Opere Indifferibili"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/fondo-opere-indifferibili/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Beneficiari del FOI 2023 - Procedura “semplificata” secondo semestre 2023 misura PNRR M5C2I1.3 ​\nSecondo quanto previsto dall'art. 1 comma 370 della Legge n. 197/2022, di seguito l’elenco dei CUP potenzialmente destinatari della preassegnazione 2° semestre 2023 del 10% del contributo del Fondo per l’avvio di opere indifferibili.\nSecondo l’art. 1 comma 370 della Legge n. 197/2022, entro i successivi venti giorni dalla pubblicazione sul sito internet istituzionale (entro il 30 giugno 2023), gli enti locali per poter confermare la preassegnazione dovranno accedere all'apposita piattaforma informatica già in uso presso il Dipartimento della Ragioneria Generale dello Stato.\nLa mancata conferma equivale alla rinuncia alla preassegnazione e l'ente locale può accedere alla procedura ordinaria."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/fondo-opere-indifferibili/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/fondo-opere-indifferibili/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/informazione-comunicazione-pubblicita/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Informazione, comunicazione, pubblicità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Informazione, comunicazione, pubblicità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/informazione-comunicazione-pubblicita/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "L’attuazione degli interventi richiede il rispetto degli obblighi in materia di comunicazione e informazione previsti dall’art. 34 del Regolamento (UE) 2021/241. In particolare è necessario che i Soggetti attuatori assicurino, per gli interventi di cui sono titolari, la visibilità del finanziamento dell’Unione per mezzo dell’emblema dell’UE e della dicitura “Finanziato dall’Unione europea - NextGenerationEU” in tutte le attività di comunicazione a livello di progetto. Inoltre, quando viene mostrato in associazione con un altro logo, l’emblema dell’Unione europea deve essere mostrato almeno con lo stesso risalto e visibilità. L’emblema deve rimanere altresì distinto e separato e non può essere modificato con l’aggiunta di altri segni visivi, marchi o testi. Oltre all’emblema, nessun’altra identità visiva o logo può essere utilizzata per evidenziare il sostegno dell’UE.\nPer quanto attiene all’Amministrazione centrale invece, Direzioni generali competenti per misura, ANPAL e Unità di Missione per il PNRR garantiscono il rispetto degli obblighi in materia di comunicazione provvedendo a :"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/informazione-comunicazione-pubblicita/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/informazione-comunicazione-pubblicita/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/portale-le-politiche-attive-del-lavoro/pagine/la-scrivania-digitale-faq/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "La scrivania digitale - Faq"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "La scrivania digitale - Faq"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/portale-le-politiche-attive-del-lavoro/pagine/la-scrivania-digitale-faq/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come faccio ad iscrivermi come cittadino sul Portale per le politiche attive del lavoro? Per usufruire dei servizi digitali, il cittadino (persona fisica) deve registrarsi sul Portale per le politiche attive del lavoro. I servizi sono fruibili dopo aver effettuato l’accesso dalla pagina del portale Servizi Lavoro tramite l’autenticazione con Spid (o altra modalità). Successivamente, l'utente deve cliccare sul bottone Portale per le politiche attive del lavoro e seguire la procedura. Consulta il Manuale di registrazione in questa pagina. Una volta conclusa la registrazione, gli utenti, qualora volessero, possono registrare una persona giuridica (sia essa azienda o ente operatore). Come faccio a iscrivere una persona giuridica sul Portale per le politiche attive del lavoro? Una volta che il cittadino è registrato al Portale e ha effettuato il login come utente, potrà registrare una persona giuridica (Azienda o Ente operatore) per la quale sarà il suo rappresentante legale o delegato. La funzione di “Registrazione persona giuridica” è presente all'interno della sezione ''Dati persona fisica e giuridica'' del Portale. Cliccando sul link di registrazione della persona giuridica, il…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/portale-le-politiche-attive-del-lavoro/pagine/la-scrivania-digitale-faq/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/portale-le-politiche-attive-del-lavoro/pagine/la-scrivania-digitale-faq/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C1/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "M5C1 (Componente C1 - “Politiche del lavoro”)"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "M5C1 (Componente C1 - “Politiche del lavoro”)"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C1/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La componente “ Politiche per il lavoro ” mira ad accompagnare la trasformazione del mercato del lavoro con adeguati strumenti che facilitino le transizioni occupazionali; a migliorare l’occupabilità dei lavoratori; a innalzare il livello delle tutele attraverso la formazione.L’obiettivo generale è il potenziamento delle politiche attive del mercato del lavoro (ALMPs), compresi i soggetti che le erogano (CPI), e della formazione professionale, anche aumentando le risorse per la formazione duale.\nIn particolare, attraverso due investimenti e due riforme si prevede di:"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C1/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C1/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C2/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "M5C2 (Componente C2 - “Infrastrutture sociali, famiglie, comunità e terzo settore”)"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "M5C2 (Componente C2 - “Infrastrutture sociali, famiglie, comunità e terzo settore”)"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C2/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Gli interventi della Componente 2 della Missione 5 di competenza MLPS per PNRR italiano valorizzano l'intera dimensione sociale delle politiche sanitarie, urbanistiche, abitative e dei servizi per l’infanzia, per le persone anziane, per i soggetti più vulnerabili, con una particolare attenzione alle sfere della formazione, del lavoro, del sostegno alle famiglie, dell’equità sociale e tra i generi.\nGli interventi previsti interessano le persone più fragili, nella loro dimensione individuale, familiare e sociale. Il fine di tutte le misure nel complesso è quello di prevenire l’istituzionalizzazione della persona e intervenire sui principali fattori di rischio che portano a una condizione di marginalità sociale, mirando a una sempre maggiore autonomia delle persone coinvolte.\nL’attenzione verso i soggetti più fragili comporta proprio la necessità di investire in interventi di inclusione sociale volti a eliminare tutti quegli ostacoli che impediscono a persone con una data vulnerabilità (minori in povertà educativa, anziani non autosufficienti, persone con disabilità e senza dimora) una reale autonomia e autodeterminazione personale, nonché la partecipazione a percorsi di politica…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C2/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C2/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Decontribuzione-deposito-contratti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Misure di conciliazione vita lavoro"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Misure di conciliazione vita lavoro"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Decontribuzione-deposito-contratti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "​ Per il biennio 2017-2018, era stata avviata una sperimentazione per favorire la conciliazione dei tempi di vita e lavoro all'interno delle aziende: lo sgravio contributivo previsto dall'articolo 25 del Decreto Legislativo n. 80/2015 e attuato secondo le modalità del Decreto Interministeriale del 12 settembre 2017 .\nL'agevolazione riguardava i contratti aziendali sottoscritti dal 1° gennaio 2017 al 31 agosto 2018 che promuovevano misure di conciliazione per i dipendenti, migliorative rispetto alle previsioni di legge o del CCNL di riferimento. Il sostegno alla genitorialità, la flessibilità organizzativa e l'erogazione di servizi di welfare aziendale a favore dei lavoratori: sono le tre le linee di intervento individuate dal Decreto.\nI datori di lavoro che intendavano usufruire della decontribuzione dovevano inviare un'apposita istanza sul portale INPS e, preventivamente, effettuare il deposito telematico del contratto aziendale, anche qualora si trattasse del recepimento di un contratto territoriale di secondo livello.\nPer accedere alle risorse stanziate dal Decreto per l'anno 2017, il deposito doveva avvenire entro il 31 ottobre 2017 e la richiesta all'INPS doveva essere…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Decontribuzione-deposito-contratti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://servizi.lavoro.gov.it/deposito-contratti/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/ISEE/Pagine/Monitoraggio/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Monitoraggio"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Monitoraggio"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/ISEE/Pagine/Monitoraggio/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Report di monitoraggio 2024 Executive Summary Appendice Territoriale Appendice Territoriale Report di monitoraggio 2023 Executive Summary Appendice territoriale Appendice territoriale Report di monitoraggio 2022 Executive Summary Appendice territoriale Appendice territoriale Report di monitoraggio 2021 Executive Summary Appendice territoriale Appendice territoriale Report di monitoraggio 2020 Executive Summary Appendice territoriale Appendice territoriale Report di monitoraggio 2018-2019 Executive Summary Appendice territoriale Appendice territoriale Report di monitoraggio 2017 Appendice territoriale Report di monitoraggio 2016 Appendice territoriale Report di monitoraggio 2015 I dati del terzo trimestre 2015 I dati del primo semestre 2015 I dati del primo trimestre 2015"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/ISEE/Pagine/Monitoraggio/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/ISEE/Pagine/Monitoraggio/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/monitoraggio-avanzamento-attivita-regione/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Monitoraggio dell'avanzamento delle attività per regione"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Monitoraggio dell'avanzamento delle attività per regione"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/monitoraggio-avanzamento-attivita-regione/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Abruzzo Basilicata Calabria Campania Emilia-Romagna Friuli-Venezia Giulia Lazio Liguria Lombardia Marche Molise Piemonte Provincia Autonoma di Bolzano Provincia Autonoma di Trento Puglia Sardegna Sicilia Toscana Umbria Valle d'Aosta Veneto"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/monitoraggio-avanzamento-attivita-regione/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/monitoraggio-avanzamento-attivita-regione/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/piano-interventi-e-servizi-sociali/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Piano interventi e servizi sociali"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Piano interventi e servizi sociali"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/piano-interventi-e-servizi-sociali/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Piano nazionale degli interventi e dei servizi sociali è uno strumento di programmazione nazionale che definisce le priorità, gli indirizzi e le modalità di utilizzo delle risorse per garantire servizi sociali uniformi e di qualità su tutto il territorio italiano . Redatto ogni tre anni, il Piano richiama all’attuazione dei Livelli Essenziali delle Prestazioni Sociali (LEPS) e rappresenta una guida per le regioni e gli enti locali nella pianificazione e nell'erogazione dei servizi sociali.\nIl Piano nazionale degli interventi e dei servizi sociali per il triennio 2024-2026 , adottato con Decreto interministeriale del 2 aprile 2025 , si articola in 3 capitoli :\nNello specifico, il Piano sociale nazionale 2024-2026 (cap. 2) costituisce l’atto di programmazione delle risorse afferenti al Fondo nazionale per le politiche sociali e individua, nel limite di tali risorse, lo sviluppo degli interventi e dei servizi necessari per la progressiva definizione dei livelli essenziali delle prestazioni sociali da garantire su tutto il territorio nazionale.\nAnalogamente, il Piano nazionale per gli interventi e i servizi sociali di contrasto alla povertà 2024-2026 (cap. 3) costituisce l’atto di…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/piano-interventi-e-servizi-sociali/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/piano-interventi-e-servizi-sociali/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/portale-politiche-attive-lavoro/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Portale per le politiche attive del lavoro"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale per le politiche attive del lavoro"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/portale-politiche-attive-lavoro/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Portale per le politiche attive del lavoro è la porta di accesso ai servizi online per l'inserimento e il reinserimento nel mondo del lavoro."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/portale-politiche-attive-lavoro/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/portale-politiche-attive-lavoro/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Documenti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Rapporti di monitoraggio"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Rapporti di monitoraggio"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Documenti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "​ Monitoraggio Annualità 2011 - Quaderni della Ricerca Sociale 28 Monitoraggio Annualità 2010 - Quaderni della Ricerca Sociale 25 Monitoraggio Annualità 2009 - Quaderni della Ricerca Sociale 15 Monitoraggio Annualità 2008 - Quaderni della Ricerca Sociale 11 Monitoraggio Annualit​à 2007 - Quaderni della Ricerca Sociale 1 ​"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Documenti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Documenti/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/repertorio-degli-incentivi-allassunzione/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Repertorio degli incentivi all’assunzione"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Repertorio degli incentivi all’assunzione"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/repertorio-degli-incentivi-allassunzione/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Repertorio nazionale degli incentivi per l’occupazione è il catalogo online di tutti gli incentivi per l’occupazione disponibili a livello nazionale e regionale. A chi è rivolto? Datori di lavoro, persone in cerca di occupazione e operatrici e operatori dei servizi per il lavoro. A cosa serve? Permette di consultare i diversi incentivi economici, normativi o contributivi riconosciuti alle aziende per assumere specifiche categorie di persone. Per consultare il Repertorio ricerca le schede degli incentivi, attraverso il menu in alto a sinistra, in base al tuo profilo. Vai al Repertorio nazionale degli incentivi per l’occupazione ."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/repertorio-degli-incentivi-allassunzione/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/repertorio-degli-incentivi-allassunzione/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/ricorsi-e-sanzioni-di-condizionalita/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Ricorsi e sanzioni di condizionalità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Ricorsi e sanzioni di condizionalità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/ricorsi-e-sanzioni-di-condizionalita/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Comitato per i ricorsi di condizionalità Il Comitato per i ricorsi di condizionalità (previsto dall'art. 21, comma 12 del Decreto legislativo 14 settembre 2015, n. 150) è deputato a decidere sui ricorsi presentati dai percettori di NASpI/DIS-COLL avverso i provvedimenti adottati dai Centri per l'impiego. Il Comitato è composto da rappresentanti del Ministero del Lavoro e delle Politiche Sociali, dell'INPS, delle Regioni e Province Autonome e delle Parti Sociali.\nCome presentare un ricorso di condizionalità Chi ha ricevuto una sanzione del centro per l'impiego per non aver partecipato alle misure di politica attiva o per non aver accettato offerte di lavoro congrue può presentare ricorso al Comitato per i ricorsi di condizionalità. Il ricorso può essere presentato per motivi di legittimità e per motivi di merito, entro 30 giorni solari dal ricevimento della sanzione.\nIl ricorso deve essere presentato compilando l'apposito modulo e deve necessariamente essere accompagnato da copia di un documento di identità del ricorrente in corso di validità.\nAl ricorso si potrà allegare, inoltre, ulteriore documentazione ritenuta utile ai fini della definizione dello stesso da parte del Comitato…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/ricorsi-e-sanzioni-di-condizionalita/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/ricorsi-e-sanzioni-di-condizionalita/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/servizi-il-lavoro-cerca-sportello/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Servizi per il lavoro: cerca sportello"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Servizi per il lavoro: cerca sportello"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/servizi-il-lavoro-cerca-sportello/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Attraverso il servizio Cerca sportello è possibile selezionare la Provincia di interesse per conoscere i recapiti di:\nVai al servizio Cerca sportello ."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/servizi-il-lavoro-cerca-sportello/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/servizi-il-lavoro-cerca-sportello/"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/SIOSS/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "SIOSS"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "SIOSS"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/SIOSS/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il SIOSS - Sistema informativo dell'offerta dei servizi sociali, è costituito dalle seguenti componenti:\na) Banca dati dei servizi attivati b) Banca dati delle professioni e degli operatori sociali È previsto inoltre l'avvio di specifici moduli per il monitoraggio dell'utilizzo delle risorse dei fondi nazionali per il finanziamento del sistema degli interventi e dei servizi sociali.\nIstituito dal Decreto ministeriale 103 del 22 agosto 2019 , ai sensi dell'articolo 24 del Decreto legislativo n. 147 del 2017, è parte del SIUSS, il Sistema Unitario dei Servizi sociali .\nIl Decreto ministeriale n. 44 del 28 marzo 2025 ha apportato integrazioni e modifiche al D.M. n. 103/2019 istitutivo del SIOSS introducendo, tra l’altro, ulteriori moduli di approfondimento relativi a quei servizi e interventi che costituiscono LEPS (Livelli Essenziali delle Prestazioni Sociali). La Circolare n. 12 del 23 giugno 2025 illustra i termini e le modalità per la messa a disposizione di tali informazioni relative al monitoraggio dell’annualità 2024."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/SIOSS/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://servizi.lavoro.gov.it/SIOSS"
+      }
+    },
+    {
+      "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Detassazione-Deposito-contratti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Welfare aziendale"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Welfare aziendale"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.lavoro.gov.it"
+      },
+      "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Detassazione-Deposito-contratti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A seguito del Decreto Interministeriale del 25 marzo 2016 , che disciplina l'erogazione dei premi di risultato, la partecipazione agli utili di impresa con tassazione agevolata e prevede misure di welfare aziendale, dal 29 aprile 2016 il deposito dei contratti aziendali e territoriali di secondo livello dovrà avvenire esclusivamente in modalità telematica , senza recarsi presso gli Uffici Territoriali del Ministero del Lavoro e delle Politiche Sociali.\nIl testo - a firma congiunta del Ministro del Lavoro e delle Politiche Sociali e del Ministro dell'Economia e delle Finanze - rappresenta un altro importante tassello della Legge di Stabilità 2016. Per quanto riguarda il deposito dei contratti , l'obiettivo è quello di monitorare le prassi attuate dalle singole imprese o a livello locale, verificandone la conformità alle norme di legge.\nInfatti, il regolare deposito sarà necessario per poter usufruire della detassazione poiché i contratti aziendali e territoriali rappresentano uno strumento fondamentale per favorire nelle aziende gli incrementi di produttività, redditività, qualità, efficienza ed innovazione.\nSoltanto in questo modo, il modello perverrà automaticamente all'ITL…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Detassazione-Deposito-contratti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://servizi.lavoro.gov.it/deposito-contratti/"
+      }
+    }
+  ],
+  "dct:title": {
+    "@language": "it",
+    "@value": "Catalogo servizi MLPS"
+  },
+  "dct:modified": "2026-09-15T16:35:27.040069+00:00",
+  "dct:source": "https://www.lavoro.gov.it/"
+}

@@ -1,0 +1,1350 @@
+{
+  "@context": {
+    "cpsv": "https://w3id.org/italia/onto/CPSV#",
+    "cv": "http://data.europa.eu/m8g/",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "io": "https://io.italia.it/onto/io#",
+    "gse": "https://www.gse.it/onto/gse#",
+    "cpsv-portalone": "urn:cpsv-portalone:"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.gse.it",
+      "@type": "cv:PublicOrganisation",
+      "dct:title": {
+        "@language": "it",
+        "@value": "GSE - Gestore Servizi Energetici"
+      },
+      "foaf:homepage": "https://www.gse.it/"
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/servizi-digitali-integrati/alerting-sulla-performance-degli-impianti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Alerting sulla performance degli impianti"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Alerting sulla performance degli impianti"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/servizi-digitali-integrati/alerting-sulla-performance-degli-impianti/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/servizi-digitali-integrati/alerting-sulla-performance-degli-impianti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/servizi-digitali-integrati/alerting-sulla-performance-degli-impianti/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/antimafia/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Antimafia"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Antimafia"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/antimafia/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scegli un argomento qui di seguito Informazioni generali Supporto alla presentazione della richiesta Lettera sospensione"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/antimafia/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/antimafia/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/mercati-energetici/aste-co2/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Aste CO2"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Aste CO2"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/mercati-energetici/aste-co2/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Le aste sono un meccanismo di assegnazione delle quote di emissione valide per adempiere agli obblighi dello European Union Emissions Trading Scheme (EU ETS). Il collocamento tramite aste è la modalità più rilevante per l'assegnazione di quote . Gli impianti esposti a rischio di delocalizzazione a causa dei costi del carbonio ricevono una parte di quote a titolo gratuito in base a parametri di riferimento (benchmark). L'assegnazione delle quote a titolo gratuito sarà gradualmente ridotta nel tempo, soprattutto per i settori soggetti al Carbon Border Adjustment Mechanism ( CBAM ).\nA partire dal 2013, le aste garantiscono efficienza nella formazione di un prezzo di riferimento per la CO2 in Europa, promuovono l'internalizzazione dei costi ambientali, contribuiscono al passaggio verso mix energetici sostenibili e favoriscono gli investimenti in efficienza energetica.\nAnnualmente, i quantitativi delle quote da collocare sono resi pubblici dal gestore della piattaforma, previa consultazione della Commissione e una volta quantificate le quote da collocare gratuitamente, attraverso la pubblicazione di Calendari d'asta.\nIl Sistema Europeo di Scambio di Quote di Emissione (da qui in poi…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/mercati-energetici/aste-co2/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/mercati-energetici/aste-co2/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/aste-co2/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Aste CO2"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Aste CO2"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/aste-co2/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scegli un argomento qui di seguito Il sistema d' asta Informazioni sul pacchetto clima-energia Informazioni su sistema EU ETS"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/aste-co2/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/aste-co2/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/atto-dimpegno-2025/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Produzione elettrica da impianti a biogas e biomasse solide"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Produzione elettrica da impianti a biogas e biomasse solide"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/atto-dimpegno-2025/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "In merito alla produzione elettrica, a partire dal 1° gennaio 2025 e fino al termine del periodo transitorio , ovvero 31 dicembre 2025 per i produttori che abbiano accettato il preventivo per la certificazione della sostenibilità da parte di un organismo accreditato, gli operatori sono tenuti all’invio di un atto d’impegno all’utilizzo esclusivo di biocombustibili sostenibili o, in alternativa, a comunicare mensilmente al GSE i quantitativi non sostenibili di combustibili utilizzati tramite un apposito modulo e secondo le modalità descritte nella Guida."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/atto-dimpegno-2025/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/atto-dimpegno-2025/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/autoconsumo/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Gruppi di autoconsumatori e Comunità di energia rinnovabile"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Gruppi di autoconsumatori e Comunità di energia rinnovabile"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/autoconsumo/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Scopri le tipologie di autoconsumo: fisico, virtuale e diffuso e le comunità energetiche rinnovabili per ottenere benefici ambientali ed economici."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/autoconsumo/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/autoconsumo/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biocarburanti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Biocarburanti avanzati diversi dal biometano"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Biocarburanti avanzati diversi dal biometano"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biocarburanti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "I biocarburanti sono combustibili ottenuti da biomasse, inclusi rifiuti e sottoprodotti e possono avere anche forma gassosa, come ad esempio il biometano che viene impiegato per i trasporti. Nati come alternativa ai carburanti fossili, i biocarburanti sostenibili rapppresentano oggi la risposta più concreta per ridurre le emissioni di CO2 derivanti dal settore dei trasporti. I biocarburanti sono definiti avanzati se prodotti a partire dalle materie prime elencate nella parte A dell’Allegato 3 del DM 2 marzo 2018.\nManuale utente Produttori art7\nProcedure Applicative 6.0 DM 2 marzo 2018\nAdempimenti derivanti dal DM 5 agosto 2022 per l'accesso ai benefici del DM 2 marzo 2018"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biocarburanti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biocarburanti/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Biocarburanti"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Biocarburanti"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scegli un argomento qui di seguito o torna al servizio DM 2 marzo 2018 Informazioni generali Biocarburanti premiali Informazioni apertura conto proprietà e procedura emissione e ritiro Informazioni sulle sanzioni previste per mancato adempimento Supporto alla presentazione o annullamento della richiesta Rettifica dati pre ammissione Rettifica dati amministrativi e fiscali Fatturazione elettronica"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/biocarburanti-premiali/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Maggiorazioni"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Maggiorazioni"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/biocarburanti-premiali/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "​Torna agli argomenti Ho acquistato del biocarburante prodotto da rifiuti, proveniente da un paese non appartenente all’Unione Europea. Ho diritto al riconoscimento della maggiorazione double counting? La maggiorazione double counting viene riconosciuta ai biocarburanti prodotti a partire da rifiuti e sottoprodotti (inclusi grassi animali di categoria 2), di cui all’articolo 33, comma 5 del D. Lgs. 28/2011 e ss. mm. e ii., indipendentemente dal paese di produzione del biocarburante e da quello d’origine della materia prima, se immessi in consumo dopo il 22 febbraio 2014 (Legge n. 9 del 21 febbraio 2014 ) Non hai trovato quello che cercavi? Parla con il supporto GSE Scrivici Scrivici su Twitter"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/biocarburanti-premiali/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/biocarburanti-premiali/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biometano/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Biometano - DM 02/03/2018"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Biometano - DM 02/03/2018"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biometano/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biometano/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/rinnovabili-per-i-trasporti/biometano/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/biometano/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Biometano"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Biometano"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biometano/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Cerca un argomento qui di seguito o torna al servizio DM 2 marzo 2018"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/biometano/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biometano/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/calcolo-del-beneficio/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Il Nuovo Piano Transizione 5.0"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Il Nuovo Piano Transizione 5.0"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/calcolo-del-beneficio/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "CALCOLO DEL BENEFICIO L’agevolazione consiste in una maggiorazione del costo di acquisizione degli investimenti agevolabili, riconosciuta esclusivamente per la determinazione delle quote di ammortamento e dei canoni di locazione finanziaria. L’entità della maggiorazione è calcolata in base a scaglioni progressivi: 180% per la quota di investimenti fino a 2,5 milioni di euro; 100% per la quota eccedente 2,5 milioni e fino a 10 milioni di euro; 50% per la quota eccedente 10 milioni e fino a 20 milioni di euro. La maggiorazione rileva a partire dal periodo d’imposta in cui viene trasmessa al GSE la comunicazione di completamento degli investimenti ed è subordinata all’esito positivo delle verifiche effettuate."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/calcolo-del-beneficio/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/calcolo-del-beneficio/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/cambio-di-titolarità/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cambio di titolarità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cambio di titolarità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cambio-di-titolarità/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/cambio-di-titolarità/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cambio-di-titolarità/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cambio-di-titolarità/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "cambio di titolarità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "cambio di titolarità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cambio-di-titolarità/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cambio-di-titolarità/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cambio-di-titolarità/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/cambio-di-titolarità/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "cambio di titolarità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "cambio di titolarità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/cambio-di-titolarità/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/cambio-di-titolarità/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/cambio-di-titolarità/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/certificati-bianchi/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificati Bianchi"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati Bianchi"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/certificati-bianchi/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/certificati-bianchi/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/certificati-bianchi/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificati Bianchi"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati Bianchi"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scegli un argomento qui di seguito o visita la sezione DM 28 dicembre 2012 DM 11 gennaio 2017"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificati verdi"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificati verdi"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scelgli un argomento qui di seguito Informazioni generali Informazioni su apertura conto proprietà e procedura emissione e ritiro Compensazione dei CV Conversione da CV in incentivo Supporto alla presentazione della richiesta Accredito sul conto proprietà"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Certificazione della Sostenibilità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Certificazione della Sostenibilità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La sezione descrive gli adempimenti da rispettare ai sensi del “DM Sostenibilità” e del “DL Milleproroghe” per attestare la sostenibilità degli impianti alimentati da biomasse solide e biogas.\nLa sezione descrive gli adempimenti da rispettare ai sensi del “DM Sostenibilità” e del “DL Milleproroghe” per attestare la sostenibilità degli impianti alimentati da bioliquidi."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/cessione-crediti/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cessione dei crediti"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cessione dei crediti"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cessione-crediti/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La cessione dei crediti derivanti dall'ammissione alle tariffe incentivanti, consente al Soggetto Responsabile di trasferire la titolarità dei crediti vantati verso il GSE a un soggetto cessionario ed è ammessa per i seguenti meccanismi di incentivazione:\nIl GSE riconoscerà il pagamento dei crediti a favore del soggetto cessionario se sono rispettate le seguenti condizioni:\n– la cessione dei crediti deve avere ad oggetto la totalità dei crediti, presenti e futuri, vantati dal cedente nei confronti del GSE per effetto della Convenzione in essere tra le parti, fino alla scadenza della stessa o alla eventuale retrocessione (nel caso di cessione stipulata ai sensi della Legge n. 52/91, prevista esclusivamente per le convenzioni GRIN, la stessa è automaticamente risolta l'ultimo giorno del ventitreesimo mese successivo a quello di stipula dell'atto di cessione);\n– i crediti devono essere ceduti a un unico cessionario;"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/cessione-crediti/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cessione-crediti/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cessione-credito-e-mandato-all-incasso/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cessione credito e mandato all'incasso"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cessione credito e mandato all'incasso"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cessione-credito-e-mandato-all-incasso/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cessione-credito-e-mandato-all-incasso/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/cessione-credito-e-mandato-all-incasso/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/cessione-credito-e-mandato-all-incasso/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cessione credito e mandato all'incasso"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cessione credito e mandato all'incasso"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/cessione-credito-e-mandato-all-incasso/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/cessione-credito-e-mandato-all-incasso/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/cessione-credito-e-mandato-all-incasso/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/cessione-del-credito-e-sopravvenuto-cambio-di-titolarita/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cessione del credito e sopravvenuto cambio di titolarità"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cessione del credito e sopravvenuto cambio di titolarità"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cessione-del-credito-e-sopravvenuto-cambio-di-titolarita/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Nel caso di cambio titolarità di convenzioni il cui credito risulti essere stato precedentemente ceduto dal Soggetto responsabile cedente a favore di un terzo (cessionario), il soggetto subentrante diviene titolare della Convenzione ma non dispone del credito che da essa ne deriva in quanto ceduto a terzi.\nTale condizione sussiste in quanto, la cessione del credito accettata dal GSE e sottoscritta dal precedente soggetto responsabile cedente e dal cessionario, prevede che i crediti presenti e futuri, derivanti dalla convenzione, siano ceduti fino a scadenza di quest'ultima in favore del cessionario.\nPertanto in caso di cambio titolarità in presenza di cessione del credito le parti dovranno dare informativa al GSE sulla cessione del credito in essere utilizzando una delle seguenti opzioni e notificando al GSE la seguente documentazione integrativa:\nL' opzione C inoltre NON POTRA ESSERE UTILIZZATA In caso di avvenuta cessazione del soggetto cedente – precedente soggetto responsabile (cambio titolarita'mortis causa o fusione tra aziende) e pertanto in tale caso potranno essere considerate solo le opzioni A e B. In tal caso occorrerà integrare le premesse dell'allegato 1 o…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/cessione-del-credito-e-sopravvenuto-cambio-di-titolarita/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cessione-del-credito-e-sopravvenuto-cambio-di-titolarita/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/chi-può-accedere/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "CHI PUÒ ACCEDERE"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "CHI PUÒ ACCEDERE"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/chi-può-accedere/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/chi-può-accedere/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/chi-può-accedere/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-operativi/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Chiarimenti operativi"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Chiarimenti operativi"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-operativi/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-operativi/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-operativi/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-su-pagamenti-e-fatture/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Chiarimenti su pagamenti e fatture"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Chiarimenti su pagamenti e fatture"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-su-pagamenti-e-fatture/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-su-pagamenti-e-fatture/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/chiarimenti-su-pagamenti-e-fatture/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/chiarimenti-su-pagamenti-e-fatture/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Chiarimenti su pagamenti e fatture"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Chiarimenti su pagamenti e fatture"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/chiarimenti-su-pagamenti-e-fatture/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/chiarimenti-su-pagamenti-e-fatture/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/chiarimenti-su-pagamenti-e-fatture/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/chiarimenti-su-pagamenti-e-fatture/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Chiarimenti su pagamenti e fatture"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Chiarimenti su pagamenti e fatture"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/chiarimenti-su-pagamenti-e-fatture/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/chiarimenti-su-pagamenti-e-fatture/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/chiarimenti-su-pagamenti-e-fatture/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cogenerazione"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cogenerazione"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scegli un argomento qui di seguito Informazioni generali Informazioni condizioni di cumulabilità Informazioni su modalità di calcolo, pagamenti degli incentivi e aspetti fiscali Supporto alla presentazione o annullamento della richiesta Integrazioni e motivi ostativi Chiarimenti su pagamenti e fatture Rettifica dati tecnici o contrattuali Chiarimenti operativi Informazioni su Certificati bianchi per la Cogenerazione Informazioni su Certificati Verdi da Teleriscaldamento Informazioni su apertura conto proprietà e procedura emissione e ritiro Certificati bianchi Fatturazione elettronica"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/cogenerazione/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/cogenerazione-ad-alto-rendimento/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cogenerazione ad alto rendimento"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cogenerazione ad alto rendimento"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/cogenerazione-ad-alto-rendimento/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La cogenerazione è la produzione combinata , in un unico processo, di energia elettrica - o meccanica - e calore. Un'unità di cogenerazione è definita ad alto rendimento se il valore del risparmio di energia primaria (PES) che ne consegue è almeno del 10% oppure, nel caso di unità di micro-cogenerazione (< 50 kWe) o piccola cogenerazione (< 1 MWe), se assume un qualunque valore positivo.\nIl GSE provvede annualmente al riconoscimento a consuntivo del funzionamento CAR e, per le unità di cogenerazione che lo richiedono, al successivo riconoscimento del numero di CB cui hanno diritto. Il GSE provvede inoltre a esaminare richieste di valutazione preliminare (preventivo) per unità non ancora in esercizio, finalizzate al successivo accesso ai Certificati Bianchi.\nNel caso in cui il progetto presentato non sia conforme alla normativa verranno indicate le carenze rilevate e le eventuali modifiche da apportare . Il GSE infine svolge le attività di verifica e controllo sugli impianti incentivati comunicando al MISE e al produttore l'esito finale delle ispezioni. Tutte le richieste di riconoscimento vanno inviate esclusivamente attraverso il Portale RICOGE , che consente di caricare tutti i…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/cogenerazione-ad-alto-rendimento/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/cogenerazione-ad-alto-rendimento/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/come-accedere/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Il Nuovo Piano Transizione 5.0"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Il Nuovo Piano Transizione 5.0"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/come-accedere/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "COME ACCEDERE La procedura di accesso alla misura prevede 3 fasi: Comunicazione preventiva Comunicazione di conferma Comunicazione di completamento Tutte e tre le comunicazioni e le azioni ad esse correlate dovranno essere effettuate tramite il portale “Nuovo Piano Transizione 5.0\" accessibile collegandosi, tramite SPID, CIE o altre modalità previste per l’accesso all' Area Clienti GSE . È consigliabile svolgere la procedura con il browser Google Chrome. Comunicazione preventiva Per ciascuna struttura produttiva, l’impresa trasmette una o più comunicazioni preventive contenenti i dati identificativi dell’azienda, la tipologia e l’ammontare degli investimenti previsti. Per ogni bene, devono essere indicati la data di completamento, determinata secondo i criteri del TUIR per i beni di cui agli Allegati IV e V, ovvero la data di fine lavori per gli impianti FER (Fonti Energetiche Rinnovabili), il coefficiente di ammortamento fiscale, la data prevista di interconnessione per i beni materiali e immateriali 4.0 o, nel caso degli impianti FER, la data prevista di entrata in esercizio. Comunicazione di conferma Entro sessanta giorni dalla ricezione dell’esito positivo della comunicazione…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/come-accedere/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/imprese/nuovo-piano-transizione-5-0/come-accedere/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/come-funzionano-i-pagamenti-in-conto-energia/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Come funzionano i pagamenti in Conto Energia"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Come funzionano i pagamenti in Conto Energia"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/come-funzionano-i-pagamenti-in-conto-energia/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Da I a IV Conto Energia (tariffa normale) l'incentivo è calcolato moltiplicando la quantità di energia prodotta dal tuo impianto per la tariffa incentivante\nDa IV al V Conto Energia (tariffa onnicomprensiva e tariffa premio autoconsumo) l'incentivo è dato dalla somma della tariffa fissa omnicomprensiva e della tariffa premio autoconsumo.\nL'importo della tariffa incentivante varia a seconda della potenza dell'impianto e il pagamento avviene, per ciascun anno, tramite acconti periodici costanti e un conguaglio annuale .\nL'acconto viene erogato sulla base della stima dell'energia prodotta. Per quantificare l'importo il GSE considera l'energia prodotta dall'impianto negli ultimi anni fino al periodo di riferimento"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/come-funzionano-i-pagamenti-in-conto-energia/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/come-funzionano-i-pagamenti-in-conto-energia/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/compensazione-dei-cv/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Compensazione dei CV"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Compensazione dei CV"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/compensazione-dei-cv/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/compensazione-dei-cv/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/compensazione-dei-cv/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/conguaglio/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Produzione elettrica da impianti a biogas e biomasse solide"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Produzione elettrica da impianti a biogas e biomasse solide"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/conguaglio/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per gli impianti che attualmente beneficiano degli incentivi GRIN, FER, TO e del meccanismo di remunerazione BIO-PMG , i produttori sono tenuti a fare richiesta di conguaglio al GSE nell’anno n+1 rispetto alla produzione dell’anno precedente inviando la documentazione necessaria al fine di attestare la sostenibilità dei biocombustibili utilizzati, pena la sospensione dell’erogazione degli incentivi e della remunerazione BIO-PMG. Nel caso in cui lo stesso impianto abbia beneficiato di due diversi regimi commerciali durante il medesimo anno, sarà necessario inviare la dichiarazione a consuntivo secondo le modalità descritte nella Guida."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/conguaglio/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-biogas-e-biomasse-solide/conguaglio/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-bioliquidi/conguaglio-e-atto-dimpegno-2025/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Produzione elettrica da impianti a bioliquidi"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Produzione elettrica da impianti a bioliquidi"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-bioliquidi/conguaglio-e-atto-dimpegno-2025/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per gli impianti che beneficiano degli incentivi GRIN/TO e contestualmente della remunerazione BIOL-PMG , i produttori sono tenuti a fornire al GSE la documentazione necessaria ad attestare la sostenibilità dei bioliquidi utilizzati, secondo le modalità descritte nella Guida.\nI titolari degli impianti che accedono al solo regime commerciale BIOL-PMG sono tenuti ad inviare la documentazione necessaria secondo le modalità descritte nella Guida."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-bioliquidi/conguaglio-e-atto-dimpegno-2025/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/certificazione-della-sostenibilita/produzione-elettrica-da-impianti-a-bioliquidi/conguaglio-e-atto-dimpegno-2025/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/fotovoltaico/conto-energia/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Conto Energia"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Conto Energia"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/fotovoltaico/conto-energia/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Conto Energia è stato introdotto in Italia con la Direttiva comunitaria 2001/77/CE e poi recepita con l’approvazione del Decreto legislativo 387 del 2003 . Questo meccanismo è diventato operativo con l’entrata in vigore dei Decreti interministeriali del 28/07/2005 e del 0 6/02/2006 (I° Conto Energia ) che hanno introdotto il sistema di finanziamento in conto esercizio della produzione elettrica.\nCon il D.M. 19/02/2007 (II° Co nto Energia ) sono state introdotte alcune novità come l’applicazione della tariffa incentivante su tutta l'energia prodotta dall’impianto, la semplificazione delle regole di accesso alle tariffe incentivanti e la differenziazione delle tariffe anche in funzione del tipo di integrazione architettonica e della taglia dell’impianto.\nÈ stato inoltre previsto un premio per impianti fotovoltaici abbinati all’uso efficiente dell’energia.\nNel 2010, con il D.M. 06/08/2010 è entrato in vigore il III° Conto Energia , applicabile agli impianti entrati in esercizio a partire dal 1 gennaio 2011 e fino al 31 maggio 2011, che ha introdotto specifiche tariffe per impianti fotovoltaici integrati con caratteristiche innovative e impianti fotovoltaici a concentrazione."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/fotovoltaico/conto-energia/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/fotovoltaico/conto-energia/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Conto Energia"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Conto Energia"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scegli un argomento qui di seguito Informazioni generali Cambio di titolarità Cessione credito e mandato all'incasso Chiarimenti su pagamenti e fatture Dichiarazione annuale di consumo Informazioni condizioni di cumulabilità Informazioni convenzione Informazioni su modalità di calcolo, pagamenti degli incentivi e aspetti fiscali Richieste informazioni verifiche ispettive Variazione Iban e bonifici stornati Informazioni su smaltimento dei moduli Fatturazione elettronica"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/pa/conto-termico/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Conto termico"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Conto termico"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/pa/conto-termico/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/pa/conto-termico/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/pa/conto-termico/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Conto Termico 3.0"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Conto Termico 3.0"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Scopri il nuovo Conto Termico 3.0, la misura di incentivi gestita dal GSE per l’efficienza energetica e la produzione di energia termica da fonti rinnovabili."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/conto-termico-per-la-pa/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Conto termico per la pa"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Conto termico per la pa"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/conto-termico-per-la-pa/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/conto-termico-per-la-pa/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/efficienza-energetica/conto-termico-3-0/conto-termico-per-la-pa/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/conversione-da-cv-in-incentivo/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Conversione da CV in incentivo"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Conversione da CV in incentivo"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/conversione-da-cv-in-incentivo/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/conversione-da-cv-in-incentivo/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-verdi/conversione-da-cv-in-incentivo/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/dichiarazione-annuale-di-consumo/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Dichiarazione annuale di consumo"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Dichiarazione annuale di consumo"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/dichiarazione-annuale-di-consumo/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/conto-energia/dichiarazione-annuale-di-consumo/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/conto-energia/dichiarazione-annuale-di-consumo/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/dichiarazione-di-consumo/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Dichiarazione di consumo"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Dichiarazione di consumo"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/dichiarazione-di-consumo/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "I titolari di impianti fotovoltaici di potenza complessiva superiore a 20 kW hanno l’obbligo di invio delle dichiarazioni di consumo al GSE per la produzione del proprio impianto fino all’anno 2015. L’obbligo non riguarda gli impianti incentivati con il Quarto Conto Energia in TFO o con il Quinto Conto Energia. L’obbligo inoltre non sussiste a partire dall’anno di produzione 2016. Il GSE si riserva tuttavia la facoltà di richiedere tale documentazione, qualora lo ritenga necessario.\n- Cessazione dell’obbligo di invio delle dichiarazioni di consumo: Del. N.595/2014/R/eel dell’Autorità di Regolazione per Energia Reti e Ambiente (“ARERA”); - Invio dichiarazioni di consumo pregresse: art. 53 del Testo Unico delle accise; - Esenzione invio Dichiarazione di Consumo in caso di impianti incentivati con il Quinto Conto Energia: Del. ARERA 343/2012/R/efr\nI documenti richiesti sono i seguenti:\nLa Documentazione deve essere inviata attraverso il portale dedicato al CONTO ENERGIA. Per maggiori informazioni consulta la Guida all’invio dematerializzato delle dichiarazioni di consumo"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/dichiarazione-di-consumo/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/dichiarazione-di-consumo/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/disdetta-convenzione/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Disdetta convenzione"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Disdetta convenzione"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/disdetta-convenzione/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/disdetta-convenzione/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/ritiro-dedicato/disdetta-convenzione/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/disdetta-convenzione/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Disdetta contratto"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Disdetta contratto"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/disdetta-convenzione/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/disdetta-convenzione/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/scambio-sul-posto/disdetta-convenzione/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/dispacciamento/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Dispacciamento"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Dispacciamento"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/dispacciamento/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Cerca un argomento qui di seguito Gestione programmi"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/dispacciamento/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/dispacciamento/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/mercati-energetici/dispacciamento-rinnovabili/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Dispacciamento rinnovabili"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Dispacciamento rinnovabili"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/mercati-energetici/dispacciamento-rinnovabili/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio di dispacciamento , svolto da Terna, è la gestione coordinata delle immissioni e dei prelievi di energia elettrica sulla rete di trasmissione nazionale per garantire il bilanciamento del sistema elettrico.\nL'energia elettrica non è un bene immagazzinabile; per questo è necessario produrre , istante per istante, la quantità di energia richiesta dall'insieme dei consumatori finali e gestirne la trasmissione in modo che offerta e domanda siano sempre in equilibrio .\nQuesto garantirà continuità della fornitura in condizioni di sicurezza.\nIn tempo reale, Terna monitora i flussi elettrici e corregge i livelli di immissione e prelievo bilanciandoli in perfettamente in ogni momento. Se necessario, Terna invia specifici ordini per ridurre o aumentare l'energia immessa in rete alle unità di produzione."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/mercati-energetici/dispacciamento-rinnovabili/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/mercati-energetici/dispacciamento-rinnovabili/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/dm-11-gennaio-2017/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "DM 11 gennaio 2017"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "DM 11 gennaio 2017"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/dm-11-gennaio-2017/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come possiamo esserti d'aiuto? Scegli un argomento qui di seguito Condizioni generali di cumulabilità Informazioni generali Presentazione e valutazione richiesta Rettifica dati Cambio di titolarità"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/dm-11-gennaio-2017/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/certificati-bianchi/dm-11-gennaio-2017/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/dm-2-marzo-2018/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Dm 2 marzo 2018"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Dm 2 marzo 2018"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/dm-2-marzo-2018/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "​Gli articoli 12 e 13 del D.M. 2 marzo 2018 disciplinano l'accesso agli incentivi degli impianti di produzione di biometano e di altri biocarburanti avanzati ubicati sul territorio di altri Stati membri dell'Unione Europea e di altri Stati terzi confinanti con l'Italia con i quali l'UE ha stipulato accordi di libero scambio e che esportano fisicamente la loro produzione di biometano o di altri biocarburanti avanzati in Italia. Tra le varie condizioni previste dal citato decreto per l'ammissione all'incentivazione di tali impianti vi è l'esistenza di un accordo con lo Stato membro o terzo confinante in cui è ubicato l'impianto che stabilisca delle condizioni di reciprocità. Ad oggi, non essendo ancora presenti accordi su tale tematica, non è ancora possibile incentivare impianti ubicati al di fuori del territorio nazionale.\n​Le materie prime valevoli per la produzione di biometano avanzato e di altri biocarburanti avanzati sono riportate nell’allegato 3 parte A del D.M. 10 ottobre 2014, così come modificato dal D.M. 2 marzo 2018, ad esclusione delle materie prime elencate nella parte B del medesimo allegato 3. Inoltre, al paragrafo 3.1 delle Procedure applicative, pubblicate dal…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/dm-2-marzo-2018/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biocarburanti/dm-2-marzo-2018/"
+      }
+    },
+    {
+      "@id": "https://www.gse.it/servizi-per-te/supporto/biometano/dm-2-marzo-2018/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Dm 2 marzo 2018"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Dm 2 marzo 2018"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.gse.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.gse.it"
+      },
+      "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biometano/dm-2-marzo-2018/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "​Gli articoli 12 e 13 del D.M. 2 marzo 2018 disciplinano l'accesso agli incentivi degli impianti di produzione di biometano e di altri biocarburanti avanzati ubicati sul territorio di altri Stati membri dell'Unione Europea e di altri Stati terzi confinanti con l'Italia con i quali l'UE ha stipulato accordi di libero scambio e che esportano fisicamente la loro produzione di biometano o di altri biocarburanti avanzati in Italia. Tra le varie condizioni previste dal citato decreto per l'ammissione all'incentivazione di tali impianti vi è l'esistenza di un accordo con lo Stato membro o terzo confinante in cui è ubicato l'impianto che stabilisca delle condizioni di reciprocità. Ad oggi, non essendo ancora presenti accordi su tale tematica, non è ancora possibile incentivare impianti ubicati al di fuori del territorio nazionale.​\n​ Qualora l’impianto di produzione di biogas e la sezione di depurazione e raffinazione siano in capo a soggetti distinti, il Produttore (soggetto titolato a richiedere la qualifica e gli incentivi spettanti) è unico e coincide con il soggetto titolare delle autorizzazioni alla costruzione e all’esercizio della sezione di depurazione e raffinazione del biogas…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.gse.it/servizi-per-te/supporto/biometano/dm-2-marzo-2018/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.gse.it/servizi-per-te/supporto/biometano/dm-2-marzo-2018/"
+      }
+    }
+  ],
+  "dct:title": {
+    "@language": "it",
+    "@value": "Catalogo servizi GSE"
+  },
+  "dct:modified": "2026-09-15T16:34:15.637564+00:00",
+  "dct:source": "https://www.gse.it/"
+}

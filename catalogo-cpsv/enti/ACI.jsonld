@@ -1,0 +1,2751 @@
+{
+  "@context": {
+    "cpsv": "https://w3id.org/italia/onto/CPSV#",
+    "cv": "http://data.europa.eu/m8g/",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "aci": "https://www.aci.it/onto/aci#",
+    "cpsv-portalone": "urn:cpsv-portalone:"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.aci.it",
+      "@type": "cv:PublicOrganisation",
+      "dct:title": {
+        "@language": "it",
+        "@value": "ACI - Automobile Club d'Italia"
+      },
+      "foaf:homepage": "https://aci.gov.it"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Assistenza e richiesta dati statistici"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/",
+      "foaf:page": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente di richiedere dati statistici o informazioni riguardanti i dati del Pubblico Registro Automobilistico (PRA), come prime iscrizioni, passaggi di proprietà, radiazioni, parco veicolare, ecc., incidenti stradali e costi chilometrici."
+      },
+      "dct:modified": "1 Aprile 2026",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Dati statistici in formato excel o csv per le principali formalità PRA, i veicoli circolanti e gli incidenti stradali."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "I tempi di evasione della richiesta dipendono dalla complessità della fornitura statistica."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio può essere gratuito o a pagamento a seconda dei requisiti previsti dal Regolamento di accesso al Sistema Informativo Centrale ACI. Il pagamento , ove richiesto , prevede un importo stabilito secondo la tabella tariffe 2022 ai sensi della legge 9 luglio 1990, n. 187 (l’importo è rivalutato annualmente in base all’indice ISTAT/FOI – indice del costo della vita di famiglie, operai e impiegati). regolamento di accesso al sistema informativo centrale ACI ( pdf , 692 KB) tabella tariffe - anno 2022 ( pdf , 37 KB)"
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#access-description"
+        },
+        {
+          "@id": "https://richiestadatistatistici.aci.it/home#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Addetti ai lavori, studiosi e semplici appassionati del settore dell’automotive che vogliono approfondire le proprie conoscenze statistiche automobilistiche."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Indicazioni specifiche delle variabili riguardanti la statistica che si intende ottenere, quali ad esempio anno di riferimento, disaggregazione geografica, tipo di categoria del veicolo, alimentazione, classificazione euro, ecc."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/assistenza-e-richiesta-dati-statistici/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi utilizzare il servizio di assistenza online tramite identità digitale. richiestadatistatistici.aci.it"
+      }
+    },
+    {
+      "@id": "https://richiestadatistatistici.aci.it/home#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://richiestadatistatistici.aci.it/home"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Attestazione classe di distanza chilometrica per farmacie"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/",
+      "foaf:page": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio fornisce una attestazione che certifica la classe di distanza chilometrica che intercorre tra farmacie situate in frazioni comunali e il centro geografico comunale del capoluogo della provincia di appartenenza, ai fini di quanto previsto dal Titolo II, art. 17, comma 3 dell’Accordo Collettivo Nazionale per la disciplina dei rapporti con le farmacie pubbliche e private."
+      },
+      "dct:modified": "25 Novembre 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Attestazione che certifica la classe di distanza chilometrica che intercorre tra farmacie situate in frazioni comunali e il centro geografico comunale del capoluogo della provincia di appartenenza."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La richiesta, di norma, viene svolta in 2-4 giorni lavorativi dalla ricezione della mail, esclusi sabato e festivi."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#input-come-fare"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Ad Amministrazioni Pubbliche – ASL – che ne facciano richiesta in ottemperanza a quanto previsto nell’Accordo Collettivo Nazionale per la disciplina dei rapporti con le farmacie pubbliche e private. Al fine di assicurare una gestione più efficiente e centralizzata si ritiene più opportuno che le richieste pervengano per area territoriale di competenza delle ASL."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Ragione sociale della farmacia Indirizzo Numero civico Frazione Comune È obbligatoria la compilazione di tutte le informazioni richieste nel foglio excel ."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Inviare una richiesta mail all’indirizzo distanzechilometriche@aci.it allegando una copia del foglio excel disponibile di seguito. È necessario compilare tutte le colonne del foglio excel, avendo cura di inserire una riga per ciascuna farmacia per la quale si richiede l’attestazione. farmacie ( excel , 6 KB)"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/avvisaci-2/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "AvvisACI"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/avvisaci-2/",
+      "foaf:page": "https://aci.gov.it/servizio/avvisaci-2/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio AvvisACI ti permettere di monitorare l’avvenuta registrazione al PRA di pratiche da te stesso presentate, e di essere informato di eventi registrati sul proprio veicolo su richiesta di altri soggetti."
+      },
+      "dct:modified": "27 Gennaio 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Una e-mail o un sms relativo alle seguenti tipologie di registrazioni al PRA: iscrizione di immatricolazione trascrizione dell’atto di vendita da parte dell’acquirente iscrizione del fermo amministrativo da parte di un Agente della riscossione e relativa cancellazione radiazione da parte dell’Autodemolitore al quale è stato consegnato il veicolo per la demolizione radiazione per definitiva esportazione all’estero perdita di possesso del veicolo e rientro in possesso."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "l’iscrizione è immediata successivamente verrà inviata una e-mail, all’indirizzo fornito, ogni qualvolta verrà registrato al PRA un evento su un veicolo di tuo interesse."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/avvisaci-2/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/avvisaci-2/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/avvisaci-2/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/avvisaci-2/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/avvisaci-2/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/avvisaci-2/#access-description"
+        },
+        {
+          "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=avvisaci#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/avvisaci-2/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/avvisaci-2/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/avvisaci-2/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/avvisaci-2/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Esclusivamente alle persone fisiche ed é sempre possibile richiederne online la disattivazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/avvisaci-2/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Per l’iscrizione al servizio, occorrono: targa codice fiscale indirizzo e-mail contatto telefonico (solo se si desidera ricevere anche la notifica via sms)."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/avvisaci-2/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/avvisaci-2/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi utilizzare il servizio tramite identità digitale. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=avvisaci#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=avvisaci"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Bollo Auto: istanze online"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/bollo-auto-istanze-online/",
+      "foaf:page": "https://aci.gov.it/servizio/bollo-auto-istanze-online/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Bollo auto",
+      "cpsv:hasTheme": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+        }
+      ],
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Bollo auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio permette di inviare istanze di rimborso, di esenzione, di domiciliazione bancaria del bollo auto e memorie difensive per verificare posizioni irregolari relative al bollo auto. Attenzione Il servizio è disponibile solo per le Regioni e le Province autonome convenzionate con ACI che hanno attivato tali servizi."
+      },
+      "dct:modified": "18 Marzo 2026",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "L’esito dell’istanza lavorata (accoglimento, rigetto o ricalcolo). Nella sezione “Le tue istanze”, saranno consultabili i vari stati di lavorazione della pratica sino all’esito definitivo."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "L’istanza viene evasa entro i termini previsti dal Regolamento interno di ciascuna Regione/Provincia Autonoma. Info Un’istanza di rimborso può essere presentata entro i termini di prescrizione previsti da ciascuna Amministrazione, che può prevedere una soglia di importo minimo rimborsabile. L’invio della memoria difensiva è possibile fino alla data della chiusura della campagna di recupero da parte della Regione o Provincia autonoma, indicata sull’avviso ricevuto."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#input-come-fare"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#input-condizioni-di-servizio"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#access-description"
+        },
+        {
+          "@id": "https://my.aci.it/spec/assistenza/istanze#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/bollo-auto-istanze-online/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A Cittadini, Amministrazioni, Enti e Aziende che vogliono inviare istanze di rimborso, istanze di esenzione o di domiciliazione del bollo auto o che hanno ricevuto avvisi bonari, accertamenti o ingiunzioni di pagamento dalla propria Regione o Provincia autonoma, e che vogliono inviare online una memoria difensiva per chiedere il riesame della contestazione ricevuta."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Per utilizzare il servizio sono necessari: Per le istanze di rimborso : copia e/o originale delle ricevute di versamento, a seconda delle motivazioni del rimborso eventuali documenti da allegare (in formato PDF, peso massimo 3 Mb) Per le istanze di esenzione : documentazione obbligatoria da allegare, a seconda del richiedente e della tipologia di esenzione richiesta: ad esempio Documento di circolazione, Verbale accertamento handicap, Certificato Commissione medica pubblica, Certificato indennità di accompagnamento, Dichiarazione sostitutiva carico fiscale (in formato PDF, peso massimo 3 Mb) Per le istanze di domiciliazione bancaria : coordinate bancarie del conto sul quale attivare la domiciliazione del bollo auto Per le memorie difensive : il numero pratica presente sull’avviso eventuali documenti da allegare (in formato PDF, peso massimo 3 Mb)."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#input-condizioni-di-servizio",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Condizioni di servizio: È richiesta l’autenticazione tramite SPID, CIE, CNS oppure eIDAS. È necessario che la Regione/Provincia Autonoma di competenza abbia attivato il servizio e, per le memorie difensive che ci sia una campagna in atto di recupero della tassa automobilistica."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollo-auto-istanze-online/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi inviare una istanza direttamente online tramite identità digitale. my.aci.it"
+      }
+    },
+    {
+      "@id": "https://my.aci.it/spec/assistenza/istanze#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://my.aci.it/spec/assistenza/istanze"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Bollonet: paga il bollo"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/",
+      "foaf:page": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Bollo auto",
+      "cpsv:hasTheme": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+        }
+      ],
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Bollo auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio di pagamento online della tassa automobilistica (bollo)."
+      },
+      "dct:modified": "13 Ottobre 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Una notifica di avvenuto pagamento in tempo reale e, entro un’ora, la ricevuta del pagamento effettuato."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Il pagamento è effettuato in tempo reale a conclusione del corretto iter di acquisizione dei dati relativi al pagamento. La ricevuta viene inviata entro un’ora. Attenzione Per il bollo corrente pagato oltre i termini di legge, la procedura calcola sanzioni ed interessi. Per il pagamento di avvisi bonari o atti di accertamento tramite Codice Avviso PagoPA (IUV) o numero pratica, la procedura è attiva fino alla data stabilita dalla singola Regione/P.A. e notificata al contribuente nell’avviso inviato."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito. Info Il pagamento viene effettuato tramite la piattaforma PagoPA, scegliendo un Prestatore di Servizi di Pagamento (PSP) aderente (banca o altro istituto di pagamento). Un eventuale costo aggiuntivo dipende dal PSP selezionato."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#input-come-fare"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#input-condizioni-di-servizio"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#access-description"
+        },
+        {
+          "@id": "https://bollo.aci.it/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio è disponibile per Cittadini, Amministrazioni, Enti e Aziende residenti o con sede nella quasi totalità delle Regioni e nelle Province Autonome di Bolzano e di Trento."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Per utilizzare il servizio sono necessari i dati del veicolo e dell’intestatario: generalità codice fiscale indirizzo e-mail Regione o Provincia di residenza dell’intestatario targa tipo di veicolo. Attenzione È consigliabile consultare il documento di circolazione per la verifica dei dati tecnici utilizzati per il calcolo dell’importo da pagare. Per gli avvisi di pagamento e gli avvisi di accertamento occorre conoscere il Codice Avviso PagoPA (IUV) o numero pratica associato al pagamento che si vuole effettuare."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS e selezionare il pagamento che si desidera effettuare per uno dei veicoli associati al soggetto richiedente oppure è possibile inserire una targa per effettuare il pagamento per un veicolo non di propria competenza. La fase di pagamento prosegue con la selezione di un soggetto pagatore (PSP) abilitato sulla piattaforma PagoPA. Portale di Assistenza ai Servizi ACI Il Portale consente al cittadino di richiedere supporto, assistenza tecnica e informazioni sui Servizi ACI in materia di tasse automobilistiche (bollo auto), associazionismo, pagamenti online, prenotazione appuntamento presso gli uffici PRA (Pubblico Registro Automobilistico), riviste, sport e altro. Professionisti, imprese, Enti e PA Cittadino Utilità per te e la tua auto Approfondisci assistenzaservizicittadino.aci.it"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#input-condizioni-di-servizio",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Condizioni di servizio: È richiesta l’autenticazione tramite SPID, CIE, CNS oppure eIDAS. Attenzione È necessario che la Regione/Provincia Autonoma di competenza abbia messo a disposizione i dati del proprio Ruolo regionale/provinciale ed autorizzato il pagamento del bollo."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/bollonet-paga-il-bollo/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Paga il bollo direttamente online tramite identità digitale. bollo.aci.it"
+      }
+    },
+    {
+      "@id": "https://bollo.aci.it/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://bollo.aci.it/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Calcola online il bollo ed il superbollo"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/",
+      "foaf:page": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Bollo auto",
+      "cpsv:hasTheme": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+        }
+      ],
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Bollo auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente di conoscere l’importo della tassa automobilistica regionale/provinciale da versare (bollo) e dell’addizionale erariale della tassa automobilistica se dovuta (superbollo)."
+      },
+      "dct:modified": "4 Aprile 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "A conclusione dell’inserimento dei dati, si ottiene il calcolo di quanto dovuto a titolo di tassa automobilistica regionale e di superbollo in base agli archivi regionali/provinciali, oppure in base ai dati inseriti manualmente dall’utente. Attenzione Il calcolo viene effettuato solo a partire dal primo giorno del mese successivo a quello di scadenza dell’ultimo bollo pagato."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Il calcolo è effettuato in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#input-come-fare"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#input-condizioni-di-servizio"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#access-description"
+        },
+        {
+          "@id": "https://online.aci.it/acinet/calcolobollo/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Ai cittadini, amministrazioni, enti e aziende che desiderano conoscere l’importo della tassa automobilistica e dell’eventuale addizionale erariale (superbollo)."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Per utilizzare il servizio sono necessari i dati del veicolo e dell’intestatario: tipo di pagamento tipo di veicolo regione di residenza dell’intestatario targa"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio non occorre autenticazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#input-condizioni-di-servizio",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Condizioni di servizio: È necessario che la Regione/Provincia Autonoma di competenza abbia messo a disposizione i dati del proprio Ruolo Regionale."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/calcola-online-il-bollo-ed-il-superbollo/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi calcolare il bollo o il superbollo direttamente online. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://online.aci.it/acinet/calcolobollo/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://online.aci.it/acinet/calcolobollo/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Consulta attestazione e Certificato di Proprietà Digitale"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/",
+      "foaf:page": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente di consultare online l’attestazione e il Certificato di Proprietà digitale (CdPD) emesso dal Pubblico Registro Automobilistico (PRA). È possibile consultare solamente i certificati digitali emessi dal 05/10/2015 al 30/09/2021."
+      },
+      "dct:modified": "19 Settembre 2024",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "La consultazione online dell’attestazione e del CDP digitale."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La consultazione è in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#access-description"
+        },
+        {
+          "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=ConsultaCDPD&purl=L2F1dGgvbG9naW5TdWNjZXNz&purl=L2F1dGgvbG9naW5TdWNjZXNzP3JlZGlyZWN0LXVybD0vY29uc3VsdGFjZHBk#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A chiunque sia in possesso dell’attestazione rilasciata dall’ufficio PRA a fronte di una pratica portata a termine."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: È necessario il documento rilasciato dall’Ufficio PRA a conclusione della pratica richiesta, sul quale sono riportati il link di riferimento e il QR Code utili per il collegamento."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi consultare l’attestazione e il Certificato di Proprietà Digitale direttamente online tramite identità digitale. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=ConsultaCDPD&purl=L2F1dGgvbG9naW5TdWNjZXNz&purl=L2F1dGgvbG9naW5TdWNjZXNzP3JlZGlyZWN0LXVybD0vY29uc3VsdGFjZHBk#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=ConsultaCDPD&purl=L2F1dGgvbG9naW5TdWNjZXNz&purl=L2F1dGgvbG9naW5TdWNjZXNzP3JlZGlyZWN0LXVybD0vY29uc3VsdGFjZHBk"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Consulta Atto e Nota digitale"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/",
+      "foaf:page": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio permette la consultazione e la verifica dell’autenticità dell’atto di vendita o della ricevuta di presentazione della pratica rilasciati in formato digitale dagli studi di consulenza."
+      },
+      "dct:modified": "19 Settembre 2024",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "La verifica dell’autenticità o meno del documento nativo digitale."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La risposta è fornita in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#access-description"
+        },
+        {
+          "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=ConsultaAtti&purl=L2F1dGgvbG9naW5TdWNjZXNz#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A chiunque sia in possesso del documento digitale."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: È sufficiente inserire il codice di accesso o utilizzare il QR Code presenti nell’attestazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi accedere al servizio online tramite identità digitale. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=ConsultaAtti&purl=L2F1dGgvbG9naW5TdWNjZXNz#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=ConsultaAtti&purl=L2F1dGgvbG9naW5TdWNjZXNz"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Consultazione online esito istanza di rimborso"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/",
+      "foaf:page": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio permette la consultazione online dello stato di lavorazione dell’istanza di rimborso."
+      },
+      "dct:modified": "16 Dicembre 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "L’esito dell’istanza lavorata (accettata, respinta o in lavorazione)."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Il servizio è in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#input-come-fare"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A cittadini, amministrazioni, enti e aziende che hanno presentato un’istanza di rimborso e vogliono conoscerne lo stato di lavorazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: numero di protocollo assegnato all’istanza codice fiscale del richiedente presenti sul documento rilasciato dall’Ufficio PRA (Pubblico Registro Automobilistico)."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio non occorre autenticazione. È sufficiente inserire correttamente il numero di protocollo dell’istanza e il codice fiscale del richiedente negli appositi campi. Una volta cliccato sul pulsante “Verifica”, il sistema mostrerà l’esito della richiesta: accettata, respinta oppure in lavorazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Convenzioni accesso Dati PRA"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/",
+      "foaf:page": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Consente di essere abilitati alla consultazione dei dati PRA tramite collegamento telematico."
+      },
+      "dct:modified": "24 Ottobre 2024",
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La consultazione è in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "il servizio è gratuito per le Amministrazioni centrali e periferiche dello Stato per gli altri soggetti è richiesto un costo a titolo di copertura degli oneri che l’Ente sostiene per l’erogazione del servizio. L’ammontare del costo e le modalità di pagamento sono disciplinati nella Convenzione."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#input-come-fare"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#input-condizioni-di-servizio"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#access-description"
+        },
+        {
+          "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=contratti_digitali&purl=L3BhZGNXZWJDbGllbnQvc2l0ZS9pbmRleC54aHRtbA==#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Alle Amministrazioni dello Stato, le Pubbliche Amministrazioni, i Concessionari di pubblici servizi e i soggetti giuridici privati in possesso dei requisiti di legge."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Registrazione al servizio."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per attivare la consultazione è necessario registrarsi al servizio."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#input-condizioni-di-servizio",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Condizioni di servizio: La risposta viene fornita solo se il veicolo è iscritto al PRA (generalmente per i veicoli iscritti e/o oggetto di formalità ed operazioni dopo il 1992)."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi accedere al servizio online tramite identità digitale. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=contratti_digitali&purl=L3BhZGNXZWJDbGllbnQvc2l0ZS9pbmRleC54aHRtbA==#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://login.aci.it/index.php?do=genNotAuth&id=login&application_key=contratti_digitali&purl=L3BhZGNXZWJDbGllbnQvc2l0ZS9pbmRleC54aHRtbA=="
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Crononet: estratto cronologico PRA"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/",
+      "foaf:page": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio permette di ottenere il certificato “estratto cronologico generale del veicolo” rilasciato dall’archivio del Pubblico Registro Automobilistico (PRA) contenente l’elenco di tutte le formalità (ad esempio: trasferimento della proprietà, perdita del possesso, radiazione) annotate sul veicolo a partire dalla sua prima iscrizione."
+      },
+      "dct:modified": "15 Luglio 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "L’estratto cronologico in formato digitale."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La risposta è fornita in 3-5 giorni lavorativi dal pagamento del costo del servizio."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio ha un costo di euro 25,00 di cui: euro 9,00 (costo della certificazione, secondo la vigente tariffa approvata con D.M. del Ministero dell’Economia e delle Finanze del 21/03/2013) euro 16,00 (imposta di bollo)."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#access-description"
+        },
+        {
+          "@id": "https://crononet.aci.it/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A chiunque ne faccia richiesta."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Tipo di veicolo (autoveicolo, motoveicolo, rimorchio) Targa."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS. L’estratto cronologico può essere richiesto: con il servizio Crononet se in possesso di Spid o CIE per i certificati cronologici di veicoli iscritti nella Banca Dati Giuridica del Pra costituita ai sensi della Legge n. 187 del 1990 (nati indicativamente entro il 1993) via PEC o posta elettronica all’Ufficio del Pubblico Registro Automobilistico della provincia di residenza i cui recapiti sono reperibili alla pagina Sedi ACI sul territorio seguendo le istruzioni fornite sul sito ACI, alla pagina Sportello Virtuale i richiedenti stranieri in possesso di una identità digitale rilasciata da uno Stato della UE possono accedere al servizio attraverso il login eIDAS. I richiedenti stranieri extra UE, ovvero UE che non sono in possesso di una identità digitale possono richiedere il Certificato cronologico agli Uffici provinciali PRA seguendo le indicazioni riportate nell’ Avviso/Notice . Per la richiesta, si prega di utilizzare il seguente Modulo/Application Form . Gli indirizzi email degli Uffici periferici ACI sono reperibili alla pagina Sedi ACI sul territorio ."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi utilizzare il servizio direttamente online tramite identità digitale. crononet.aci.it"
+      }
+    },
+    {
+      "@id": "https://crononet.aci.it/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://crononet.aci.it/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Forniture Dati PRA"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/fornitura-dati-pra/",
+      "foaf:page": "https://aci.gov.it/servizio/fornitura-dati-pra/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consiste nella fornitura di dati estratti dal Pubblico Registro Automobilistico (PRA) e relativi ai veicoli in esso registrati, strutturati in ragione di specifiche esigenze. Le informazioni possono essere fornite sia in forma analitica (targa, caratteristiche tecniche, dati anagrafici) sia in forma aggregata (statistiche di varia natura) e possono fare riferimento all’intero territorio nazionale oppure ad ambiti geografici precisi (regione, provincia, comune o CAP)."
+      },
+      "dct:modified": "21 Novembre 2024",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Si possono ottenere i principali dati tecnici (cilindrata, alimentazione, carrozzeria ecc.) del veicolo e i dati anagrafici degli intestatari dei veicoli (nel rispetto e nei limiti dettati dal GDPR), registrati nel Pubblico Registro Automobilistico."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Variano in base alla tipologia di fornitura dati richiesta."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Variano in base alla tipologia di fornitura dati richiesta."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#access-description"
+        },
+        {
+          "@id": "https://my.aci.it/spec/pra/index#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/fornitura-dati-pra/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio è predisposto a beneficio: degli Operatori del mercato automotive , quali ad esempio le aziende autorizzate alla revisione dei veicoli, o aziende che debbano utilizzare le informazioni del PRA per effettuare analisi di mercato o per la realizzazione di iniziative o progetti connessi con il mondo dell’automobile; delle Pubbliche Amministrazioni , ad esempio per soddisfare specifiche esigenze legate al parco circolante, alle zone a traffico limitato, in materia tributaria, ai fini della pianificazione in materia ambientale o delle attività degli studi di consulenza automobilistica."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Forniture “una tantum” c.d. catalogate , tramite registrazione al servizio Forniture Dati PRA, per accedere a una propria area riservata dove inserire e gestire le richieste di fornitura. Forniture in convenzione con cadenza periodica (mensile, bimestrale, trimestrale ecc.) che può essere richiesta tramite registrazione al servizio Forniture Dati PRA, per accedere a una propria area riservata dove inserire una richiesta di convenzione. Il servizio viene erogato entro i termini disciplinati in convenzione. L’accesso al servizio è subordinato alla verifica della fattibilità tecnica ed eventuale sviluppo del software di estrazione e dopo la stipula della convenzione. Forniture “una tantum” c.d. non catalogate , tramite registrazione al servizio Forniture Dati PRA. Il servizio viene erogato previa verifica della fattibilità tecnica e sviluppo del software di estrazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/fornitura-dati-pra/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi accedere al servizio online previa registrazione allo stesso. my.aci.it"
+      }
+    },
+    {
+      "@id": "https://my.aci.it/spec/pra/index#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://my.aci.it/spec/pra/index"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Pagamento Formalità PRA"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/",
+      "foaf:page": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente di effettuare il pagamento tramite pagoPA degli importi: delle somme di spettanza ACI, sia per le pratiche richieste agli Uffici del Pubblico Registro Automobilistico (PRA) tramite PEC o mail sia per quelle presentate presso gli Uffici della Motorizzazione Civile (UMC) delle visure nominative delle certificazioni e delle visure non effettuabili tramite i servizi online Crononet e Visurenet."
+      },
+      "dct:modified": "5 Settembre 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Effettuato e andato a buon fine il pagamento su pagoPA, eseguito con una delle modalità previste, si ottiene la ricevuta contenente il codice IUV (Identificativo Univoco di Versamento) generato dal sistema. Tale ricevuta dovrà essere presentata all’Ufficio PRA o, in alternativa, all’Ufficio della Motorizzazione Civile. In caso di richieste tramite PEC o mail di pratiche, visure nominative e certificazioni, la ricevuta dovrà essere inviata unitamente alla relativa documentazione."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Quelli previsti dalla modalità di pagamento scelta (carta di credito/debito, bonifico, altri sistemi di pagamento come ad esempio PayPal)."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito. Possono essere previste commissioni bancarie o postali, legate alla modalità di pagamento scelta."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#access-description"
+        },
+        {
+          "@id": "https://iservizi.aci.it/PagamentoFormalita/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Agli utenti che richiedono pratiche, visure nominative e certificazioni tramite PEC o mail agli Uffici PRA agli utenti che effettuano la presentazione di una pratica presso gli UMC."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Per utilizzare il servizio sono necessari: targa/telaio (o codice fiscale dell’intestatario in caso di visura nominativa) tipo del veicolo codice pratica (è disponibile una lista per la selezione; per pratiche, visure nominative o certificazioni richieste tramite PEC o mail, indicare come codice pratica, il codice convenzionale C03301) importo cognome e nome o ragione sociale codice fiscale numero di telefono indirizzo mail indirizzo, comune e provincia di residenza."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio non occorre autenticazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-presso-uffici-motorizzazione-civile/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://iservizi.aci.it/PagamentoFormalita/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://iservizi.aci.it/PagamentoFormalita/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Pagamento formalità PRA per operatori abilitati allo STA"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/",
+      "foaf:page": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente di effettuare il pagamento delle somme di spettanza ACI ed è riservato esclusivamente agli operatori professionali (Agenzie, Studi di consulenza etc.) abilitati allo STA che come modalità di pagamento delle formalità telematiche utilizzano pagoPA."
+      },
+      "dct:modified": "25 Giugno 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Effettuato e andato a buon fine il pagamento dei codici IUV (Identificativo Univoco di Versamento) le pratiche risulteranno pagate."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Quelli previsti dalla modalità di pagamento scelta (carta di credito/debito, bonifico, altri sistemi di pagamento come ad esempio PayPal)."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito. Possono essere previste commissioni bancarie o postali, legate alla modalità di pagamento scelta."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#access-description"
+        },
+        {
+          "@id": "https://iservizi.aci.it/PagamentoPraticheSTA/#/input#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Agli operatori professionali (Agenzie, Studi di consulenza etc.) abilitati allo STA."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Per utilizzare il servizio è necessario inserire l’identificativo Aggregato Avvisi Pagamento reperibile tramite l’applicazione “Gestione avvisi di pagamento”."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio non occorre autenticazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/pagamento-formalita-pra-per-operatori-abilitati-allo-sta/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://iservizi.aci.it/PagamentoPraticheSTA/#/input#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://iservizi.aci.it/PagamentoPraticheSTA/#/input"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Portale di Assistenza ai Servizi ACI"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/",
+      "foaf:page": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Utilità per te e la tua auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Utilità per te e la tua auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Portale consente al cittadino di richiedere supporto, assistenza tecnica e informazioni sui Servizi ACI in materia di tasse automobilistiche (bollo auto), associazionismo, pagamenti online, prenotazione appuntamento presso gli uffici PRA (Pubblico Registro Automobilistico), riviste, sport e altro."
+      },
+      "dct:modified": "20 Marzo 2026",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Una mail di notifica avviserà il cittadino che la richiesta è stata evasa. Per leggere l’esito, il cittadino dovrà entrare nel Portale. Sarà disponibile anche lo storico delle interlocuzioni intercorse."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La risposta avviene entro le 40 ore lavorative dalla compilazione della procedura guidata, salvo i casi in cui sia necessario un approfondimento che richieda tempi tecnici più lunghi."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#access-description"
+        },
+        {
+          "@id": "https://assistenzaservizicittadino.aci.it/psc#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#addressee-professionisti%2C%20imprese%2C%20enti%20e%20pa",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Professionisti, imprese, Enti e PA"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A tutti i cittadini."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi utilizzare il servizio di assistenza online tramite identità digitale. assistenzaservizicittadino.aci.it"
+      }
+    },
+    {
+      "@id": "https://assistenzaservizicittadino.aci.it/psc#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://assistenzaservizicittadino.aci.it/psc"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "REVE: ricerca codice identificativo di iscrizione al Registro Veicoli Esteri"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/",
+      "foaf:page": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "La ricerca consente di individuare il codice identificativo di un veicolo con targa estera, se registrato nell’elenco gestito da ACI."
+      },
+      "dct:modified": "24 Ottobre 2024",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Il codice identificativo del veicolo, se iscritto al REVE."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La risposta è in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-pratica"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-pratica"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#access-description"
+        },
+        {
+          "@id": "https://reve.aci.it/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-pratica",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Pratica"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-pratica",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Pratica"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Ai Cittadini, Amministrazioni, Enti e Aziende."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Tipo di veicolo (autoveicolo, motoveicolo, rimorchio) targa estera Stato estero di immatricolazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Accesso libero"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi utilizzare il servizio online senza autenticazione. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://reve.aci.it/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://reve.aci.it/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/sportello-online/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Sportello Online"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/sportello-online/",
+      "foaf:page": "https://aci.gov.it/servizio/sportello-online/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente di richiedere online una pratica (iscrizione, trascrizione, annotazione) o prenotare un appuntamento presso l’Ufficio del Pubblico Registro Automobilistico (PRA)."
+      },
+      "dct:modified": "21 Aprile 2026",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "Richiesta di una pratica online : l’attestazione di avvenuta registrazione al PRA al termine della lavorazione della pratica. Prenotazione appuntamento : un SMS o una email della conferma dell’appuntamento."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Richiesta di una pratica online : la pratica di norma sarà presa in carico e lavorata in 2-4 giorni lavorativi dalla richiesta, esclusi sabato e festivi. Prenotazione appuntamento : confermata in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Richiesta di una pratica online : il costo varia in base alla tipologia della pratica. Prenotazione appuntamento : servizio gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/sportello-online/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/sportello-online/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/sportello-online/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/sportello-online/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/sportello-online/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/sportello-online/#access-description"
+        },
+        {
+          "@id": "https://sportello-online.aci.it/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/sportello-online/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/sportello-online/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/sportello-online/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/sportello-online/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Ai cittadini privati e ai soggetti titolati (es. avvocati, curatori fallimentari, ecc.)."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/sportello-online/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Targa del veicolo Eventuali dati anagrafici o di contatto richiesti Documentazione utile"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/sportello-online/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS. Richiesta di una pratica online : inserisci i dati necessari; allega la documentazione utile in formato PDF ed esegui il pagamento degli importi dovuti (salvo eventuali esenzioni) mediante pagoPA . Prenotazione appuntamento : seleziona l’ufficio PRA, la data e l’orario tra quelli disponibili."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/sportello-online/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Invia una pratica tramite identità digitale o prenota un appuntamento online. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://sportello-online.aci.it/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://sportello-online.aci.it/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica estratto cronologico PRA"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/",
+      "foaf:page": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente il controllo online dell’autenticità dei certificati cronologici dei veicoli (a far data dal 18/05/2015) e la verifica dell’effettiva provenienza dall’archivio del PRA a tutela dell’utente, per individuare e contrastare eventuali casi di contraffazione."
+      },
+      "dct:modified": "18 Dicembre 2024",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "La verifica dell’autenticità del documento."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La risposta è in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#input-come-fare"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#input-condizioni-di-servizio"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#access-description"
+        },
+        {
+          "@id": "https://iservizi.aci.it/VerificaDocumento/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A chiunque ne faccia richiesta."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Il codice del documento presente nel certificato."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio occorre autenticarsi con le credenziali SPID, CIE, CNS ed eIDAS."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#input-condizioni-di-servizio",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Condizioni di servizio: È possibile verificare l’autenticità dei certificati rilasciati dal 18 maggio 2015."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi verificare l’estratto cronologico PRA direttamente online tramite identità digitale. Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://iservizi.aci.it/VerificaDocumento/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://iservizi.aci.it/VerificaDocumento/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Verifica tipo documento e vincoli"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/",
+      "foaf:page": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio consente di verificare online: la tipologia di documento emesso a fronte di un determinato veicolo (Certificato di proprietà cartaceo, Certificato di Proprietà digitale o Documento Unico) se sul veicolo sono iscritti vincoli e/o gravami (es: fermo amministrativo, pignoramento, ipoteca etc)."
+      },
+      "dct:modified": "30 Maggio 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "La verifica del documento e l’iscrizione di vincoli e gravami."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "La consultazione è in tempo reale."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "Il servizio è gratuito."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#access-description"
+        },
+        {
+          "@id": "https://iservizi.aci.it/verificatipocdp/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Soggetti (persone fisiche o giuridiche) intestatari di veicoli al PRA."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: Per utilizzare il servizio sono necessari: targa completa del veicolo tipo di veicolo codice fiscale, solo per la verifica di vincoli e gravami."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: Per accedere al servizio non occorre autenticazione."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Accedi al servizio"
+      }
+    },
+    {
+      "@id": "https://iservizi.aci.it/verificatipocdp/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://iservizi.aci.it/verificatipocdp/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/",
+      "@type": "cpsv:PublicService",
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.aci.it"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Visurenet: visura della banca dati del PRA"
+      },
+      "dct:identifier": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/",
+      "foaf:page": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/",
+      "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "aci:areaTematica": "Pratiche auto",
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "aci-area-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · area tematica ACI",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "aci",
+        "cpsv-portalone:sourceField": "area_tematica",
+        "cpsv-portalone:sourceValue": "Pratiche auto"
+      },
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il servizio fornisce, sulla base del numero di targa, le informazioni sullo stato giuridico attuale del veicolo (intestatario, vincoli/gravami) come risultante dalla banca dati del PRA."
+      },
+      "dct:modified": "22 Ottobre 2025",
+      "aci:outputDescription": {
+        "@language": "it",
+        "@value": "La visura in formato digitale che non costituisce certificazione."
+      },
+      "aci:processingTime": {
+        "@language": "it",
+        "@value": "Il tempo di evasione è di 3-5 giorni lavorativi successivi alla ricezione della richiesta. Il costo è di euro 6,00 e in tal caso la ricevuta deve essere trasmessa via e-mail."
+      },
+      "aci:costDescription": {
+        "@language": "it",
+        "@value": "6,00 euro."
+      },
+      "cpsv:hasWebSiteChannel": {
+        "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#website-channel"
+      },
+      "cv:addressee": [
+        {
+          "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#addressee-cittadino"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#addressee-description"
+        }
+      ],
+      "cpsv:hasInput": [
+        {
+          "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#input-cosa-serve"
+        },
+        {
+          "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#input-come-fare"
+        }
+      ],
+      "cpsv:hasOtherElectronicChannel": [
+        {
+          "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#access-description"
+        },
+        {
+          "@id": "https://visurenet.aci.it/#electronic-channel"
+        }
+      ]
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#website-channel",
+      "@type": "cpsv:WebSiteChannel",
+      "foaf:page": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/"
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#addressee-cittadino",
+      "@type": "cv:Agent",
+      "skos:prefLabel": {
+        "@language": "it",
+        "@value": "Cittadino"
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#addressee-description",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "A chiunque ne faccia richiesta. Attenzione La visura viene rilasciata solo se il veicolo è iscritto al PRA e la targa è contenuta in un archivio informatico (generalmente per i veicoli iscritti e/o oggetto di pratiche/operazioni effettuate dopo il 1992)."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#input-cosa-serve",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Cosa serve: tipo di veicolo (autoveicolo, motoveicolo, rimorchio) targa completa."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#input-come-fare",
+      "@type": "cpsv:Input",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come fare: La visura può essere richiesta: con il servizio Visurenet mediante autenticazione con le credenziali SPID, CIE, CNS ed eIDAS. Sono consentite solamente tre visure nello stesso giorno con lo stesso codice fiscale; per le visure non richiedibili tramite il servizio Visurenet è possibile fare richiesta via PEC o posta elettronica all’Ufficio del Pubblico Registro Automobilistico della provincia di residenza. I recapiti sono reperibili nella sezione Sedi ACI sul territorio ; i richiedenti stranieri extra UE, o UE che non sono in possesso di una identità digitale, possono richiedere le visure agli Uffici provinciali PRA seguendo le indicazioni riportate nell’ Avviso/Notice . Per la richiesta, è necessario utilizzare il Modulo/Application Form ."
+      }
+    },
+    {
+      "@id": "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/#access-description",
+      "@type": "cpsv:OtherElectronicChannel",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Puoi effettuare una visura online tramite identità digitale. visurenet.aci.it"
+      }
+    },
+    {
+      "@id": "https://visurenet.aci.it/#electronic-channel",
+      "@type": "cpsv:OtherElectronicChannel",
+      "foaf:page": "https://visurenet.aci.it/"
+    }
+  ],
+  "dct:source": "https://aci.gov.it/servizi/tutti-i-servizi-online/",
+  "dct:title": {
+    "@language": "it",
+    "@value": "Catalogo servizi online ACI (aci.gov.it)"
+  },
+  "dct:modified": "2026-09-15T11:36:28.968036+00:00",
+  "aci:unmappedSections": {
+    "https://aci.gov.it/servizio/attestazione-classe-di-distanza-chilometrica-per-farmacie/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per assistenza è possibile scrivere una mail all’indirizzo distanzechilometriche@aci.it ."
+    },
+    "https://aci.gov.it/servizio/bollo-auto-istanze-online/": {
+      "Contatti": "Le Regioni e le Province Autonome convenzionate con ACI hanno attivato un servizio di assistenza diretta agli utenti, tutte le informazioni sono disponibili alla pagina Recapiti per l’assistenza."
+    },
+    "https://aci.gov.it/servizio/bollonet-paga-il-bollo/": {
+      "Modalità di pagamento": "Il pagamento del bollo sarà effettuato tramite PagoPA. PagoPA",
+      "Contatti": "Tutte le informazioni e i contatti per l’assistenza sono disponibili alla pagina G uida al Bollo Auto ."
+    },
+    "https://aci.gov.it/servizio/consulta-attestazione-e-certificato-di-proprieta-digitale/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per casi particolari è possibile rivolgersi all’ufficio PRA della propria provincia di residenza ai contatti reperibili nella sezione Sedi ACI sul territorio ."
+    },
+    "https://aci.gov.it/servizio/consulta-atto-e-nota-digitale/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per casi particolari è possibile rivolgersi all’ufficio URP della propria provincia di residenza ai contatti reperibili nella sezione Sedi ACI sul territorio ."
+    },
+    "https://aci.gov.it/servizio/consultazione-online-esito-istanza-di-rimborso/": {
+      "Utilizza il servizio": "Compila e verifica lo stato della tua richiesta di rimborso. Tutti i campi richiesti sono obbligatori.",
+      "Contatti": "Per ogni ulteriore richiesta di informazioni è possibile contattare l’Ufficio PRA presso il quale è stata presentata l’istanza, ai contatti reperibili nella sezione Sedi ACI sul territorio ."
+    },
+    "https://aci.gov.it/servizio/convenzioni-accesso-dati-pra/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per assistenza è possibile rivolgersi alla Direzione PRA e Fiscalità Automobilistica (DPFA) inviando una e-mail all’indirizzo gestionecontratti.usgef-pra@aci.it ."
+    },
+    "https://aci.gov.it/servizio/crononet-estratto-cronologico-pra/": {
+      "Contatti": "Per tutte le informazioni e l’assistenza relative al servizio Crononet scrivere una e-mail all’indirizzo visurenet@aci.it . Per le visure non richiedibili tramite questo servizio è possibile rivolgersi all’ufficio PRA della propria provincia di residenza ai contatti reperibili nella sezione Sedi ACI sul territorio . Link utili Lo sportello virtuale ACI"
+    },
+    "https://aci.gov.it/servizio/fornitura-dati-pra/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per assistenza è possibile scrivere una e-mail all’indirizzo aci-fdautomotive@aci.it ."
+    },
+    "https://aci.gov.it/servizio/portale-di-assistenza-ai-servizi-aci/": {
+      "Contatti": "Il Portale è il canale unico d’ingresso delle richieste. Solo per l’assistenza al Bollo Auto, consultare le modalità indicate nella pagina Recapiti per l’assistenza . Solo per problemi di accesso ai servizi online con SPID, CIE, CNS o eiDAS, compilare una richiesta di assistenza da questo link ."
+    },
+    "https://aci.gov.it/servizio/reve-ricerca-codice-identificativo-di-iscrizione-al-registro-veicoli-esteri/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per casi particolari è possibile rivolgersi all’ufficio URP della propria provincia di residenza ai contatti reperibili nella sezione Sedi ACI sul territorio .",
+      "Argomenti correlati": "REVE: registrazione dei veicoli immatricolati all’estero Come fare per iscrivere un veicolo al Registro dei Veicoli Esteri (REVE). Pratica REVE: fine disponibilità Il servizio permette l'annotazione di fine disponibilità di un veicolo iscritto al Registro dei Veicoli Esteri (REVE). Pratica"
+    },
+    "https://aci.gov.it/servizio/verifica-estratto-cronologico-pra/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per casi particolari è possibile rivolgersi all’ufficio URP della propria provincia di residenza ai contatti reperibili nella sezione Sedi ACI sul territorio ."
+    },
+    "https://aci.gov.it/servizio/verifica-tipo-documento-e-vincoli/": {
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per casi particolari è possibile rivolgersi all’ufficio URP della propria provincia di residenza ai contatti reperibili nella sezione Sedi ACI sul territorio ."
+    },
+    "https://aci.gov.it/servizio/visurenet-visura-della-banca-dati-del-pubblico-registro-automobilistico-pra/": {
+      "Modalità di pagamento": "Il pagamento può essere effettuato solo tramite PagoPA. PagoPA",
+      "Contatti": "Per ogni ulteriore richiesta di informazioni o per assistenza https://assistenzaservizicittadino.aci.it"
+    }
+  }
+}

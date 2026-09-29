@@ -1,0 +1,918 @@
+{
+  "@context": {
+    "cpsv": "https://w3id.org/italia/onto/CPSV#",
+    "cv": "http://data.europa.eu/m8g/",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "io": "https://io.italia.it/onto/io#",
+    "ipzs": "https://www.ipzs.it/onto/ipzs#",
+    "cpsv-portalone": "urn:cpsv-portalone:"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.ipzs.it",
+      "@type": "cv:PublicOrganisation",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Istituto Poligrafico e Zecca dello Stato"
+      },
+      "foaf:homepage": "https://www.ipzs.it/"
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/bio-based-card/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Bio Based Card"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Bio Based Card"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/bio-based-card/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Progettata con materiali innovativi ottenuti da fonti rinnovabili, e biodegradabile in conformità alla norma ISO 14855.\nRealizzata con materiali biodegradabili, compostabili e riciclabili ottenuti esclusivamente da fonti rinnovabili\nIl nostro impegno per la sicurezza garantisce che la carta sia a prova di manomissione, incorporando elementi di sicurezza avanzati\nLa sua durata ineguagliabile resiste all'usura quotidiana, rimanendo pienamente conforme agli standard del formato ID1"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/bio-based-card/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/bio-based-card/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/bollini-farmaceutici/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Bollini farmaceutici"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Bollini farmaceutici"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/bollini-farmaceutici/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/bollini-farmaceutici/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/bollini-farmaceutici/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/carta-identita-elettronica/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Carta di Identità Elettronica"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Carta di Identità Elettronica"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/carta-identita-elettronica/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La Carta di Identità Elettronica IPZS: microchip integrato, identità digitale per PA e servizi privati, tecnologie anticontraffazione avanzate. Oltre 8,3 milioni di CIE prodotte nel 2024, per un totale di oltre 64 milioni emesse."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/carta-identita-elettronica/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/carta-identita-elettronica/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/carte-di-sicurezza/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Carte di Sicurezza"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Carte di Sicurezza"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/carte-di-sicurezza/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/carte-di-sicurezza/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/carte-di-sicurezza/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/cnac/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "CNAC"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "CNAC"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/cnac/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Le banconote e le monete metalliche in Euro vengono realizzate con caratteristiche di sicurezza molto sofisticate ed evolute. Ciò nonostante, l'Europa ha investito e continua ad investire molto per garantire al cittadino la massima tutela e contrastare il fenomeno della contraffazione.\nPer quanto riguarda le monete metalliche la normativa europea (Reg. UE 1338/2001) prevede la costituzione di un Coin National Analysis Centre in ciascun paese membro.\nIn Italia, il C.N.A.C. (acronimo inglese di centro nazionale di analisi delle monete), costituito nel 2001 presso l'Istituto Poligrafico e Zecca dello Stato, presso lo stabilimento della Zecca, l'officina monetaria Italiana produttrice per l'Europa delle monete in Euro per l'Italia, San Marino e lo Stato della Città del Vaticano, rappresenta l'autorità nazionale competente preposta all'analisi dei falsi rinvenuti all'interno del territorio italiano, vaticano e sanmarinese.\nAl C.N.A.C. è conferito il compito di effettuare perizie su tutte le monete metalliche sospette di falsità rinvenute in circolazione dai cosiddetti Gestori professionali del contante (banche, poste, soggetti che svolgono attività di custodia, trasporto e trattamento…"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/cnac/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/cnac/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/collezione-numismatica/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Collezione Numismatica 2026"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Collezione Numismatica 2026"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/collezione-numismatica/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Collezione Numismatica 2026"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/collezione-numismatica/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/collezione-numismatica/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alcolici/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Contrassegni alcolici"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Contrassegni alcolici"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alcolici/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alcolici/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alcolici/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alimentari/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Contrassegni alimentari"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Contrassegni alimentari"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alimentari/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alimentari/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-alimentari/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-vini/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Contrassegni vini"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Contrassegni vini"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-vini/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-vini/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/contrassegni-vini/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/digitale-e-ia/digitalizzazione/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Digitalizzazione"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Digitalizzazione"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/digitale-e-ia/digitalizzazione/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/digitale-e-ia/digitalizzazione/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/digitale-e-ia/digitalizzazione/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/disability-card/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Disability Card"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Disability Card"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/disability-card/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La Disability Card è uno strumento pensato per garantire pari opportunità a milioni di persone con disabilità, facilitando l'accesso a servizi pubblici e privati. Prodotta dall'Istituto Poligrafico e Zecca dello Stato (IPZS), questa carta non solo certifica la condizione di disabilità, ma offre anche la possibilità di usufruire di numerosi benefici in tutta Europa.\nRequisiti e modalità di richiesta\nPuò essere richiesta da invalidi civili con percentuale pari o superiore al 67%, ciechi, sordi, persone con handicap in situazione di gravità (Legge 104/1992) e invalidi sul lavoro con percentuale pari o superiore al 35%\nL'IPZS produce il documento, in collaborazione con l'INPS. La Disability Card va richiesta tramite il portale INPS ed è spedita da Poste Italiane direttamente all'indirizzo di residenza del richiedente o ad altro recapito da lui indicato."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/disability-card/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/disability-card/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/it/soluzioni/identita/disability-card/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Disability Card"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Disability Card"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/it/soluzioni/identita/disability-card/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La Disability Card è uno strumento pensato per garantire pari opportunità a milioni di persone con disabilità, facilitando l'accesso a servizi pubblici e privati. Prodotta dall'Istituto Poligrafico e Zecca dello Stato (IPZS), questa carta non solo certifica la condizione di disabilità, ma offre anche la possibilità di usufruire di numerosi benefici in tutta Europa.\nRequisiti e modalità di richiesta\nPuò essere richiesta da invalidi civili con percentuale pari o superiore al 67%, ciechi, sordi, persone con handicap in situazione di gravità (Legge 104/1992) e invalidi sul lavoro con percentuale pari o superiore al 35%\nL'IPZS produce il documento, in collaborazione con l'INPS. La Disability Card va richiesta tramite il portale INPS ed è spedita da Poste Italiane direttamente all'indirizzo di residenza del richiedente o ad altro recapito da lui indicato."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/it/soluzioni/identita/disability-card/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/it/soluzioni/identita/disability-card/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/editoria-su-commessa/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Editoria su commessa"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Editoria su commessa"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/editoria-su-commessa/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/editoria-su-commessa/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/editoria-su-commessa/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/foglietti-erinnofili/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Foglietti erinnofili"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Foglietti erinnofili"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/foglietti-erinnofili/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/foglietti-erinnofili/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/foglietti-erinnofili/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/digitale-e-ia/intelligenza-artificiale/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Intelligenza Artificiale"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Intelligenza Artificiale"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/digitale-e-ia/intelligenza-artificiale/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/digitale-e-ia/intelligenza-artificiale/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/digitale-e-ia/intelligenza-artificiale/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/it-wallet/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "IT-Wallet"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "IT-Wallet"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/it-wallet/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "IT-Wallet Documenti a portata di Smartphone con il portafoglio digitale italiano"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/it-wallet/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/it-wallet/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/libreria-dello-stato/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Libreria dello Stato"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Libreria dello Stato"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/libreria-dello-stato/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Libreria dello Stato IPZS: soluzioni editoriali innovative dalla progettazione alla distribuzione. Rivista Palladio, magazine Consortium, servizi integrati per enti pubblici e privati. Tradizione e innovazione editoriale."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/libreria-dello-stato/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/libreria-dello-stato/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/made-in-italy/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Made in Italy"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Made in Italy"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/made-in-italy/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/made-in-italy/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/made-in-italy/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/marche-da-bollo/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Marche da bollo"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Marche da bollo"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/marche-da-bollo/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/marche-da-bollo/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/marche-da-bollo/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/normattiva/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Normattiva - Il portale della legge vigente"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Normattiva - Il portale della legge vigente"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/normattiva/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Istituto Poligrafico e Zecca dello Stato"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/normattiva/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/normattiva/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/passaporto-digitale-di-prodotto/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Passaporto Digitale di Prodotto"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Passaporto Digitale di Prodotto"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/passaporto-digitale-di-prodotto/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/passaporto-digitale-di-prodotto/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/passaporto-digitale-di-prodotto/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/passaporto-elettronico/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Passaporto italiano"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Passaporto italiano"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/passaporto-elettronico/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Impianti automatizzati, linee con grandi capacità produttive e un impegno costante sui temi della sostenibilità e del risparmio idrico ci confermano tra le eccellenze industriali del territorio e in Europa.\nMilioni di cittadini scelgono ogni anno il passaporto elettronico per i propri viaggi nel mondo."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/passaporto-elettronico/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/passaporto-elettronico/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/passaporto-italiano/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Passaporto italiano"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Passaporto italiano"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/passaporto-italiano/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Le destinazioni più richieste, in base a chi sei e a cosa ti serve.\nMonete, medaglie ed editoria da collezione\nComunicati e materiali per le testate\nUltime notizie e iniziative dell'Istituto"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/passaporto-italiano/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/passaporto-italiano/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/patente-di-guida/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Patente di Guida Europea"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Patente di Guida Europea"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/patente-di-guida/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "La Patente di guida europea appartiene alla categoria delle carte di sicurezza ed è un documento ad elevato livello tecnologico che ne garantisce l'anticontraffazione.\nPatente di Guida Europea prodotte nel 2024\nIl Poligrafico realizza patenti di guida europee con tecnologie avanzate per garantire sicurezza e affidabilità. Conformi alle normative europee, le patenti includono elementi di sicurezza come microstampe e ologrammi a protezione dalla contraffazione. La produzione attenta e la gestione della personalizzazione assicurano alta qualità e durabilità."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/patente-di-guida/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/patente-di-guida/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/permesso-di-soggiorno/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Permesso di soggiorno"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Permesso di soggiorno"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/permesso-di-soggiorno/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Permesso di Soggiorno Elettronico (PSE) è il documento rilasciato dalle questure che permette ai cittadini extra UE di risiedere nel territorio Schengen. È conforme al modello uniforme definito in ambito comunitario, al fine di garantire un livello di sicurezza omogeneo per tutti i Paesi dell'UE. Il PSE è conforme agli standard internazionali (ICAO 9303) adottati anche per i passaporti.\ndi permessi di soggiorno prodotti nel 2024\nIl Poligrafico cura l'intero progetto per il Ministero garantendo la produzione, personalizzazione e la gestione dei sistemi di emissione centrali e periferici. La produzione adotta tecniche produttive, materiali e tecnologie innovativi in grado di innalzare il livello di sicurezza, rendendo così il documento più sicuro dai rischi di contraffazione e falsificazione."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/permesso-di-soggiorno/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/permesso-di-soggiorno/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/it/soluzioni/identita/permesso-di-soggiorno/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Permesso di soggiorno"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Permesso di soggiorno"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/it/soluzioni/identita/permesso-di-soggiorno/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Il Permesso di Soggiorno Elettronico (PSE) è il documento rilasciato dalle questure che permette ai cittadini extra UE di risiedere nel territorio Schengen. È conforme al modello uniforme definito in ambito comunitario, al fine di garantire un livello di sicurezza omogeneo per tutti i Paesi dell'UE. Il PSE è conforme agli standard internazionali (ICAO 9303) adottati anche per i passaporti.\ndi permessi di soggiorno prodotti nel 2024\nIl Poligrafico cura l'intero progetto per il Ministero garantendo la produzione, personalizzazione e la gestione dei sistemi di emissione centrali e periferici. La produzione adotta tecniche produttive, materiali e tecnologie innovativi in grado di innalzare il livello di sicurezza, rendendo così il documento più sicuro dai rischi di contraffazione e falsificazione."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/it/soluzioni/identita/permesso-di-soggiorno/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/it/soluzioni/identita/permesso-di-soggiorno/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/prodotti-arte/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Prodotti d'arte"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Prodotti d'arte"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/prodotti-arte/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/editoria-e-arte/prodotti-arte/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/editoria-e-arte/prodotti-arte/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/identita/progetto-eu-etd/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Progetto EU ETD"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Progetto EU ETD"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/identita/progetto-eu-etd/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "IPZS è stato selezionato dalla Commissione Europea per progettare il nuovo EU ETD, il documento di viaggio d’emergenza per cittadini UE non rappresentati all’estero, con elevati standard di sicurezza"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/progetto-eu-etd/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/identita/progetto-eu-etd/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Salta al contenuto principale"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Salta al contenuto principale"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Scopri le soluzioni IPZS per documenti d'identità: Carta di Identità Elettronica (CIE), passaporti, patenti europee e IT-Wallet. Un patrimonio da proteggere con tecnologie sicure e innovative. Oltre 8,3 milioni di CIE prodotte nel 2024"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/sam/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "SAM – Scuola dell' Arte della Medaglia"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "SAM – Scuola dell' Arte della Medaglia"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/sam/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Corso gratuito e a numero chiuso a Roma per scultori, incisori, medaglisti e numismatici. Ammissione su selezione. Formazione artistica d'eccellenza da oltre un secolo."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/sam/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/numismatica-medaglie-monetazione/sam/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/servizio-elettorale/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Servizio elettorale"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Servizio elettorale"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/servizio-elettorale/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/servizio-elettorale/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/giuridico-ed-elettorale/servizio-elettorale/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/targhe-veicoli/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Targhe veicoli"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Targhe veicoli"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/targhe-veicoli/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/targhe-veicoli/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/targhe-veicoli/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/tracciabilita/tasselli-tabacchi/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Tasselli tabacchi"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Tasselli tabacchi"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/tasselli-tabacchi/",
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/tracciabilita/tasselli-tabacchi/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/tasselli-tabacchi/"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/valori-di-carta/",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Valoridicarta"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Valoridicarta"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.ipzs.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.ipzs.it"
+      },
+      "foaf:page": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/valori-di-carta/",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Carte speciali e sistemi di sicurezza per valori di Stato, banconote e passaporti\nCarte con elementi olografici di sicurezza e anticontraffazione\nCostituita nel 2018 come società in-house del Poligrafico e Zecca dello Stato e della Banca d’Italia con accreditamento da parte della Banca Centrale Europea nel maggio 2019, Valoridicarta produce carte speciali e relativi sistemi di sicurezza per le carte valori dello Stato, per banconote e passaporti.\nE' l'integrazione nello stesso processo produttivo di carte filigranate di pregio con elementi olografici di sicurezza e anticontraffazione a rendere Valoridicarta un polo industriale di eccellenza, a partecipazione interamente pubblica, in grado di competere con altre importanti realtà nell'ambito nella produzione di carte valori in Europa e nel mondo."
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/valori-di-carta/#channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/valori-di-carta/"
+      }
+    }
+  ],
+  "dct:title": {
+    "@language": "it",
+    "@value": "Catalogo soluzioni IPZS"
+  },
+  "dct:modified": "2026-09-15T16:34:51.281907+00:00",
+  "dct:source": "https://www.ipzs.it/"
+}
