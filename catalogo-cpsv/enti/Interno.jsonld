@@ -1,0 +1,471 @@
+{
+  "@context": {
+    "cpsv": "https://w3id.org/italia/onto/CPSV#",
+    "cv": "http://data.europa.eu/m8g/",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "io": "https://io.italia.it/onto/io#",
+    "interno": "https://www.interno.gov.it/onto/interno#",
+    "cpsv-portalone": "urn:cpsv-portalone:"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.interno.gov.it",
+      "@type": "cv:PublicOrganisation",
+      "dct:title": {
+        "@language": "it",
+        "@value": "Ministero dell'Interno"
+      },
+      "foaf:homepage": "https://www.interno.gov.it/"
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1124",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Anagrafe antimafia degli esecutori: iscrizione ed elenchi"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Anagrafe antimafia degli esecutori: iscrizione ed elenchi"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1124",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per garantire la legalità delle attività connesse alla ricostruzione nei territori colpiti dagli eventi sismici in Centro Italia, nell’isola di Ischia e nelle provincie di Campobasso e Catania, all’organizzazione e allo svolgimento dei Giochi olimpici e paralimpici invernali Milano-Cortina 2026, nonché agli interventi urgenti relativi al sistema ospedaliero della Regione Calabria, opera la struttura per la prevenzione antimafia con il compito di verificare la documentazione antimafia degli operatori economici impegnati nei lavori"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1124-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://anagrafeesecutori.interno.gov.it/home"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1463",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Anagrafe nazionale della popolazione residente (ANPR)"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Anagrafe nazionale della popolazione residente (ANPR)"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1463",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Banca dati unica del ministero dell’Interno che favorisce lo scambio delle informazioni tra comuni e pubbliche amministrazioni e il dialogo tra comuni e cittadini"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1463-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1118",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Carta d'identità elettronica"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Carta d'identità elettronica"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1118",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Presentare la richiesta per il rilascio del documento, prenotare un appuntamento, verificare l'attivazione presso il proprio comune"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1118-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.cartaidentita.interno.gov.it"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1115",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Cittadinanza: invio domande, controllo pratica"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Cittadinanza: invio domande, controllo pratica"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1115",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Come diventare cittadini italiani. Le procedure per inoltrare le richieste e per verificare lo stato della pratica"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1115-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://portaleservizi.dlci.interno.it/AliCittadinanza/ali/home.htm"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/11"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1119",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Commissariato di PS on line"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Commissariato di PS on line"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1119",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Hai un dubbio? Sei in presenza di un reato informatico? Furto o smarrimento? Puoi contattare la Polizia on line"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1119-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "http://www.commissariatodips.it/"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1169",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Corrispondenza Viminale"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Corrispondenza Viminale"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1169",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Pagina dove è possibile ricercare le raccomandate, assicurate e atti giudiziari, indirizzati al ministero dell'Interno - Palazzo Viminale"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1169-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "http://corrviminale.interno.it/"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1126",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Fatturazione elettronica"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Fatturazione elettronica"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1126",
+      "dct:description": {
+        "@language": "it",
+        "@value": "I codici univoci per la fatturazione elettronica, unica forma di pagamento accettata dall’amministrazione tenuta ad avvalersi del Sistema di Interscambio"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1126-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.interno.gov.it/it/node/274"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1127",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Le app"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Le app"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1127",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Dait - Direzione centrale Servizi elettorali Apple Android\nEligendo l'app del ministero dell'Interno che mostra in tempo reale i dati ufficiosi, forniti da comuni e prefetture, relativi alle operazioni elettorali\nPolizia di Stato Apple Android\nLe applicazioni per avere le ultime notizie su concorsi, passaporto, permessi di soggiorno, bandi, ecc.; per segnalare contenuti illeciti, per partecipare a sondaggi o per dire la propria opinione\nVigili del fuoco\nLe applicazioni per consultare i principali testi normativi sulla prevenzione incendi e sulla sicurezza sul lavoro, per verificare lo stato di avanzamento di una pratica, ecc..."
+      },
+      "cpsv:hasChannel": [
+        {
+          "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1127-channel-online-0",
+          "@type": "cpsv:OtherElectronicChannel",
+          "foaf:page": "https://itunes.apple.com/it/app/eleligendo-mobile/id1335979826?mt=8"
+        },
+        {
+          "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1127-channel-online-1",
+          "@type": "cpsv:OtherElectronicChannel",
+          "foaf:page": "https://play.google.com/store/apps/details?id=com.ministeroInterno.appElettorale"
+        },
+        {
+          "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1127-channel-online-2",
+          "@type": "cpsv:OtherElectronicChannel",
+          "foaf:page": "http://www.poliziadistato.it/articolo/view/22097"
+        },
+        {
+          "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1127-channel-online-3",
+          "@type": "cpsv:OtherElectronicChannel",
+          "foaf:page": "http://www.poliziadistato.it/articolo/22105"
+        },
+        {
+          "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1127-channel-online-4",
+          "@type": "cpsv:OtherElectronicChannel",
+          "foaf:page": "https://www.vigilfuoco.it/servizi-le-aziende-e-i-professionisti/app-aziende-e-professionisti/vvf-prevenzione-incendi-mobile"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1120",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Passaporto elettronico"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Passaporto elettronico"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1120",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Accesso per il cittadino che per le pubbliche amministrazioni"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1120-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://passaportonline.poliziadistato.it/"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1116",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Permesso di soggiorno: controllo pratica"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Permesso di soggiorno: controllo pratica"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1116",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Visualizza sullo stato del procedimento già avviato"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1116-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "http://questure.poliziadistato.it/stranieri"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1121",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Prevenzione incendi on line: lo stato dei procedimenti"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Prevenzione incendi on line: lo stato dei procedimenti"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1121",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Servizi a cittadini e professionisti, possibilità di consultare i procedimenti avviati"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1121-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.vigilfuoco.it/servizi-le-aziende-e-i-professionisti/servizi-line-di-prevenzione-incendi"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1117",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Procedure flussi immigrazione"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Procedure flussi immigrazione"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1117",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Per la compilazione e la spedizione via telematica delle domande. Disponibile un help desk"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1117-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://portaleservizi.dlci.interno.it/"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1123",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Richieste accesso ai rapporti di intervento"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Richieste accesso ai rapporti di intervento"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1123",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Questo servizio permette di richiedere il rapporto di intervento redatto dai Vigili del fuoco, a seguito della chiusura dell’intervento di soccorso tecnico urgente"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1123-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://corpodigitale.vigilfuoco.it/#/rapportiIntervento"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1444",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Vittime civili del terrorismo e della criminalità organizzata: Invio domande"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Vittime civili del terrorismo e della criminalità organizzata: Invio domande"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1444",
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1444-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://portaleservizi.dlci.interno.it/AliGsev/ali/home.htm"
+      }
+    },
+    {
+      "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1125",
+      "@type": "cpsv:PublicService",
+      "cpsv:name": {
+        "@language": "it",
+        "@value": "Vittime estorsione e usura: accesso al fondo solidarietà"
+      },
+      "dct:title": {
+        "@language": "it",
+        "@value": "Vittime estorsione e usura: accesso al fondo solidarietà"
+      },
+      "cpsv:producedBy": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "cv:hasCompetentAuthority": {
+        "@id": "https://www.interno.gov.it"
+      },
+      "foaf:page": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1125",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Portale delle domande di accesso al Fondo di solidarietà per le vittime delle richieste estorsive e dell'usura"
+      },
+      "cpsv:hasChannel": {
+        "@id": "https://www.interno.gov.it/it/servizi/servizi-line#paragraph-1125-channel-online-0",
+        "@type": "cpsv:OtherElectronicChannel",
+        "foaf:page": "https://www.interno.gov.it/it/fondo-solidarieta"
+      }
+    }
+  ],
+  "dct:title": {
+    "@language": "it",
+    "@value": "Catalogo servizi online Ministero dell'Interno"
+  },
+  "dct:modified": "2026-10-02T08:00:08.787406+00:00",
+  "dct:source": "https://www.interno.gov.it/"
+}
