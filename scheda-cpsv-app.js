@@ -17,7 +17,7 @@ import {
   saveSessionToStorage,
   validateDraft,
 } from "./scheda-cpsv-model.js";
-import { applySuggestions, composeDuration, parseDurationUi } from "./scheda-cpsv-suggest.js";
+import { applySuggestions } from "./scheda-cpsv-suggest.js";
 
 const root = document.getElementById("editor-root");
 const statusEl = document.getElementById("app-status");
@@ -114,10 +114,8 @@ function readFormIntoDraft() {
   draft.audience = String(data.get("audience") || "").trim();
   draft.processingTime = {
     text: String(data.get("processingTime") || "").trim(),
-    duration: composeDuration(
-      String(data.get("durationKind") || "").trim(),
-      data.get("durationAmount"),
-    ),
+    kind: String(form.querySelector("#durationKind")?.value || "").trim(),
+    amount: String(form.querySelector("#durationAmount")?.value || "").trim(),
   };
   const amountRaw = String(data.get("costAmount") || "").trim();
   draft.cost = {
@@ -231,19 +229,20 @@ function classificationLinksHtml(ids, entries, emptyLabel) {
 }
 
 function durationFieldsHtml(processingTime) {
-  const ui = parseDurationUi(processingTime?.duration || "");
-  const needsAmount = ui.kind && ui.kind !== "immediate";
+  const kind = String(processingTime?.kind || "").trim();
+  const amount = processingTime?.amount;
+  const needsAmount = Boolean(kind && kind !== "immediate");
   return `
     <div class="scheda-field scheda-field--inline">
       <div>
         <label for="durationKind">Durata strutturata</label>
         <select id="durationKind" name="durationKind">
-          <option value="" ${!ui.kind ? "selected" : ""}>Non specificata</option>
-          <option value="immediate" ${ui.kind === "immediate" ? "selected" : ""}>Immediato</option>
-          <option value="hours" ${ui.kind === "hours" ? "selected" : ""}>Ore</option>
-          <option value="days" ${ui.kind === "days" ? "selected" : ""}>Giorni</option>
-          <option value="weeks" ${ui.kind === "weeks" ? "selected" : ""}>Settimane</option>
-          <option value="months" ${ui.kind === "months" ? "selected" : ""}>Mesi</option>
+          <option value="" ${!kind ? "selected" : ""}>Non specificata</option>
+          <option value="immediate" ${kind === "immediate" ? "selected" : ""}>Immediato</option>
+          <option value="hours" ${kind === "hours" ? "selected" : ""}>Ore</option>
+          <option value="days" ${kind === "days" ? "selected" : ""}>Giorni</option>
+          <option value="weeks" ${kind === "weeks" ? "selected" : ""}>Settimane</option>
+          <option value="months" ${kind === "months" ? "selected" : ""}>Mesi</option>
         </select>
       </div>
       <div>
@@ -254,7 +253,7 @@ function durationFieldsHtml(processingTime) {
           type="number"
           min="1"
           step="1"
-          value="${needsAmount ? escapeHtml(String(ui.amount)) : ""}"
+          value="${needsAmount && amount !== "" && amount != null ? escapeHtml(String(amount)) : ""}"
           ${needsAmount ? "" : "disabled"}
           placeholder="es. 30"
         />

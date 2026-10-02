@@ -1,27 +1,35 @@
 /** Euristiche testo libero → campi tipizzati (solo slot vuoti). */
 
-const EX = "https://example.org/onto/ex#";
+import {
+  composeDuration,
+  parseDurationUi,
+  formatDurationLabel,
+} from "./scheda-cpsv-model.js";
+
+export { composeDuration, parseDurationUi, formatDurationLabel };
+
+const IO = "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/service-input-output";
 
 const INPUT_RULES = [
-  { typeId: `${EX}InputType-identity-document`, re: /carta\s+d['’]?identit|documento\s+di\s+identit|\bcie\b|passaporto|carta\s+identit/i },
-  { typeId: `${EX}InputType-spid`, re: /\bspid\b|cie\s*id|eidas|identit[aà]\s+digitale/i },
-  { typeId: `${EX}InputType-codice-fiscale`, re: /codice\s+fiscale|\bcf\b/i },
-  { typeId: `${EX}InputType-iban`, re: /\biban\b|coordinate\s+bancarie|conto\s+corrente/i },
-  { typeId: `${EX}InputType-form`, re: /modulo|formular|compilare|pdf\b|modello\b/i },
-  { typeId: `${EX}InputType-certificate`, re: /certificat|attestazion|attestato/i },
-  { typeId: `${EX}InputType-receipt`, re: /ricevut|quietanza|pagamento\s+effettuato|marca\s+da\s+bollo/i },
-  { typeId: `${EX}InputType-photo`, re: /fotogra|foto\s+tessera|fototessera/i },
-  { typeId: `${EX}InputType-declaration`, re: /dichiarazion|autocertificazion/i },
+  { typeId: `${IO}/IDDEC`, re: /carta\s+d['’]?identit|documento\s+di\s+identit|\bcie\b|passaporto|carta\s+identit|identit[aà]/i },
+  { typeId: `${IO}/REQ`, re: /istanza|domanda|richiesta|modulo\s+di\s+richiesta|formular/i },
+  { typeId: `${IO}/PAYMENTDEC`, re: /ricevut|quietanza|pagamento\s+effettuato|marca\s+da\s+bollo|attestazione\s+di\s+pagamento/i },
+  { typeId: `${IO}/CERT`, re: /certificat|attestazion|attestato/i },
+  { typeId: `${IO}/AUTHACT`, re: /autorizzazion|atto\s+autorizz|permesso|licenza/i },
+  { typeId: `${IO}/CODE`, re: /codice\s+fiscale|\bcf\b|codice\s+identific|\bspid\b|pin\b/i },
+  { typeId: `${IO}/ADMINDOC`, re: /documentazione\s+amministr|visura|estratto|dichiarazion|autocertificazion/i },
+  { typeId: `${IO}/OTHDOC`, re: /documento|documentazione|pdf\b|allegat/i },
 ];
 
 const OUTPUT_RULES = [
-  { typeId: `${EX}OutputType-certificate`, re: /certificat|attestato|attestazion/i },
-  { typeId: `${EX}OutputType-payment`, re: /bollettin|pagamento|pago\s*pa|f24/i },
-  { typeId: `${EX}OutputType-appointment`, re: /appuntament|prenotazion|calendario/i },
-  { typeId: `${EX}OutputType-registration`, re: /iscrizion|registrazion|iscriv/i },
-  { typeId: `${EX}OutputType-card`, re: /tessera|carta\s+fisica|carta\s+digitale/i },
-  { typeId: `${EX}OutputType-status`, re: /esito|stato\s+della\s+pratica|conferma/i },
-  { typeId: `${EX}OutputType-document`, re: /document|scaric|pdf|ricevut/i },
+  { typeId: `${IO}/CERT`, re: /certificat|attestato|attestazion/i },
+  { typeId: `${IO}/AUTHACT`, re: /autorizzazion|permesso|licenza|atto\s+autorizz/i },
+  { typeId: `${IO}/PAYMENTDEC`, re: /bollettin|pagamento|pago\s*pa|f24|quietanza/i },
+  { typeId: `${IO}/CODE`, re: /codice|protocollo|identificativo/i },
+  { typeId: `${IO}/IDDEC`, re: /carta|tessera|documento\s+di\s+identit/i },
+  { typeId: `${IO}/REQ`, re: /ricevuta\s+di\s+richiesta|conferma\s+di\s+invio/i },
+  { typeId: `${IO}/ADMINDOC`, re: /documentazione|visura|estratto|dichiarazion/i },
+  { typeId: `${IO}/OTHDOC`, re: /document|scaric|pdf|esito|pratica/i },
 ];
 
 function itemText(item) {
@@ -87,7 +95,7 @@ export function suggestDuration(text) {
   const weeks = t.match(/(\d+)\s*settiman/);
   if (weeks) {
     const n = Number(weeks[1]);
-    if (n > 0) return `P${n * 7}D`;
+    if (n > 0) return `P${n}W`;
   }
   const months = t.match(/(\d+)\s*mes[ei]/);
   if (months) {
@@ -95,58 +103,6 @@ export function suggestDuration(text) {
     if (n > 0) return `P${n}M`;
   }
   return "";
-}
-
-/**
- * Interpreta un xsd:duration in campi UI (valore + unità).
- * @returns {{ kind: ""|"immediate"|"hours"|"days"|"weeks"|"months", amount: number|"" }}
- */
-export function parseDurationUi(duration) {
-  const raw = String(duration || "").trim().toUpperCase();
-  if (!raw) return { kind: "", amount: "" };
-  if (raw === "PT0S" || raw === "P0D" || raw === "PT0H") {
-    return { kind: "immediate", amount: "" };
-  }
-  const weeks = raw.match(/^P(\d+)W$/);
-  if (weeks) return { kind: "weeks", amount: Number(weeks[1]) };
-  const months = raw.match(/^P(\d+)M$/);
-  if (months) return { kind: "months", amount: Number(months[1]) };
-  const days = raw.match(/^P(\d+)D$/);
-  if (days) return { kind: "days", amount: Number(days[1]) };
-  const hours = raw.match(/^PT(\d+)H$/);
-  if (hours) return { kind: "hours", amount: Number(hours[1]) };
-  // fallback: giorni se solo PnD con altro (es. P1DT2H) → arrotonda ai giorni interi
-  const dayPart = raw.match(/P(\d+)D/);
-  if (dayPart) return { kind: "days", amount: Number(dayPart[1]) };
-  const hourPart = raw.match(/PT(\d+)H/);
-  if (hourPart) return { kind: "hours", amount: Number(hourPart[1]) };
-  return { kind: "", amount: "" };
-}
-
-/** Compone xsd:duration da UI assistita. */
-export function composeDuration(kind, amount) {
-  const k = String(kind || "");
-  if (k === "immediate") return "PT0S";
-  if (!k) return "";
-  const n = Number(amount);
-  if (!Number.isFinite(n) || n <= 0) return "";
-  const int = Math.round(n);
-  if (k === "hours") return `PT${int}H`;
-  if (k === "days") return `P${int}D`;
-  if (k === "weeks") return `P${int}W`;
-  if (k === "months") return `P${int}M`;
-  return "";
-}
-
-/** Etichetta leggibile per una durata (catalogo / anteprima). */
-export function formatDurationLabel(duration) {
-  const ui = parseDurationUi(duration);
-  if (ui.kind === "immediate") return "Immediato";
-  if (ui.kind === "hours") return ui.amount === 1 ? "1 ora" : `${ui.amount} ore`;
-  if (ui.kind === "days") return ui.amount === 1 ? "1 giorno" : `${ui.amount} giorni`;
-  if (ui.kind === "weeks") return ui.amount === 1 ? "1 settimana" : `${ui.amount} settimane`;
-  if (ui.kind === "months") return ui.amount === 1 ? "1 mese" : `${ui.amount} mesi`;
-  return String(duration || "");
 }
 
 /**
@@ -181,18 +137,22 @@ export function applySuggestions(draft) {
     typeof next.processingTime === "string"
       ? next.processingTime
       : String(next.processingTime?.text || "");
+  const timeKind =
+    typeof next.processingTime === "object" ? String(next.processingTime?.kind || "") : "";
   const timeDuration =
     typeof next.processingTime === "object" ? String(next.processingTime?.duration || "") : "";
-  if (timeText && !timeDuration) {
+  if (timeText && !timeKind && !timeDuration) {
     const duration = suggestDuration(timeText);
     if (duration) {
-      next.processingTime = { text: timeText, duration };
+      const parsed = parseDurationUi(duration);
+      next.processingTime = {
+        text: timeText,
+        duration,
+        kind: parsed.kind,
+        amount: parsed.amount,
+      };
       changed += 1;
-    } else {
-      next.processingTime = { text: timeText, duration: "" };
     }
-  } else if (typeof next.processingTime === "string") {
-    next.processingTime = { text: timeText, duration: timeDuration };
   }
 
   const costText =

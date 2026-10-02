@@ -87,12 +87,59 @@ function isHttpUrl(value) {
   }
 }
 
+/** Interpreta xsd:duration → UI (unità + quantità). */
+export function parseDurationUi(duration) {
+  const raw = String(duration || "").trim().toUpperCase();
+  if (!raw) return { kind: "", amount: "" };
+  if (raw === "PT0S" || raw === "P0D" || raw === "PT0H") {
+    return { kind: "immediate", amount: "" };
+  }
+  const weeks = raw.match(/^P(\d+)W$/);
+  if (weeks) return { kind: "weeks", amount: Number(weeks[1]) };
+  const months = raw.match(/^P(\d+)M$/);
+  if (months) return { kind: "months", amount: Number(months[1]) };
+  const days = raw.match(/^P(\d+)D$/);
+  if (days) return { kind: "days", amount: Number(days[1]) };
+  const hours = raw.match(/^PT(\d+)H$/);
+  if (hours) return { kind: "hours", amount: Number(hours[1]) };
+  const dayPart = raw.match(/P(\d+)D/);
+  if (dayPart) return { kind: "days", amount: Number(dayPart[1]) };
+  const hourPart = raw.match(/PT(\d+)H/);
+  if (hourPart) return { kind: "hours", amount: Number(hourPart[1]) };
+  return { kind: "", amount: "" };
+}
+
+/** Compone xsd:duration da UI assistita. */
+export function composeDuration(kind, amount) {
+  const k = String(kind || "");
+  if (k === "immediate") return "PT0S";
+  if (!k) return "";
+  const n = Number(amount);
+  if (!Number.isFinite(n) || n <= 0) return "";
+  const int = Math.round(n);
+  if (k === "hours") return `PT${int}H`;
+  if (k === "days") return `P${int}D`;
+  if (k === "weeks") return `P${int}W`;
+  if (k === "months") return `P${int}M`;
+  return "";
+}
+
+export function formatDurationLabel(duration) {
+  const ui = parseDurationUi(duration);
+  if (ui.kind === "immediate") return "Immediato";
+  if (ui.kind === "hours") return ui.amount === 1 ? "1 ora" : `${ui.amount} ore`;
+  if (ui.kind === "days") return ui.amount === 1 ? "1 giorno" : `${ui.amount} giorni`;
+  if (ui.kind === "weeks") return ui.amount === 1 ? "1 settimana" : `${ui.amount} settimane`;
+  if (ui.kind === "months") return ui.amount === 1 ? "1 mese" : `${ui.amount} mesi`;
+  return String(duration || "");
+}
+
 export function emptyTypedItem() {
   return { text: "", typeId: "" };
 }
 
 export function emptyProcessingTime() {
-  return { text: "", duration: "" };
+  return { text: "", kind: "", amount: "", duration: "" };
 }
 
 export function emptyCost() {
@@ -135,10 +182,29 @@ function normalizeTypedList(values) {
 }
 
 function normalizeProcessingTime(value) {
-  if (typeof value === "string") return { text: value, duration: "" };
+  if (typeof value === "string") {
+    return { text: value, kind: "", amount: "", duration: "" };
+  }
+  let kind = String(value?.kind || "").trim();
+  let amount =
+    value?.amount === 0 || value?.amount === "0"
+      ? 0
+      : value?.amount == null || value?.amount === ""
+        ? ""
+        : Number(value.amount);
+  if (amount !== "" && Number.isNaN(amount)) amount = "";
+  let duration = String(value?.duration || "").trim();
+  if (!kind && duration) {
+    const parsed = parseDurationUi(duration);
+    kind = parsed.kind;
+    amount = parsed.amount === "" ? "" : parsed.amount;
+  }
+  if (kind) duration = composeDuration(kind, amount);
   return {
     text: String(value?.text || ""),
-    duration: String(value?.duration || "").trim(),
+    kind,
+    amount,
+    duration,
   };
 }
 
@@ -171,7 +237,11 @@ export function draftHasContent(draft) {
   const d = normalizeDraft(draft);
   const keys = ["title", "abstract", "description", "orgName", "audience", "pageUrl", "ioServiceId", "howTo"];
   if (keys.some((k) => String(d[k] || "").trim())) return true;
-  if (String(d.processingTime?.text || "").trim() || String(d.processingTime?.duration || "").trim()) {
+  if (
+    String(d.processingTime?.text || "").trim() ||
+    String(d.processingTime?.duration || "").trim() ||
+    String(d.processingTime?.kind || "").trim()
+  ) {
     return true;
   }
   if (
@@ -346,8 +416,10 @@ export function formToDocument(draft) {
   }
 
   const processingText = String(d.processingTime?.text || "").trim();
-  const processingDuration = String(d.processingTime?.duration || "").trim();
-  if (processingText || processingDuration) {
+  const processingDuration =
+    composeDuration(d.processingTime?.kind, d.processingTime?.amount) ||
+    String(d.processingTime?.duration || "").trim();
+  if (processingText || processingDuration || d.processingTime?.kind === "immediate") {
     const timeId = fragmentId(serviceId, "processing-time");
     service["cpsv:hasProcessingTime"] = { "@id": timeId };
     const timeNode = {
@@ -356,8 +428,11 @@ export function formToDocument(draft) {
     };
     const desc = lit(processingText);
     if (desc) timeNode["dct:description"] = desc;
-    if (processingDuration) {
-      timeNode["cv:value"] = { "@type": "xsd:duration", "@value": processingDuration };
+    const durationValue =
+      processingDuration ||
+      (d.processingTime?.kind === "immediate" ? "PT0S" : "");
+    if (durationValue) {
+      timeNode["cv:value"] = { "@type": "xsd:duration", "@value": durationValue };
     }
     graph.push(timeNode);
   }
@@ -645,13 +720,17 @@ export function documentToForm(doc, serviceId = null) {
   const timeRef = refId(asList(service["cpsv:hasProcessingTime"])[0]);
   const timeNode = nodeById(graph, timeRef);
   if (timeNode) {
+    const duration = readDuration(timeNode["cv:value"]);
+    const parsed = parseDurationUi(duration);
     draft.processingTime = {
       text: readLit(timeNode["dct:description"]) || readLit(timeNode["dct:title"]),
-      duration: readDuration(timeNode["cv:value"]),
+      duration,
+      kind: parsed.kind,
+      amount: parsed.amount,
     };
   } else {
     const aciTime = readLit(service["aci:processingTime"]);
-    if (aciTime) draft.processingTime = { text: aciTime, duration: "" };
+    if (aciTime) draft.processingTime = { text: aciTime, duration: "", kind: "", amount: "" };
   }
 
   const costRaw = service["cpsv:hasCost"];
