@@ -1,0 +1,10 @@
+{
+  "https://example.org/onto/ex#OutputType-certificate": "Certificato / attestato",
+  "https://example.org/onto/ex#OutputType-document": "Documento scaricabile",
+  "https://example.org/onto/ex#OutputType-payment": "Pagamento / bollettino",
+  "https://example.org/onto/ex#OutputType-appointment": "Appuntamento / prenotazione",
+  "https://example.org/onto/ex#OutputType-registration": "Iscrizione / registrazione",
+  "https://example.org/onto/ex#OutputType-card": "Tessera / carta fisica o digitale",
+  "https://example.org/onto/ex#OutputType-status": "Esito / stato della pratica",
+  "https://example.org/onto/ex#OutputType-other": "Altro risultato"
+}

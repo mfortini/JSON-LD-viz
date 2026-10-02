@@ -390,6 +390,14 @@
   margin-bottom: 12px;
 }
 
+.cpsv-sheet__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .cpsv-sheet__title {
   margin: 0;
   flex: 1 1 16rem;

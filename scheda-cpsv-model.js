@@ -7,6 +7,7 @@ export const CONTEXT = {
   foaf: "http://xmlns.com/foaf/0.1/",
   io: "https://io.italia.it/onto/io#",
   ex: "https://example.org/onto/ex#",
+  xsd: "http://www.w3.org/2001/XMLSchema#",
 };
 
 const STORAGE_KEY = "cpsv-scheda-session";
@@ -86,6 +87,18 @@ function isHttpUrl(value) {
   }
 }
 
+export function emptyTypedItem() {
+  return { text: "", typeId: "" };
+}
+
+export function emptyProcessingTime() {
+  return { text: "", duration: "" };
+}
+
+export function emptyCost() {
+  return { text: "", amount: "", currency: "EUR" };
+}
+
 export function emptyDraft() {
   return {
     serviceId: "https://example.org/servizi/nuovo-servizio/",
@@ -96,10 +109,10 @@ export function emptyDraft() {
     orgName: "",
     orgHomepage: "https://example.org/",
     audience: "",
-    inputs: [""],
-    outputs: [""],
-    processingTime: "",
-    cost: "",
+    inputs: [emptyTypedItem()],
+    outputs: [emptyTypedItem()],
+    processingTime: emptyProcessingTime(),
+    cost: emptyCost(),
     pageUrl: "",
     onlineUrls: [""],
     lifeEvents: [],
@@ -109,29 +122,73 @@ export function emptyDraft() {
   };
 }
 
+function normalizeTypedList(values) {
+  const list = Array.isArray(values) ? values : [];
+  const mapped = list.map((item) => {
+    if (typeof item === "string") return { text: item, typeId: "" };
+    return {
+      text: String(item?.text ?? "").trim() ? String(item.text) : String(item?.text || ""),
+      typeId: String(item?.typeId || "").trim(),
+    };
+  });
+  return mapped.length ? mapped : [emptyTypedItem()];
+}
+
+function normalizeProcessingTime(value) {
+  if (typeof value === "string") return { text: value, duration: "" };
+  return {
+    text: String(value?.text || ""),
+    duration: String(value?.duration || "").trim(),
+  };
+}
+
+function normalizeCost(value) {
+  if (typeof value === "string") return { text: value, amount: "", currency: "EUR" };
+  const amount = value?.amount;
+  return {
+    text: String(value?.text || ""),
+    amount: amount === 0 || amount === "0" ? 0 : amount == null || amount === "" ? "" : amount,
+    currency: String(value?.currency || "EUR").trim() || "EUR",
+  };
+}
+
+/** Normalizza bozze legacy (stringhe) verso la forma tipizzata. */
+export function normalizeDraft(draft) {
+  const base = { ...emptyDraft(), ...(draft || {}) };
+  base.inputs = normalizeTypedList(base.inputs);
+  base.outputs = normalizeTypedList(base.outputs);
+  base.processingTime = normalizeProcessingTime(base.processingTime);
+  base.cost = normalizeCost(base.cost);
+  return base;
+}
+
 export function cloneDraft(draft) {
-  return structuredClone(draft);
+  return structuredClone(normalizeDraft(draft));
 }
 
 export function draftHasContent(draft) {
   if (!draft) return false;
-  const keys = [
-    "title",
-    "abstract",
-    "description",
-    "orgName",
-    "audience",
-    "processingTime",
-    "cost",
-    "pageUrl",
-    "ioServiceId",
-    "howTo",
-  ];
-  if (keys.some((k) => String(draft[k] || "").trim())) return true;
-  if ((draft.inputs || []).some((v) => String(v || "").trim())) return true;
-  if ((draft.outputs || []).some((v) => String(v || "").trim())) return true;
-  if ((draft.onlineUrls || []).some((v) => String(v || "").trim())) return true;
-  if ((draft.lifeEvents || []).length || (draft.themes || []).length) return true;
+  const d = normalizeDraft(draft);
+  const keys = ["title", "abstract", "description", "orgName", "audience", "pageUrl", "ioServiceId", "howTo"];
+  if (keys.some((k) => String(d[k] || "").trim())) return true;
+  if (String(d.processingTime?.text || "").trim() || String(d.processingTime?.duration || "").trim()) {
+    return true;
+  }
+  if (
+    String(d.cost?.text || "").trim() ||
+    d.cost?.amount === 0 ||
+    (d.cost?.amount !== "" && d.cost?.amount != null)
+  ) {
+    return true;
+  }
+  if ((d.inputs || []).some((v) => String(v.text || "").trim() || String(v.typeId || "").trim())) {
+    return true;
+  }
+  if ((d.outputs || []).some((v) => String(v.text || "").trim() || String(v.typeId || "").trim())) {
+    return true;
+  }
+  if ((d.onlineUrls || []).some((v) => String(v || "").trim())) return true;
+  if ((d.lifeEvents || []).length || (d.themes || []).length) return true;
   return false;
 }
 
@@ -162,10 +219,56 @@ function compactTexts(values) {
   return (values || []).map((v) => String(v || "").trim()).filter(Boolean);
 }
 
+function compactTypedItems(values) {
+  return normalizeTypedList(values).filter(
+    (item) => String(item.text || "").trim() || String(item.typeId || "").trim(),
+  );
+}
+
+function readDuration(value) {
+  if (value == null) return "";
+  if (typeof value === "string") return value.trim();
+  if (typeof value === "object") {
+    if (typeof value["@value"] === "string") return value["@value"].trim();
+    if (typeof value["@value"] === "number") return String(value["@value"]);
+  }
+  return "";
+}
+
+function readAmount(value) {
+  if (value == null || value === "") return "";
+  if (typeof value === "number") return value;
+  if (typeof value === "string" && value.trim()) {
+    const n = Number(value.replace(",", "."));
+    return Number.isNaN(n) ? "" : n;
+  }
+  if (typeof value === "object" && value["@value"] != null) return readAmount(value["@value"]);
+  return "";
+}
+
+function typedItemsFromRefs(graph, refs) {
+  return asList(refs)
+    .map((ref) => {
+      const id = refId(ref);
+      const node = nodeById(graph, id) || (typeof ref === "object" && !ref["@id"] ? ref : null);
+      if (!node && typeof ref === "string") return null;
+      const text =
+        readLit(node?.["dct:description"]) ||
+        readLit(node?.["dct:title"]) ||
+        readLit(node?.["rdfs:comment"]) ||
+        "";
+      const typeId = refId(node?.["dct:type"]) || "";
+      if (!text && !typeId) return null;
+      return { text, typeId };
+    })
+    .filter(Boolean);
+}
+
 export function formToDocument(draft) {
-  const serviceId = String(draft.serviceId || "").trim();
-  const titleLit = lit(draft.title);
-  const orgId = String(draft.orgId || "").trim() || fragmentId(serviceId, "ente");
+  const d = normalizeDraft(draft);
+  const serviceId = String(d.serviceId || "").trim();
+  const titleLit = lit(d.title);
+  const orgId = String(d.orgId || "").trim() || fragmentId(serviceId, "ente");
   const graph = [];
 
   const service = {
@@ -176,28 +279,28 @@ export function formToDocument(draft) {
     service["cpsv:name"] = titleLit;
     service["dct:title"] = titleLit;
   }
-  const abstractLit = lit(draft.abstract);
+  const abstractLit = lit(d.abstract);
   if (abstractLit) service["dct:abstract"] = abstractLit;
-  const descriptionLit = lit(draft.description);
+  const descriptionLit = lit(d.description);
   if (descriptionLit) service["dct:description"] = descriptionLit;
 
   service["cpsv:producedBy"] = { "@id": orgId };
   service["cv:hasCompetentAuthority"] = { "@id": orgId };
 
-  const pageUrl = String(draft.pageUrl || "").trim() || serviceId;
+  const pageUrl = String(d.pageUrl || "").trim() || serviceId;
   service["foaf:page"] = pageUrl;
 
   const org = {
     "@id": orgId,
     "@type": "cv:PublicOrganisation",
   };
-  const orgTitle = lit(draft.orgName);
+  const orgTitle = lit(d.orgName);
   if (orgTitle) org["dct:title"] = orgTitle;
-  const homepage = String(draft.orgHomepage || "").trim();
+  const homepage = String(d.orgHomepage || "").trim();
   if (homepage) org["foaf:homepage"] = homepage;
   graph.push(org);
 
-  const audienceText = String(draft.audience || "").trim();
+  const audienceText = String(d.audience || "").trim();
   if (audienceText) {
     const agentId = fragmentId(serviceId, "addressee");
     service["cv:addressee"] = { "@id": agentId };
@@ -208,47 +311,78 @@ export function formToDocument(draft) {
     });
   }
 
-  const inputs = compactTexts(draft.inputs);
+  const inputs = compactTypedItems(d.inputs);
   if (inputs.length) {
-    const refs = inputs.map((text, index) => {
+    const refs = inputs.map((item, index) => {
       const id = fragmentId(serviceId, `input-${index}`);
-      graph.push({
+      const node = {
         "@id": id,
         "@type": "cpsv:Input",
-        "dct:description": lit(text),
-      });
+      };
+      const desc = lit(item.text);
+      if (desc) node["dct:description"] = desc;
+      if (item.typeId) node["dct:type"] = { "@id": item.typeId };
+      graph.push(node);
       return { "@id": id };
     });
     service["cpsv:hasInput"] = refs.length === 1 ? refs[0] : refs;
   }
 
-  const outputs = compactTexts(draft.outputs);
+  const outputs = compactTypedItems(d.outputs);
   if (outputs.length) {
-    const refs = outputs.map((text, index) => {
+    const refs = outputs.map((item, index) => {
       const id = fragmentId(serviceId, `output-${index}`);
-      graph.push({
+      const node = {
         "@id": id,
         "@type": "cpsv:Output",
-        "dct:description": lit(text),
-      });
+      };
+      const desc = lit(item.text);
+      if (desc) node["dct:description"] = desc;
+      if (item.typeId) node["dct:type"] = { "@id": item.typeId };
+      graph.push(node);
       return { "@id": id };
     });
     service["cpsv:hasOutput"] = refs.length === 1 ? refs[0] : refs;
   }
 
-  const processing = String(draft.processingTime || "").trim();
-  if (processing) {
+  const processingText = String(d.processingTime?.text || "").trim();
+  const processingDuration = String(d.processingTime?.duration || "").trim();
+  if (processingText || processingDuration) {
     const timeId = fragmentId(serviceId, "processing-time");
     service["cpsv:hasProcessingTime"] = { "@id": timeId };
-    graph.push({
+    const timeNode = {
       "@id": timeId,
       "@type": "cpsv:ServiceProcessingTime",
-      "dct:description": lit(processing),
-    });
+    };
+    const desc = lit(processingText);
+    if (desc) timeNode["dct:description"] = desc;
+    if (processingDuration) {
+      timeNode["cv:value"] = { "@type": "xsd:duration", "@value": processingDuration };
+    }
+    graph.push(timeNode);
   }
 
-  const costLit = lit(draft.cost);
-  if (costLit) service["cpsv:hasCost"] = costLit;
+  const costText = String(d.cost?.text || "").trim();
+  const costAmount = d.cost?.amount;
+  const hasAmount =
+    costAmount === 0 || (costAmount !== "" && costAmount != null && !Number.isNaN(Number(costAmount)));
+  const costCurrency = String(d.cost?.currency || "").trim() || "EUR";
+  if (hasAmount) {
+    const costId = fragmentId(serviceId, "cost");
+    service["cpsv:hasCost"] = { "@id": costId };
+    const costNode = {
+      "@id": costId,
+      "@type": "cv:Cost",
+    };
+    const desc = lit(costText);
+    if (desc) costNode["dct:description"] = desc;
+    costNode["cv:value"] = Number(costAmount);
+    costNode["cv:currency"] = costCurrency;
+    graph.push(costNode);
+  } else {
+    const costLit = lit(costText);
+    if (costLit) service["cpsv:hasCost"] = costLit;
+  }
 
   if (pageUrl) {
     const websiteId = fragmentId(serviceId, "channel-website");
@@ -261,7 +395,7 @@ export function formToDocument(draft) {
     });
   }
 
-  const onlineUrls = compactTexts(draft.onlineUrls);
+  const onlineUrls = compactTexts(d.onlineUrls);
   if (onlineUrls.length) {
     const refs = onlineUrls.map((url, index) => {
       const id = fragmentId(serviceId, `channel-online-${index}`);
@@ -275,20 +409,20 @@ export function formToDocument(draft) {
     service["cpsv:hasOtherElectronicChannel"] = refs.length === 1 ? refs[0] : refs;
   }
 
-  const lifeEvents = (draft.lifeEvents || []).filter(Boolean);
+  const lifeEvents = (d.lifeEvents || []).filter(Boolean);
   if (lifeEvents.length) {
     const refs = lifeEvents.map((id) => ({ "@id": id }));
     service["cpsv:isPartOfEvent"] = refs.length === 1 ? refs[0] : refs;
   }
-  const themes = (draft.themes || []).filter(Boolean);
+  const themes = (d.themes || []).filter(Boolean);
   if (themes.length) {
     const refs = themes.map((id) => ({ "@id": id }));
     service["cpsv:hasTheme"] = refs.length === 1 ? refs[0] : refs;
   }
 
-  const ioId = String(draft.ioServiceId || "").trim();
+  const ioId = String(d.ioServiceId || "").trim();
   if (ioId) service["io:serviceId"] = ioId;
-  const howTo = lit(draft.howTo);
+  const howTo = lit(d.howTo);
   if (howTo) service["ex:howTo"] = howTo;
 
   graph.unshift(service);
@@ -484,7 +618,6 @@ export function documentToForm(doc, serviceId = null) {
   draft.abstract = readLit(service["dct:abstract"]);
   draft.description = readLit(service["dct:description"]);
   draft.pageUrl = typeof service["foaf:page"] === "string" ? service["foaf:page"] : "";
-  draft.cost = readLit(service["cpsv:hasCost"]);
   draft.ioServiceId =
     typeof service["io:serviceId"] === "string" ? service["io:serviceId"] : "";
   draft.howTo = readLit(service["ex:howTo"]);
@@ -504,13 +637,39 @@ export function documentToForm(doc, serviceId = null) {
   const audienceTexts = textsFromRefs(graph, service["cv:addressee"]);
   draft.audience = audienceTexts[0] || "";
 
-  const inputs = textsFromRefs(graph, service["cpsv:hasInput"]);
-  draft.inputs = inputs.length ? inputs : [""];
-  const outputs = textsFromRefs(graph, service["cpsv:hasOutput"]);
-  draft.outputs = outputs.length ? outputs : [""];
+  const inputs = typedItemsFromRefs(graph, service["cpsv:hasInput"]);
+  draft.inputs = inputs.length ? inputs : [emptyTypedItem()];
+  const outputs = typedItemsFromRefs(graph, service["cpsv:hasOutput"]);
+  draft.outputs = outputs.length ? outputs : [emptyTypedItem()];
 
-  const times = textsFromRefs(graph, service["cpsv:hasProcessingTime"]);
-  draft.processingTime = times[0] || "";
+  const timeRef = refId(asList(service["cpsv:hasProcessingTime"])[0]);
+  const timeNode = nodeById(graph, timeRef);
+  if (timeNode) {
+    draft.processingTime = {
+      text: readLit(timeNode["dct:description"]) || readLit(timeNode["dct:title"]),
+      duration: readDuration(timeNode["cv:value"]),
+    };
+  } else {
+    const aciTime = readLit(service["aci:processingTime"]);
+    if (aciTime) draft.processingTime = { text: aciTime, duration: "" };
+  }
+
+  const costRaw = service["cpsv:hasCost"];
+  const costId = refId(costRaw);
+  const costNode = costId ? nodeById(graph, costId) : null;
+  if (costNode) {
+    draft.cost = {
+      text: readLit(costNode["dct:description"]) || readLit(costNode["dct:title"]),
+      amount: readAmount(costNode["cv:value"]),
+      currency:
+        typeof costNode["cv:currency"] === "string"
+          ? costNode["cv:currency"]
+          : readLit(costNode["cv:currency"]) || "EUR",
+    };
+  } else {
+    const costText = readLit(costRaw) || readLit(service["aci:costDescription"]);
+    draft.cost = { text: costText, amount: "", currency: "EUR" };
+  }
 
   const websitePages = asList(service["cpsv:hasWebSiteChannel"])
     .map((ref) => nodeById(graph, refId(ref)))
@@ -533,7 +692,7 @@ export function documentToForm(doc, serviceId = null) {
   draft.lifeEvents = idsFromRefs(service["cpsv:isPartOfEvent"]);
   draft.themes = idsFromRefs(service["cpsv:hasTheme"]);
 
-  return draft;
+  return normalizeDraft(draft);
 }
 
 export function parseJsonLdText(text) {
@@ -590,7 +749,7 @@ export function loadSessionFromStorage() {
       if (!legacy) return null;
       const data = JSON.parse(legacy);
       return {
-        draft: { ...emptyDraft(), ...data },
+        draft: normalizeDraft({ ...emptyDraft(), ...data }),
         catalogDoc: null,
         activeServiceId: data.serviceId || null,
         catalogPersisted: false,
@@ -598,7 +757,7 @@ export function loadSessionFromStorage() {
     }
     const data = JSON.parse(raw);
     return {
-      draft: { ...emptyDraft(), ...(data.draft || {}) },
+      draft: normalizeDraft({ ...emptyDraft(), ...(data.draft || {}) }),
       catalogDoc: data.catalogDoc || null,
       activeServiceId: data.activeServiceId || data.draft?.serviceId || null,
       catalogPersisted: Boolean(data.catalogDoc),

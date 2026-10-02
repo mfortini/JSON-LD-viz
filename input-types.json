@@ -1,0 +1,12 @@
+{
+  "https://example.org/onto/ex#InputType-identity-document": "Documento di identità (CIE, CI, passaporto)",
+  "https://example.org/onto/ex#InputType-spid": "SPID / CIE id / eIDAS",
+  "https://example.org/onto/ex#InputType-codice-fiscale": "Codice fiscale",
+  "https://example.org/onto/ex#InputType-iban": "IBAN / coordinate bancarie",
+  "https://example.org/onto/ex#InputType-form": "Modulo / form compilato",
+  "https://example.org/onto/ex#InputType-certificate": "Certificato / attestazione",
+  "https://example.org/onto/ex#InputType-receipt": "Ricevuta / quietanza di pagamento",
+  "https://example.org/onto/ex#InputType-photo": "Fotografia",
+  "https://example.org/onto/ex#InputType-declaration": "Dichiarazione / autocertificazione",
+  "https://example.org/onto/ex#InputType-other": "Altro documento / requisito"
+}

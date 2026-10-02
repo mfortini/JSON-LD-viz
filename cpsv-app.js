@@ -7,6 +7,12 @@ import {
   truncate,
 } from "./cpsv-model.js";
 import { buildCpsvPermalinkUrl, parseCpsvPermalink } from "./cpsv-permalinks.js";
+import {
+  filenameForDraft,
+  documentToForm,
+  saveSessionToStorage,
+  serviceSlice,
+} from "./scheda-cpsv-model.js";
 
 const ui = {
   orgLead: document.querySelector("#org-lead"),
@@ -190,6 +196,45 @@ function onViewClick(event) {
     state.selectedServiceId = null;
     updatePermalink();
     render();
+    return;
+  }
+
+  const editBtn = event.target.closest("[data-edit-scheda]");
+  if (editBtn && state.catalog?.raw) {
+    event.preventDefault();
+    const serviceId = editBtn.getAttribute("data-edit-scheda");
+    try {
+      const draft = documentToForm(state.catalog.raw, serviceId);
+      saveSessionToStorage({
+        draft,
+        catalogDoc: state.catalog.raw,
+        activeServiceId: serviceId,
+      });
+      window.location.href = `./scheda-cpsv.html?service=${encodeURIComponent(serviceId)}`;
+    } catch (error) {
+      showStatus(error.message || "Impossibile aprire l’editor.");
+    }
+    return;
+  }
+
+  const downloadBtn = event.target.closest("[data-download-scheda]");
+  if (downloadBtn && state.catalog?.raw) {
+    event.preventDefault();
+    const serviceId = downloadBtn.getAttribute("data-download-scheda");
+    try {
+      const slice = serviceSlice(state.catalog.raw, serviceId);
+      const draft = documentToForm(slice, serviceId);
+      const blob = new Blob([JSON.stringify(slice, null, 2)], { type: "application/ld+json" });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = filenameForDraft(draft);
+      anchor.click();
+      URL.revokeObjectURL(url);
+      showStatus("Scheda JSON-LD scaricata.");
+    } catch (error) {
+      showStatus(error.message || "Download non riuscito.");
+    }
     return;
   }
 
@@ -504,11 +549,15 @@ function renderServiceDetail(service) {
         <p class="cpsv-sheet__org">${escapeHtml(orgTitle)}</p>
         <div class="cpsv-sheet__title-row">
           <h1 class="cpsv-sheet__title">${escapeHtml(service.title)}</h1>
-          ${
-            service.externalUrl
-              ? `<a class="cpsv-cta cpsv-cta--header" href="${escapeHtml(service.externalUrl)}" target="_blank" rel="noopener noreferrer">Vai al servizio</a>`
-              : ""
-          }
+          <div class="cpsv-sheet__actions">
+            ${
+              service.externalUrl
+                ? `<a class="cpsv-cta cpsv-cta--header" href="${escapeHtml(service.externalUrl)}" target="_blank" rel="noopener noreferrer">Vai al servizio</a>`
+                : ""
+            }
+            <button type="button" class="ghost-button" data-edit-scheda="${escapeHtml(service.id)}">Modifica in editor</button>
+            <button type="button" class="ghost-button" data-download-scheda="${escapeHtml(service.id)}">Scarica scheda JSON-LD</button>
+          </div>
         </div>
         ${
           service.abstract

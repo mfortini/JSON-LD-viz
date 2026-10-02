@@ -3,6 +3,7 @@ import {
   documentToForm,
   draftHasContent,
   emptyDraft,
+  emptyTypedItem,
   filenameForCatalog,
   filenameForDraft,
   formToDocument,
@@ -10,11 +11,13 @@ import {
   listPublicServices,
   loadSessionFromStorage,
   mergeDraftIntoCatalog,
+  normalizeDraft,
   parseJsonLdText,
   playgroundUrl,
   saveSessionToStorage,
   validateDraft,
 } from "./scheda-cpsv-model.js";
+import { applySuggestions } from "./scheda-cpsv-suggest.js";
 
 const root = document.getElementById("editor-root");
 const statusEl = document.getElementById("app-status");
@@ -30,6 +33,8 @@ let activeServiceId = null;
 let catalogFilter = "";
 let lifeEvents = [];
 let themes = [];
+let inputTypes = [];
+let outputTypes = [];
 let pendingDoc = null;
 let saveTimer = null;
 
@@ -107,18 +112,50 @@ function readFormIntoDraft() {
   draft.orgName = String(data.get("orgName") || "").trim();
   draft.orgHomepage = String(data.get("orgHomepage") || "").trim();
   draft.audience = String(data.get("audience") || "").trim();
-  draft.processingTime = String(data.get("processingTime") || "").trim();
-  draft.cost = String(data.get("cost") || "").trim();
+  draft.processingTime = {
+    text: String(data.get("processingTime") || "").trim(),
+    duration: String(data.get("processingDuration") || "").trim(),
+  };
+  const amountRaw = String(data.get("costAmount") || "").trim();
+  draft.cost = {
+    text: String(data.get("cost") || "").trim(),
+    amount: amountRaw === "" ? "" : Number(amountRaw.replace(",", ".")),
+    currency: String(data.get("costCurrency") || "EUR").trim() || "EUR",
+  };
+  if (amountRaw !== "" && Number.isNaN(draft.cost.amount)) draft.cost.amount = "";
   draft.pageUrl = String(data.get("pageUrl") || "").trim();
   draft.ioServiceId = String(data.get("ioServiceId") || "").trim();
   draft.howTo = String(data.get("howTo") || "").trim();
-  draft.inputs = [...form.querySelectorAll('[name="inputs"]')].map((el) => el.value);
-  draft.outputs = [...form.querySelectorAll('[name="outputs"]')].map((el) => el.value);
+  draft.inputs = [...form.querySelectorAll("[data-typed='inputs']")].map((row) => ({
+    text: row.querySelector('[name="inputText"]')?.value || "",
+    typeId: row.querySelector('[name="inputType"]')?.value || "",
+  }));
+  draft.outputs = [...form.querySelectorAll("[data-typed='outputs']")].map((row) => ({
+    text: row.querySelector('[name="outputText"]')?.value || "",
+    typeId: row.querySelector('[name="outputType"]')?.value || "",
+  }));
   draft.onlineUrls = [...form.querySelectorAll('[name="onlineUrls"]')].map((el) => el.value);
   draft.lifeEvents = [...form.querySelectorAll("#lifeEvents option:checked")].map(
     (opt) => opt.value,
   );
   draft.themes = [...form.querySelectorAll("#themes option:checked")].map((opt) => opt.value);
+  draft = normalizeDraft(draft);
+}
+
+function typeOptionsHtml(entries, selected) {
+  const opts = [
+    `<option value="">— tipo (opzionale) —</option>`,
+    ...entries.map(
+      ({ id, label }) =>
+        `<option value="${escapeHtml(id)}" ${selected === id ? "selected" : ""}>${escapeHtml(label)}</option>`,
+    ),
+  ];
+  if (selected && !entries.some((e) => e.id === selected)) {
+    opts.push(
+      `<option value="${escapeHtml(selected)}" selected>${escapeHtml(selected)}</option>`,
+    );
+  }
+  return opts.join("");
 }
 
 function optionsHtml(entries, selected) {
@@ -138,6 +175,24 @@ function listRows(name, values, placeholder) {
       <div class="scheda-list-row" data-list="${name}" data-index="${index}">
         <textarea name="${name}" rows="2" placeholder="${escapeHtml(placeholder)}">${escapeHtml(value)}</textarea>
         <button type="button" data-remove="${name}" data-index="${index}" aria-label="Rimuovi">Rimuovi</button>
+      </div>`,
+    )
+    .join("");
+}
+
+function typedListRows(kind, values, placeholder, typeEntries) {
+  const items = values?.length ? values : [emptyTypedItem()];
+  const textName = kind === "inputs" ? "inputText" : "outputText";
+  const typeName = kind === "inputs" ? "inputType" : "outputType";
+  return items
+    .map(
+      (item, index) => `
+      <div class="scheda-list-row scheda-list-row--typed" data-typed="${kind}" data-index="${index}">
+        <div class="scheda-typed-fields">
+          <textarea name="${textName}" rows="2" placeholder="${escapeHtml(placeholder)}">${escapeHtml(item.text || "")}</textarea>
+          <select name="${typeName}" aria-label="Tipo">${typeOptionsHtml(typeEntries, item.typeId || "")}</select>
+        </div>
+        <button type="button" data-remove="${kind}" data-index="${index}" aria-label="Rimuovi">Rimuovi</button>
       </div>`,
     )
     .join("");
@@ -276,28 +331,46 @@ function render() {
         </fieldset>
 
         <fieldset class="scheda-section">
-          <legend>Destinatario, input, output, tempi</legend>
+          <legend>Destinatario, input, output, tempi e costi</legend>
+          <p class="scheda-panel__hint">
+            Il testo resta la fonte; i campi tipizzati sono opzionali.
+            <button type="button" class="scheda-add" data-suggest="structure">Suggerisci struttura</button>
+          </p>
           <div class="scheda-field">
             <label for="audience">A chi è rivolto</label>
             <textarea id="audience" name="audience" rows="2">${escapeHtml(draft.audience)}</textarea>
           </div>
           <div class="scheda-field">
             <label>Cosa serve (input)</label>
-            <div class="scheda-list">${listRows("inputs", draft.inputs, "Documento di identità")}</div>
+            <div class="scheda-list">${typedListRows("inputs", draft.inputs, "Documento di identità", inputTypes)}</div>
             <button type="button" class="scheda-add" data-add="inputs">Aggiungi input</button>
           </div>
           <div class="scheda-field">
             <label>Cosa si ottiene (output)</label>
-            <div class="scheda-list">${listRows("outputs", draft.outputs, "Certificato")}</div>
+            <div class="scheda-list">${typedListRows("outputs", draft.outputs, "Certificato", outputTypes)}</div>
             <button type="button" class="scheda-add" data-add="outputs">Aggiungi output</button>
           </div>
           <div class="scheda-field">
-            <label for="processingTime">Tempi</label>
-            <input id="processingTime" name="processingTime" value="${escapeHtml(draft.processingTime)}" />
+            <label for="processingTime">Tempi (testo)</label>
+            <input id="processingTime" name="processingTime" value="${escapeHtml(draft.processingTime?.text || "")}" />
           </div>
           <div class="scheda-field">
-            <label for="cost">Costi</label>
-            <input id="cost" name="cost" value="${escapeHtml(draft.cost)}" />
+            <label for="processingDuration">Durata <span class="hint">(xsd:duration, es. P30D, PT0S)</span></label>
+            <input id="processingDuration" name="processingDuration" value="${escapeHtml(draft.processingTime?.duration || "")}" placeholder="P30D" />
+          </div>
+          <div class="scheda-field">
+            <label for="cost">Costi (testo)</label>
+            <input id="cost" name="cost" value="${escapeHtml(draft.cost?.text || "")}" />
+          </div>
+          <div class="scheda-field scheda-field--inline">
+            <div>
+              <label for="costAmount">Importo</label>
+              <input id="costAmount" name="costAmount" type="number" step="0.01" min="0" value="${draft.cost?.amount === 0 || draft.cost?.amount ? escapeHtml(String(draft.cost.amount)) : ""}" />
+            </div>
+            <div>
+              <label for="costCurrency">Valuta</label>
+              <input id="costCurrency" name="costCurrency" value="${escapeHtml(draft.cost?.currency || "EUR")}" maxlength="3" />
+            </div>
           </div>
         </fieldset>
 
@@ -656,11 +729,25 @@ root.addEventListener("click", (event) => {
   if (add) {
     event.preventDefault();
     readFormIntoDraft();
-    if (add === "inputs") draft.inputs = [...(draft.inputs || []), ""];
-    if (add === "outputs") draft.outputs = [...(draft.outputs || []), ""];
+    if (add === "inputs") draft.inputs = [...(draft.inputs || []), emptyTypedItem()];
+    if (add === "outputs") draft.outputs = [...(draft.outputs || []), emptyTypedItem()];
     if (add === "onlineUrls") draft.onlineUrls = [...(draft.onlineUrls || []), ""];
     scheduleSave();
     render();
+    return;
+  }
+  if (target.getAttribute("data-suggest") === "structure") {
+    event.preventDefault();
+    readFormIntoDraft();
+    const result = applySuggestions(draft);
+    draft = normalizeDraft(result.draft);
+    scheduleSave();
+    render();
+    toast(
+      result.changed
+        ? `Struttura suggerita: ${result.changed} campo/i aggiornati.`
+        : "Nessun suggerimento applicabile (campi tipizzati già valorizzati o testo insufficiente).",
+    );
     return;
   }
   const remove = target.getAttribute("data-remove");
@@ -670,7 +757,11 @@ root.addEventListener("click", (event) => {
     readFormIntoDraft();
     const list = draft[remove] || [];
     list.splice(index, 1);
-    draft[remove] = list.length ? list : [""];
+    if (remove === "inputs" || remove === "outputs") {
+      draft[remove] = list.length ? list : [emptyTypedItem()];
+    } else {
+      draft[remove] = list.length ? list : [""];
+    }
     scheduleSave();
     render();
   }
@@ -721,16 +812,47 @@ document.getElementById("btn-copy").addEventListener("click", () => {
 });
 document.getElementById("btn-playground").addEventListener("click", openPlayground);
 
+async function loadCatalogFromQuery(catalogUrl, serviceId) {
+  const response = await fetch(catalogUrl, { credentials: "same-origin" });
+  if (!response.ok) throw new Error(`Catalogo non raggiungibile (HTTP ${response.status}).`);
+  const doc = parseJsonLdText(JSON.stringify(await response.json()));
+  applyImportedDocument(doc, serviceId || null);
+}
+
 async function boot() {
-  const [lifeRes, themeRes] = await Promise.all([
+  const [lifeRes, themeRes, inputRes, outputRes] = await Promise.all([
     fetch("./life-events.json"),
     fetch("./themes.json"),
+    fetch("./input-types.json"),
+    fetch("./output-types.json"),
   ]);
   lifeEvents = labelMapEntries(await lifeRes.json());
   themes = labelMapEntries(await themeRes.json());
+  inputTypes = labelMapEntries(await inputRes.json());
+  outputTypes = labelMapEntries(await outputRes.json());
+
+  const params = new URLSearchParams(window.location.search);
+  const catalogParam = params.get("catalog");
+  const serviceParam = params.get("service");
+
+  if (catalogParam) {
+    try {
+      const catalogUrl = new URL(catalogParam, window.location.href).href;
+      await loadCatalogFromQuery(catalogUrl, serviceParam);
+      if (window.history.replaceState) {
+        const clean = new URL(window.location.href);
+        clean.search = "";
+        window.history.replaceState({}, "", clean.pathname + clean.hash);
+      }
+      return;
+    } catch (error) {
+      toast(error.message || "Deep-link catalogo non riuscito.");
+    }
+  }
+
   const session = loadSessionFromStorage();
   if (session) {
-    draft = session.draft;
+    draft = normalizeDraft(session.draft);
     catalogDoc = session.catalogDoc;
     activeServiceId = session.activeServiceId || draft.serviceId;
     if (catalogDoc && activeServiceId) {
@@ -739,6 +861,14 @@ async function boot() {
         activeServiceId = draft.serviceId;
       } catch {
         catalogDoc = null;
+      }
+    }
+    if (serviceParam && catalogDoc) {
+      try {
+        openService(serviceParam);
+        return;
+      } catch (error) {
+        toast(error.message || "Servizio non trovato nel catalogo in sessione.");
       }
     }
   } else {

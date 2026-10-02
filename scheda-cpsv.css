@@ -194,11 +194,24 @@
   gap: 8px;
 }
 
-.scheda-list-row {
-  display: grid;
+.scheda-list-row--typed {
   grid-template-columns: 1fr auto;
-  gap: 8px;
-  align-items: start;
+}
+
+.scheda-typed-fields {
+  display: grid;
+  gap: 6px;
+}
+
+.scheda-field--inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.scheda-field--inline > div {
+  display: grid;
+  gap: 6px;
 }
 
 .scheda-list-row textarea {
