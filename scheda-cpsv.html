@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor scheda CPSV</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./scheda-cpsv.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero cpsv-hero scheda-hero" aria-labelledby="page-title">
+        <div class="hero__topbar">
+          <a class="ghost-link hero__github-link" href="./index.html">Viewer</a>
+          <a class="ghost-link hero__github-link" href="./cpsv.html">Portale CPSV</a>
+          <a class="ghost-link hero__github-link" href="./comune.html">Comune</a>
+          <a class="ghost-link hero__github-link" href="./catalogo-cpsv/">Portale cittadini</a>
+        </div>
+
+        <div class="hero__content">
+          <p class="eyebrow">CPSV-AP_IT</p>
+          <h1 id="page-title">Editor scheda CPSV</h1>
+          <p class="hero__lead">
+            Compila una scheda di servizio pubblico in JSON-LD, con import ed export.
+          </p>
+          <div class="hero__actions" id="toolbar">
+            <button type="button" class="ghost-button" id="btn-new">Nuova scheda</button>
+            <label class="ghost-button" for="file-import">Importa file</label>
+            <input
+              id="file-import"
+              type="file"
+              accept=".json,.jsonld,application/ld+json,application/json"
+              hidden
+            />
+            <button type="button" class="ghost-button" id="btn-paste">Incolla JSON-LD</button>
+            <button type="button" class="ghost-button" id="btn-export">Esporta scheda</button>
+            <button type="button" class="ghost-button" id="btn-export-catalog" hidden>
+              Esporta catalogo
+            </button>
+            <button type="button" class="ghost-button" id="btn-copy">Copia scheda</button>
+            <button type="button" class="ghost-button" id="btn-playground">
+              Apri nel Playground
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="scheda-layout" id="editor-root" aria-live="polite"></main>
+    </div>
+
+    <div class="toast" id="app-status" aria-live="polite"></div>
+
+    <dialog id="paste-dialog" class="panel scheda-dialog" aria-labelledby="paste-title">
+      <div class="section-heading">
+        <h2 id="paste-title">Incolla JSON-LD</h2>
+      </div>
+      <p class="panel__intro">
+        Incolla un documento con <code>@context</code> e <code>@graph</code>, oppure un singolo
+        PublicService.
+      </p>
+      <textarea id="paste-input" rows="14" spellcheck="false" aria-label="JSON-LD da importare"></textarea>
+      <div class="scheda-dialog__actions">
+        <button type="button" class="ghost-button ghost-button--dark" id="paste-cancel">
+          Annulla
+        </button>
+        <button type="button" class="ghost-button" id="paste-apply">Importa</button>
+      </div>
+    </dialog>
+
+    <dialog id="pick-dialog" class="panel scheda-dialog" aria-labelledby="pick-title">
+      <div class="section-heading">
+        <h2 id="pick-title">Scegli il servizio</h2>
+      </div>
+      <p class="panel__intro">Il file contiene più PublicService. Quale vuoi editare?</p>
+      <div id="pick-list" class="scheda-pick-list"></div>
+      <div class="scheda-dialog__actions">
+        <button type="button" class="ghost-button ghost-button--dark" id="pick-cancel">
+          Annulla
+        </button>
+      </div>
+    </dialog>
+
+    <script type="module" src="./scheda-cpsv-app.js"></script>
+  </body>
+</html>
