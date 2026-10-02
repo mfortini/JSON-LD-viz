@@ -209,9 +209,35 @@
   gap: 12px;
 }
 
-.scheda-field--inline > div {
+.scheda-vocab-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.scheda-vocab-list {
+  margin: 8px 0 0;
+  padding-left: 1.1rem;
   display: grid;
-  gap: 6px;
+  gap: 4px;
+}
+
+.scheda-pill--link {
+  text-decoration: none;
+}
+
+.scheda-pill--link:hover,
+.scheda-pill--link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.scheda-field .hint {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .scheda-list-row textarea {

@@ -98,6 +98,58 @@ export function suggestDuration(text) {
 }
 
 /**
+ * Interpreta un xsd:duration in campi UI (valore + unità).
+ * @returns {{ kind: ""|"immediate"|"hours"|"days"|"weeks"|"months", amount: number|"" }}
+ */
+export function parseDurationUi(duration) {
+  const raw = String(duration || "").trim().toUpperCase();
+  if (!raw) return { kind: "", amount: "" };
+  if (raw === "PT0S" || raw === "P0D" || raw === "PT0H") {
+    return { kind: "immediate", amount: "" };
+  }
+  const weeks = raw.match(/^P(\d+)W$/);
+  if (weeks) return { kind: "weeks", amount: Number(weeks[1]) };
+  const months = raw.match(/^P(\d+)M$/);
+  if (months) return { kind: "months", amount: Number(months[1]) };
+  const days = raw.match(/^P(\d+)D$/);
+  if (days) return { kind: "days", amount: Number(days[1]) };
+  const hours = raw.match(/^PT(\d+)H$/);
+  if (hours) return { kind: "hours", amount: Number(hours[1]) };
+  // fallback: giorni se solo PnD con altro (es. P1DT2H) → arrotonda ai giorni interi
+  const dayPart = raw.match(/P(\d+)D/);
+  if (dayPart) return { kind: "days", amount: Number(dayPart[1]) };
+  const hourPart = raw.match(/PT(\d+)H/);
+  if (hourPart) return { kind: "hours", amount: Number(hourPart[1]) };
+  return { kind: "", amount: "" };
+}
+
+/** Compone xsd:duration da UI assistita. */
+export function composeDuration(kind, amount) {
+  const k = String(kind || "");
+  if (k === "immediate") return "PT0S";
+  if (!k) return "";
+  const n = Number(amount);
+  if (!Number.isFinite(n) || n <= 0) return "";
+  const int = Math.round(n);
+  if (k === "hours") return `PT${int}H`;
+  if (k === "days") return `P${int}D`;
+  if (k === "weeks") return `P${int}W`;
+  if (k === "months") return `P${int}M`;
+  return "";
+}
+
+/** Etichetta leggibile per una durata (catalogo / anteprima). */
+export function formatDurationLabel(duration) {
+  const ui = parseDurationUi(duration);
+  if (ui.kind === "immediate") return "Immediato";
+  if (ui.kind === "hours") return ui.amount === 1 ? "1 ora" : `${ui.amount} ore`;
+  if (ui.kind === "days") return ui.amount === 1 ? "1 giorno" : `${ui.amount} giorni`;
+  if (ui.kind === "weeks") return ui.amount === 1 ? "1 settimana" : `${ui.amount} settimane`;
+  if (ui.kind === "months") return ui.amount === 1 ? "1 mese" : `${ui.amount} mesi`;
+  return String(duration || "");
+}
+
+/**
  * Applica suggerimenti solo agli slot tipizzati vuoti.
  * @returns {{ draft: object, changed: number }}
  */

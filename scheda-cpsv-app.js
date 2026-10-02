@@ -17,7 +17,7 @@ import {
   saveSessionToStorage,
   validateDraft,
 } from "./scheda-cpsv-model.js";
-import { applySuggestions } from "./scheda-cpsv-suggest.js";
+import { applySuggestions, composeDuration, parseDurationUi } from "./scheda-cpsv-suggest.js";
 
 const root = document.getElementById("editor-root");
 const statusEl = document.getElementById("app-status");
@@ -114,7 +114,10 @@ function readFormIntoDraft() {
   draft.audience = String(data.get("audience") || "").trim();
   draft.processingTime = {
     text: String(data.get("processingTime") || "").trim(),
-    duration: String(data.get("processingDuration") || "").trim(),
+    duration: composeDuration(
+      String(data.get("durationKind") || "").trim(),
+      data.get("durationAmount"),
+    ),
   };
   const amountRaw = String(data.get("costAmount") || "").trim();
   draft.cost = {
@@ -180,22 +183,105 @@ function listRows(name, values, placeholder) {
     .join("");
 }
 
+function isVocabIri(value) {
+  return typeof value === "string" && /^https?:\/\//i.test(value.trim());
+}
+
+/** Link alla scheda del concetto di vocabolario controllato (IRI http/https). */
+function vocabConceptLink(id, label, className = "") {
+  const text = label || id;
+  if (!isVocabIri(id)) return escapeHtml(text);
+  const cls = className ? ` class="${escapeHtml(className)}"` : "";
+  return `<a${cls} href="${escapeHtml(id)}" target="_blank" rel="noopener noreferrer">${escapeHtml(text)}<span class="visually-hidden"> (scheda vocabolario)</span></a>`;
+}
+
 function typedListRows(kind, values, placeholder, typeEntries) {
   const items = values?.length ? values : [emptyTypedItem()];
   const textName = kind === "inputs" ? "inputText" : "outputText";
   const typeName = kind === "inputs" ? "inputType" : "outputType";
   return items
-    .map(
-      (item, index) => `
+    .map((item, index) => {
+      const typeId = item.typeId || "";
+      const vocab =
+        typeId && isVocabIri(typeId)
+          ? `<a class="scheda-vocab-link" href="${escapeHtml(typeId)}" target="_blank" rel="noopener noreferrer">Scheda tipo nel vocabolario</a>`
+          : "";
+      return `
       <div class="scheda-list-row scheda-list-row--typed" data-typed="${kind}" data-index="${index}">
         <div class="scheda-typed-fields">
           <textarea name="${textName}" rows="2" placeholder="${escapeHtml(placeholder)}">${escapeHtml(item.text || "")}</textarea>
-          <select name="${typeName}" aria-label="Tipo">${typeOptionsHtml(typeEntries, item.typeId || "")}</select>
+          <select name="${typeName}" aria-label="Tipo">${typeOptionsHtml(typeEntries, typeId)}</select>
+          ${vocab}
         </div>
         <button type="button" data-remove="${kind}" data-index="${index}" aria-label="Rimuovi">Rimuovi</button>
-      </div>`,
-    )
+      </div>`;
+    })
     .join("");
+}
+
+function classificationLinksHtml(ids, entries, emptyLabel) {
+  const selected = (ids || []).filter(Boolean);
+  if (!selected.length) return `<p class="hint">${escapeHtml(emptyLabel)}</p>`;
+  return `<ul class="scheda-vocab-list">${selected
+    .map((id) => {
+      const label = entries.find((e) => e.id === id)?.label || id;
+      return `<li>${vocabConceptLink(id, label, "scheda-vocab-link")}</li>`;
+    })
+    .join("")}</ul>`;
+}
+
+function durationFieldsHtml(processingTime) {
+  const ui = parseDurationUi(processingTime?.duration || "");
+  const needsAmount = ui.kind && ui.kind !== "immediate";
+  return `
+    <div class="scheda-field scheda-field--inline">
+      <div>
+        <label for="durationKind">Durata strutturata</label>
+        <select id="durationKind" name="durationKind">
+          <option value="" ${!ui.kind ? "selected" : ""}>Non specificata</option>
+          <option value="immediate" ${ui.kind === "immediate" ? "selected" : ""}>Immediato</option>
+          <option value="hours" ${ui.kind === "hours" ? "selected" : ""}>Ore</option>
+          <option value="days" ${ui.kind === "days" ? "selected" : ""}>Giorni</option>
+          <option value="weeks" ${ui.kind === "weeks" ? "selected" : ""}>Settimane</option>
+          <option value="months" ${ui.kind === "months" ? "selected" : ""}>Mesi</option>
+        </select>
+      </div>
+      <div>
+        <label for="durationAmount">Quantità</label>
+        <input
+          id="durationAmount"
+          name="durationAmount"
+          type="number"
+          min="1"
+          step="1"
+          value="${needsAmount ? escapeHtml(String(ui.amount)) : ""}"
+          ${needsAmount ? "" : "disabled"}
+          placeholder="es. 30"
+        />
+      </div>
+    </div>
+    <p class="hint">Scegli unità e numero: nel JSON-LD viene salvata automaticamente come durata standard.</p>`;
+}
+
+function previewVocabPillsHtml() {
+  const pills = [
+    ...(draft.lifeEvents || []).map((id) => ({
+      id,
+      label: lifeEvents.find((e) => e.id === id)?.label || id,
+    })),
+    ...(draft.themes || []).map((id) => ({
+      id,
+      label: themes.find((e) => e.id === id)?.label || id,
+    })),
+  ].filter((p) => p.label);
+  if (!pills.length) return "";
+  return `<div class="scheda-pills">${pills
+    .map((p) =>
+      isVocabIri(p.id)
+        ? `<a class="scheda-pill scheda-pill--link" href="${escapeHtml(p.id)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.label)}<span class="visually-hidden"> (scheda vocabolario)</span></a>`
+        : `<span class="scheda-pill">${escapeHtml(p.label)}</span>`,
+    )
+    .join("")}</div>`;
 }
 
 function filteredCatalogServices() {
@@ -259,12 +345,6 @@ function render() {
   const errors = validateDraft(draft);
   const doc = formToDocument(draft);
   const json = JSON.stringify(doc, null, 2);
-  const lifeLabels = draft.lifeEvents
-    .map((id) => lifeEvents.find((e) => e.id === id)?.label || id)
-    .filter(Boolean);
-  const themeLabels = draft.themes
-    .map((id) => themes.find((e) => e.id === id)?.label || id)
-    .filter(Boolean);
   const orgLine = draft.orgName || draft.orgId || "Ente non indicato";
   const previewTitle = draft.title || "Titolo del servizio";
   const previewAbstract = draft.abstract || "";
@@ -354,10 +434,7 @@ function render() {
             <label for="processingTime">Tempi (testo)</label>
             <input id="processingTime" name="processingTime" value="${escapeHtml(draft.processingTime?.text || "")}" />
           </div>
-          <div class="scheda-field">
-            <label for="processingDuration">Durata <span class="hint">(xsd:duration, es. P30D, PT0S)</span></label>
-            <input id="processingDuration" name="processingDuration" value="${escapeHtml(draft.processingTime?.duration || "")}" placeholder="P30D" />
-          </div>
+          ${durationFieldsHtml(draft.processingTime)}
           <div class="scheda-field">
             <label for="cost">Costi (testo)</label>
             <input id="cost" name="cost" value="${escapeHtml(draft.cost?.text || "")}" />
@@ -395,12 +472,14 @@ function render() {
               ${optionsHtml(lifeEvents, draft.lifeEvents)}
             </select>
             <span class="hint">Tieni Ctrl/Cmd per selezioni multiple</span>
+            ${classificationLinksHtml(draft.lifeEvents, lifeEvents, "Nessun evento selezionato.")}
           </div>
           <div class="scheda-field">
             <label for="themes">Temi</label>
             <select id="themes" name="themes" multiple>
               ${optionsHtml(themes, draft.themes)}
             </select>
+            ${classificationLinksHtml(draft.themes, themes, "Nessun tema selezionato.")}
           </div>
         </fieldset>
 
@@ -423,13 +502,7 @@ function render() {
         <h2 id="preview-heading">Anteprima scheda</h2>
         <p class="org">${escapeHtml(orgLine)}</p>
         <h3>${escapeHtml(previewTitle)}</h3>
-        ${
-          lifeLabels.length || themeLabels.length
-            ? `<div class="scheda-pills">${[...lifeLabels, ...themeLabels]
-                .map((label) => `<span class="scheda-pill">${escapeHtml(label)}</span>`)
-                .join("")}</div>`
-            : ""
-        }
+        ${previewVocabPillsHtml()}
         ${previewAbstract ? `<p class="abstract">${escapeHtml(previewAbstract)}</p>` : ""}
         <p class="body">${escapeHtml(previewBody)}</p>
         <a
@@ -457,12 +530,6 @@ function updatePreviewOnly() {
   const errors = validateDraft(draft);
   const doc = formToDocument(draft);
   const json = JSON.stringify(doc, null, 2);
-  const lifeLabels = draft.lifeEvents
-    .map((id) => lifeEvents.find((e) => e.id === id)?.label || id)
-    .filter(Boolean);
-  const themeLabels = draft.themes
-    .map((id) => themes.find((e) => e.id === id)?.label || id)
-    .filter(Boolean);
   const orgLine = draft.orgName || draft.orgId || "Ente non indicato";
   const previewTitle = draft.title || "Titolo del servizio";
   const previewAbstract = draft.abstract || "";
@@ -491,15 +558,14 @@ function updatePreviewOnly() {
     card.querySelector(".org").textContent = orgLine;
     card.querySelector("h3").textContent = previewTitle;
     let pills = card.querySelector(".scheda-pills");
-    if (lifeLabels.length || themeLabels.length) {
+    const pillsHtml = previewVocabPillsHtml();
+    if (pillsHtml) {
       if (!pills) {
         pills = document.createElement("div");
         pills.className = "scheda-pills";
         card.querySelector("h3").after(pills);
       }
-      pills.innerHTML = [...lifeLabels, ...themeLabels]
-        .map((label) => `<span class="scheda-pill">${escapeHtml(label)}</span>`)
-        .join("");
+      pills.outerHTML = pillsHtml;
     } else if (pills) {
       pills.remove();
     }
@@ -713,7 +779,17 @@ root.addEventListener("change", (event) => {
     return;
   }
   if (!target.closest("#scheda-form")) return;
+  const needsRerender =
+    target.id === "durationKind" ||
+    target.id === "lifeEvents" ||
+    target.id === "themes" ||
+    target.name === "inputType" ||
+    target.name === "outputType";
   syncFromForm();
+  if (needsRerender) {
+    render();
+    return;
+  }
 });
 
 root.addEventListener("click", (event) => {
