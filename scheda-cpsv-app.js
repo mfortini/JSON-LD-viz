@@ -412,7 +412,7 @@ function render() {
         <fieldset class="scheda-section">
           <legend>Destinatario, input, output, tempi e costi</legend>
           <p class="scheda-panel__hint">
-            Il testo resta la fonte; i campi tipizzati sono opzionali.
+            Con tipo, durata o importo valorizzati il testo libero è opzionale: puoi lasciarlo vuoto.
             <button type="button" class="scheda-add" data-suggest="structure">Suggerisci struttura</button>
           </p>
           <div class="scheda-field">
@@ -421,22 +421,24 @@ function render() {
           </div>
           <div class="scheda-field">
             <label>Cosa serve (input)</label>
-            <div class="scheda-list">${typedListRows("inputs", draft.inputs, "Documento di identità", inputTypes)}</div>
+            <p class="hint">Testo libero opzionale se scegli un tipo dal vocabolario.</p>
+            <div class="scheda-list">${typedListRows("inputs", draft.inputs, "Documento di identità (opzionale)", inputTypes)}</div>
             <button type="button" class="scheda-add" data-add="inputs">Aggiungi input</button>
           </div>
           <div class="scheda-field">
             <label>Cosa si ottiene (output)</label>
-            <div class="scheda-list">${typedListRows("outputs", draft.outputs, "Certificato", outputTypes)}</div>
+            <p class="hint">Testo libero opzionale se scegli un tipo dal vocabolario.</p>
+            <div class="scheda-list">${typedListRows("outputs", draft.outputs, "Certificato (opzionale)", outputTypes)}</div>
             <button type="button" class="scheda-add" data-add="outputs">Aggiungi output</button>
           </div>
           <div class="scheda-field">
-            <label for="processingTime">Tempi (testo)</label>
-            <input id="processingTime" name="processingTime" value="${escapeHtml(draft.processingTime?.text || "")}" />
+            <label for="processingTime">Tempi (testo, opzionale)</label>
+            <input id="processingTime" name="processingTime" value="${escapeHtml(draft.processingTime?.text || "")}" placeholder="Opzionale se hai una durata strutturata" />
           </div>
           ${durationFieldsHtml(draft.processingTime)}
           <div class="scheda-field">
-            <label for="cost">Costi (testo)</label>
-            <input id="cost" name="cost" value="${escapeHtml(draft.cost?.text || "")}" />
+            <label for="cost">Costi (testo, opzionale)</label>
+            <input id="cost" name="cost" value="${escapeHtml(draft.cost?.text || "")}" placeholder="Opzionale se hai un importo" />
           </div>
           <div class="scheda-field scheda-field--inline">
             <div>
