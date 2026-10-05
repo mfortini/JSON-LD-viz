@@ -391,6 +391,34 @@
       "anpr:howTo": {
         "@language": "it",
         "@value": "VAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Certificati anagrafici” . SELEZIONA LA PERSONA INTESTATARIA A chi è intestato il certificato? Puoi richiederlo per te o per un’altra persona che appartiene alla tua famiglia anagrafica . SELEZIONA LA TIPOLOGIA Quale certificato anagrafico ti serve? Scegli tra le 15 tipologie disponibili online . SELEZIONA L’USO Per quale uso richiedi il certificato? Puoi richiederlo gratuitamente se l’uso rientra tra i motivi di esenzione previsti dalla legge. Nel caso in cui, invece, tu debba richiedere un certificato in bollo, dovrai successivamente procedere al pagamento dell’ imposta di 16 euro . SELEZIONA L’EVENTUALE SECONDA LINGUA Se risiedi in un comune bilingue, puoi scegliere la seconda lingua di emissione per il tuo certificato. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nel certificato sono corrette? Verificale nell’ anteprima . VAI AL PAGAMENTO Procedi all’eventuale pagamento dell’imposta di bollo di 16 euro. Il sistema ti reindirizzerà verso un portale dedicato. OTTIENI IL CERTIFICATO Terminata l’operazione di pagamento, puoi tornare sull’Anagrafe nazionale per scaricare il certificato oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione ”I tuoi dati”."
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "subservice-title",
+        "cpsv-portalone:sourceValue": "Certificati anagrafici"
       }
     },
     {
@@ -488,6 +516,34 @@
       "anpr:howTo": {
         "@language": "it",
         "@value": "VAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Certificati elettorali” . SELEZIONA LA TIPOLOGIA DI CERTIFICATO Quale certificato elettorale ti serve? Scegli tra le 2 tipologie disponibili . SELEZIONA L’USO Per quale uso richiedi il certificato? Puoi richiederlo gratuitamente se l’uso rientra tra i motivi di esenzione previsti dalla legge ( uso per iniziativa legislativa popolare , uso elettorale o uso referendario ). Nel caso in cui, invece, tu debba richiedere un certificato in bollo, dovrai successivamente procedere al pagamento dell’ imposta di 16 euro . SELEZIONA L’EVENTUALE SECONDA LINGUA Se risiedi in un comune bilingue, puoi scegliere la seconda lingua di emissione per il tuo certificato. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nel certificato sono corrette? Verificale nell’ anteprima . VAI AL PAGAMENTO Procedi all’eventuale pagamento dell’imposta di bollo di 16 euro. Il sistema ti reindirizzerà verso un portale di pagamento dedicato. OTTIENI IL CERTIFICATO Terminata l’operazione di pagamento, puoi tornare sull’Anagrafe Nazionale per scaricare il certificato oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione “I tuoi dati”."
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "subservice-title",
+        "cpsv-portalone:sourceValue": "Certificati elettorali"
       }
     },
     {
@@ -585,6 +641,34 @@
       "anpr:howTo": {
         "@language": "it",
         "@value": "VAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Certificati dello stato civile” . SELEZIONA LA PERSONA INTESTATARIA A chi è intestato il certificato? Puoi richiederlo per te o per un figlio minore appartenente alla tua famiglia anagrafica e con lo stesso indirizzo di residenza. SELEZIONA L’EVENTO Quale evento hai bisogno di certificare? Scegli tra le opzioni disponibili. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nel certificato sono corrette? Verificale nell’ anteprima . OTTIENI IL CERTIFICATO Puoi scaricare il certificato oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione I tuoi dati."
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "subservice-title",
+        "cpsv-portalone:sourceValue": "Certificati dello stato civile"
       }
     },
     {
@@ -678,6 +762,34 @@
       "anpr:howTo": {
         "@language": "it",
         "@value": "Puoi selezionare in autonomia tutte le informazioni necessarie alla richiesta dell’estratto:\nVAI AL SERVIZIO Accedi ai servizi seleziona il servizio “Certificati ed estratti”, quindi scegli “Estratti dello stato civile” . SELEZIONA LA PERSONA INTESTATARIA A chi è intestato il certificato? Puoi richiederlo per te o per un figlio minore appartenente alla tua famiglia anagrafica e con lo stesso indirizzo di residenza. SELEZIONA L'EVENTO E DESCRIVI IL MOTIVO DELLA RICHIESTA Seleziona l’ evento che hai bisogno di certificare e la tipologia di estratto (per riassunto o per copia integrale). In ogni caso, descrivi il motivo della tua richiesta. L’ufficio di stato civile valuterà se la motivazione fornita è relativa a un interesse personale e concreto. Una motivazione generica o non pertinente potrebbe portare al rifiuto della richiesta. VERIFICA IL RIEPILOGO Tutte le informazioni riportate nella richiesta sono corrette? Verificale nel riepilogo. RICHIEDI L’ESTRATTO Quando richiedi l’estratto il sistema attribuisce un identificativo alla richiesta che viene trasmessa al comune che ha formato l’atto. A ogni cambio di stato della richiesta da parte del comune, ti verrà inviata una notifica per email. Puoi verificare in ogni momento lo stato di avanzamento della richiesta nella sezione “Le tue richieste”. Inoltre, quando il comune avrà approvato la richiesta, riceverai anche una notifica all’indirizzo email che hai salvato nella sezione “I tuoi dati” OTTIENI L’ESTRATTO Una volta che la richiesta è stata approvata dal Comune, puoi scaricare l’estratto dalla sezione “Le tue richieste” oppure inviarlo all’indirizzo email o al domicilio digitale salvati nella sezione “I tuoi dati”."
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "subservice-title",
+        "cpsv-portalone:sourceValue": "Estratti dello stato civile"
       }
     },
     {
@@ -714,6 +826,34 @@
         "@id": "https://www.anagrafenazionale.interno.it/area-cittadino/domicilio-digitale/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.anagrafenazionale.interno.it/area-cittadino/domicilio-digitale/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Domicilio digitale"
       }
     },
     {
@@ -937,6 +1077,34 @@
       "anpr:howTo": {
         "@language": "it",
         "@value": "VAI AL SERVIZIO Accedi ai servizi per cittadini europei e seleziona l’opzione “ Voglio iniziare ora una dichiarazione di trasferimento ”. INSERISCI I TUOI DATI Inserisci i tuoi dati anagrafici e il tuo indirizzo email. SCEGLI LA TIPOLOGIA DI CAMBIO DI RESIDENZA Scegli il tipo di dichiarazione tra le due seguenti opzioni: Nuova residenza , se vai ad abitare in una casa dove non risiedono altre persone o se nella casa dove ti trasferisci ci sono altre persone con cui non hai vincoli di parentela o affettivi (è il caso di un gruppo di studenti che condividono un appartamento); Residenza in famiglia esistente , se, viceversa, nella nuova casa ci sono persone con le quali hai vincoli di parentela o affettivi (è il caso di una coppia di fidanzati). COMPLETA I DATI RICHIESTI Completa i tuoi dati personali, inserisci quelli delle persone che si trasferiscono insieme a te, le informazioni relative alla residenza presso cui ti trasferisci e i dati dell’immobile dove abiterai. ALLEGA LA DOCUMENTAZIONE Allega i documenti richiesti. Puoi caricarli dal tuo dispositivo oppure, se già in possesso di una identità digitale europea eIDAS, puoi utilizzare il sistema OOTS (Once Only Technical System) per recuperarli direttamente online e trasmetterli all’Anagrafe Nazionale. AGGIUNGI I DATI DI REPERIBILITÀ Se lo desideri, inserisci il tuo numero di telefono e la fascia di reperibilità per consentire la verifica della tua presenza nell’abitazione. VERIFICA IL RIEPILOGO E INVIA Controlla che i dati mostrati siano corretti e invia la dichiarazione."
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "subservice-title",
+        "cpsv-portalone:sourceValue": "Trasferimento della residenza in Italia"
       }
     },
     {
@@ -1037,6 +1205,34 @@
       "anpr:howTo": {
         "@language": "it",
         "@value": "VAI AL SERVIZIO Accedi ai servizi per cittadini europei e seleziona “Richiedi il certificato di nascita” . INSERISCI IL TUO CODICE FISCALE Per utilizzare il servizio, è necessario inserire il tuo codice fiscale italiano. SELEZIONA L’USO Seleziona l’ uso per cui richiedi il certificato . Puoi richiederlo gratuitamente se l’uso rientra tra i motivi di esenzione previsti dalla legge. Nel caso in cui, invece, tu debba richiedere un certificato in bollo, per procedere al pagamento dell’imposta di 16,00 € sarai reindirizzato verso un portale dedicato. OTTIENI IL CERTIFICATO Terminata l’operazione di pagamento, potrai tornare sul portale dell’Anagrafe nazionale e ottenere il tuo certificato."
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "subservice-title",
+        "cpsv-portalone:sourceValue": "Certificato di nascita"
       }
     },
     {
@@ -1127,6 +1323,34 @@
       "anpr:howTo": {
         "@language": "it",
         "@value": "VAI AL SERVIZIO Accedi all’area riservata dell’Anagrafe nazionale con la tua identità digitale (SPID, CIE, CNS o eIDAS) e seleziona il servizio “Iscrizione nelle liste elettorali” . INSERISCI UNA NUOVA RICHIESTA Ti ricordiamo che non è possibile iniziare un nuovo inserimento se sono presenti richieste ancora in lavorazione. Verifica i dati relativi alle tue generalità, alla cittadinanza e alla residenza in Italia presenti sulla tua scheda, quindi compila i “Dati aggiuntivi” , indicando un indirizzo di ultima residenza nel tuo Stato estero di origine e, se lo desideri, un recapito telefonico al quale il comune possa contattarti in caso di necessità. VERIFICA IL RIEPILOGO E INVIA Controlla che i dati mostrati siano corretti e invia la richiesta ."
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "anpr-procedure-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · procedura ANPR",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "anpr",
+        "cpsv-portalone:sourceField": "subservice-title",
+        "cpsv-portalone:sourceValue": "Iscrizione nelle liste elettorali"
       }
     }
   ],

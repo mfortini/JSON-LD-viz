@@ -911,6 +911,26 @@
       "dct:identifier": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html",
       "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html",
       "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "inail-manual-override",
+        "cpsv-portalone:methodLabel": "Manuale · override INAIL",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "manual",
+        "cpsv-portalone:sourceField": "life_event_overrides.json",
+        "cpsv-portalone:sourceValue": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/borsa-di-studio-ai-superstiti.html",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Prestazione per superstiti di lavoratori deceduti; componente borsa di studio collegata all'evento morte/eredità."
+        }
+      },
       "dct:issued": "25/06/2026, 08:38",
       "dct:modified": "30/06/2026",
       "cpsv:hasWebSiteChannel": {
@@ -1314,6 +1334,21 @@
       "dct:identifier": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html",
       "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html",
       "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "inail-manual-override",
+        "cpsv-portalone:methodLabel": "Manuale · override INAIL",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "manual",
+        "cpsv-portalone:sourceField": "life_event_overrides.json",
+        "cpsv-portalone:sourceValue": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/certificazione-unica.html",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Certificazione Unica per dichiarazione redditi e ciclo fiscale."
+        }
+      },
       "dct:issued": "11/04/2018, 11:55",
       "dct:modified": "05/07/2024, 08:55",
       "cpsv:hasWebSiteChannel": {
@@ -1885,6 +1920,21 @@
       "dct:identifier": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html",
       "foaf:page": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html",
       "dct:language": "http://publications.europa.eu/resource/authority/language/ITA",
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/2"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "inail-manual-override",
+        "cpsv-portalone:methodLabel": "Manuale · override INAIL",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "manual",
+        "cpsv-portalone:sourceField": "life_event_overrides.json",
+        "cpsv-portalone:sourceValue": "https://www.inail.it/portale/it/supporto/guide-e-manuali-operativi/gestione-transitoria-infortuni-ex-inpgi.html",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Gestione transitoria prestazioni per infortuni ex INPGI."
+        }
+      },
       "dct:issued": "01/12/2023, 12:36",
       "dct:modified": "30/09/2024, 09:22",
       "cpsv:hasWebSiteChannel": {

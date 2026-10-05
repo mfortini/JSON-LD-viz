@@ -74,6 +74,20 @@
         "@id": "https://www.mim.gov.it/web/guest/procedura-straordinaria-per-esami-finalizzata-all-accesso-ai-percorsi-di-abilitazione-all-insegnamento-nella-scuola-secondaria-di-primo-e-secondo-grado-su-posto-comune/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/procedura-straordinaria-per-esami-finalizzata-all-accesso-ai-percorsi-di-abilitazione-all-insegnamento-nella-scuola-secondaria-di-primo-e-secondo-grado-su-posto-comune/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Procedura straordinaria per esami finalizzata all’accesso ai percorsi di abilitazione all’insegnamento nella scuola secondaria di primo e secondo grado su posto comune"
       }
     },
     {
@@ -186,6 +200,20 @@
         "@id": "https://www.mim.gov.it/web/guest/agenzia-europea-per-i-bisogni-educativi-speciali-e-l-istruzione-inclusiva/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/agenzia-europea-per-i-bisogni-educativi-speciali-e-l-istruzione-inclusiva/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Agenzia europea per i bisogni educativi speciali e l’istruzione inclusiva"
       }
     },
     {
@@ -494,6 +522,20 @@
         "@id": "https://www.mim.gov.it/web/guest/tematiche-e-servizi/istruzione-degli-adulti/apprendimento-permanente/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/tematiche-e-servizi/istruzione-degli-adulti/apprendimento-permanente/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Apprendimento permanente"
       }
     },
     {
@@ -1122,6 +1164,20 @@
         "@id": "https://www.mim.gov.it/web/guest/chiedere-un-assistente-di-lingua-per-la-scuola/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/chiedere-un-assistente-di-lingua-per-la-scuola/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Chiedere un assistente di lingua per la scuola"
       }
     },
     {
@@ -1178,6 +1234,20 @@
         "@id": "https://www.mim.gov.it/web/guest/cinema-per-la-scuola/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/cinema-per-la-scuola/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Cinema per la scuola"
       }
     },
     {
@@ -1318,6 +1388,20 @@
         "@id": "https://www.mim.gov.it/web/guest/come-farsi-riconoscere-in-italia-una-qualifica-professionale/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/come-farsi-riconoscere-in-italia-una-qualifica-professionale/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Come farsi riconoscere in Italia una qualifica professionale, compresa l’istruzione e la formazione professionale?"
       }
     },
     {
@@ -1374,6 +1458,20 @@
         "@id": "https://www.mim.gov.it/web/guest/come-scegliere-un-percorso-di-istruzione-in-italia/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/come-scegliere-un-percorso-di-istruzione-in-italia/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Come scegliere un percorso di istruzione in Italia"
       }
     },
     {
@@ -1538,6 +1636,20 @@
         "@id": "https://www.mim.gov.it/web/guest/tematiche-e-servizi/scuola/eccellenze/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/tematiche-e-servizi/scuola/eccellenze/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Competizioni e iniziative per le eccellenze"
       }
     },
     {
@@ -1886,6 +1998,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-educazione-motoria/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-educazione-motoria/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso 2023 per docenti di educazione motoria nella scuola primaria (Legge 30 dicembre 2021, n. 234 articolo 1, commi 329 e seguenti)"
       }
     },
     {
@@ -1998,6 +2124,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-ordinario-scuola-infanzia-e-primaria/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-ordinario-scuola-infanzia-e-primaria/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso ordinario 2020 per docenti nella scuola dell’infanzia e primaria"
       }
     },
     {
@@ -2026,6 +2166,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-ordinario-scuola-secondaria1/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-ordinario-scuola-secondaria1/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso ordinario 2020 per docenti nella scuola secondaria​​​​​​​"
       }
     },
     {
@@ -2054,6 +2208,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-ordinario-2023-scuola-dell-infanzia-e-primaria/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-ordinario-2023-scuola-dell-infanzia-e-primaria/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso ordinario 2023 Scuola dell’infanzia e primaria (Decreto-legge 25 maggio 2021, n. 73 articolo 59, comma 11)"
       }
     },
     {
@@ -2082,6 +2250,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-ordinario-2023-scuola-secondaria-di-primo-e-secondo-grado/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-ordinario-2023-scuola-secondaria-di-primo-e-secondo-grado/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso ordinario 2023 Scuola secondaria di primo e secondo grado (Decreto legge 25 maggio 2021, n.73 articolo 59 comma 11)"
       }
     },
     {
@@ -2110,6 +2292,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-per-titoli-ed-esami-per-l-accesso-ai-ruoli-del-personale-docente-della-scuola-dell-infanzia-e-primaria-su-posto-comune-e-di-sostegno/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-per-titoli-ed-esami-per-l-accesso-ai-ruoli-del-personale-docente-della-scuola-dell-infanzia-e-primaria-su-posto-comune-e-di-sostegno/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso per titoli ed esami per l’accesso ai ruoli del personale docente della scuola dell’infanzia e primaria su posto comune e di sostegno, ai sensi del Decreto ministeriale 26 ottobre 2023, n. 206"
       }
     },
     {
@@ -2138,6 +2334,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-per-titoli-ed-esami-per-l-accesso-ai-ruoli-del-personale-docente-della-scuola-secondaria-di-primo-e-di-secondo-grado-su-posto-comune-e-di-sostegno/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-per-titoli-ed-esami-per-l-accesso-ai-ruoli-del-personale-docente-della-scuola-secondaria-di-primo-e-di-secondo-grado-su-posto-comune-e-di-sostegno/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso per titoli ed esami per l’accesso ai ruoli del personale docente della scuola secondaria di primo e di secondo grado su posto comune e di sostegno, ai sensi dell’articolo 3, comma 8, del Decreto ministeriale 26 ottobre 2023, n. 205"
       }
     },
     {
@@ -2166,6 +2376,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-ordinario-2025-scuola-dell-infanzia-e-primaria/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-ordinario-2025-scuola-dell-infanzia-e-primaria/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso ordinario 2025 – scuola dell’infanzia e primaria"
       }
     },
     {
@@ -2194,6 +2418,20 @@
         "@id": "https://www.mim.gov.it/web/guest/concorso-ordinario-2025-scuola-secondaria-di-primo-e-secondo-grado/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/concorso-ordinario-2025-scuola-secondaria-di-primo-e-secondo-grado/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Concorso ordinario 2025 – scuola secondaria di primo e secondo grado"
       }
     },
     {
@@ -2278,6 +2516,20 @@
         "@id": "https://www.mim.gov.it/web/guest/cspi/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.mim.gov.it/web/guest/cspi/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/1"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/1"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mim-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mim-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Consiglio Superiore della Pubblica Istruzione"
       }
     }
   ],

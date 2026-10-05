@@ -132,7 +132,32 @@
         "foaf:page": "https://portaleservizi.dlci.interno.it/AliCittadinanza/ali/home.htm"
       },
       "cpsv:hasTheme": {
-        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/11"
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/6"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/9"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/10"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/12"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/13"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/14"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "interno-servizi-line-crosswalk",
+        "cpsv-portalone:methodLabel": "Bozza · servizi-line Interno",
+        "cpsv-portalone:confidence": "draft",
+        "cpsv-portalone:badge": "draft",
+        "cpsv-portalone:sourceField": "cittadinanza",
+        "cpsv-portalone:sourceValue": "cittadinanza"
       }
     },
     {

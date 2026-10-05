@@ -130,6 +130,28 @@
         "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/pagamenti-pagopa/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ilportaledellautomobilista.it/sistema-pagamenti/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:methodLabel": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Pagamenti con Autenticazione"
       }
     },
     {
@@ -326,6 +348,28 @@
         "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:methodLabel": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Saldo punti patente"
       }
     },
     {
@@ -350,6 +394,28 @@
         "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente  /#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/saldo-punti-patente  /"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:methodLabel": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Saldo punti patente"
       }
     },
     {
@@ -426,6 +492,28 @@
         "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:methodLabel": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Verifica Classe Ambientale e CO2"
       }
     },
     {
@@ -450,6 +538,28 @@
         "@id": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo  /#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ilportaledellautomobilista.it/web/portale-automobilista/ext/verifica-classe-ambientale-veicolo  /"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/4"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/5"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/6"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/7"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:methodLabel": "mit-motorizzazione-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Verifica classe ambientale veicolo"
       }
     },
     {

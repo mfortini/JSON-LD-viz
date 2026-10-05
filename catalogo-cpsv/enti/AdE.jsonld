@@ -366,6 +366,24 @@
         "@language": "it",
         "@value": "Altri servizi"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/consegna-documenti#website-channel"
       },
@@ -526,6 +544,24 @@
         "@language": "it",
         "@value": "Assistenza"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Assistenza",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/contatta/assistenza-catastale-e-ipotecaria/elimina-code-online#website-channel"
       },
@@ -626,6 +662,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Assistenza"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Assistenza",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/contatta/assistenza-fiscale#website-channel"
@@ -897,6 +951,24 @@
         "@language": "it",
         "@value": "Agevolazioni"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Agevolazioni",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/detristredil-cessione-crediti-sconti-ccire#website-channel"
       },
@@ -1139,6 +1211,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Altri servizi"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/pagamenti-fatture-note-di-addebito-pagosigma#website-channel"
@@ -2084,6 +2174,24 @@
         "@language": "it",
         "@value": "Agevolazioni"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Agevolazioni",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/canone-tv/dichiarazione-sostitutiva-invio-online#website-channel"
       },
@@ -2155,6 +2263,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Agevolazioni"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Agevolazioni",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/detrazione-riqualificazione-energetica-55-2016/compilazione-web-cessione-crediti-riq-ener-ccire#website-channel"
@@ -2236,6 +2362,24 @@
         "@language": "it",
         "@value": "Agevolazioni"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Agevolazioni",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/detrazione-riqualificazione-energetica-55-2016/piattaforma-cessione-crediti-riq-ener#website-channel"
       },
@@ -2316,6 +2460,24 @@
         "@language": "it",
         "@value": "Agevolazioni"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Agevolazioni",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/detrristredil36/piattaforma-cessione-crediti-detrristredil36#website-channel"
       },
@@ -2384,6 +2546,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Agevolazioni"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Agevolazioni",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/moss/regime-non-ue#website-channel"
@@ -2489,6 +2669,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Agevolazioni"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Agevolazioni",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/schede/agevolazioni/moss/regime-ue#website-channel"
@@ -8826,6 +9024,24 @@
         "@language": "it",
         "@value": "Altri servizi"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/altri/cassetto-fiscale#website-channel"
       },
@@ -8930,6 +9146,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Altri servizi"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/altri/come-inviare-o-annullare-i-documenti#website-channel"
@@ -9048,6 +9282,24 @@
         "@language": "it",
         "@value": "Altri servizi"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/altri/desktoptelematico#website-channel"
       },
@@ -9165,6 +9417,24 @@
         "@language": "it",
         "@value": "Altri servizi"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/altri/enti-cooperazione-informatica#website-channel"
       },
@@ -9211,6 +9481,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Altri servizi"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/altri/ricevute#website-channel"
@@ -9317,6 +9605,24 @@
         "@language": "it",
         "@value": "Altri servizi"
       },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Altri servizi",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
+      },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/altri/sid2#website-channel"
       },
@@ -9370,6 +9676,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Assistenza"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Assistenza",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/assistenza/civis#website-channel"
@@ -9527,6 +9851,24 @@
       "skos:notation": {
         "@language": "it",
         "@value": "Assistenza"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/9"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/17"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ade-category-crosswalk",
+        "cpsv-portalone:methodLabel": "Curato · categoria catalogo AdE",
+        "cpsv-portalone:confidence": "curated",
+        "cpsv-portalone:badge": "ade",
+        "cpsv-portalone:sourceField": "catalog_category",
+        "cpsv-portalone:sourceValue": "Assistenza",
+        "dct:description": {
+          "@language": "it",
+          "@value": "Crosswalk curato: categoria catalogo AdE → materia CPSV → life event via skos:relatedMatch ufficiale."
+        }
       },
       "cpsv:hasWebSiteChannel": {
         "@id": "https://www.agenziaentrate.gov.it/portale/servizi/servizitrasversali/assistenza/email-e-comunicazioni-telefoniche#website-channel"

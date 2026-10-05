@@ -46,6 +46,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albi-professionali-persone-non-vedenti/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/modulistica/modello-richiesta-certificazione-centralinisti-non-vedenti"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Albi professionali persone non vedenti"
       }
     },
     {
@@ -74,6 +93,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-delle-agenzie-il-lavoro/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-delle-agenzie-il-lavoro/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Albo nazionale delle Agenzie per il lavoro"
       }
     },
     {
@@ -102,6 +140,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-soggetti-accreditati-ai-servizi-lavoro/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/albo-nazionale-soggetti-accreditati-ai-servizi-lavoro/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Albo nazionale soggetti accreditati ai servizi lavoro"
       }
     },
     {
@@ -130,6 +187,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/Ambiti-Territoriali-del-SIUSS/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/Ambiti-Territoriali-del-SIUSS/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Ambiti Territoriali Sociali"
       }
     },
     {
@@ -158,6 +234,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/applicativo-sgravicdsonline/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/applicativo-sgravicdsonline/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Applicativo \"sgravicdsonline\""
       }
     },
     {
@@ -186,6 +281,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assegno-di-ricollocazione-cigs/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assegno-di-ricollocazione-cigs/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Assegno di ricollocazione Cigs"
       }
     },
     {
@@ -214,6 +328,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assumere-lavoratori-non-comunitari/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/assumere-lavoratori-non-comunitari/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Assumere lavoratori non comunitari"
       }
     },
     {
@@ -242,6 +375,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/collocamento-nello-spettacolo-cittadini-extra-ue/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/collocamento-nello-spettacolo-cittadini-extra-ue/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Collocamento nello spettacolo per cittadini extra-Ue"
       }
     },
     {
@@ -270,6 +422,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Credito-d-imposta-deposito-contratti/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://servizi.lavoro.gov.it/deposito-contratti"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Credito d'imposta per la formazione 4.0"
       }
     },
     {
@@ -298,6 +469,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Decreti-di-riparto/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Decreti-di-riparto/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Decreti di riparto"
       }
     },
     {
@@ -326,6 +516,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/ricorsi-e-sanzioni-di-condizionalita/pagine/delibere-comitato-ricorsi/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/ricorsi-e-sanzioni-di-condizionalita/pagine/delibere-comitato-ricorsi/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Delibere del Comitato per i ricorsi di condizionalità"
       }
     },
     {
@@ -354,6 +563,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/dichiarazione-di-immediata-disponibilita-al-lavoro/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/dichiarazione-di-immediata-disponibilita-al-lavoro/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Dichiarazione di immediata disponibilità al lavoro"
       }
     },
     {
@@ -382,6 +610,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/fondi-interprofessionali-e-bilaterali-formazione-continua/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/fondi-interprofessionali-e-bilaterali-formazione-continua/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Fondi interprofessionali e bilaterali formazione continua"
       }
     },
     {
@@ -410,6 +657,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/fondo-opere-indifferibili/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/fondo-opere-indifferibili/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Fondo Opere Indifferibili"
       }
     },
     {
@@ -438,6 +704,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/informazione-comunicazione-pubblicita/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/informazione-comunicazione-pubblicita/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Informazione, comunicazione, pubblicità"
       }
     },
     {
@@ -466,6 +751,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/portale-le-politiche-attive-del-lavoro/pagine/la-scrivania-digitale-faq/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/portale-le-politiche-attive-del-lavoro/pagine/la-scrivania-digitale-faq/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "La scrivania digitale - Faq"
       }
     },
     {
@@ -494,6 +798,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C1/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C1/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "M5C1 (Componente C1 - “Politiche del lavoro”)"
       }
     },
     {
@@ -522,6 +845,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C2/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Attuazione-Interventi-PNRR/Pagine/M5C2/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "M5C2 (Componente C2 - “Infrastrutture sociali, famiglie, comunità e terzo settore”)"
       }
     },
     {
@@ -550,6 +892,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Decontribuzione-deposito-contratti/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://servizi.lavoro.gov.it/deposito-contratti/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Misure di conciliazione vita lavoro"
       }
     },
     {
@@ -578,6 +939,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/ISEE/Pagine/Monitoraggio/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/ISEE/Pagine/Monitoraggio/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Monitoraggio"
       }
     },
     {
@@ -606,6 +986,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/monitoraggio-avanzamento-attivita-regione/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/attuazione-interventi-pnrr/pagine/monitoraggio-avanzamento-attivita-regione/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Monitoraggio dell'avanzamento delle attività per regione"
       }
     },
     {
@@ -634,6 +1033,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/piano-interventi-e-servizi-sociali/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/piano-interventi-e-servizi-sociali/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Piano interventi e servizi sociali"
       }
     },
     {
@@ -662,6 +1080,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/portale-politiche-attive-lavoro/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/portale-politiche-attive-lavoro/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Portale per le politiche attive del lavoro"
       }
     },
     {
@@ -690,6 +1127,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Documenti/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/Fondo-nazionale-politiche-sociali/Pagine/Documenti/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Rapporti di monitoraggio"
       }
     },
     {
@@ -718,6 +1174,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/repertorio-degli-incentivi-allassunzione/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/repertorio-degli-incentivi-allassunzione/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Repertorio degli incentivi all’assunzione"
       }
     },
     {
@@ -746,6 +1221,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/ricorsi-e-sanzioni-di-condizionalita/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/ricorsi-e-sanzioni-di-condizionalita/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Ricorsi e sanzioni di condizionalità"
       }
     },
     {
@@ -774,6 +1268,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/servizi-il-lavoro-cerca-sportello/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.lavoro.gov.it/strumenti-e-servizi/pagine/servizi-il-lavoro-cerca-sportello/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Servizi per il lavoro: cerca sportello"
       }
     },
     {
@@ -802,6 +1315,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Sistema-informativo-servizi-sociali/Pagine/SIOSS/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://servizi.lavoro.gov.it/SIOSS"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "SIOSS"
       }
     },
     {
@@ -830,6 +1362,25 @@
         "@id": "https://www.lavoro.gov.it/strumenti-e-servizi/Deposito-telematico-contratti/Pagine/Detassazione-Deposito-contratti/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://servizi.lavoro.gov.it/deposito-contratti/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/3"
+      },
+      "cpsv:isPartOfEvent": [
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/3"
+        },
+        {
+          "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/4"
+        }
+      ],
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "mlps-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "mlps-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Welfare aziendale"
       }
     }
   ],

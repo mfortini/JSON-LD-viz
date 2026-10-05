@@ -46,6 +46,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/bio-based-card/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/bio-based-card/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Bio Based Card"
       }
     },
     {
@@ -98,6 +112,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/carta-identita-elettronica/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/carta-identita-elettronica/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Carta di Identità Elettronica"
       }
     },
     {
@@ -277,6 +305,14 @@
       }
     },
     {
+      "@id": "https://www.ipzs.it/soluzioni/identita/disability-card#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Può essere richiesta da invalidi civili con percentuale pari o superiore al 67%, ciechi, sordi, persone con handicap in situazione di gravità (Legge 104/1992) e invalidi sul lavoro con percentuale pari o superiore al 35%"
+      }
+    },
+    {
       "@id": "https://www.ipzs.it/soluzioni/identita/disability-card/",
       "@type": "cpsv:PublicService",
       "cpsv:name": {
@@ -298,10 +334,39 @@
         "@language": "it",
         "@value": "La Disability Card è uno strumento pensato per garantire pari opportunità a milioni di persone con disabilità, facilitando l'accesso a servizi pubblici e privati. Prodotta dall'Istituto Poligrafico e Zecca dello Stato (IPZS), questa carta non solo certifica la condizione di disabilità, ma offre anche la possibilità di usufruire di numerosi benefici in tutta Europa.\nRequisiti e modalità di richiesta\nPuò essere richiesta da invalidi civili con percentuale pari o superiore al 67%, ciechi, sordi, persone con handicap in situazione di gravità (Legge 104/1992) e invalidi sul lavoro con percentuale pari o superiore al 35%\nL'IPZS produce il documento, in collaborazione con l'INPS. La Disability Card va richiesta tramite il portale INPS ed è spedita da Poste Italiane direttamente all'indirizzo di residenza del richiedente o ad altro recapito da lui indicato."
       },
+      "cv:addressee": {
+        "@id": "https://www.ipzs.it/soluzioni/identita/disability-card#addressee"
+      },
+      "ipzs:howTo": {
+        "@language": "it",
+        "@value": "L'IPZS produce il documento, in collaborazione con l'INPS. La Disability Card va richiesta tramite il portale INPS ed è spedita da Poste Italiane direttamente all'indirizzo di residenza del richiedente o ad altro recapito da lui indicato."
+      },
       "cpsv:hasChannel": {
         "@id": "https://www.ipzs.it/soluzioni/identita/disability-card/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/disability-card/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Disability Card"
+      }
+    },
+    {
+      "@id": "https://www.ipzs.it/it/soluzioni/identita/disability-card#addressee",
+      "@type": "cv:Agent",
+      "dct:description": {
+        "@language": "it",
+        "@value": "Può essere richiesta da invalidi civili con percentuale pari o superiore al 67%, ciechi, sordi, persone con handicap in situazione di gravità (Legge 104/1992) e invalidi sul lavoro con percentuale pari o superiore al 35%"
       }
     },
     {
@@ -326,10 +391,31 @@
         "@language": "it",
         "@value": "La Disability Card è uno strumento pensato per garantire pari opportunità a milioni di persone con disabilità, facilitando l'accesso a servizi pubblici e privati. Prodotta dall'Istituto Poligrafico e Zecca dello Stato (IPZS), questa carta non solo certifica la condizione di disabilità, ma offre anche la possibilità di usufruire di numerosi benefici in tutta Europa.\nRequisiti e modalità di richiesta\nPuò essere richiesta da invalidi civili con percentuale pari o superiore al 67%, ciechi, sordi, persone con handicap in situazione di gravità (Legge 104/1992) e invalidi sul lavoro con percentuale pari o superiore al 35%\nL'IPZS produce il documento, in collaborazione con l'INPS. La Disability Card va richiesta tramite il portale INPS ed è spedita da Poste Italiane direttamente all'indirizzo di residenza del richiedente o ad altro recapito da lui indicato."
       },
+      "cv:addressee": {
+        "@id": "https://www.ipzs.it/it/soluzioni/identita/disability-card#addressee"
+      },
+      "ipzs:howTo": {
+        "@language": "it",
+        "@value": "L'IPZS produce il documento, in collaborazione con l'INPS. La Disability Card va richiesta tramite il portale INPS ed è spedita da Poste Italiane direttamente all'indirizzo di residenza del richiedente o ad altro recapito da lui indicato."
+      },
       "cpsv:hasChannel": {
         "@id": "https://www.ipzs.it/it/soluzioni/identita/disability-card/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/it/soluzioni/identita/disability-card/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Disability Card"
       }
     },
     {
@@ -430,6 +516,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/it-wallet/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/it-wallet/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "IT-Wallet"
       }
     },
     {
@@ -558,6 +658,20 @@
         "@id": "https://www.ipzs.it/soluzioni/tracciabilita/passaporto-digitale-di-prodotto/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/tracciabilita/passaporto-digitale-di-prodotto/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Passaporto Digitale di Prodotto"
       }
     },
     {
@@ -586,6 +700,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/passaporto-elettronico/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/passaporto-elettronico/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Passaporto italiano"
       }
     },
     {
@@ -614,6 +742,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/passaporto-italiano/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/passaporto-italiano/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Passaporto italiano"
       }
     },
     {
@@ -642,6 +784,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/patente-di-guida/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/patente-di-guida/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Patente di Guida Europea"
       }
     },
     {
@@ -670,6 +826,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/permesso-di-soggiorno/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/permesso-di-soggiorno/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Permesso di soggiorno"
       }
     },
     {
@@ -698,6 +868,20 @@
         "@id": "https://www.ipzs.it/it/soluzioni/identita/permesso-di-soggiorno/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/it/soluzioni/identita/permesso-di-soggiorno/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Permesso di soggiorno"
       }
     },
     {
@@ -750,6 +934,20 @@
         "@id": "https://www.ipzs.it/soluzioni/identita/progetto-eu-etd/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/identita/progetto-eu-etd/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Progetto EU ETD"
       }
     },
     {
@@ -906,6 +1104,20 @@
         "@id": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/valori-di-carta/#channel-online-0",
         "@type": "cpsv:OtherElectronicChannel",
         "foaf:page": "https://www.ipzs.it/soluzioni/stampa-di-sicurezza/valori-di-carta/"
+      },
+      "cpsv:hasTheme": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/public-services-subject-matters/7"
+      },
+      "cpsv:isPartOfEvent": {
+        "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/life-business-event/life-event/11"
+      },
+      "cpsv-portalone:lifeEventMapping": {
+        "cpsv-portalone:method": "ipzs-hub-crosswalk",
+        "cpsv-portalone:methodLabel": "ipzs-hub-crosswalk",
+        "cpsv-portalone:confidence": "unknown",
+        "cpsv-portalone:badge": "unknown",
+        "cpsv-portalone:sourceField": "title",
+        "cpsv-portalone:sourceValue": "Valoridicarta"
       }
     }
   ],
