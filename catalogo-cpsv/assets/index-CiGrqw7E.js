@@ -116,7 +116,7 @@ ${i.lifeEvents.length?`
 <section class="mb-4" aria-labelledby="life-events-entry-title">
   <h2 class="h5" id="life-events-entry-title">Parti da un momento della vita</h2>
   <p class="text-secondary small mb-3">
-    Scegli l’evento che ti riguarda per vedere i servizi collegati (come nei cataloghi one-stop-shop europei).
+    Scegli l’evento che ti riguarda per vedere i servizi collegati.
   </p>
   <div class="chip-list life-events-entry" role="group" aria-label="Momenti della vita">
     ${i.lifeEvents.map(r=>{const l=e.lifeEvent===r.id,d=r.label.length>48?`${r.label.slice(0,45).trim()}…`:r.label;return`<button
