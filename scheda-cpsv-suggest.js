@@ -32,6 +32,14 @@ const OUTPUT_RULES = [
   { typeId: `${IO}/OTHDOC`, re: /document|scaric|pdf|esito|pratica/i },
 ];
 
+/** Allowlist concetti OntoPiA (allineata a structure/typed.py). */
+const CONCEPT_RULES = [
+  {
+    conceptId: "https://w3id.org/italia/onto/CPV/taxCode",
+    re: /codice\s+fiscale|\bcf\b/i,
+  },
+];
+
 function itemText(item) {
   if (item == null) return "";
   if (typeof item === "string") return item;
@@ -41,6 +49,11 @@ function itemText(item) {
 function itemTypeId(item) {
   if (!item || typeof item === "string") return "";
   return String(item.typeId || "").trim();
+}
+
+function itemConceptId(item) {
+  if (!item || typeof item === "string") return "";
+  return String(item.conceptId || "").trim();
 }
 
 export function suggestInputType(text) {
@@ -55,6 +68,14 @@ export function suggestOutputType(text) {
   const t = String(text || "");
   for (const rule of OUTPUT_RULES) {
     if (rule.re.test(t)) return rule.typeId;
+  }
+  return "";
+}
+
+export function suggestConcept(text) {
+  const t = String(text || "");
+  for (const rule of CONCEPT_RULES) {
+    if (rule.re.test(t)) return rule.conceptId;
   }
   return "";
 }
@@ -115,22 +136,54 @@ export function applySuggestions(draft) {
 
   next.inputs = (next.inputs || []).map((item) => {
     const text = itemText(item);
-    const typeId = itemTypeId(item);
-    if (!text || typeId) return typeof item === "string" ? { text: item, typeId: "" } : item;
-    const suggested = suggestInputType(text);
-    if (!suggested) return { text, typeId: "" };
-    changed += 1;
-    return { text, typeId: suggested };
+    let typeId = itemTypeId(item);
+    let conceptId = itemConceptId(item);
+    const base =
+      typeof item === "string" ? { text: item, typeId: "", conceptId: "" } : { ...item, text, typeId, conceptId };
+    if (!text) return base;
+    let localChanged = false;
+    if (!typeId) {
+      const suggested = suggestInputType(text);
+      if (suggested) {
+        typeId = suggested;
+        localChanged = true;
+      }
+    }
+    if (!conceptId) {
+      const suggestedConcept = suggestConcept(text);
+      if (suggestedConcept) {
+        conceptId = suggestedConcept;
+        localChanged = true;
+      }
+    }
+    if (localChanged) changed += 1;
+    return { ...base, text, typeId, conceptId };
   });
 
   next.outputs = (next.outputs || []).map((item) => {
     const text = itemText(item);
-    const typeId = itemTypeId(item);
-    if (!text || typeId) return typeof item === "string" ? { text: item, typeId: "" } : item;
-    const suggested = suggestOutputType(text);
-    if (!suggested) return { text, typeId: "" };
-    changed += 1;
-    return { text, typeId: suggested };
+    let typeId = itemTypeId(item);
+    let conceptId = itemConceptId(item);
+    const base =
+      typeof item === "string" ? { text: item, typeId: "", conceptId: "" } : { ...item, text, typeId, conceptId };
+    if (!text) return base;
+    let localChanged = false;
+    if (!typeId) {
+      const suggested = suggestOutputType(text);
+      if (suggested) {
+        typeId = suggested;
+        localChanged = true;
+      }
+    }
+    if (!conceptId) {
+      const suggestedConcept = suggestConcept(text);
+      if (suggestedConcept) {
+        conceptId = suggestedConcept;
+        localChanged = true;
+      }
+    }
+    if (localChanged) changed += 1;
+    return { ...base, text, typeId, conceptId };
   });
 
   const timeText =

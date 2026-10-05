@@ -135,7 +135,7 @@ export function formatDurationLabel(duration) {
 }
 
 export function emptyTypedItem() {
-  return { text: "", typeId: "" };
+  return { text: "", typeId: "", conceptId: "" };
 }
 
 export function emptyProcessingTime() {
@@ -172,10 +172,11 @@ export function emptyDraft() {
 function normalizeTypedList(values) {
   const list = Array.isArray(values) ? values : [];
   const mapped = list.map((item) => {
-    if (typeof item === "string") return { text: item, typeId: "" };
+    if (typeof item === "string") return { text: item, typeId: "", conceptId: "" };
     return {
       text: String(item?.text ?? "").trim() ? String(item.text) : String(item?.text || ""),
       typeId: String(item?.typeId || "").trim(),
+      conceptId: String(item?.conceptId || "").trim(),
     };
   });
   return mapped.length ? mapped : [emptyTypedItem()];
@@ -251,10 +252,24 @@ export function draftHasContent(draft) {
   ) {
     return true;
   }
-  if ((d.inputs || []).some((v) => String(v.text || "").trim() || String(v.typeId || "").trim())) {
+  if (
+    (d.inputs || []).some(
+      (v) =>
+        String(v.text || "").trim() ||
+        String(v.typeId || "").trim() ||
+        String(v.conceptId || "").trim(),
+    )
+  ) {
     return true;
   }
-  if ((d.outputs || []).some((v) => String(v.text || "").trim() || String(v.typeId || "").trim())) {
+  if (
+    (d.outputs || []).some(
+      (v) =>
+        String(v.text || "").trim() ||
+        String(v.typeId || "").trim() ||
+        String(v.conceptId || "").trim(),
+    )
+  ) {
     return true;
   }
   if ((d.onlineUrls || []).some((v) => String(v || "").trim())) return true;
@@ -291,7 +306,10 @@ function compactTexts(values) {
 
 function compactTypedItems(values) {
   return normalizeTypedList(values).filter(
-    (item) => String(item.text || "").trim() || String(item.typeId || "").trim(),
+    (item) =>
+      String(item.text || "").trim() ||
+      String(item.typeId || "").trim() ||
+      String(item.conceptId || "").trim(),
   );
 }
 
@@ -328,8 +346,9 @@ function typedItemsFromRefs(graph, refs) {
         readLit(node?.["rdfs:comment"]) ||
         "";
       const typeId = refId(node?.["dct:type"]) || "";
-      if (!text && !typeId) return null;
-      return { text, typeId };
+      const conceptId = refId(node?.["cv:supportsConcept"]) || "";
+      if (!text && !typeId && !conceptId) return null;
+      return { text, typeId, conceptId };
     })
     .filter(Boolean);
 }
@@ -392,6 +411,7 @@ export function formToDocument(draft) {
       const desc = lit(item.text);
       if (desc) node["dct:description"] = desc;
       if (item.typeId) node["dct:type"] = { "@id": item.typeId };
+      if (item.conceptId) node["cv:supportsConcept"] = { "@id": item.conceptId };
       graph.push(node);
       return { "@id": id };
     });
@@ -409,6 +429,7 @@ export function formToDocument(draft) {
       const desc = lit(item.text);
       if (desc) node["dct:description"] = desc;
       if (item.typeId) node["dct:type"] = { "@id": item.typeId };
+      if (item.conceptId) node["cv:supportsConcept"] = { "@id": item.conceptId };
       graph.push(node);
       return { "@id": id };
     });

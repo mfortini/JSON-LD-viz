@@ -379,6 +379,9 @@
       },
       "dct:type": {
         "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/service-input-output/CODE"
+      },
+      "cv:supportsConcept": {
+        "@id": "https://w3id.org/italia/onto/CPV/taxCode"
       }
     },
     {
@@ -738,6 +741,9 @@
       },
       "dct:type": {
         "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/service-input-output/CODE"
+      },
+      "cv:supportsConcept": {
+        "@id": "https://w3id.org/italia/onto/CPV/taxCode"
       }
     },
     {
@@ -1384,6 +1390,9 @@
       },
       "dct:type": {
         "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/service-input-output/REQ"
+      },
+      "cv:supportsConcept": {
+        "@id": "https://w3id.org/italia/onto/CPV/taxCode"
       }
     },
     {
@@ -1954,6 +1963,9 @@
       },
       "dct:type": {
         "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/service-input-output/CODE"
+      },
+      "cv:supportsConcept": {
+        "@id": "https://w3id.org/italia/onto/CPV/taxCode"
       }
     },
     {
@@ -2898,6 +2910,9 @@
       },
       "dct:type": {
         "@id": "https://w3id.org/italia/controlled-vocabulary/classifications-for-public-services/service-input-output/CODE"
+      },
+      "cv:supportsConcept": {
+        "@id": "https://w3id.org/italia/onto/CPV/taxCode"
       }
     },
     {

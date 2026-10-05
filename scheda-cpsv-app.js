@@ -35,6 +35,7 @@ let lifeEvents = [];
 let themes = [];
 let inputTypes = [];
 let outputTypes = [];
+let concepts = [];
 let pendingDoc = null;
 let saveTimer = null;
 
@@ -130,10 +131,12 @@ function readFormIntoDraft() {
   draft.inputs = [...form.querySelectorAll("[data-typed='inputs']")].map((row) => ({
     text: row.querySelector('[name="inputText"]')?.value || "",
     typeId: row.querySelector('[name="inputType"]')?.value || "",
+    conceptId: row.querySelector('[name="inputConcept"]')?.value || "",
   }));
   draft.outputs = [...form.querySelectorAll("[data-typed='outputs']")].map((row) => ({
     text: row.querySelector('[name="outputText"]')?.value || "",
     typeId: row.querySelector('[name="outputType"]')?.value || "",
+    conceptId: row.querySelector('[name="outputConcept"]')?.value || "",
   }));
   draft.onlineUrls = [...form.querySelectorAll('[name="onlineUrls"]')].map((el) => el.value);
   draft.lifeEvents = [...form.querySelectorAll("#lifeEvents option:checked")].map(
@@ -141,6 +144,17 @@ function readFormIntoDraft() {
   );
   draft.themes = [...form.querySelectorAll("#themes option:checked")].map((opt) => opt.value);
   draft = normalizeDraft(draft);
+}
+
+function conceptOptionsHtml(entries, selected) {
+  const opts = [
+    `<option value="">— concetto (opzionale) —</option>`,
+    ...entries.map(
+      (e) =>
+        `<option value="${escapeHtml(e.id)}" ${e.id === selected ? "selected" : ""}>${escapeHtml(e.label)}</option>`,
+    ),
+  ];
+  return opts.join("");
 }
 
 function typeOptionsHtml(entries, selected) {
@@ -197,19 +211,27 @@ function typedListRows(kind, values, placeholder, typeEntries) {
   const items = values?.length ? values : [emptyTypedItem()];
   const textName = kind === "inputs" ? "inputText" : "outputText";
   const typeName = kind === "inputs" ? "inputType" : "outputType";
+  const conceptName = kind === "inputs" ? "inputConcept" : "outputConcept";
   return items
     .map((item, index) => {
       const typeId = item.typeId || "";
+      const conceptId = item.conceptId || "";
       const vocab =
         typeId && isVocabIri(typeId)
           ? `<a class="scheda-vocab-link" href="${escapeHtml(typeId)}" target="_blank" rel="noopener noreferrer">Scheda tipo nel vocabolario</a>`
+          : "";
+      const conceptLink =
+        conceptId && isVocabIri(conceptId)
+          ? `<a class="scheda-vocab-link" href="${escapeHtml(conceptId)}" target="_blank" rel="noopener noreferrer">Scheda concetto</a>`
           : "";
       return `
       <div class="scheda-list-row scheda-list-row--typed" data-typed="${kind}" data-index="${index}">
         <div class="scheda-typed-fields">
           <textarea name="${textName}" rows="2" placeholder="${escapeHtml(placeholder)}">${escapeHtml(item.text || "")}</textarea>
           <select name="${typeName}" aria-label="Tipo">${typeOptionsHtml(typeEntries, typeId)}</select>
+          <select name="${conceptName}" aria-label="Concetto">${conceptOptionsHtml(concepts, conceptId)}</select>
           ${vocab}
+          ${conceptLink}
         </div>
         <button type="button" data-remove="${kind}" data-index="${index}" aria-label="Rimuovi">Rimuovi</button>
       </div>`;
@@ -785,7 +807,9 @@ root.addEventListener("change", (event) => {
     target.id === "lifeEvents" ||
     target.id === "themes" ||
     target.name === "inputType" ||
-    target.name === "outputType";
+    target.name === "outputType" ||
+    target.name === "inputConcept" ||
+    target.name === "outputConcept";
   syncFromForm();
   if (needsRerender) {
     render();
@@ -897,16 +921,18 @@ async function loadCatalogFromQuery(catalogUrl, serviceId) {
 }
 
 async function boot() {
-  const [lifeRes, themeRes, inputRes, outputRes] = await Promise.all([
+  const [lifeRes, themeRes, inputRes, outputRes, conceptRes] = await Promise.all([
     fetch("./life-events.json"),
     fetch("./themes.json"),
     fetch("./input-types.json"),
     fetch("./output-types.json"),
+    fetch("./concepts.json"),
   ]);
   lifeEvents = labelMapEntries(await lifeRes.json());
   themes = labelMapEntries(await themeRes.json());
   inputTypes = labelMapEntries(await inputRes.json());
   outputTypes = labelMapEntries(await outputRes.json());
+  concepts = conceptRes.ok ? labelMapEntries(await conceptRes.json()) : [];
 
   const params = new URLSearchParams(window.location.search);
   const catalogParam = params.get("catalog");
